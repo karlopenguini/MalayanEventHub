@@ -57,10 +57,16 @@
             </div>
             <div>
                 <asp:Label ID="lblCollege" runat="server" Text="College"></asp:Label>
-                <asp:RequiredFieldValidator ID="rfvCollege" runat="server" ErrorMessage="*" ControlToValidate="ddlCollege" CssClass="validator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvCollege" runat="server" ErrorMessage="*" ControlToValidate="ddlCollege" CssClass="validator" InitialValue="Choose"></asp:RequiredFieldValidator>
             </div>
             <div>
-                <asp:DropDownList ID="ddlCollege" runat="server" Width ="100px"></asp:DropDownList>
+                <asp:DropDownList ID="ddlCollege" runat="server" Width ="100px">
+                    <asp:ListItem Selected="True">Choose</asp:ListItem>
+                    <asp:ListItem>CAS</asp:ListItem>
+                    <asp:ListItem>CCIS</asp:ListItem>
+                    <asp:ListItem>MITL</asp:ListItem>
+                    <asp:ListItem>CMET</asp:ListItem>
+                </asp:DropDownList>
             </div>
             <div>
                 <asp:Label ID="lblAdviserNum" runat="server" Text="Adviser Employee Number"></asp:Label>
@@ -81,7 +87,7 @@
                 <asp:RequiredFieldValidator ID="rfvMembers" runat="server" ErrorMessage="*" ControlToValidate="txtMembers" CssClass="validator"></asp:RequiredFieldValidator>
             </div>
             <div>
-                <asp:TextBox ID="txtMembers" runat="server" Width="500px" Height="120px" class ="textbox" style="overflow:auto; resize:none;" ></asp:TextBox>
+                <asp:TextBox ID="txtMembers" runat="server" Width="500px" Height="120px" class ="textbox" style="overflow:auto; resize:none;" TextMode="MultiLine" ></asp:TextBox>
             </div>
             <di style = "margin: 15px auto">
                 <asp:Button ID="btnRegister" runat="server" Text="Register" style="border-radius: 50px; border-width: 1px; border-color: black;"/>
