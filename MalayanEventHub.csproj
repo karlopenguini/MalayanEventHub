@@ -78,6 +78,7 @@
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
     <Content Include="Styles\Admin\test.html" />
+    <Content Include="Styles\Organizer\organization-registration.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
     <Content Include="Styles\User\test.html" />

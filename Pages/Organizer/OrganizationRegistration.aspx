@@ -1,50 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrganizationRegistration.aspx.cs" Inherits="MalayanEventHub.Layouts.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="organization_re.css">
-    <style>
-        body {
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-        
-        /* Flexbox wrapper than contains a flexbox item that is another flexbox container */
-        .wrapper { 
-            margin: auto;
-            display:flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 600px;
-        }
-
-        /* Form title properties */
-        #title {
-            font-size: 25px;
-            margin-top: 50px;
-        }
-
-        /* Flexbox container inside wrapper that contains form controls */
-        .form {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: flex-start;
-            align-self: center;
-
-            margin-bottom: 25px;
-            padding: 5px;
-        }
-
-        .form div {
-            margin:5px;
-        }
-
-        /* Rounded Text Boxes */
-        .textbox {
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            border-radius: 10px;
-            border-width: 1px;
-            border-color: black;
-        }
-    </style>
+    <link href="../../Styles/Organizer/organization-registration.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="wrapper">
