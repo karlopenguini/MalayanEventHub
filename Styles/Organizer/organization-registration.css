@@ -39,3 +39,7 @@
     border-width: 1px;
     border-color: black;
 }
+
+.validator {
+    color: red;
+}
