@@ -73,7 +73,6 @@
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
-    <Content Include="Pages\Organizer\Organizations.aspx" />
     <Content Include="Pages\Organizer\OrganizationRegistration.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
@@ -107,13 +106,6 @@
     </Compile>
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Organizer\Organizations.aspx.cs">
-      <DependentUpon>Organizations.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Organizer\Organizations.aspx.designer.cs">
-      <DependentUpon>Organizations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrganizationRegistration.aspx.cs">
       <DependentUpon>OrganizationRegistration.aspx</DependentUpon>
