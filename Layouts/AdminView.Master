@@ -142,13 +142,11 @@
             <a href="~/Sample.aspx" class="nav-logo">
                         MCL<span>EventHub.</span>
             </a>
-
             <section class="search-bar-container">
                 <div style="width:50%;">
                     <asp:TextBox ID="TextBox1" runat="server" CssClass="search-bar"></asp:TextBox>
                 </div>
             </section>
-
             <section class="nav-links">
                 <asp:HyperLink ID="hl_events" runat="server" target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
                     <p>events</p>
@@ -172,22 +170,19 @@
                 </div>
             </section>
         </nav>
+        <main style="margin: 0px 164px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <footer>
+            <section>
+                <div class="footer-about-us">
+                    <p class="footer-about-us-header">About us</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <p>All Rights Reserved (2022).</p>
+            </section>
+        </footer>
     </form>
-    
-    <div style="margin: 0px 164px;">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-    
-
-    <footer>
-        <section>
-            <div class="footer-about-us">
-                <p class="footer-about-us-header">About us</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <p>All Rights Reserved (2022).</p>
-        </section>
-    </footer>
 </body>
 </html>
