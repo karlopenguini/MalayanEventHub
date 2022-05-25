@@ -75,6 +75,14 @@
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Pages\Admin\test.html" />
+    <Content Include="Pages\Organizer\test.html" />
+    <Content Include="Pages\test.html" />
+    <Content Include="Pages\User\test.html" />
+    <Content Include="Styles\Admin\test.html" />
+    <Content Include="Styles\Organizer\test.html" />
+    <Content Include="Styles\test.html" />
+    <Content Include="Styles\User\test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -115,14 +123,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Admin\" />
-    <Folder Include="Pages\Organizer\" />
-    <Folder Include="Pages\User\" />
-    <Folder Include="Styles\Admin\" />
-    <Folder Include="Styles\Organizer\" />
-    <Folder Include="Styles\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
