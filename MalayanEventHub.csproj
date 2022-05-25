@@ -73,7 +73,8 @@
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
-    <Content Include="Pages\User\OrganizationRegistration.aspx" />
+    <Content Include="Pages\Organizer\Organizations.aspx" />
+    <Content Include="Pages\Organizer\OrganizationRegistration.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
@@ -107,11 +108,18 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User\OrganizationRegistration.aspx.cs">
+    <Compile Include="Pages\Organizer\Organizations.aspx.cs">
+      <DependentUpon>Organizations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\Organizations.aspx.designer.cs">
+      <DependentUpon>Organizations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrganizationRegistration.aspx.cs">
       <DependentUpon>OrganizationRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\User\OrganizationRegistration.aspx.designer.cs">
+    <Compile Include="Pages\Organizer\OrganizationRegistration.aspx.designer.cs">
       <DependentUpon>OrganizationRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,7 +136,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\User\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
