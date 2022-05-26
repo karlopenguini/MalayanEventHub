@@ -7,14 +7,14 @@
 }
 
 .form-body {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     padding: 10px;
 }
 
 .form-section {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .form-body .header {
@@ -23,10 +23,10 @@
 }
 
 .form-body .sub-header {
-    font-size: 30px;
+    font-size: 25px;
     padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     color: white;
     background-color: #07084a;
     border-radius: 5px;
@@ -39,23 +39,27 @@
 
 .form-fields {
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
 }
 
-.sub-header:hover, .card .header:hover {
+.sub-header:hover {
     cursor: pointer;
 }
 
 .form-field {
     display: flex;
     flex-flow: row wrap;
+    align-content: center;
     align-items: center;
     align-self: center;
+    margin-bottom: 5px;
 }
 
 
     .form-field p {
-        font-size: 26px;
+        margin-top: 12px;
+        margin-bottom: 15px;
+        font-size: 23px;
         font-weight: 100;
     }
 
@@ -67,15 +71,7 @@
 .text-boxs {
     margin-left: 16px;
     border-radius: 7px;
-    font-size: 22px;
-    flex-grow: 1;
-    padding: 5px;
-}
-
-.hyper-links {
-    color: blue;
-    font-size: 22px;
-    text-decoration: underline;
+    font-size: 18px;
     flex-grow: 1;
     padding: 5px;
 }
@@ -83,7 +79,7 @@
 .dropdown-lists {
     margin-left: 16px;
     border-radius: 7px;
-    font-size: 22px;
+    font-size: 18px;
     flex-grow: 1;
     padding: 5px;
 }
@@ -99,7 +95,7 @@
 
     .check-boxs li {
         flex-basis: 33%;
-        font-size: 22px;
+        font-size: 18px;
         margin-bottom: 15px;
     }
 
@@ -117,6 +113,10 @@ input[type='checkbox'] {
     transform: scale(1.5);
 }
 
+input[type='text'] {
+    /*height: 28px; */
+}
+
 textarea {
     flex-basis: 100%;
     height: 200px;
@@ -125,7 +125,6 @@ textarea {
 .main-button {
     background-color: #07084a;
     color: white;
-    margin-left: 20px;
 }
 
 .sub-button {
