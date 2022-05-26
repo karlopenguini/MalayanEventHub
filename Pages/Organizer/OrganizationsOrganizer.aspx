@@ -3,7 +3,6 @@
     <link href="../../Styles/Organizer/organizations-organizer.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="wrapper">
         <div id="title">My Organizations</div>
         <div class="controls">
@@ -30,4 +29,19 @@
         </div>
     </div>
 
+    <%-- DataList of Organizations --%>
+    <asp:DataList ID="dlOrganizations" runat="server" DataSourceID="Organizations">
+        <ItemTemplate>
+            <div class="card">
+                        <img src="../../Images/mcl_logo.png" />
+                        <div class="info">
+                            <a href="#" class="btn">DETAILS</a>
+                            <a href="#" class="btn">CREATE EVENT</a>
+                            <a href="#" class="btn">VIEW EVENTS</a>
+                            <a href="#" class="btn">VIOLATIONS</a>
+                        </div>
+                    </div>
+        </ItemTemplate>
+    </asp:DataList>
+<asp:SqlDataSource ID="Organizations" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [OrganizationTBL]"></asp:SqlDataSource>
 </asp:Content>
