@@ -84,6 +84,7 @@
     <Content Include="Styles\Admin\test.html" />
     <Content Include="Styles\Event_Organization_Headers.css" />
     <Content Include="Styles\EventsPage.css" />
+
     <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
@@ -159,7 +160,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Styles\Admin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
