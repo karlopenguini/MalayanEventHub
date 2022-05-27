@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MalayanEventHub
 {
-    public partial class OrgCreateEvent : System.Web.UI.Page
+    public partial class OrgEventRequestStatus : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

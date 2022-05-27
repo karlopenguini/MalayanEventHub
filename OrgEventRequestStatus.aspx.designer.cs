@@ -11,7 +11,7 @@ namespace MalayanEventHub
 {
 
 
-    public partial class OrgCreateEvent
+    public partial class OrgEventRequestStatus
     {
 
         /// <summary>
@@ -58,15 +58,6 @@ namespace MalayanEventHub
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxVenue;
-
-        /// <summary>
-        /// TextBoxInvLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxInvLink;
 
         /// <summary>
         /// TextBoxObjectives control.
@@ -150,13 +141,13 @@ namespace MalayanEventHub
         protected global::System.Web.UI.WebControls.FileUpload FileUploadImg;
 
         /// <summary>
-        /// ButtonSubmit control.
+        /// ButtonShowParticipants control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
+        protected global::System.Web.UI.WebControls.Button ButtonShowParticipants;
 
         /// <summary>
         /// ButtonCancel control.

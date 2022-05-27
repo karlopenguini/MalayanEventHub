@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Create Event" Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrgCreateEvent.aspx.cs" Inherits="MalayanEventHub.OrgCreateEvent" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrgEventRequestStatus.aspx.cs" Inherits="MalayanEventHub.OrgEventRequestStatus" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <style type="text/css">
+      <style type="text/css">
         body{
             margin:0;
             padding:0;
@@ -76,7 +76,6 @@
             font-size: 22px;
             flex-grow: 1;
             padding: 5px;
-            
         }
         .check-boxs{
             list-style:none;
@@ -104,9 +103,7 @@
             transform: scale(1.5);
           
         }
-        input[type='text']{
-             /*height: 28px; */
-        }
+
         textarea{
             flex-basis: 100%;
             height: 200px;
@@ -156,31 +153,31 @@
             <div id="event-section-fields" class="form-fields">
                 <div class="form-field">
                     <p>Event Title:</p>
-                    <asp:TextBox ID="TextBoxTitle" runat="server" CssClass="text-boxs" ></asp:TextBox>
+                    <asp:TextBox ID="TextBoxTitle" runat="server" CssClass="text-boxs" Enabled="False" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Start Date & Time:</p>
-                    <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal" Enabled="False" ></asp:TextBox>
                 </div>
                  <div class="form-field">
                     <p>End Date & Time:</p>
-                    <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal" Enabled="False" ></asp:TextBox>
                 </div>
                  <div class="form-field">
                     <p>Venue:</p>
-                    <asp:TextBox ID="TextBoxVenue" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxVenue" runat="server" CssClass="text-boxs" Enabled="False" ></asp:TextBox>
                 </div>
-                <div class="form-field">
+                 <div class="form-field">
                     <p>Invitation Link:</p>
-                    <asp:TextBox ID="TextBoxInvLink" runat="server" CssClass="text-boxs" TextMode="Url"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxInvLink" runat="server" CssClass="text-boxs" TextMode="Url" Enabled="false"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Objectives:</p>
-                    <asp:TextBox ID="TextBoxObjectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="TextBoxObjectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" Enabled="False" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Specific Details:</p>
-                    <asp:TextBox ID="TextBoxSpecificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="TextBoxSpecificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" Enabled="False" ></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -194,7 +191,7 @@
                     <div id="audience-section-fields" class="form-fields">
                         <div class="form-field">
                             <p>College:</p>
-                            <asp:DropDownList ID="DropDownListCollege" CssClass="dropdown-lists" runat="server">
+                            <asp:DropDownList ID="DropDownListCollege" CssClass="dropdown-lists" Enabled="False"  runat="server">
                                 <asp:ListItem Value="SHS">Senior High School (SHS)</asp:ListItem>
                                 <asp:ListItem Value="CAS">College of Arts and Science (CAS)</asp:ListItem>
                                 <asp:ListItem Value="CCIS">College of Computer and Information Science (CCIS)</asp:ListItem>
@@ -206,19 +203,19 @@
                         </div>
                         <div class="form-field">
                             <p>Degree/Strand:</p>
-                            <asp:DropDownList ID="DropDownListDegree" CssClass="dropdown-lists" runat="server">
+                            <asp:DropDownList ID="DropDownListDegree" CssClass="dropdown-lists" Enabled="False"  runat="server">
                                 <asp:ListItem Value="" Selected="True" hidden="hidden">-- Please specify a College first.</asp:ListItem>
                                 <asp:ListItem Value="All" >All</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-field">
                             <p>Year:</p>
-                            <asp:DropDownList ID="DropDownListStartGradeYear" CSSClass="year-dropdown-lists" runat="server">
+                            <asp:DropDownList ID="DropDownListStartGradeYear" CSSClass="year-dropdown-lists" Enabled="False"  runat="server">
                                 <asp:ListItem>--</asp:ListItem>
                                 <asp:ListItem>All</asp:ListItem>
                             </asp:DropDownList>
                             <p>to</p>
-                            <asp:DropDownList ID="DropDownListEndGradeYear" CSSClass="year-dropdown-lists" runat="server">
+                            <asp:DropDownList ID="DropDownListEndGradeYear" CSSClass="year-dropdown-lists" Enabled="False"  runat="server">
                                 <asp:ListItem>--</asp:ListItem>
                                 <asp:ListItem>All</asp:ListItem>
                             </asp:DropDownList>
@@ -234,7 +231,7 @@
             </div>
             <div id="participant-info-fields" class="form-fields">
                 <p style="font-size: 24px;">Target Information of Participants:</p>
-                <asp:CheckBoxList ID="CheckBoxListTargetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList">
+                <asp:CheckBoxList ID="CheckBoxListTargetData" runat="server" Width="100%" CssClass="check-boxs" Enabled="False"  RepeatLayout="UnorderedList">
                     <asp:ListItem >Student No.</asp:ListItem>
                     <asp:ListItem Enabled="False" Selected="True">First Name</asp:ListItem>
                     <asp:ListItem>Middle Name</asp:ListItem>
@@ -256,13 +253,12 @@
             <div id="pubmat-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Pubmat Image:</p>
-                    <asp:FileUpload ID="FileUploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"  />
+                    <asp:FileUpload ID="FileUploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"  Enabled="False"  />
                 </div>  
-                <p>Note: Preferred to be landscape and  must be less than 10mb.</p>
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
-            <asp:Button ID="ButtonSubmit" runat="server" Text="Submit"  CssClass="main-button" Width="35%"  />
+            <asp:Button ID="ButtonShowParticipants" runat="server" Text="Show Participants"  CssClass="main-button" Width="35%" />
             <asp:Button ID="ButtonCancel" runat="server" Text="Cancel" Width="35%" />
         </div>
     </div>
