@@ -162,21 +162,21 @@
             <section class="nav-links">
                 <asp:HyperLink ID="hl_events" runat="server" target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
                     <p>events</p>
-                    <object data="../Images/SVG/arrow.svg"></object>
+                    <object data="/../Images/SVG/arrow.svg"></object>
                 </asp:HyperLink>
                 <asp:HyperLink ID="hl_organizations" runat="server" target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
                     <p>organizations</p>
-                    <object data="../Images/SVG/arrow.svg"></object>
+                    <object data="/../Images/SVG/arrow.svg"></object>
                 </asp:HyperLink>
                 <asp:HyperLink ID="hl_tickets" runat="server" target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
                     <p>tickets</p>
-                    <object data="../Images/SVG/arrow.svg"></object>
+                    <object data="/../Images/SVG/arrow.svg"></object>
                 </asp:HyperLink>
                 <div class="nav-account">
-                    <object data="../Images/SVG/UserCircle.svg"></object>
+                    <object data="/../Images/SVG/UserCircle.svg"></object>
                     <div class="nav-account-btn">
                         <asp:Button ID="btn_account" runat="server" Text="Karlo Miguel Palisoc" CssClass="nav-account-btn-name"/>
-                        <object data="../Images/SVG/Caret_Circle_Down.svg"></object>
+                        <object data="/../Images/SVG/Caret_Circle_Down.svg"></object>
                     </div>
                 
                 </div>
