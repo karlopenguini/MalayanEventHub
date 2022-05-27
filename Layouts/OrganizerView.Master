@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; } /* Switch to border-box for box-sizing. */
-
+        html{
+            height:100%;
+        }
         body {
           margin: 0; /* Remove the tiny space around the edge of the page */
           font-family: 'Roboto', sans-serif;
@@ -20,6 +22,7 @@
           content: '';
           display: block;
           height: 240px; /* Set same as footer's height */
+          min-height:100%;
         }
         p{
             margin:0;
@@ -38,6 +41,7 @@
             --blue: #0070EE;
             --white: #FFFBFC;
             --dark-blue:rgb(0 33 78 / 0.92);
+            --mcl-blue:#00214E;
         }
 
         .navbar{
@@ -91,8 +95,10 @@
             letter-spacing:1px;
         }
         footer{
-            position:absolute;
-            bottom:0;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
             width:100%;
             background-color: var(--dark-blue);
             height:240px;
@@ -175,7 +181,7 @@
             </section>
         </nav>
 
-        <main style="margin: 0px 164px;">
+        <main style="width:1112px; margin:auto;">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </main>
