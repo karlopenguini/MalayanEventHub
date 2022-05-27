@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace MCLEventHub.Classes
+namespace MalayanEventHub.Classes
 {
     //class for handling the database
     public class DatabaseHandler

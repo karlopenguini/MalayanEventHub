@@ -92,6 +92,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Degree.cs" />
+    <Compile Include="Classes\College.cs" />
     <Compile Include="Classes\DatabaseHandler.cs" />
     <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Layouts\AdminView.Master.cs">
