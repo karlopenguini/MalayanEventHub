@@ -27,21 +27,21 @@
                 <asp:Button ID="btn_Register" runat="server" Text="Register Organization" />
             </div>
         </div>
+        <%-- DataList of Organizations --%>
+        <asp:DataList ID="dl_Organizations" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellSpacing="20">
+            <ItemTemplate>
+                <div class="card">
+                    <img src="../../Images/mcl_logo.png" />
+                    <div class="info">
+                        <a href="#" class="btn">DETAILS</a>
+                        <a href="#" class="btn">CREATE EVENT</a>
+                        <a href="#" class="btn">VIEW EVENTS</a>
+                        <a href="#" class="btn">VIOLATIONS</a>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:DataList>
     </div>
 
-    <%-- DataList of Organizations --%>
-    <asp:DataList ID="dl_Organizations" runat="server" DataSourceID="Organizations">
-        <ItemTemplate>
-            <div class="card">
-                        <img src="../../Images/mcl_logo.png" />
-                        <div class="info">
-                            <a href="#" class="btn">DETAILS</a>
-                            <a href="#" class="btn">CREATE EVENT</a>
-                            <a href="#" class="btn">VIEW EVENTS</a>
-                            <a href="#" class="btn">VIOLATIONS</a>
-                        </div>
-                    </div>
-        </ItemTemplate>
-    </asp:DataList>
-<asp:SqlDataSource ID="Organizations" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [OrganizationTBL]"></asp:SqlDataSource>
+    
 </asp:Content>

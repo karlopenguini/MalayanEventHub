@@ -11,7 +11,27 @@ namespace MalayanEventHub.Layouts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                OrganizationData SampleOrganization = new OrganizationData
+                {
+                    OrganizationImageURL = "../../Images/mcl_logo.png",
+                };
+                List<OrganizationData> SampleOrganizations = new List<OrganizationData>();
 
+                for (int i = 0; i < 9; i++)
+                {
+                    SampleOrganizations.Add(SampleOrganization);
+                }
+
+                dl_Organizations.DataSource = SampleOrganizations;
+                dl_Organizations.DataBind();
+            }
+        }
+
+        public class OrganizationData
+        {
+            public string OrganizationImageURL { get; set; }
         }
     }
 }
