@@ -15,13 +15,13 @@ namespace MalayanEventHub.Layouts
     {
 
         /// <summary>
-        /// lblName control.
+        /// lbl_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.Label lbl_Name;
 
         /// <summary>
         /// rfvName control.
@@ -33,22 +33,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvName;
 
         /// <summary>
-        /// txtName control.
+        /// tb_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox tb_Name;
 
         /// <summary>
-        /// lblLogo control.
+        /// lbl_Logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogo;
+        protected global::System.Web.UI.WebControls.Label lbl_Logo;
 
         /// <summary>
         /// rfvLogo control.
@@ -60,22 +60,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLogo;
 
         /// <summary>
-        /// txtLogo control.
+        /// tb_Logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLogo;
+        protected global::System.Web.UI.WebControls.TextBox tb_Logo;
 
         /// <summary>
-        /// lblAcronym control.
+        /// lbl_Acronym control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAcronym;
+        protected global::System.Web.UI.WebControls.Label lbl_Acronym;
 
         /// <summary>
         /// rfvAcronym control.
@@ -87,22 +87,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAcronym;
 
         /// <summary>
-        /// txtAcronym control.
+        /// tb_Acronym control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAcronym;
+        protected global::System.Web.UI.WebControls.TextBox tb_Acronym;
 
         /// <summary>
-        /// lblType control.
+        /// lbl_Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblType;
+        protected global::System.Web.UI.WebControls.Label lbl_Type;
 
         /// <summary>
         /// rfvType control.
@@ -114,22 +114,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvType;
 
         /// <summary>
-        /// txtType control.
+        /// tb_Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtType;
+        protected global::System.Web.UI.WebControls.TextBox tb_Type;
 
         /// <summary>
-        /// lblContact control.
+        /// lbl_Contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContact;
+        protected global::System.Web.UI.WebControls.Label lbl_Contact;
 
         /// <summary>
         /// rfvContact control.
@@ -141,22 +141,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContact;
 
         /// <summary>
-        /// txtContact control.
+        /// tb_Contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContact;
+        protected global::System.Web.UI.WebControls.TextBox tb_Contact;
 
         /// <summary>
-        /// lblMission control.
+        /// lbl_Mission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMission;
+        protected global::System.Web.UI.WebControls.Label lbl_Mission;
 
         /// <summary>
         /// rfvMission control.
@@ -168,22 +168,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMission;
 
         /// <summary>
-        /// txtMission control.
+        /// tb_Mission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMission;
+        protected global::System.Web.UI.WebControls.TextBox tb_Mission;
 
         /// <summary>
-        /// lblVision control.
+        /// lbl_Vision control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVision;
+        protected global::System.Web.UI.WebControls.Label lbl_Vision;
 
         /// <summary>
         /// rfvVision control.
@@ -195,22 +195,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVision;
 
         /// <summary>
-        /// txtVision control.
+        /// tb_Vision control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVision;
+        protected global::System.Web.UI.WebControls.TextBox tb_Vision;
 
         /// <summary>
-        /// lblCollege control.
+        /// lbl_College control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCollege;
+        protected global::System.Web.UI.WebControls.Label lbl_College;
 
         /// <summary>
         /// rfvCollege control.
@@ -222,22 +222,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCollege;
 
         /// <summary>
-        /// ddlCollege control.
+        /// ddl_College control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCollege;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_College;
 
         /// <summary>
-        /// lblAdviserNum control.
+        /// lbl_AdviserNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdviserNum;
+        protected global::System.Web.UI.WebControls.Label lbl_AdviserNum;
 
         /// <summary>
         /// rfvAdviserNum control.
@@ -249,22 +249,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAdviserNum;
 
         /// <summary>
-        /// txtAdviserNum control.
+        /// tb_AdviserNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAdviserNum;
+        protected global::System.Web.UI.WebControls.TextBox tb_AdviserNum;
 
         /// <summary>
-        /// lblVicePresNum control.
+        /// lbl_VicePresNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVicePresNum;
+        protected global::System.Web.UI.WebControls.Label lbl_VicePresNum;
 
         /// <summary>
         /// rfvVicePresNum control.
@@ -276,22 +276,22 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVicePresNum;
 
         /// <summary>
-        /// txtVicePresNum control.
+        /// tb_VicePresNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVicePresNum;
+        protected global::System.Web.UI.WebControls.TextBox tb_VicePresNum;
 
         /// <summary>
-        /// lblMembers control.
+        /// lbl_Members control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMembers;
+        protected global::System.Web.UI.WebControls.Label lbl_Members;
 
         /// <summary>
         /// rfvMembers control.
@@ -303,21 +303,21 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMembers;
 
         /// <summary>
-        /// txtMembers control.
+        /// tb_Members control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMembers;
+        protected global::System.Web.UI.WebControls.TextBox tb_Members;
 
         /// <summary>
-        /// btnRegister control.
+        /// btn_Register control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.Button btn_Register;
     }
 }
