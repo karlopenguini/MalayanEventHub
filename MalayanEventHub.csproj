@@ -76,9 +76,6 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
-    <Content Include="Layouts\Common\Admin\WebForm1.aspx" />
-    <Content Include="Layouts\Common\Organizer\WebForm1.aspx" />
-    <Content Include="Layouts\Common\User\WebForm1.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
@@ -107,13 +104,6 @@
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
-    <Compile Include="Layouts\Common\Admin\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\Common\Admin\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Layouts\Common\Organizer\OrganizationView.master.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,26 +111,12 @@
     <Compile Include="Layouts\Common\Organizer\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
-    <Compile Include="Layouts\Common\Organizer\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\Common\Organizer\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Layouts\Common\User\AccountDetailsView.master.cs">
       <DependentUpon>AccountDetailsView.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Layouts\Common\User\AccountDetailsView.master.designer.cs">
       <DependentUpon>AccountDetailsView.master</DependentUpon>
-    </Compile>
-    <Compile Include="Layouts\Common\User\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\Common\User\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Layouts\OrganizerView.Master.cs">
       <DependentUpon>OrganizerView.Master</DependentUpon>
