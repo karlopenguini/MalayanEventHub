@@ -72,12 +72,18 @@
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
+    <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\test.html" />
     <Content Include="Pages\User\test.html" />
     <Content Include="Styles\Admin\test.html" />
+    <Content Include="Styles\Event_Organization_Headers.css" />
+    <Content Include="Styles\EventsPage.css" />
+
+    <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\organizations-organizer.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
@@ -94,6 +100,27 @@
     <Compile Include="Layouts\AdminView.Master.designer.cs">
       <DependentUpon>AdminView.Master</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\Common\Admin\OrganizationView.master.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\Organizer\OrganizationView.master.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\Organizer\OrganizationView.master.designer.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\User\AccountDetailsView.master.cs">
+      <DependentUpon>AccountDetailsView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\User\AccountDetailsView.master.designer.cs">
+      <DependentUpon>AccountDetailsView.master</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\OrganizerView.Master.cs">
       <DependentUpon>OrganizerView.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +135,13 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Organizer\OrganizationsOrganizer.aspx.cs">
       <DependentUpon>OrganizationsOrganizer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,6 +155,9 @@
     <Content Include="Layouts\AdminView.Master" />
     <Content Include="Layouts\OrganizerView.Master" />
     <Content Include="Layouts\UserView.Master" />
+    <Content Include="Layouts\Common\Admin\OrganizationView.master" />
+    <Content Include="Layouts\Common\Organizer\OrganizationView.master" />
+    <Content Include="Layouts\Common\User\AccountDetailsView.master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -129,7 +166,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Styles\Admin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
