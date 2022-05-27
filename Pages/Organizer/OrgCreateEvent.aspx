@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Create Event" Language="C#" MasterPageFile="~/Layouts/Common/Organizer/OrganizationView.Master" AutoEventWireup="true" CodeBehind="OrgCreateEvent.aspx.cs" Inherits="MalayanEventHub.OrgCreateEvent" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="form-body">
