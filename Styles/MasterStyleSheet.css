@@ -1,0 +1,215 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-weight: 300;
+}
+
+.form-body {
+    width: 100%;
+}
+
+.form-section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.form-body .header {
+    font-size: 2em;
+    font-weight: normal;
+    color:var(--mcl-blue);
+    margin-bottom:0.7em;
+}
+
+.form-body .sub-header {
+    font-size: 25px;
+    color:var(--mcl-blue);
+    border-bottom: 0.5px solid;
+    padding:0.5em 0.4em;
+    margin-bottom:0.2em;
+    font-weight:400;
+    
+    
+}
+
+    .form-body .sub-header p {
+        margin: 0;
+        display: inline-block;
+        
+    }
+
+.form-fields {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.sub-header:hover {
+    cursor: pointer;
+}
+
+.form-field {
+    display: flex;
+    margin-bottom: 5px;
+    flex-direction:column;
+    width:100%;
+}
+
+
+    .form-field p {
+        margin-top: 12px;
+        margin-bottom: 15px;
+        font-size: 23px;
+        font-weight: 100;
+    }
+
+.hide {
+    display: none;
+}
+
+/*html form elements*/
+.text-boxs {
+    font-size: 18px;
+    flex-grow: 1;
+    padding: 0.6em;
+    border-radius:0.4em;
+    border:unset;
+    background-color:rgb(7 47 74 / 0.15);
+}
+    .text-boxs:focus {
+        outline: none;
+        background-color: rgb(7 47 74 / 0.27);
+    }
+
+.dropdown-lists {
+    margin-left: 16px;
+    border-radius: 7px;
+    font-size: 18px;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.check-boxs {
+    list-style: none;
+    margin-left: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+}
+
+    .check-boxs li {
+        flex-basis: 33%;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+label {
+    margin: 16px 16px 30px 16px;
+    border-radius: 7px;
+    font-size: 22px;
+    flex-grow: 1;
+    padding: 5px;
+    font-weight: 100;
+}
+
+input[type='checkbox'] {
+    /*//font-size: 30px;*/
+    transform: scale(1.5);
+}
+
+input[type='text'] {
+    /*height: 28px; */
+}
+
+textarea {
+    flex-basis: 100%;
+    height: 200px;
+}
+
+.main-button {
+    background-color: #07084a;
+    color: white;
+}
+
+.sub-button {
+    width: 40%;
+    margin-left: 20px;
+}
+
+input[type='submit'] {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+    input[type='submit']:hover, input[type='checkbox']:hover, input[type='file']:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+.year-dropdown-lists {
+    margin-left: 16px;
+    margin-right: 10px;
+    border-radius: 7px;
+    font-size: 22px;
+    width: 20%;
+    padding: 5px;
+}
+
+.mleft-auto {
+    margin-left: auto;
+}
+
+/*card css*/
+.card {
+    width: 100%;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 8px 6px 8px #888888;
+    background-color: #d4d4d4;
+    padding-bottom: 20px;
+}
+
+    .card .header {
+        /* -moz-border-radius-topleft:8px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;*/
+        /*background-color: #e5f0a1;*/
+        width: 100%;
+        font-family: 'Helvetica', 'Arial',sans-serif;
+        font-size: 28px;
+        border-bottom: 3px solid black;
+        padding: 10px 5px 10px 5px;
+    }
+
+    .card p {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .card .header p {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    .card .card-body {
+        width: 100%;
+        background-color: white;
+        padding: 8px;
+    }
+
+#ContentPlaceHolder1_LabelStatus {
+    margin-left: 40px;
+    font-size: 70px;
+    font-weight: 100;
+}
+
+textarea {
+    resize: none;
+}
+
+.card-detail {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}

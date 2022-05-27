@@ -72,12 +72,14 @@
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
+    <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
     <Content Include="Pages\Organizer\OrganizationRegistration.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
     <Content Include="Styles\Admin\test.html" />
+    <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\organization-registration.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
@@ -93,6 +95,27 @@
     </Compile>
     <Compile Include="Layouts\AdminView.Master.designer.cs">
       <DependentUpon>AdminView.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\Admin\OrganizationView.master.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\Organizer\OrganizationView.master.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\Organizer\OrganizationView.master.designer.cs">
+      <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\User\AccountDetailsView.master.cs">
+      <DependentUpon>AccountDetailsView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\User\AccountDetailsView.master.designer.cs">
+      <DependentUpon>AccountDetailsView.master</DependentUpon>
     </Compile>
     <Compile Include="Layouts\OrganizerView.Master.cs">
       <DependentUpon>OrganizerView.Master</DependentUpon>
@@ -121,6 +144,9 @@
     <Content Include="Layouts\AdminView.Master" />
     <Content Include="Layouts\OrganizerView.Master" />
     <Content Include="Layouts\UserView.Master" />
+    <Content Include="Layouts\Common\Admin\OrganizationView.master" />
+    <Content Include="Layouts\Common\Organizer\OrganizationView.master" />
+    <Content Include="Layouts\Common\User\AccountDetailsView.master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

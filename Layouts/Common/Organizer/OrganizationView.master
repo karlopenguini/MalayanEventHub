@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrganizationView.master.cs" Inherits="MalayanEventHub.Layouts.Common.Organizer.OrganizationView" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .organization-header{
+            display: flex;
+            justify-content:space-between;
+            margin:0;
+            margin-bottom:2em;
+            font-weight:100;
+        }
+        .org-details{
+            display:flex;
+            flex-direction: row;
+            font-size:2em;
+            color:var(--dark-blue);
+        }
+        .organization-info{
+            flex-grow:2;
+            display:flex;
+            flex-direction:column;
+            gap:1em;
+        }
+        .organization-header-border{
+            border-bottom: 1px solid;
+            border-color:var(--blue);
+            width:100%;
+        }
+        .org-name{
+            font-size: 2.6em;
+            letter-spacing:0.12em;
+        }
+
+        .separator{
+            padding: 0 0.4em;
+        }
+        button{
+            all:unset;
+        }
+        .org-settings{
+            margin: 0em 2em;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <section class="organization-header">
+        <div class="organization-info">
+            <p class="org-name">Organization Name</p>
+            <div class="org-details"><p class="org-type">Type</p><p class="separator">|</p><p class="org-college">College</p></div>
+            <div class="organization-header-border"></div>
+        </div>
+        <div>
+            <button>
+                <object class="org-settings" data="../../../Images/SVG/Settings.svg" width="36"></object>
+            </button>
+        </div>
+    </section>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
