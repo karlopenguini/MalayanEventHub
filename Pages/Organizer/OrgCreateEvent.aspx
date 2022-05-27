@@ -11,23 +11,32 @@
             </div>
             <div id="event-section-fields" class="form-fields">
                 <div class="form-field">
-                    <asp:CustomValidator ID="CustomValidatorEventTitle" runat="server" ErrorMessage="Event Title must not be empty." Text="*" ControlToValidate="TextBoxTitle" ForeColor="Maroon" Font-Size="Large" ValidateEmptyText="true" ValidationGroup="form" OnServerValidate="RequiredValue_ServerValidate" ></asp:CustomValidator>
-                    <p>Event Title:</p>
+                    <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator ID="CustomValidatorEventTitle" runat="server" ErrorMessage="Event Title must not be empty." Text="*" ControlToValidate="TextBoxTitle" ForeColor="Maroon" Font-Size="Large" ValidateEmptyText="true" ValidationGroup="form" OnServerValidate="RequiredValue_ServerValidate" ></asp:CustomValidator>
+                        <p>Event Title:</p>
+                    </div>
+                    
                     <asp:TextBox ID="TextBoxTitle" runat="server" CssClass="text-boxs" ></asp:TextBox>
                 </div>
                 <div class="form-field">
-                    <asp:CustomValidator ID="CustomValidatorStartDateTime" ControlToValidate="TextBoxStartDateTime" Text="*" runat="server" ErrorMessage="Start Date & Time should be placed at present or future times." ForeColor="Maroon" Font-Size="Large" OnServerValidate="StartDateTime_Validate"  ValidateEmptyText="True" ValidationGroup="form" ></asp:CustomValidator>
-                    <p>Start Date & Time:</p>
+                    <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator ID="CustomValidatorStartDateTime" ControlToValidate="TextBoxStartDateTime" Text="*" runat="server" ErrorMessage="Start Date & Time should be placed at present or future times." ForeColor="Maroon" Font-Size="Large" OnServerValidate="StartDateTime_Validate"  ValidateEmptyText="True" ValidationGroup="form" ></asp:CustomValidator>
+                        <p>Start Date & Time:</p>
+                    </div>
                     <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal" CausesValidation="true"></asp:TextBox>
                 </div>
                  <div class="form-field">
-                      <asp:CustomValidator ID="CustomValidatorEndDateTime" ControlToValidate="TextBoxEndDateTime" Text="*" runat="server" ErrorMessage="End Date & Time should be not be eariler than start date & time and at least 30 mins duration." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form" OnServerValidate="CustomValidatorEndDateTime_ServerValidate" ValidateEmptyText="true" ></asp:CustomValidator>
-                    <p>End Date & Time:</p>
+                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator ID="CustomValidatorEndDateTime" ControlToValidate="TextBoxEndDateTime" Text="*" runat="server" ErrorMessage="End Date & Time should be not be eariler than start date & time and at least 30 mins duration." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form" OnServerValidate="CustomValidatorEndDateTime_ServerValidate" ValidateEmptyText="true" ></asp:CustomValidator>
+                        <p>End Date & Time:</p>
+                     </div>
                     <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal"></asp:TextBox>
                 </div>
                  <div class="form-field">
-                     <asp:CustomValidator ID="CustomValidatorVenue" runat="server" ErrorMessage="Venue must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="TextBoxVenue" ForeColor="Maroon" Font-Size="Large"  OnServerValidate="RequiredValue_ServerValidate" ValidationGroup="form" ></asp:CustomValidator>
-                    <p>Venue:</p>
+                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                         <asp:CustomValidator ID="CustomValidatorVenue" runat="server" ErrorMessage="Venue must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="TextBoxVenue" ForeColor="Maroon" Font-Size="Large"  OnServerValidate="RequiredValue_ServerValidate" ValidationGroup="form" ></asp:CustomValidator>
+                        <p>Venue:</p>
+                     </div>
                     <asp:TextBox ID="TextBoxVenue" runat="server" CssClass="text-boxs" ></asp:TextBox>
                 </div>
                 <div class="form-field">
@@ -35,13 +44,17 @@
                     <asp:TextBox ID="TextBoxInvLink" runat="server" CssClass="text-boxs" TextMode="Url" placeholder="optional"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                    <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ID="CustomValidatorObj"  runat="server" ErrorMessage="Objectives must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="TextBoxObjectives" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
-                    <p>Objectives:</p>
+                    <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ID="CustomValidatorObj"  runat="server" ErrorMessage="Objectives must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="TextBoxObjectives" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
+                        <p>Objectives:</p>
+                    </div>
                     <asp:TextBox ID="TextBoxObjectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
                 </div>
                 <div class="form-field">
-                    <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ValidateEmptyText="true" ID="CustomValidatorSpecificDet" runat="server" ErrorMessage="Specific details must not be empty." Text="*" ControlToValidate="TextBoxSpecificDet" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
-                    <p>Specific Details:</p>
+                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ValidateEmptyText="true" ID="CustomValidatorSpecificDet" runat="server" ErrorMessage="Specific details must not be empty." Text="*" ControlToValidate="TextBoxSpecificDet" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
+                        <p>Specific Details:</p>
+                    </div>
                     <asp:TextBox ID="TextBoxSpecificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
                 </div>
             </div>
@@ -55,8 +68,10 @@
                 <ContentTemplate>
                     <div id="audience-section-fields" class="form-fields">
                         <div class="form-field">
-                            <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="CustomValidatorCollege" ControlToValidate="DropDownListCollege" Text="*" runat="server" ErrorMessage="Must be picked a target college." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
-                            <p>College:</p>
+                             <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                                <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="CustomValidatorCollege" ControlToValidate="DropDownListCollege" Text="*" runat="server" ErrorMessage="Must be picked a target college." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
+                                <p>College:</p>
+                             <</div>
                             <asp:DropDownList ID="DropDownListCollege" CssClass="dropdown-lists" runat="server">
                                 <asp:ListItem Value="" Selected="True"  hidden="hidden"> -- Choose a College</asp:ListItem>
                                 <asp:ListItem Value="SHS">Senior High School (SHS)</asp:ListItem>
@@ -69,15 +84,17 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-field">
-                            <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="CustomValidatorTargetDegree" ControlToValidate="DropDownListDegree" Text="*" runat="server" ErrorMessage="Must be picked a target degree." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
-                            <p>Degree/Strand:</p>
+                             <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                                <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="CustomValidatorTargetDegree" ControlToValidate="DropDownListDegree" Text="*" runat="server" ErrorMessage="Must be picked a target degree." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
+                                <p>Degree/Strand:</p>
+                             </div>
                             <asp:DropDownList ID="DropDownListDegree" CssClass="dropdown-lists" runat="server">
                                 <asp:ListItem Value="" Selected="True" hidden="hidden">-- Please specify a College first.</asp:ListItem>
                                 <asp:ListItem Value="All" >All</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-field">
-                            <div class="d-flex" style="width: 100%;">
+                            <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
                                 <asp:CustomValidator ValidateEmptyText="true" ID="CustomValidatorGradeYear" Text="*" runat="server" ErrorMessage="Must have a Target Grade Year range value." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form" OnServerValidate="CustomValidatorGradeYear_ServerValidate"></asp:CustomValidator>
                                 <p>Year:</p>
                             </div>
