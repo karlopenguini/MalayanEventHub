@@ -2,14 +2,11 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: 'Franklin Gothic',sans-serif;
     font-weight: 300;
 }
 
 .form-body {
-    width: 70%;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;
 }
 
 .form-section {
@@ -18,27 +15,31 @@
 }
 
 .form-body .header {
-    font-size: 35px;
-    font-weight: bold;
+    font-size: 2em;
+    font-weight: normal;
+    color:var(--mcl-blue);
+    margin-bottom:0.7em;
 }
 
 .form-body .sub-header {
     font-size: 25px;
-    padding-left: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    color: white;
-    background-color: #07084a;
-    border-radius: 5px;
+    color:var(--mcl-blue);
+    border-bottom: 0.5px solid;
+    padding:0.5em 0.4em;
+    margin-bottom:0.2em;
+    font-weight:400;
+    
+    
 }
 
     .form-body .sub-header p {
         margin: 0;
         display: inline-block;
+        
     }
 
 .form-fields {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -48,11 +49,9 @@
 
 .form-field {
     display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    align-items: center;
-    align-self: center;
     margin-bottom: 5px;
+    flex-direction:column;
+    width:100%;
 }
 
 
@@ -69,12 +68,17 @@
 
 /*html form elements*/
 .text-boxs {
-    margin-left: 16px;
-    border-radius: 7px;
     font-size: 18px;
     flex-grow: 1;
-    padding: 5px;
+    padding: 0.6em;
+    border-radius:0.4em;
+    border:unset;
+    background-color:rgb(7 47 74 / 0.15);
 }
+    .text-boxs:focus {
+        outline: none;
+        background-color: rgb(7 47 74 / 0.27);
+    }
 
 .dropdown-lists {
     margin-left: 16px;

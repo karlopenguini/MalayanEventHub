@@ -76,6 +76,7 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Sample.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
@@ -103,6 +104,13 @@
     </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Sample.aspx.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sample.aspx.designer.cs">
+      <DependentUpon>Sample.aspx</DependentUpon>
     </Compile>
     <Compile Include="Layouts\Common\Organizer\OrganizationView.master.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
