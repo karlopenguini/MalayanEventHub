@@ -53,7 +53,7 @@
 
             </div>
         </section>
-        <section class="events-container">
+        <section class="general-container">
             <asp:Repeater ID="EventsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="event-card">

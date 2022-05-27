@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MalayanEventHub.Layouts
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,8 +24,8 @@ namespace MalayanEventHub.Layouts
                     SampleOrganizations.Add(SampleOrganization);
                 }
 
-                dl_Organizations.DataSource = SampleOrganizations;
-                dl_Organizations.DataBind();
+                OrganizationsRepeater.DataSource = SampleOrganizations;
+                OrganizationsRepeater.DataBind();
             }
         }
 
