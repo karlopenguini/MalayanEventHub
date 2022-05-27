@@ -22,7 +22,7 @@ namespace MalayanEventHub
 
         //validations control
         protected void RequiredValue_ServerValidate(object source, ServerValidateEventArgs args)
-        {
+        {//for empty
 
             if (args.Value == "")
             {
