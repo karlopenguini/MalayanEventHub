@@ -7,15 +7,15 @@
         <div id="title">My Organizations</div>
         <div class="controls">
             <div>
-                <asp:Label ID="lblType" runat="server" Text="Type:"></asp:Label>
+                <asp:Label ID="lbl_Type" runat="server" Text="Type:"></asp:Label>
                 <asp:DropDownList ID="ddlType" runat="server" Width="120px">
                     <asp:ListItem>Academic</asp:ListItem>
                     <asp:ListItem>Non-Academic</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div>
-                <asp:Label ID="lblCollege" runat="server" Text="College:"></asp:Label>
-                <asp:DropDownList ID="ddlCollege" runat="server" Width="80px">
+                <asp:Label ID="lbl_College" runat="server" Text="College:"></asp:Label>
+                <asp:DropDownList ID="ddl_College" runat="server" Width="80px">
                     <asp:ListItem>CAS</asp:ListItem>
                     <asp:ListItem>CCIS</asp:ListItem>
                     <asp:ListItem>ETYCB</asp:ListItem>
@@ -24,13 +24,13 @@
                 </asp:DropDownList>
             </div>
             <div>
-                <asp:Button ID="btnRegister" runat="server" Text="Register Organization" />
+                <asp:Button ID="btn_Register" runat="server" Text="Register Organization" />
             </div>
         </div>
     </div>
 
     <%-- DataList of Organizations --%>
-    <asp:DataList ID="dlOrganizations" runat="server" DataSourceID="Organizations">
+    <asp:DataList ID="dl_Organizations" runat="server" DataSourceID="Organizations">
         <ItemTemplate>
             <div class="card">
                         <img src="../../Images/mcl_logo.png" />

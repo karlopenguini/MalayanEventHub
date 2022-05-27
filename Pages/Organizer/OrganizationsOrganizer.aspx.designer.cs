@@ -15,13 +15,13 @@ namespace MalayanEventHub.Layouts
     {
 
         /// <summary>
-        /// lblType control.
+        /// lbl_Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblType;
+        protected global::System.Web.UI.WebControls.Label lbl_Type;
 
         /// <summary>
         /// ddlType control.
@@ -33,40 +33,40 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.DropDownList ddlType;
 
         /// <summary>
-        /// lblCollege control.
+        /// lbl_College control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCollege;
+        protected global::System.Web.UI.WebControls.Label lbl_College;
 
         /// <summary>
-        /// ddlCollege control.
+        /// ddl_College control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCollege;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_College;
 
         /// <summary>
-        /// btnRegister control.
+        /// btn_Register control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.Button btn_Register;
 
         /// <summary>
-        /// dlOrganizations control.
+        /// dl_Organizations control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlOrganizations;
+        protected global::System.Web.UI.WebControls.DataList dl_Organizations;
 
         /// <summary>
         /// Organizations control.
