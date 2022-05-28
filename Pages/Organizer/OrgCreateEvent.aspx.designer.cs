@@ -24,121 +24,121 @@ namespace MalayanEventHub
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// CustomValidatorEventTitle control.
+        /// cv_eventTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorEventTitle;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_eventTitle;
 
         /// <summary>
-        /// TextBoxTitle control.
+        /// tb_eventTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTitle;
+        protected global::System.Web.UI.WebControls.TextBox tb_eventTitle;
 
         /// <summary>
-        /// CustomValidatorStartDateTime control.
+        /// cv_startDateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorStartDateTime;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_startDateTime;
 
         /// <summary>
-        /// TextBoxStartDateTime control.
+        /// tb_startDateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxStartDateTime;
+        protected global::System.Web.UI.WebControls.TextBox tb_startDateTime;
 
         /// <summary>
-        /// CustomValidatorEndDateTime control.
+        /// cv_endDateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorEndDateTime;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_endDateTime;
 
         /// <summary>
-        /// TextBoxEndDateTime control.
+        /// tb_endDateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEndDateTime;
+        protected global::System.Web.UI.WebControls.TextBox tb_endDateTime;
 
         /// <summary>
-        /// CustomValidatorVenue control.
+        /// cv_venue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorVenue;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_venue;
 
         /// <summary>
-        /// TextBoxVenue control.
+        /// tb_venue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxVenue;
+        protected global::System.Web.UI.WebControls.TextBox tb_venue;
 
         /// <summary>
-        /// TextBoxInvLink control.
+        /// tb_invLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxInvLink;
+        protected global::System.Web.UI.WebControls.TextBox tb_invLink;
 
         /// <summary>
-        /// CustomValidatorObj control.
+        /// cv_obj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorObj;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_obj;
 
         /// <summary>
-        /// TextBoxObjectives control.
+        /// tb_objectives control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxObjectives;
+        protected global::System.Web.UI.WebControls.TextBox tb_objectives;
 
         /// <summary>
-        /// CustomValidatorSpecificDet control.
+        /// cv_specificDet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorSpecificDet;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_specificDet;
 
         /// <summary>
-        /// TextBoxSpecificDet control.
+        /// tb_specificDet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSpecificDet;
+        protected global::System.Web.UI.WebControls.TextBox tb_specificDet;
 
         /// <summary>
         /// UpdatePanelAudienceFormSection control.
@@ -150,111 +150,111 @@ namespace MalayanEventHub
         protected global::System.Web.UI.UpdatePanel UpdatePanelAudienceFormSection;
 
         /// <summary>
-        /// CustomValidatorCollege control.
+        /// cv_college control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorCollege;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_college;
 
         /// <summary>
-        /// DropDownListCollege control.
+        /// ddl_college control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListCollege;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_college;
 
         /// <summary>
-        /// CustomValidatorTargetDegree control.
+        /// cv_targetDegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorTargetDegree;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_targetDegree;
 
         /// <summary>
-        /// DropDownListDegree control.
+        /// ddl_degree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListDegree;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_degree;
 
         /// <summary>
-        /// CustomValidatorGradeYear control.
+        /// cv_gradeYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorGradeYear;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_gradeYear;
 
         /// <summary>
-        /// DropDownListStartGradeYear control.
+        /// ddl_startGradeYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListStartGradeYear;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_startGradeYear;
 
         /// <summary>
-        /// DropDownListEndGradeYear control.
+        /// ddl_endGradeYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEndGradeYear;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_endGradeYear;
 
         /// <summary>
-        /// CheckBoxListTargetData control.
+        /// cbl_targetData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListTargetData;
+        protected global::System.Web.UI.WebControls.CheckBoxList cbl_targetData;
 
         /// <summary>
-        /// FileUploadImg control.
+        /// f_uploadImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUploadImg;
+        protected global::System.Web.UI.WebControls.FileUpload f_uploadImg;
 
         /// <summary>
-        /// ValidationSummary control.
+        /// validate_summary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
+        protected global::System.Web.UI.WebControls.ValidationSummary validate_summary;
 
         /// <summary>
-        /// ButtonSubmit control.
+        /// btn_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
+        protected global::System.Web.UI.WebControls.Button btn_submit;
 
         /// <summary>
-        /// ButtonCancel control.
+        /// btn_cancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancel;
+        protected global::System.Web.UI.WebControls.Button btn_cancel;
     }
 }

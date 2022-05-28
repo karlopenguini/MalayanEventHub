@@ -4,14 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using MalayanEventHub.Classes;
 namespace MalayanEventHub
 {
     public partial class OrgCreateEvent : System.Web.UI.Page
     {
+        DatabaseHandler dbHandler;
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
+            //populate dropdownlist
+            dbHandler = new DatabaseHandler(Server.MapPath(""));
         }
 
 
@@ -63,13 +67,13 @@ namespace MalayanEventHub
         {
             try
             {
-                if (TextBoxStartDateTime.Text == "" || TextBoxEndDateTime.Text=="")
+                if (tb_startDateTime.Text == "" || tb_endDateTime.Text=="")
                 {
                     args.IsValid = false;
                     return;
                 }
-                DateTime start = DateTime.Parse(TextBoxStartDateTime.Text);
-                DateTime end = DateTime.Parse(TextBoxEndDateTime.Text);
+                DateTime start = DateTime.Parse(tb_startDateTime.Text);
+                DateTime end = DateTime.Parse(tb_endDateTime.Text);
                 if (start.Date < end.Date)
                 {
                     args.IsValid = true;
@@ -91,7 +95,7 @@ namespace MalayanEventHub
 
         protected void CustomValidatorGradeYear_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if(DropDownListStartGradeYear.SelectedValue=="" || DropDownListEndGradeYear.SelectedValue == "")
+            if(ddl_startGradeYear.SelectedValue=="" || ddl_endGradeYear.SelectedValue == "")
             {
                 args.IsValid = false;
             }
