@@ -76,11 +76,26 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+
     <Content Include="Pages\Admin\EventRequests.aspx" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
     <Content Include="Pages\User\test.html" />
     <Content Include="Styles\Event_Violation_Card.css" />
+
+
+    <Content Include="Pages\Admin\ViewEvent.aspx" />
+    <Content Include="Pages\Admin\EventReview.aspx" />
+    <Content Include="Pages\Admin\Events.aspx" />
+    <Content Include="Pages\Admin\test.html" />
+
+    <Content Include="Pages\Organizer\test.html" />
+    <Content Include="Pages\test.html" />
+    <Content Include="Pages\User\test.html" />
+    <Content Include="Styles\Admin\test.html" />
+    <Content Include="Styles\Event_Organization_Headers.css" />
+    <Content Include="Styles\EventsPage.css" />
+
     <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
@@ -104,12 +119,28 @@
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
+
     <Compile Include="Pages\Admin\EventRequests.aspx.cs">
       <DependentUpon>EventRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Admin\EventRequests.aspx.designer.cs">
       <DependentUpon>EventRequests.aspx</DependentUpon>
+
+    <Compile Include="Pages\Admin\ViewEvent.aspx.cs">
+      <DependentUpon>ViewEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewEvent.aspx.designer.cs">
+      <DependentUpon>ViewEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\EventReview.aspx.cs">
+      <DependentUpon>EventReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\EventReview.aspx.designer.cs">
+      <DependentUpon>EventReview.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="Layouts\Common\Organizer\OrganizationView.master.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
@@ -138,6 +169,13 @@
     </Compile>
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
