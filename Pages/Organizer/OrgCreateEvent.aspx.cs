@@ -15,10 +15,16 @@ namespace MalayanEventHub
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             //populate dropdownlist
-            dbHandler = new DatabaseHandler(Server.MapPath(""));
+            dbHandler = new DatabaseHandler();
+            
         }
 
 
+        private void Populate_CollegeList()
+        {
+            string query = "SELECT * FROM CollegeTBL";
+            List<Dictionary<string, string>> dataList = dbHandler.RetrieveData(query);
+        }
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
             

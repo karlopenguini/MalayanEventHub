@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace MalayanEventHub.Classes
 {
@@ -12,11 +13,11 @@ namespace MalayanEventHub.Classes
     {
         private SqlConnection dbConn;
         private bool isValidRequest;
-        public DatabaseHandler(string dbNameServerPath)
+        public DatabaseHandler()
         {
             try
             {
-                dbConn = new SqlConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + dbNameServerPath);
+                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
                 isValidRequest = true;
             }
             catch (Exception ex)
@@ -42,42 +43,42 @@ namespace MalayanEventHub.Classes
             dbConn.Close();
         }
 
-        //internal List<Dictionary<string, string>> RetrieveData(string queryCMD)
-        //{
-        //    if (!isValidRequest)
-        //    {
-        //        throw new Exception("Error Initializing Sql Connection Object.");
-        //    }
-        //    //Initializing a data list
-        //    List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
+        internal List<Dictionary<string, string>> RetrieveData(string queryCMD)
+        {
+            if (!isValidRequest)
+            {
+                throw new Exception("Error Initializing Sql Connection Object.");
+            }
+            //Initializing a data list
+            List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
 
-        //    //execute query
-        //    dbConn.Open();
-        //    SqlCommand dbCMD = new SqlCommand(queryCMD, dbConn);
-        //    SqlDataReader sqlData = dbCMD.ExecuteReader();
+            //execute query
+            dbConn.Open();
+            SqlCommand dbCMD = new SqlCommand(queryCMD, dbConn);
+            SqlDataReader dataReader = dbCMD.ExecuteReader();
 
-        //    //save it to another data structure
-        //    DataTable dt = new DataTable(sqlData);
-        //    foreach (DataRow row in dt.Rows)
-        //    {
-        //        Dictionary<string, string> dict = new Dictionary<string, string>();
-        //        foreach (DataColumn column in dt.Columns)
-        //        {
+            //save it to another data structure
+            DataTable dt = dataReader.GetSchemaTable();
+            foreach (DataRow row in dt.Rows)
+            {
+                Dictionary<string, string> dict = new Dictionary<string, string>();
+                foreach (DataColumn column in dt.Columns)
+                {
 
-        //            dict[column.ColumnName] = row[column];
-        //        }
+                    dict[column.ColumnName] = row[column].ToString();
+                }
 
-        //        //add to list
-        //        dataList.Add(dict);
-        //    }
+                //add to list
+                dataList.Add(dict);
+            }
 
-        //    //close db connection
-        //    dbConn.Close();
+            //close db connection
+            dbConn.Close();
 
 
-        //    //return datalist
-        //    return dataList;
-        //}
+            //return datalist
+            return dataList;
+        }
 
         internal bool GetRequestStatus()
         {
