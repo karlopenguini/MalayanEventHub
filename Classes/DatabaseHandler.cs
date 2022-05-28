@@ -56,16 +56,19 @@ namespace MalayanEventHub.Classes
             dbConn.Open();
             SqlCommand dbCMD = new SqlCommand(queryCMD, dbConn);
             SqlDataReader dataReader = dbCMD.ExecuteReader();
-
-            //save it to another data structure
-            DataTable dt = dataReader.GetSchemaTable();
-            foreach (DataRow row in dt.Rows)
+            //iterate every record
+            while(dataReader.Read())
             {
+                //make new dictionary
                 Dictionary<string, string> dict = new Dictionary<string, string>();
-                foreach (DataColumn column in dt.Columns)
+                //get fieldname and value
+                //store it to a dictionary
+                for(int i=0; i<dataReader.FieldCount; i++)
                 {
+                    string fieldName = dataReader.GetName(i);
+                    string value = dataReader[fieldName].ToString();
 
-                    dict[column.ColumnName] = row[column].ToString();
+                    dict[fieldName] = value;
                 }
 
                 //add to list

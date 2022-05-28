@@ -72,7 +72,7 @@
                                 <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="cv_college" ControlToValidate="ddl_college" Text="*" runat="server" ErrorMessage="Must be picked a target college." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                                 <p>College:</p>
                              <</div>
-                            <asp:DropDownList ID="ddl_college" CssClass="dropdown-lists" runat="server">
+                            <asp:DropDownList ID="ddl_college" CssClass="dropdown-lists" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
                                 <asp:ListItem Value="" Selected="True"  hidden="hidden"> -- Choose a College</asp:ListItem>
                                 <asp:ListItem Value="SHS">Senior High School (SHS)</asp:ListItem>
                                 <asp:ListItem Value="CAS">College of Arts and Science (CAS)</asp:ListItem>
@@ -88,7 +88,7 @@
                                 <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="cv_targetDegree" ControlToValidate="ddl_degree" Text="*" runat="server" ErrorMessage="Must be picked a target degree." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                                 <p>Degree/Strand:</p>
                              </div>
-                            <asp:DropDownList ID="ddl_degree" CssClass="dropdown-lists" runat="server">
+                            <asp:DropDownList ID="ddl_degree" CssClass="dropdown-lists" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_degree_SelectedIndexChanged">
                                 <asp:ListItem Value="" Selected="True" hidden="hidden">-- Please specify a College first.</asp:ListItem>
                                 <asp:ListItem Value="All" >All</asp:ListItem>
                             </asp:DropDownList>
