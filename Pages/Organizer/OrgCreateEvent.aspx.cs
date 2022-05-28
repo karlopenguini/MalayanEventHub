@@ -73,9 +73,6 @@ namespace MalayanEventHub
             ListItem itemAll = new ListItem("All", "All");
             ListItem yearDefault = new ListItem("--", "");
 
-            ddl_startGradeYear.Items.Add(yearDefault);
-            ddl_endGradeYear.Items.Add(yearDefault);
-
             //conditional
             if (ddl_college.SelectedValue == "All")
             {
@@ -105,6 +102,8 @@ namespace MalayanEventHub
 
                 return;
             }
+            ddl_startGradeYear.Items.Add(yearDefault);
+            ddl_endGradeYear.Items.Add(yearDefault);
 
             itemDefault.Selected = true;
             if (ddl_college.SelectedValue == "")
@@ -311,6 +310,15 @@ namespace MalayanEventHub
             if(ddl_startGradeYear.SelectedValue=="" || ddl_endGradeYear.SelectedValue == "")
             {
                 args.IsValid = false;
+                return;
+            }
+
+            int startYear = Int32.Parse(ddl_startGradeYear.SelectedValue);
+            int endYear = Int32.Parse(ddl_endGradeYear.SelectedValue);
+            if (startYear > endYear)
+            {
+                args.IsValid = false;
+                
             }
         }
 

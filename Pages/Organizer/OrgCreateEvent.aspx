@@ -95,7 +95,7 @@
                         </div>
                         <div class="form-field">
                             <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
-                                <asp:CustomValidator ValidateEmptyText="true" ID="cv_gradeYear" Text="*" runat="server" ErrorMessage="Must have a Target Grade Year range value." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form" OnServerValidate="CustomValidatorGradeYear_ServerValidate"></asp:CustomValidator>
+                                <asp:CustomValidator ValidateEmptyText="true" ID="cv_gradeYear" Text="*" runat="server" ErrorMessage="Must have an valid range of target year" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form" OnServerValidate="CustomValidatorGradeYear_ServerValidate"></asp:CustomValidator>
                                 <p>Year:</p>
                             </div>
                             <div class="d-flex" style="width: 100%;">
@@ -151,7 +151,7 @@
             </div>
         </div>
         <div style="width: 40%; display:block; margin: auto;" >
-            <asp:ValidationSummary ID="validate_summary" runat="server" Font-Size="Large" ForeColor="#990000" HeaderText="Invalid Submission:" ValidationGroup="form" />
+            <asp:ValidationSummary ID="validate_summary" runat="server" Font-Size="Large" ForeColor="#990000" HeaderText="Invalid Submission:" ValidationGroup="form" Height="148px" />
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; margin-bottom: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
             <asp:Button ID="btn_submit" runat="server" Text="Submit"  CssClass="main-button" Width="35%" OnClick="ButtonSubmit_Click" ValidationGroup="form"  />
