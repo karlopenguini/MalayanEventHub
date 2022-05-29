@@ -37,7 +37,10 @@ namespace MalayanEventHub
         #region Submitting Form
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            UploadDataToServer();
+            if (Page.IsValid)
+            {
+                UploadDataToServer();
+            }
         }
         private void UploadDataToServer()
         {
@@ -461,6 +464,17 @@ namespace MalayanEventHub
 
             int startYear = Int32.Parse(ddl_startGradeYear.SelectedValue);
             int endYear = Int32.Parse(ddl_endGradeYear.SelectedValue);
+
+            //recalibating 
+            if (startYear >= 11)
+            {
+                startYear = 11 - startYear;
+            }
+            if (endYear >= 11)
+            {
+                endYear = 11 - endYear;
+            }
+            //validating
             if (startYear > endYear)
             {
                 cv_gradeYear.ErrorMessage = "Target Grade Year must have a valid range";
