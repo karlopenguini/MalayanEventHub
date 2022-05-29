@@ -67,6 +67,10 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+            <asp:SqlDataSource ID="SqlDataSource1"
+                ConnectionString="<%$ ConnectionStrings:NorthWindConnection%>"
+                SelectCommand="SELECT pubmat as 'EventImageURL', activityTitle as 'EventTitle', startDateTime as 'EventDate', proposedVenue as 'EventVenue', organizerID as 'EventOrganizer', invitationLink as 'EventURL' FROM [EventTBL] Where ProductID <= 10"
+                runat="server"></asp:SqlDataSource>
         </section>
     </main>
 </asp:Content>
