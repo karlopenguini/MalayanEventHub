@@ -50,12 +50,12 @@
             <asp:Repeater ID="OrganizationsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="organization-card">
-                    <img src="../../Images/mcl_logo.png" />
+                    <asp:Image ID="img_Logo" runat="server" ImageUrl="~/Images/mcl_logo.png"/>
                         <div class="info">
-                            <a href="#" class="btn">DETAILS</a>
-                            <a href="#" class="btn">CREATE EVENT</a>
-                            <a href="#" class="btn">VIEW EVENTS</a>
-                            <a href="#" class="btn">VIOLATIONS</a>
+                            <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn">DETAILS</asp:LinkButton>
+                            <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn">CREATE EVENT</asp:LinkButton>
+                            <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn">VIEW EVENT</asp:LinkButton>
+                            <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn">VIOLATIONS</asp:LinkButton>
                         </div>
                     </div>
                 </ItemTemplate>
