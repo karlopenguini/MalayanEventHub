@@ -18,10 +18,9 @@
                      <asp:TextBox ID="tb_Name" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                     <p>Logo<asp:RequiredFieldValidator ID="rfvLogo" runat="server" ErrorMessage="*" ControlToValidate="fu_Logo" CssClass="validator"></asp:RequiredFieldValidator></p>
-                     <asp:FileUpload ID="fu_Logo" runat="server" accept="image/png, image/jpeg"  />
+                     <p>Logo<asp:RequiredFieldValidator ID="rfvLogo" runat="server" ErrorMessage="*" ControlToValidate="tb_Logo" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_Logo" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
-                
                 <div class="form-field">
                      <p>Acronym<asp:RequiredFieldValidator ID="rfv_Acronym" runat="server" ErrorMessage="*" ControlToValidate="tb_Acronym" CssClass="validator"></asp:RequiredFieldValidator></p>
                      <asp:TextBox ID="tb_Acronym" runat="server" CssClass="text-boxs"></asp:TextBox>
