@@ -13,7 +13,7 @@ namespace MalayanEventHub
     public partial class OrgCreateEvent : System.Web.UI.Page
     {
         DatabaseHandler dbHandler;
-        string organizerID = "80001 - 2020171781";
+        string organizerID = "80001-2020171781";
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -42,6 +42,8 @@ namespace MalayanEventHub
         private void UploadDataToServer()
         {
             // collect all data fields
+            //for event TBL
+            #region Event TBL Insert Data
             //eventD_section
             string eventD_Title = tb_eventTitle.Text.Trim();
             DateTime startDT = DateTime.Parse(tb_startDateTime.Text.Trim());
@@ -67,7 +69,7 @@ namespace MalayanEventHub
             string query = "INSERT INTO EventTBL (organizerID, activityTitle, startDateTime, endDateTime, proposedVenue, objectives, details," +
                 " invitationLink, audienceCollege, audienceDegree, audienceGradeYearStart, audienceGradeYearEnd, pubmat)" +
                 " VALUES(@organizerID, @eventTitle, @startDateTime, @endDateTime, @venue, @obj, @det,@invLink, @audCollege, @audDegree, @audGradeYearStart, " +
-                "@audGradeYearEnd, @imgPubmat )";
+                "@audGradeYearEnd, @imgPubmat );";
             SqlCommand cmd = new SqlCommand(query);
 
             //add values
@@ -103,11 +105,46 @@ namespace MalayanEventHub
                 cmd.Parameters.AddWithValue("@imgPubmat", System.Data.SqlTypes.SqlBinary.Null);
              
             }
+            #endregion Event TBL 
 
             //execute thru database
-            dbHandler.ExecuteInsertQuery(cmd);
+            string eventID = dbHandler.ExecuteInsertQueryInReturn(cmd);
 
-            Response.Redirect("../Message.aspx");
+            #region for Required Information TBL
+            string query2 = "INSERT INTO RequiredInformationTBL (eventID, dataOfParticipant) VALUES";
+            List<string> cbl_targetDatavalues = new List<string>();
+            foreach(ListItem item in cbl_targetData.Items)
+            {
+                if (item.Selected)
+                {
+                    cbl_targetDatavalues.Add($"({eventID}, '{item.Value}')");
+                }
+            }
+
+            query2 = query2 + String.Join(",", cbl_targetDatavalues)+";";
+            dbHandler.ExecuteInsertQuery(query2);
+            #endregion
+
+            #region For Event Request TBL & requestTBL
+            string[] id_parts = organizerID.Split('-');
+            int organizationID = Int32.Parse(id_parts[0]);
+            int userID = Int32.Parse(id_parts[1]);
+            DateTime now = DateTime.Now;
+            string query3 = "INSERT INTO EventRequestTBL (organizationID, userID, eventID, created)" +
+                $"VALUES({organizationID}, {userID}, {eventID}, '{now.ToString("yyyy-MM-dd HH:mm:ss")}')";
+
+            string requestID = dbHandler.ExecuteInsertQueryInReturn(query3);
+
+            string query4 = "INSERT INTO RequestTBL (requestID, requestStatus, requestType)" +
+                $"VALUES({requestID}, '{"Pending"}', '{"Event-Request"}')";
+            dbHandler.ExecuteInsertQuery(query4);
+            #endregion
+           
+
+
+
+            //go to new Page
+            Response.Redirect($"../Message.aspx?eventId={eventID}");
 
         }
 

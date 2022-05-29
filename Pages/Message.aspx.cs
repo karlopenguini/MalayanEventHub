@@ -11,6 +11,8 @@ namespace MalayanEventHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string eventId = Request.QueryString["eventId"];
+            lbl_eventId.Text = eventId;
 
         }
     }
