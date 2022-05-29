@@ -71,16 +71,9 @@
                              <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
                                 <asp:CustomValidator ValidateEmptyText="true" OnServerValidate="RequiredValue_ServerValidate" ID="cv_college" ControlToValidate="ddl_college" Text="*" runat="server" ErrorMessage="Must be picked a target college." ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                                 <p>College:</p>
-                             <</div>
+                             </div>
                             <asp:DropDownList ID="ddl_college" CssClass="dropdown-lists" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
                                 <asp:ListItem Value="" Selected="True"  hidden="hidden"> -- Choose a College</asp:ListItem>
-                                <asp:ListItem Value="SHS">Senior High School (SHS)</asp:ListItem>
-                                <asp:ListItem Value="CAS">College of Arts and Science (CAS)</asp:ListItem>
-                                <asp:ListItem Value="CCIS">College of Computer and Information Science (CCIS)</asp:ListItem>
-                                <asp:ListItem Value="ETYCB">E.T. Yuchengco College of Business (ETYCB)</asp:ListItem>
-                                <asp:ListItem Value="MITL">Mapúa Institute of Technology at Laguna (MITL)</asp:ListItem>
-                                <asp:ListItem Value="CMET">College of Maritime Education and Training (CMET)</asp:ListItem>
-                                <asp:ListItem Value="All">All</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-field">
@@ -90,7 +83,6 @@
                              </div>
                             <asp:DropDownList ID="ddl_degree" CssClass="dropdown-lists" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_degree_SelectedIndexChanged">
                                 <asp:ListItem Value="" Selected="True" hidden="hidden">-- Please specify a College first.</asp:ListItem>
-                                <asp:ListItem Value="All" >All</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-field">
@@ -151,7 +143,7 @@
             </div>
         </div>
         <div style="width: 40%; display:block; margin: auto;" >
-            <asp:ValidationSummary ID="validate_summary" runat="server" Font-Size="Large" ForeColor="#990000" HeaderText="Invalid Submission:" ValidationGroup="form" Height="148px" />
+            <asp:ValidationSummary ID="validate_summary"  runat="server" Font-Size="Large" ForeColor="#990000" HeaderText="Invalid Submission:" ValidationGroup="form" />
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; margin-bottom: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
             <asp:Button ID="btn_submit" runat="server" Text="Submit"  CssClass="main-button" Width="35%" OnClick="ButtonSubmit_Click" ValidationGroup="form"  />

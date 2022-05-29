@@ -281,6 +281,7 @@ namespace MalayanEventHub
             {
                 if (tb_startDateTime.Text == "" || tb_endDateTime.Text=="")
                 {
+                    cv_endDateTime.ErrorMessage = "End date time must not be empty.";  
                     args.IsValid = false;
                     return;
                 }
@@ -288,6 +289,7 @@ namespace MalayanEventHub
                 DateTime end = DateTime.Parse(tb_endDateTime.Text);
                 if (start.Date < end.Date)
                 {
+                   
                     args.IsValid = true;
                 }
                 else if (start.Date==end.Date && (end.TimeOfDay-start.TimeOfDay).Duration().TotalMinutes>=30)
@@ -295,7 +297,7 @@ namespace MalayanEventHub
                     args.IsValid = true;
                 }
                 else
-                {
+                {cv_gradeYear.ErrorMessage = "Target Grade Year Must not be earlier than start date time and duration should be at least 30 mins";
                     args.IsValid = false;
                 }
             }
@@ -309,6 +311,7 @@ namespace MalayanEventHub
         {
             if(ddl_startGradeYear.SelectedValue=="" || ddl_endGradeYear.SelectedValue == "")
             {
+                cv_gradeYear.ErrorMessage = "Target Grade Year Must not be empty";
                 args.IsValid = false;
                 return;
             }
@@ -317,6 +320,7 @@ namespace MalayanEventHub
             int endYear = Int32.Parse(ddl_endGradeYear.SelectedValue);
             if (startYear > endYear)
             {
+                cv_gradeYear.ErrorMessage = "Target Grade Year must have a valid range";
                 args.IsValid = false;
                 
             }
