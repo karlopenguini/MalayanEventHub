@@ -28,6 +28,7 @@ namespace MalayanEventHub.Classes
 
         }
 
+      #region Inserting,Updating,Deleting Query
         internal void ExecuteUpdateQuery(string queryCMD)
         {
             if (!isValidRequest)
@@ -43,6 +44,98 @@ namespace MalayanEventHub.Classes
             dbConn.Close();
         }
 
+        internal void ExecuteUpdateQuery(SqlCommand dbCMD)
+        {
+            if (!isValidRequest)
+            {
+                throw new Exception("Error Initializing Sql Connection Object.");
+            }
+
+            //execute query
+            dbConn.Open();
+            dbCMD.Connection = dbConn;
+            dbCMD.ExecuteNonQuery();
+            
+
+            //close db connection
+            dbConn.Close();
+        }
+
+        internal string ExecuteUpdateQueryInReturn(SqlCommand dbCMD)
+        {
+            if (!isValidRequest)
+            {
+                throw new Exception("Error Initializing Sql Connection Object.");
+            }
+
+            //execute query
+            dbConn.Open();
+            dbCMD.Connection = dbConn;
+            if (dbCMD.CommandText[dbCMD.CommandText.Length - 1] != ';')
+            {
+                dbCMD.CommandText += ";";
+            }
+            dbCMD.CommandText += "SELECT SCOPE_IDENTITY()";
+            string lastID = dbCMD.ExecuteScalar().ToString();
+
+            //close db connection
+            dbConn.Close();
+
+            return lastID;
+        }
+        internal string ExecuteUpdateQueryInReturn(string queryCMD)
+        {
+            if (!isValidRequest)
+            {
+                throw new Exception("Error Initializing Sql Connection Object.");
+            }
+
+            //execute query
+            dbConn.Open();
+            SqlCommand dbCMD = new SqlCommand(queryCMD, dbConn);
+            if (dbCMD.CommandText[dbCMD.CommandText.Length - 1] != ';')
+            {
+                dbCMD.CommandText += ";";
+            }
+            dbCMD.CommandText += "SELECT SCOPE_IDENTITY()";
+            string lastId =  dbCMD.ExecuteScalar().ToString();
+
+
+            //close db connection
+            dbConn.Close();
+
+            return lastId;
+        }
+
+        internal void ExecuteInsertQuery(string queryCMD)
+        {
+            ExecuteUpdateQuery(queryCMD);
+
+         
+        }
+
+        internal void ExecuteInsertQuery(SqlCommand dbCMD)
+        {
+            ExecuteUpdateQuery(dbCMD);
+        }
+        internal string ExecuteInsertQueryInReturn(string queryCMD)
+        {
+            return ExecuteUpdateQueryInReturn(queryCMD);
+
+         
+        }
+
+        internal string ExecuteInsertQueryInReturn(SqlCommand dbCMD)
+        {
+            
+            return ExecuteUpdateQueryInReturn(dbCMD); 
+        }
+
+
+      
+        #endregion
+        
+        // for retrieving data
         internal List<Dictionary<string, string>> RetrieveData(string queryCMD)
         {
             if (!isValidRequest)
