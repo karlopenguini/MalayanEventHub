@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="filter">
-                    <asp:Button ID="btnRegister" runat="server" Text="Register Organization"/>
+                    <asp:Button ID="btnRegister" runat="server" Text="Register Organization" OnClick="btnRegister_Click"/>
                 </div>
             </div>
         </section>

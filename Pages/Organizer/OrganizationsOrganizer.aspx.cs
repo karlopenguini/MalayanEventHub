@@ -33,5 +33,10 @@ namespace MalayanEventHub.Layouts
         {
             public string OrganizationImageURL { get; set; }
         }
+
+        //protected void btnRegister_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("")
+        //}
     }
 }
