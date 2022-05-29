@@ -53,10 +53,10 @@
             </div>
         </section>
         <section class="general-container">
-            <asp:Repeater ID="EventsRepeater" runat="server">
+            <asp:Repeater ID="EventsRepeater" runat="server" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
                     <div class="event-card">
-                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%#Eval("EventImageURL")%>' />
+                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%# "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage")); %>' />
                         <div class="event-details">
                             <asp:Label CssClass="event-title" ID="lbl_event_title" runat="server" Text='<%#Eval("EventTitle")%>'></asp:Label>
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_date" runat="server" Text='<%#Eval("EventDate")%>'></asp:Label>
@@ -67,10 +67,11 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource1"
-                ConnectionString="<%$ ConnectionStrings:NorthWindConnection%>"
-                SelectCommand="SELECT pubmat as 'EventImageURL', activityTitle as 'EventTitle', startDateTime as 'EventDate', proposedVenue as 'EventVenue', organizerID as 'EventOrganizer', invitationLink as 'EventURL' FROM [EventTBL] Where ProductID <= 10"
+                <asp:SqlDataSource ID="SqlDataSource1"
+                ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                SelectCommand="SELECT [pubmat] as 'EventImage', [activityTitle] as 'EventTitle', [startDateTime] as 'EventDate', [proposedVenue] as 'EventVenue', [organizerID] as 'EventOrganizer', [invitationLink] as 'EventURL' FROM [EventTBL]"
                 runat="server"></asp:SqlDataSource>
+            
         </section>
     </main>
 </asp:Content>
