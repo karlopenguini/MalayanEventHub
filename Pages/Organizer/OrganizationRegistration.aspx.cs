@@ -13,5 +13,10 @@ namespace MalayanEventHub.Layouts
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
+
+        protected void btn_Register_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

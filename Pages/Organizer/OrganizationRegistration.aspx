@@ -2,22 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../../Styles/Organizer/organization-registration.css" rel="stylesheet" />
     <link href="../../Styles/MasterStyleSheet.css" rel="stylesheet" />
-    <script type="text/javascript">
-        function toggleFormSections(e) {
-        var objectCaller = document.getElementById(e.id + "-fields");
-        var objectCallerIndicator = document.getElementById(e.id + "-indicator");
- 
-        //set action
-        objectCaller.classList.toggle("hide");
-        if (objectCallerIndicator.innerText == "+") {
-        objectCallerIndicator.innerText = "-";
-        }
-        else if (objectCallerIndicator.innerText == "-") {
-        objectCallerIndicator.innerText = "+";
-        }
- 
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="form-body">
@@ -98,7 +82,23 @@
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
-            <asp:Button ID="btn_Register" runat="server" Text="Register" CssClass="main-button" style="margin-bottom:25px;"/>
+            <asp:Button ID="btn_Register" runat="server" Text="Register" CssClass="main-button" style="margin-bottom:25px;" OnClick="btn_Register_Click"/>
         </div>
     </div>
+    <script type="text/javascript">
+        function toggleFormSections(e) {
+            var objectCaller = document.getElementById(e.id + "-fields");
+            var objectCallerIndicator = document.getElementById(e.id + "-indicator");
+
+            //set action
+            objectCaller.classList.toggle("hide");
+            if (objectCallerIndicator.innerText == "+") {
+                objectCallerIndicator.innerText = "-";
+            }
+            else if (objectCallerIndicator.innerText == "-") {
+                objectCallerIndicator.innerText = "+";
+            }
+
+        }
+    </script>
 </asp:Content>

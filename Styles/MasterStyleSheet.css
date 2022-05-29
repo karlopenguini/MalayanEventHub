@@ -71,9 +71,10 @@
     font-size: 18px;
     flex-grow: 1;
     padding: 0.6em;
-    border-radius:0.4em;
-    border:unset;
-    background-color:rgb(7 47 74 / 0.15);
+    border-radius: 0.4em;
+    border: unset;
+    background-color: rgb(7 47 74 / 0.15);
+    font-family: 'Roboto', sans-serif;
 }
     .text-boxs:focus {
         outline: none;
