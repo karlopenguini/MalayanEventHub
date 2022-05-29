@@ -124,9 +124,9 @@
       <DependentUpon>EventRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Admin\EventRequests.aspx.designer.cs">
-      <DependentUpon>EventRequests.aspx</DependentUpon>
-
+	  <Compile Include="Pages\Admin\EventRequests.aspx.designer.cs">
+		  <DependentUpon>EventRequests.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Pages\Admin\ViewEvent.aspx.cs">
       <DependentUpon>ViewEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
