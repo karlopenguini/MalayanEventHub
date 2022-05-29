@@ -14,8 +14,9 @@
                     <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl">
                         <asp:ListItem>Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
+                        <asp:ListItem>All</asp:ListItem>
                     </asp:DropDownList>
-
+                    
                 </div>
                 <div class="filter">
                     <p class="filter-var">College:</p>
