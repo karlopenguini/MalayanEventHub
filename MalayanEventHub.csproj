@@ -83,12 +83,9 @@
     <Content Include="Pages\Admin\ViewEvent.aspx" />
     <Content Include="Pages\Admin\EventReview.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
-    <Content Include="Pages\Admin\test.html" />
+
     <Content Include="Pages\Organizer\OrgCreateEvent.aspx" />
-    <Content Include="Pages\Organizer\test.html" />
-    <Content Include="Pages\test.html" />
     <Content Include="Pages\User\test.html" />
-    <Content Include="Styles\Admin\test.html" />
     <Content Include="Styles\Event_Organization_Headers.css" />
     <Content Include="Styles\EventsPage.css" />
     <Content Include="Styles\MasterStyleSheet.css" />
@@ -203,7 +200,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Styles\Admin\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
