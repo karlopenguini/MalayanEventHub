@@ -71,6 +71,7 @@
     <Content Include="App_Data\MCLEventHubDB_log.ldf">
       <DependentUpon>MCLEventHubDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Queries\InsertEvent.sql" />
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />

@@ -11,7 +11,6 @@
             <div class="filter-container">
                 <div class="filter">
                     <p class="filter-var">Type:</p>
-
                     <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl">
                         <asp:ListItem>Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
