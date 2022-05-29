@@ -76,13 +76,16 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Layouts\Common\User\UpdateProfilePage.aspx" />
+    <Content Include="Layouts\Common\User\ProfilePage.aspx" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
+    <Content Include="Pages\User\LoginPage.aspx" />
+    <Content Include="Pages\User\RegisterPage.aspx" />
     <Content Include="Pages\User\test.html" />
     <Content Include="Styles\Event_Violation_Card.css" />
     <Content Include="Pages\Admin\ViewEvent.aspx" />
     <Content Include="Pages\Admin\EventReview.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
-
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\OrgCreateEvent.aspx" />
     <Content Include="Pages\Organizer\test.html" />
@@ -94,6 +97,9 @@
     <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
+    <Content Include="Styles\User\loginPage.css" />
+    <Content Include="Styles\User\profilePage.css" />
+    <Content Include="Styles\User\registerPage.css" />
     <Content Include="Styles\User\test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -115,6 +121,20 @@
     </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\User\UpdateProfilePage.aspx.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\User\UpdateProfilePage.aspx.designer.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Common\User\ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Common\User\ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\EventRequests.aspx.cs">
       <DependentUpon>EventRequests.aspx</DependentUpon>
@@ -178,6 +198,20 @@
     </Compile>
     <Compile Include="Pages\Organizer\OrgCreateEvent.aspx.designer.cs">
       <DependentUpon>OrgCreateEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

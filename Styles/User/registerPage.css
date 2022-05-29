@@ -1,0 +1,222 @@
+﻿body, html {
+    background-color: rgb(230, 230, 255);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 35px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.main-div {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.label-span {
+    margin-bottom: 10px;
+}
+
+.req-field-validator {
+    color: red;
+}
+
+.regex-validator {
+    color: red;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.par {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.hyper-link {
+    margin-left: 2px;
+    text-decoration: underline;
+    color: blue;
+}
+
+/*STYLES FOR THE NAME SECTION*/
+.main-name-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fname-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fname-label {
+    font-size: 18px;
+    margin: 0 0 10px 20px;
+    width: 180px;
+}
+
+.fname-tb {
+    margin-left: 20px;
+    width: 180px;
+}
+
+.mi-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mi-label {
+    font-size: 18px;
+    margin: 0 20px 10px 20px;
+    width: 100px;
+}
+
+.mi-tb {
+    margin: 0 20px;
+    width: 100px;
+}
+
+.lname-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.lname-label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 180px;
+}
+
+.lname-tb {
+    margin-right: 20px;
+    width: 180px;
+}
+
+@media only screen and (max-width: 656px) {
+    .lname-container {
+        margin: 0 20px 10px 20px;
+    }
+}
+
+/*STYLES FOR THE EMAIL NUMBER AND PASSWORD */
+.details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-label {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.details-tb {
+    margin: 0 20px 0 20px;
+}
+
+/*STYLE FOR ALL TEXTBOXES*/
+.textbox {
+    font-size: 18px;
+    padding: 0.6em;
+    border-radius: 0.4em;
+    border: unset;
+    background-color: rgb(7 47 74 / 0.15);
+}
+
+    .textbox:focus {
+        border: solid;
+        outline: none;
+        background-color: white;
+    }
+
+/*STYLES FOR THE PART WHERE THE DDLists ARE PLACED*/
+.ddl-section-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.college-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.college-label {
+    font-size: 18px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.college-ddl {
+    width: 100px;
+}
+
+.course-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 20px 0 20px;
+}
+
+.course-label {
+    font-size: 18px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.course-ddl {
+    width: 110px;
+}
+
+.year-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.year-label {
+    font-size: 18px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.year-ddl {
+    width: 100px;
+}
+
+/*STYLE FOR ALL DDLists*/
+.ddl {
+    padding: 5px;
+    font-size: 18px;
+    padding: 0.6em;
+    border-radius: 0.4em;
+    border: unset;
+    background-color: rgb(7 47 74 / 0.15);
+}
+
+    .ddl:focus {
+        border: solid;
+        outline: none;
+        background-color: white;
+    }
+
+/*BUTTON STYLE*/
+.button {
+    display: block;
+    width: 200px;
+    font-size: 18px;
+    padding: 0.6em;
+    margin: 30px auto 10px auto;
+   
+}
