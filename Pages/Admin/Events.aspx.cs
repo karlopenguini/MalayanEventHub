@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace MalayanEventHub.Layouts
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Events : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace MalayanEventHub.Layouts
                     EventDate = "May 27, 2022",
                     EventVenue = "Discord",
                     EventOrganizer = "MCL-ACM",
-                    EventURL = "www.google.com",
+                    EventURL = "ViewEvent.aspx",
                 };
                 List<EventData> SampleEvents = new List<EventData>();
 

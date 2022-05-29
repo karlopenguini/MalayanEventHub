@@ -51,15 +51,6 @@ namespace MCLEventHub.Layouts
         protected global::System.Web.UI.WebControls.HyperLink hl_organizations;
 
         /// <summary>
-        /// hl_tickets control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl_tickets;
-
-        /// <summary>
         /// btn_account control.
         /// </summary>
         /// <remarks>

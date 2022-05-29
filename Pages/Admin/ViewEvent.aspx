@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/Admin/OrganizationView.master" AutoEventWireup="true" CodeBehind="ViewEvent.aspx.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/Admin/OrganizationView.master" AutoEventWireup="true" CodeBehind="ViewEvent.aspx.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.ViewEvent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
     <link rel="stylesheet" href="../../Styles/MasterStyleSheet.css" />

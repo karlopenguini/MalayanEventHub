@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="MalayanEventHub.Layouts.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="MalayanEventHub.Layouts.Events" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../../Styles/Event_Organization_Headers.css" />
@@ -53,7 +53,7 @@
 
             </div>
         </section>
-        <section class="events-container">
+        <section class="general-container">
             <asp:Repeater ID="EventsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="event-card">
@@ -63,9 +63,8 @@
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_date" runat="server" Text='<%#Eval("EventDate")%>'></asp:Label>
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_venue" runat="server" Text='<%#Eval("EventVenue")%>'></asp:Label>
                             <asp:Label CssClass="event-org" ID="lbl_event_organization" runat="server" Text='<%#Eval("EventOrganizer")%>'></asp:Label>
-                            <asp:HyperLink ID="hl_event_page_link" runat="server" NavigateUrl='<%#Eval("EventURL")%>'></asp:HyperLink>
                         </div>
-
+                        <asp:HyperLink CssClass="link-wrap" ID="hl_event_page_link" runat="server" NavigateUrl='<%#Eval("EventURL")%>' Text=" "></asp:HyperLink>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

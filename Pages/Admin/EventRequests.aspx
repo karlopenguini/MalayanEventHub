@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/Admin/OrganizationView.master" AutoEventWireup="true" CodeBehind="EventRequests.aspx.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/Admin/OrganizationView.master" AutoEventWireup="true" CodeBehind="EventRequests.aspx.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.EventRequests" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
     <style>
         .header{

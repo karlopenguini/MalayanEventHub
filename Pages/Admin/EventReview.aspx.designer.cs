@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
 {
 
 
-    public partial class WebForm1
+    public partial class EventReview
     {
 
         /// <summary>
