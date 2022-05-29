@@ -43,9 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -65,6 +62,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="App_Data\MCLEventHubDB.mdf" />
     <Content Include="App_Data\MCLEventHubDB_log.ldf">
       <DependentUpon>MCLEventHubDB.mdf</DependentUpon>
@@ -74,19 +76,32 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
     <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\test.html" />
     <Content Include="Styles\Admin\test.html" />
+    <Content Include="Pages\Admin\EventRequests.aspx" />
+    <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
+    <Content Include="Pages\User\test.html" />
+    <Content Include="Styles\Event_Violation_Card.css" />
+    <Content Include="Pages\Admin\ViewEvent.aspx" />
+    <Content Include="Pages\Admin\EventReview.aspx" />
+    <Content Include="Pages\Admin\Events.aspx" />
+    <Content Include="Pages\Organizer\OrgCreateEvent.aspx" />
+    <Content Include="Pages\User\test.html" />
+    <Content Include="Styles\Event_Organization_Headers.css" />
+    <Content Include="Styles\EventsPage.css" />
     <Content Include="Styles\MasterStyleSheet.css" />
-    <Content Include="Styles\Organizer\organization-registration.css" />
     <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
     <Content Include="Styles\User\test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Degree.cs" />
+    <Compile Include="Classes\College.cs" />
     <Compile Include="Classes\DatabaseHandler.cs" />
     <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Layouts\AdminView.Master.cs">
@@ -102,6 +117,27 @@
     </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\EventRequests.aspx.cs">
+      <DependentUpon>EventRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\EventRequests.aspx.designer.cs">
+      <DependentUpon>EventRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewEvent.aspx.cs">
+      <DependentUpon>ViewEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewEvent.aspx.designer.cs">
+      <DependentUpon>ViewEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\EventReview.aspx.cs">
+      <DependentUpon>EventReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\EventReview.aspx.designer.cs">
+      <DependentUpon>EventReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Layouts\Common\Organizer\OrganizationView.master.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
@@ -131,12 +167,34 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
+
     <Compile Include="Pages\Organizer\OrgRegistration.aspx.cs">
       <DependentUpon>OrgRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Organizer\OrgRegistration.aspx.designer.cs">
       <DependentUpon>OrgRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgCreateEvent.aspx.cs">
+      <DependentUpon>OrgCreateEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgCreateEvent.aspx.designer.cs">
+      <DependentUpon>OrgCreateEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEventInformation.aspx.cs">
+      <DependentUpon>OrgEventInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEventInformation.aspx.designer.cs">
+      <DependentUpon>OrgEventInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,7 +214,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\User\" />
+    <Folder Include="Styles\Admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
