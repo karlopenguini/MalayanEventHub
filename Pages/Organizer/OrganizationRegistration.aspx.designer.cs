@@ -42,13 +42,13 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLogo;
 
         /// <summary>
-        /// tb_Logo control.
+        /// fu_Logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Logo;
+        protected global::System.Web.UI.WebControls.FileUpload fu_Logo;
 
         /// <summary>
         /// rfv_Acronym control.
