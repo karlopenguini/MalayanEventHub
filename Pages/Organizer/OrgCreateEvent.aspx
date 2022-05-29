@@ -16,7 +16,7 @@
                         <asp:CustomValidator ID="cv_eventTitle" runat="server" ErrorMessage="Event Title must not be empty." Text="*" ControlToValidate="tb_eventTitle" ForeColor="Maroon" Font-Size="Large" ValidateEmptyText="true" ValidationGroup="form" OnServerValidate="RequiredValue_ServerValidate" ></asp:CustomValidator>
                         <p>Event Title:</p>
                     </div>
-                    <asp:TextBox ID="tb_eventTitle" runat="server" CssClass="text-boxs" ></asp:TextBox>
+                    <asp:TextBox ID="tb_eventTitle" runat="server" CssClass="text-boxs" MaxLength="170" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
@@ -37,25 +37,25 @@
                          <asp:CustomValidator ID="cv_venue" runat="server" ErrorMessage="Venue must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="tb_venue" ForeColor="Maroon" Font-Size="Large"  OnServerValidate="RequiredValue_ServerValidate" ValidationGroup="form" ></asp:CustomValidator>
                         <p>Venue:</p>
                      </div>
-                    <asp:TextBox ID="tb_venue" runat="server" CssClass="text-boxs" ></asp:TextBox>
+                    <asp:TextBox ID="tb_venue" runat="server" CssClass="text-boxs" MaxLength="255" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Invitation Link:</p>
-                    <asp:TextBox ID="tb_invLink" runat="server" CssClass="text-boxs" TextMode="Url" placeholder="optional"></asp:TextBox>
+                    <asp:TextBox ID="tb_invLink" runat="server" CssClass="text-boxs" TextMode="Url" placeholder="optional" MaxLength="500"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
                         <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ID="cv_obj"  runat="server" ErrorMessage="Objectives must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="tb_objectives" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                         <p>Objectives:</p>
                     </div>
-                    <asp:TextBox ID="tb_objectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="tb_objectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" MaxLength="500" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                      <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
                         <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ValidateEmptyText="true" ID="cv_specificDet" runat="server" ErrorMessage="Specific details must not be empty." Text="*" ControlToValidate="tb_specificDet" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                         <p>Specific Details:</p>
                     </div>
-                    <asp:TextBox ID="tb_specificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="tb_specificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" MaxLength="500" ></asp:TextBox>
                 </div>
             </div>
         </div>
