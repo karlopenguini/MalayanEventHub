@@ -56,6 +56,15 @@
                             <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn">CREATE EVENT</asp:LinkButton>
                             <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn">VIEW EVENT</asp:LinkButton>
                             <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn">VIOLATIONS</asp:LinkButton>
+                            
+                        </div>
+                        <div class="name">
+                            <asp:Label ID="lbl_Name" runat="server" Text="Organization Name" Font-Underline="false"></asp:Label>
+                        </div>
+                        <div class="sub-name">
+                            <asp:Label ID="lbl_Type" runat="server" Text="Type" Font-Underline="false"></asp:Label>
+                            |
+                            <asp:Label ID="lbl_College" runat="server" Text="College" Font-Underline="false"></asp:Label>
                         </div>
                     </div>
                 </ItemTemplate>
