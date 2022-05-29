@@ -17,6 +17,7 @@
 }
 
 .organization-card {
+    
     width: 310px;
     height: 307px;
     padding: 2rem 1rem;
@@ -47,11 +48,14 @@
     opacity: 1;
 }
 
-.organization-card img {
+.organization-card .img {
+    /*240x240*/
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /*object-fit: cover;*/
     position: absolute;
+    /*top: 10px;
+    left: 35px;*/
     top: 0;
     left: 0;
 }
