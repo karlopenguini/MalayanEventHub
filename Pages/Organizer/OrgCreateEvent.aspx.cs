@@ -147,7 +147,7 @@ namespace MalayanEventHub
 
 
             //go to new Page
-            Response.Redirect($"../Message.aspx?eventId={eventID}");
+            Response.Redirect($"OrgEventInformation.aspx?eventId={eventID}");
 
         }
 
@@ -468,11 +468,11 @@ namespace MalayanEventHub
             //recalibating 
             if (startYear >= 11)
             {
-                startYear = 11 - startYear;
+                startYear = startYear-12;
             }
-            if (endYear >= 11)
+            if (endYear >= 12)
             {
-                endYear = 11 - endYear;
+                endYear = endYear-12;
             }
             //validating
             if (startYear > endYear)
