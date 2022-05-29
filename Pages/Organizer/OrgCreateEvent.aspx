@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Create Event" Language="C#" MasterPageFile="~/Layouts/Common/Organizer/OrganizationView.Master" AutoEventWireup="true" CodeBehind="OrgCreateEvent.aspx.cs" Inherits="MalayanEventHub.OrgCreateEvent" %>
-
+<asp:Content ID ="Content1" ContentPlaceHolderID ="head2" runat="server">
+        <link rel="stylesheet" href="../../Styles/MasterStyleSheet.css" />
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT * FROM [AdminTBL]"></asp:SqlDataSource>
@@ -16,7 +18,7 @@
                         <asp:CustomValidator ID="cv_eventTitle" runat="server" ErrorMessage="Event Title must not be empty." Text="*" ControlToValidate="tb_eventTitle" ForeColor="Maroon" Font-Size="Large" ValidateEmptyText="true" ValidationGroup="form" OnServerValidate="RequiredValue_ServerValidate" ></asp:CustomValidator>
                         <p>Event Title:</p>
                     </div>
-                    <asp:TextBox ID="tb_eventTitle" runat="server" CssClass="text-boxs" ></asp:TextBox>
+                    <asp:TextBox ID="tb_eventTitle" runat="server" CssClass="text-boxs" MaxLength="170" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
@@ -37,25 +39,25 @@
                          <asp:CustomValidator ID="cv_venue" runat="server" ErrorMessage="Venue must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="tb_venue" ForeColor="Maroon" Font-Size="Large"  OnServerValidate="RequiredValue_ServerValidate" ValidationGroup="form" ></asp:CustomValidator>
                         <p>Venue:</p>
                      </div>
-                    <asp:TextBox ID="tb_venue" runat="server" CssClass="text-boxs" ></asp:TextBox>
+                    <asp:TextBox ID="tb_venue" runat="server" CssClass="text-boxs" MaxLength="255" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Invitation Link:</p>
-                    <asp:TextBox ID="tb_invLink" runat="server" CssClass="text-boxs" TextMode="Url" placeholder="optional"></asp:TextBox>
+                    <asp:TextBox ID="tb_invLink" runat="server" CssClass="text-boxs" TextMode="Url" placeholder="optional" MaxLength="500"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
                         <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ID="cv_obj"  runat="server" ErrorMessage="Objectives must not be empty." Text="*" ValidateEmptyText="true" ControlToValidate="tb_objectives" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                         <p>Objectives:</p>
                     </div>
-                    <asp:TextBox ID="tb_objectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="tb_objectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" MaxLength="500" ></asp:TextBox>
                 </div>
                 <div class="form-field">
                      <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
                         <asp:CustomValidator OnServerValidate="RequiredValue_ServerValidate" ValidateEmptyText="true" ID="cv_specificDet" runat="server" ErrorMessage="Specific details must not be empty." Text="*" ControlToValidate="tb_specificDet" ForeColor="Maroon" Font-Size="Large" ValidationGroup="form"></asp:CustomValidator>
                         <p>Specific Details:</p>
                     </div>
-                    <asp:TextBox ID="tb_specificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="tb_specificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" MaxLength="500" ></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -115,16 +117,16 @@
                 <div class="form-field">
                     <p>Target Participant's Data:</p>
                     <asp:CheckBoxList ID="cbl_targetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList">
-                        <asp:ListItem Enabled="False" Selected="True">First Name</asp:ListItem>
-                        <asp:ListItem>Middle Name</asp:ListItem>
-                        <asp:ListItem Enabled="False" Selected="True">Last Name</asp:ListItem>
-                        <asp:ListItem >Student No.</asp:ListItem>
-                        <asp:ListItem>Contact No.</asp:ListItem>
-                        <asp:ListItem>E-mail</asp:ListItem>
-                        <asp:ListItem>Address</asp:ListItem>
-                        <asp:ListItem>College</asp:ListItem>
-                        <asp:ListItem>Course</asp:ListItem>
-                        <asp:ListItem>Year Level</asp:ListItem>
+                        <asp:ListItem Enabled="False" Selected="True" Value="firstName">First Name</asp:ListItem>
+                        <asp:ListItem Value="middleName">Middle Name</asp:ListItem>
+                        <asp:ListItem Enabled="False" Selected="True" Value="lastName">Last Name</asp:ListItem>
+                        <asp:ListItem Value="userID" >Student No.</asp:ListItem>
+                        <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
+                        <asp:ListItem Value="email">E-mail</asp:ListItem>
+                        <asp:ListItem Value="address">Address</asp:ListItem>
+                        <asp:ListItem Value="college">College</asp:ListItem>
+                        <asp:ListItem Value="course">Course</asp:ListItem>
+                        <asp:ListItem Value="yearLevel">Year Level</asp:ListItem>
                     </asp:CheckBoxList>
                  </div>
             </div>

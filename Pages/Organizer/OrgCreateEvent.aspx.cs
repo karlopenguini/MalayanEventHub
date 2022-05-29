@@ -5,21 +5,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
+using System.IO;
+using System.Data.SqlClient;
+
 namespace MalayanEventHub
 {
     public partial class OrgCreateEvent : System.Web.UI.Page
     {
         DatabaseHandler dbHandler;
+        string organizerID = "80001-2020171781";
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-            //populate dropdownlist
+            //create a dbHandler
             dbHandler = new DatabaseHandler();
-            Announce("Running Main...");
+
             //populate
             if (!Page.IsPostBack)
             {
+                organizerID = "80001-2020171781";
                 //appenddatabound
                 ddl_college.AppendDataBoundItems = false;
                 ddl_degree.AppendDataBoundItems = false;
@@ -29,7 +34,146 @@ namespace MalayanEventHub
           
         }
 
+        #region Submitting Form
+        protected void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                UploadDataToServer();
+            }
+        }
+        private void UploadDataToServer()
+        {
+            // collect all data fields
+            //for event TBL
+            #region Event TBL Insert Data
+            //eventD_section
+            string eventD_Title = tb_eventTitle.Text.Trim();
+            DateTime startDT = DateTime.Parse(tb_startDateTime.Text.Trim());
+            DateTime endDT = DateTime.Parse(tb_endDateTime.Text.Trim());
+            string eventD_startDT = startDT.ToString("yyyy-MM-dd HH:mm:ss");
+            string eventD_endDT = endDT.ToString("yyyy-MM-dd HH:mm:ss");
+            string eventD_venue = tb_venue.Text.Trim();
+            string eventD_InvLink = tb_invLink.Text.Trim();
+            string eventD_obj = tb_objectives.Text.Trim();
+            string eventD_det = tb_specificDet.Text.Trim();
 
+            //audience_section
+            string audD_college = ddl_college.SelectedValue.Trim();
+            string audD_degree = ddl_degree.SelectedValue.Trim();
+            int audD_startGradeYear = Int32.Parse(ddl_startGradeYear.SelectedValue.Trim());
+            int audD_endGradeYear = Int32.Parse(ddl_endGradeYear.SelectedValue.Trim());
+
+            //pubmat section
+            bool hasUploadImg = f_uploadImg.HasFile;
+
+
+            //connect to sql
+            string query = "INSERT INTO EventTBL (organizerID, activityTitle, startDateTime, endDateTime, proposedVenue, objectives, details," +
+                " invitationLink, audienceCollege, audienceDegree, audienceGradeYearStart, audienceGradeYearEnd, pubmat)" +
+                " VALUES(@organizerID, @eventTitle, @startDateTime, @endDateTime, @venue, @obj, @det,@invLink, @audCollege, @audDegree, @audGradeYearStart, " +
+                "@audGradeYearEnd, @imgPubmat );";
+            SqlCommand cmd = new SqlCommand(query);
+
+            //add values
+            cmd.Parameters.AddWithValue("@organizerID", organizerID);
+            //event section
+            cmd.Parameters.AddWithValue("@eventTitle", eventD_Title);
+            cmd.Parameters.AddWithValue("@startDateTime", eventD_startDT);
+            cmd.Parameters.AddWithValue("@endDateTime", eventD_endDT);
+            cmd.Parameters.AddWithValue("@venue", eventD_venue);
+            cmd.Parameters.AddWithValue("@obj", eventD_obj);
+            cmd.Parameters.AddWithValue("@det", eventD_det);
+            if (eventD_InvLink == "")
+            {
+                cmd.Parameters.AddWithValue("@invLink", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@invLink", eventD_InvLink);
+            }
+            //audtarget section
+            cmd.Parameters.AddWithValue("@audCollege", audD_college);
+            cmd.Parameters.AddWithValue("@audDegree", audD_degree);
+            cmd.Parameters.AddWithValue("@audGradeYearStart", audD_startGradeYear);
+            cmd.Parameters.AddWithValue("@audGradeYearEnd", audD_endGradeYear);
+
+            //pubmat
+            if (hasUploadImg)
+            {
+                cmd.Parameters.AddWithValue("@imgPubmat", GetImageBytes());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@imgPubmat", System.Data.SqlTypes.SqlBinary.Null);
+             
+            }
+            #endregion Event TBL 
+
+            //execute thru database
+            string eventID = dbHandler.ExecuteInsertQueryInReturn(cmd);
+
+            #region for Required Information TBL
+            string query2 = "INSERT INTO RequiredInformationTBL (eventID, dataOfParticipant) VALUES";
+            List<string> cbl_targetDatavalues = new List<string>();
+            foreach(ListItem item in cbl_targetData.Items)
+            {
+                if (item.Selected)
+                {
+                    cbl_targetDatavalues.Add($"({eventID}, '{item.Value}')");
+                }
+            }
+
+            query2 = query2 + String.Join(",", cbl_targetDatavalues)+";";
+            dbHandler.ExecuteInsertQuery(query2);
+            #endregion
+
+            #region For Event Request TBL & requestTBL
+            string[] id_parts = organizerID.Split('-');
+            int organizationID = Int32.Parse(id_parts[0]);
+            int userID = Int32.Parse(id_parts[1]);
+            DateTime now = DateTime.Now;
+            string query3 = "INSERT INTO EventRequestTBL (organizationID, userID, eventID, created)" +
+                $"VALUES({organizationID}, {userID}, {eventID}, '{now.ToString("yyyy-MM-dd HH:mm:ss")}')";
+
+            string requestID = dbHandler.ExecuteInsertQueryInReturn(query3);
+
+            string query4 = "INSERT INTO RequestTBL (requestID, requestStatus, requestType)" +
+                $"VALUES({requestID}, '{"Pending"}', '{"Event-Request"}')";
+            dbHandler.ExecuteInsertQuery(query4);
+            #endregion
+           
+
+
+
+            //go to new Page
+            Response.Redirect($"OrgEventInformation.aspx?eventId={eventID}");
+
+        }
+
+
+        #endregion
+
+        #region Submitting Form Helper functions
+        private Byte[] GetImageBytes()
+        {
+            Byte[] imageBytes;
+        
+            using (Stream stream = f_uploadImg.PostedFile.InputStream)
+            {
+                using(BinaryReader br = new BinaryReader(stream))
+                {
+                    imageBytes = br.ReadBytes((Int32)stream.Length); 
+                }
+            }
+           return imageBytes;
+        }
+
+            
+        #endregion
+
+
+        #region  Dropdownlist events
         private void Populate_CollegeList()
         {
             //clear list
@@ -197,6 +341,9 @@ namespace MalayanEventHub
             }
         }
 
+        #endregion
+
+        #region Helper Functions
         private string ConvertToOrdinal(int year)
         {
             if (year == 1)
@@ -231,12 +378,11 @@ namespace MalayanEventHub
             System.Diagnostics.Debug.WriteLine(message);
         }
 
-        protected void ButtonSubmit_Click(object sender, EventArgs e)
-        {
-            
-        }
+     
+        #endregion
 
         //validations controls method
+        #region Validation Controls
         protected void RequiredValue_ServerValidate(object source, ServerValidateEventArgs args)
         {//for empty
 
@@ -318,6 +464,17 @@ namespace MalayanEventHub
 
             int startYear = Int32.Parse(ddl_startGradeYear.SelectedValue);
             int endYear = Int32.Parse(ddl_endGradeYear.SelectedValue);
+
+            //recalibating 
+            if (startYear >= 11)
+            {
+                startYear = startYear-12;
+            }
+            if (endYear >= 12)
+            {
+                endYear = endYear-12;
+            }
+            //validating
             if (startYear > endYear)
             {
                 cv_gradeYear.ErrorMessage = "Target Grade Year must have a valid range";
@@ -328,4 +485,5 @@ namespace MalayanEventHub
 
 
     }
+    #endregion
 }
