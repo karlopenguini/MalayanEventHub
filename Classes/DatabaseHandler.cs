@@ -28,6 +28,7 @@ namespace MalayanEventHub.Classes
 
         }
 
+      #region Inserting,Updating,Deleting Query
         internal void ExecuteUpdateQuery(string queryCMD)
         {
             if (!isValidRequest)
@@ -43,6 +44,33 @@ namespace MalayanEventHub.Classes
             dbConn.Close();
         }
 
+        internal void ExecuteInsertQuery(string queryCMD)
+        {
+            ExecuteUpdateQuery(queryCMD);
+        }
+
+        internal void ExecuteUpdateQuery(SqlCommand dbCMD)
+        {
+            if (!isValidRequest)
+            {
+                throw new Exception("Error Initializing Sql Connection Object.");
+            }
+
+            //execute query
+            dbConn.Open();
+            dbCMD.Connection = dbConn;
+            dbCMD.ExecuteNonQuery();
+            //close db connection
+            dbConn.Close();
+        }
+
+        internal void ExecuteInsertQuery(SqlCommand dbCMD)
+        {
+            ExecuteUpdateQuery(dbCMD);   
+        }
+        #endregion
+        
+        // for retrieving data
         internal List<Dictionary<string, string>> RetrieveData(string queryCMD)
         {
             if (!isValidRequest)
