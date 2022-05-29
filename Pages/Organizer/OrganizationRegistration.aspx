@@ -55,12 +55,12 @@
                 </div>
                 <div class="form-field">
                      <p>Mission<asp:RequiredFieldValidator ID="rfv_Mission" runat="server" ErrorMessage="*" ControlToValidate="tb_Mission" CssClass="validator"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_Mission" runat="server" CssClass="text-boxs" Height="200px"></asp:TextBox>
                 </div>
+                <asp:TextBox ID="tb_Mission" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
                 <div class="form-field">
                      <p>Vision<asp:RequiredFieldValidator ID="rfv_Vision" runat="server" ErrorMessage="*" ControlToValidate="tb_Vision" CssClass="validator"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_Vision" runat="server" CssClass="text-boxs" Height="200px"></asp:TextBox>
                 </div>
+                <asp:TextBox ID="tb_Vision" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
                 <div class="form-field">
                      <p>College<asp:RequiredFieldValidator ID="rfv_College" runat="server" ErrorMessage="*" ControlToValidate="ddl_College" CssClass="validator" InitialValue="Choose"></asp:RequiredFieldValidator></p>
                      <asp:DropDownList ID="ddl_College" runat="server" CssClass="dropdown-lists" Width="200px">
@@ -92,8 +92,8 @@
                 </div>
                 <div class="form-field">
                      <p>Members<asp:RequiredFieldValidator ID="rfv_Members" runat="server" ErrorMessage="*" ControlToValidate="tb_Members" CssClass="validator"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_Members" runat="server" CssClass="text-boxs" Height="200px"></asp:TextBox>
                 </div>
+                <asp:TextBox ID="tb_Members" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
