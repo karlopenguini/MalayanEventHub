@@ -79,11 +79,8 @@
     <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
-    <Content Include="Pages\Admin\test.html" />
-    <Content Include="Pages\test.html" />
     <Content Include="Pages\User\test.html" />
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
-    <Content Include="Pages\Organizer\test.html" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
     <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
     <Content Include="Pages\User\test.html" />
@@ -98,7 +95,6 @@
     <Content Include="Styles\EventsPage.css" />
     <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\organizations-organizer.css" />
-    <Content Include="Styles\Organizer\test.html" />
     <Content Include="Styles\test.html" />
     <Content Include="Styles\User\test.html" />
     <Content Include="Web.config" />
