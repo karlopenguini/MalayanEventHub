@@ -126,7 +126,7 @@ namespace MalayanEventHub.Layouts
         }
 
         #region CustomValidators
-        private void VicePresident_IsExist(object source, ServerValidateEventArgs args)
+        protected void VicePresident_IsExist(object source, ServerValidateEventArgs args)
         {
             SqlConnection dbConn;
             string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
@@ -141,9 +141,11 @@ namespace MalayanEventHub.Layouts
 
             using (dbConn)
             {
+                dbConn.Open();
+
                 using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
                 {
-                    cmd.Parameters.AddWithValue("@orgName", tb_VicePresidentNumber.Text);
+                    cmd.Parameters.AddWithValue("@studentID", tb_VicePresidentNumber.Text);
 
                     int count = (int)cmd.ExecuteScalar();
 
@@ -155,7 +157,7 @@ namespace MalayanEventHub.Layouts
             }
         }
 
-        private void Secretary_IsExist(object source, ServerValidateEventArgs args)
+        protected void Secretary_IsExist(object source, ServerValidateEventArgs args)
         {
             SqlConnection dbConn;
             string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
@@ -170,9 +172,11 @@ namespace MalayanEventHub.Layouts
 
             using (dbConn)
             {
+                dbConn.Open();
+
                 using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
                 {
-                    cmd.Parameters.AddWithValue("@orgName", tb_SecretaryNumber.Text);
+                    cmd.Parameters.AddWithValue("@studentID", tb_SecretaryNumber.Text);
 
                     int count = (int)cmd.ExecuteScalar();
 
@@ -184,7 +188,7 @@ namespace MalayanEventHub.Layouts
             }
         }
 
-        private void Treasurer_IsExist(object source, ServerValidateEventArgs args)
+        protected void Treasurer_IsExist(object source, ServerValidateEventArgs args)
         {
             SqlConnection dbConn;
             string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
@@ -199,9 +203,11 @@ namespace MalayanEventHub.Layouts
 
             using (dbConn)
             {
+                dbConn.Open();
+
                 using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
                 {
-                    cmd.Parameters.AddWithValue("@orgName", tb_TreasurerNumber.Text);
+                    cmd.Parameters.AddWithValue("@studentID", tb_TreasurerNumber.Text);
 
                     int count = (int)cmd.ExecuteScalar();
 
