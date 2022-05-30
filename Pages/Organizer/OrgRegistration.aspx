@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrgRegistration.aspx.cs" Inherits="MalayanEventHub.Layouts.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrgRegistration.aspx.cs" Inherits="MalayanEventHub.Layouts.OrgRegistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../../Styles/Organizer/organization-registration.css" rel="stylesheet" />
     <link href="../../Styles/MasterStyleSheet.css" rel="stylesheet" />
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
-            <asp:Button ID="btn_Register" runat="server" Text="Register" CssClass="main-button" style="margin-bottom:25px;"/>
+            <asp:Button ID="btn_Register" runat="server" Text="Register" CssClass="main-button" style="margin-bottom:25px;" OnClick="btn_Register_Click"/>
         </div>
     </div>
     <script type="text/javascript">
