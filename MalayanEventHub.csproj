@@ -76,9 +76,7 @@
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
     <Content Include="Pages\Admin\OrgViolation.aspx" />
-    <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
-    <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\test.html" />
     <Content Include="Pages\User\test.html" />
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
@@ -183,13 +181,6 @@
     </Compile>
     <Compile Include="Pages\Organizer\OrgRegistration.aspx.designer.cs">
       <DependentUpon>OrgRegistration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Admin\Events.aspx.cs">
-      <DependentUpon>Events.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Admin\Events.aspx.designer.cs">
-      <DependentUpon>Events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrganizationsOrganizer.aspx.cs">
       <DependentUpon>OrganizationsOrganizer.aspx</DependentUpon>
