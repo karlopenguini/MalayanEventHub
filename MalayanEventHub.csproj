@@ -79,25 +79,20 @@
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
     <Content Include="Pages\User\RegisterPage.aspx" />
     <Content Include="Pages\User\LogInPage.aspx" />
-    <Content Include="Pages\User\test.html" />
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
     <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
-    <Content Include="Pages\User\test.html" />
     <Content Include="Styles\Admin\dummyHtml.html" />
     <Content Include="Styles\Event_Violation_Card.css" />
     <Content Include="Pages\Admin\ViewEvent.aspx" />
     <Content Include="Pages\Admin\EventReview.aspx" />
     <Content Include="Pages\Organizer\OrgCreateEvent.aspx" />
-    <Content Include="Pages\User\test.html" />
     <Content Include="Styles\Event_Organization_Headers.css" />
     <Content Include="Styles\EventsPage.css" />
     <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\organizations-organizer.css" />
     <Content Include="Styles\RegisterPage.css" />
-    <Content Include="Styles\test.html" />
     <Content Include="Styles\User\LogInPage.css" />
-    <Content Include="Styles\User\test.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -203,7 +198,6 @@
     <Compile Include="Pages\Organizer\OrgEventInformation.aspx.designer.cs">
       <DependentUpon>OrgEventInformation.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="Pages\User\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
