@@ -40,6 +40,7 @@
             <div class="venue-div">
                 <label class="aboutAndVenue-label">Venue</label>
                 <p id="p_venue" class="par" runat="server">SMX Convention Center, Mall of Asia Complex, Seashell Lane, Pasay, Metro Manila 1300</p>
+
             </div>
         </div>
     </section>
