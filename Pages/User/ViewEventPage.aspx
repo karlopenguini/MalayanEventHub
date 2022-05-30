@@ -24,7 +24,7 @@
                 </span>
             </div>
             <div class="register-container">
-                <button class="button" type="button">Register</button>
+                <asp:Button CssClass="button" ID="btn_register" runat="server" Text="Register" />
             </div>
         </div>
         <%--hr to separate--%>
