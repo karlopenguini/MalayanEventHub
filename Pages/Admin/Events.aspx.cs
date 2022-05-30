@@ -14,37 +14,37 @@ namespace MalayanEventHub.Layouts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Page.IsPostBack)
-            //{
-            //    EventData SampleEvent = new EventData
-            //    {
-            //        EventImageURL = "../../Images/mcl_logo.png",
-            //        EventTitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit . . .",
-            //        EventDate = "May 27, 2022",
-            //        EventVenue = "Discord",
-            //        EventOrganizer = "MCL-ACM",
-            //        EventURL = "ViewEvent.aspx",
-            //    };
-            //    List<EventData> SampleEvents = new List<EventData>();
+            if (!Page.IsPostBack)
+            {
+                EventData SampleEvent = new EventData
+                {
+                    EventImageURL = "../../Images/mcl_logo.png",
+                    EventTitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit . . .",
+                    EventDate = "May 27, 2022",
+                    EventVenue = "Discord",
+                    EventOrganizer = "MCL-ACM",
+                    EventURL = "ViewEvent.aspx",
+                };
+                List<EventData> SampleEvents = new List<EventData>();
 
-            //    for(int i = 0; i < 9; i++)
-            //    {
-            //        SampleEvents.Add(SampleEvent);
-            //    }
+                for(int i = 0; i < 9; i++)
+                {
+                    SampleEvents.Add(SampleEvent);
+                }
 
-            //    EventsRepeater.DataSource = SampleEvents;
-            //    EventsRepeater.DataBind();
-            //}
+                EventsRepeater.DataSource = SampleEvents;
+                EventsRepeater.DataBind();
+            }
             
         }
-        //public class EventData
-        //{
-        //    public string EventImageURL { get; set; }
-        //    public string EventTitle { get; set; }
-        //    public string EventDate { get; set; }
-        //    public string EventVenue { get; set; }
-        //    public string EventOrganizer { get; set; }
-        //    public string EventURL { get; set; }
-        //}
+        public class EventData
+        {
+            public string EventImageURL { get; set; }
+            public string EventTitle { get; set; }
+            public string EventDate { get; set; }
+            public string EventVenue { get; set; }
+            public string EventOrganizer { get; set; }
+            public string EventURL { get; set; }
+        }
     }
 }

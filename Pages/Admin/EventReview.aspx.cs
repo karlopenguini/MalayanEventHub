@@ -13,5 +13,10 @@ namespace MalayanEventHub.Layouts.Common.Admin
         {
 
         }
+
+        protected void btn_Register_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
