@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="MalayanEventHub.Layouts.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="MalayanEventHub.Layouts.Events" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../../Styles/Event_Organization_Headers.css" />
@@ -11,12 +11,12 @@
             <div class="filter-container">
                 <div class="filter">
                     <p class="filter-var">Type:</p>
-
                     <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl">
                         <asp:ListItem>Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
+                        <asp:ListItem>All</asp:ListItem>
                     </asp:DropDownList>
-
+                    
                 </div>
                 <div class="filter">
                     <p class="filter-var">College:</p>
@@ -54,21 +54,24 @@
             </div>
         </section>
         <section class="general-container">
-            <asp:Repeater ID="EventsRepeater" runat="server">
+            <asp:Repeater ID="EventsRepeater" runat="server" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
                     <div class="event-card">
-                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%#Eval("EventImageURL")%>' />
+                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%# "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage")) %>' />
                         <div class="event-details">
                             <asp:Label CssClass="event-title" ID="lbl_event_title" runat="server" Text='<%#Eval("EventTitle")%>'></asp:Label>
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_date" runat="server" Text='<%#Eval("EventDate")%>'></asp:Label>
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_venue" runat="server" Text='<%#Eval("EventVenue")%>'></asp:Label>
                             <asp:Label CssClass="event-org" ID="lbl_event_organization" runat="server" Text='<%#Eval("EventOrganizer")%>'></asp:Label>
-                            <asp:HyperLink ID="hl_event_page_link" runat="server" NavigateUrl='<%#Eval("EventURL")%>'></asp:HyperLink>
                         </div>
-
+                        <asp:HyperLink CssClass="link-wrap" ID="hl_event_page_link" runat="server" NavigateUrl='<%#Eval("EventURL")%>' Text=" "></asp:HyperLink>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+                <asp:SqlDataSource ID="SqlDataSource1"
+                ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                SelectCommand="SELECT [pubmat] as 'EventImage', [activityTitle] as 'EventTitle', [startDateTime] as 'EventDate', [proposedVenue] as 'EventVenue', [organizerID] as 'EventOrganizer', [invitationLink] as 'EventURL' FROM [EventTBL]"
+                runat="server"></asp:SqlDataSource>
         </section>
     </main>
 </asp:Content>
