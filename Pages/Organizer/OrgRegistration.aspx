@@ -5,6 +5,7 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="form-body">
         <p class="header">Register Organization</p>
         <div class="form-section">
@@ -106,27 +107,41 @@
                 <p style="width: 90%;">Members</p>
                 <p id="members-section-indicator" style="float: right; margin-right:15px;">-</p>
             </div>
-
             <div id="members-section-fields" class="form-fields">
                 <div class="form-field">
-                     <p>Vice President Student Number<asp:RequiredFieldValidator ID="rfv_VicePresidentNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_VicePresidentNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_VicePresidentNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
-                     <asp:CustomValidator ID="cv_VicePresidentNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="VicePresident_IsExist"></asp:CustomValidator>
+                    <p>Vice President Student Number<asp:RequiredFieldValidator ID="rfv_VicePresidentNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_VicePresidentNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                    <asp:TextBox ID="tb_VicePresidentNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <asp:CustomValidator ID="cv_VicePresidentNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="VicePresident_IsExist"></asp:CustomValidator>
                 </div>
                 <div class="form-field">
-                     <p>Secretary Student Number<asp:RequiredFieldValidator ID="rfv_" runat="server" ErrorMessage="*" ControlToValidate="tb_SecretaryNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_SecretaryNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
-                     <asp:CustomValidator ID="cv_SecretaryNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="Secretary_IsExist"></asp:CustomValidator>
+                    <p>Secretary Student Number<asp:RequiredFieldValidator ID="rfv_" runat="server" ErrorMessage="*" ControlToValidate="tb_SecretaryNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                    <asp:TextBox ID="tb_SecretaryNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <asp:CustomValidator ID="cv_SecretaryNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="Secretary_IsExist"></asp:CustomValidator>
                 </div>
                 <div class="form-field">
-                     <p>Treasurer Student Number<asp:RequiredFieldValidator ID="rfv_TreasurerNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_TreasurerNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_TreasurerNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <p>Treasurer Student Number<asp:RequiredFieldValidator ID="rfv_TreasurerNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_TreasurerNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                    <asp:TextBox ID="tb_TreasurerNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
                     <asp:CustomValidator ID="cv_TreasurerNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="Treasurer_IsExist"></asp:CustomValidator>
                 </div>
                 <div class="form-field">
-                     <p>Members<asp:RequiredFieldValidator ID="rfv_Members" runat="server" ErrorMessage="*" ControlToValidate="tb_Members" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <p>Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_Member" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                            <div>
+                                <asp:TextBox ID="tb_Member" runat="server" CssClass="text-boxs" Width="200px"></asp:TextBox>
+                                <asp:Button ID="btn_Add" runat="server" Text="Add" CssClass="sub-button" Width="100px" OnClick="btn_Add_Click"/>
+                                <asp:Button ID="btn_Delete" runat="server" Text="Delete" CssClass="sub-button" Width="100px" OnClick="btn_Delete_Click"/>
+                            </div>
+                            <asp:CustomValidator ID="cv_Member" runat="server" ErrorMessage="Student Does Not Exist" ControlToValidate="tb_Member" ForeColor="Red" OnServerValidate="Member_IsExist"></asp:CustomValidator>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
-                <asp:TextBox ID="tb_Members" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <asp:TextBox ID="tb_MemberList" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">

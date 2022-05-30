@@ -218,6 +218,79 @@ namespace MalayanEventHub.Layouts
                 }
             }
         }
+
+        protected void Member_IsExist(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection dbConn;
+            string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
+            try
+            {
+                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            using (dbConn)
+            {
+                dbConn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                {
+                    cmd.Parameters.AddWithValue("@studentID", tb_TreasurerNumber.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count <= 0)
+                    {
+                        args.IsValid = false;
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region Add and Delete Member buttons
+        protected void btn_Add_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                string[] members = tb_MemberList.Text.Split(
+                new string[] { "\r\n", "\r", "\n" },
+                StringSplitOptions.None);
+
+                if (!members.Contains(tb_Member.Text))
+                {
+                    string toAdd = tb_Member.Text + "\n";
+
+                    tb_Member.Text = "";
+                    tb_MemberList.Text += toAdd;
+                }
+            }
+        }
+
+        protected void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                string[] members = tb_MemberList.Text.Split(
+                new string[] { "\r\n", "\r", "\n" },
+                StringSplitOptions.None);
+
+                if (members.Contains(tb_Member.Text))
+                {
+                    members = members.Where(val => val != tb_Member.Text).ToArray();
+                    tb_MemberList.Text = "";
+                }
+
+                foreach (string member in members)
+                {
+                    string toAdd = member;
+                    tb_MemberList.Text += toAdd;
+                }
+            }
+        }
         #endregion
     }
 }
