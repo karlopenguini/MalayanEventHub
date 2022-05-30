@@ -82,7 +82,6 @@
     <Content Include="Pages\User\test.html" />
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
     <Content Include="Pages\Organizer\test.html" />
-    <Content Include="Styles\Admin\test.html" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
     <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
     <Content Include="Pages\User\test.html" />
