@@ -16,10 +16,12 @@
         .auto-style9 {
             text-align: center;
             margin-right: 40px;
-            width: 20%;
+            width: 10%;
+            padding: 50px;
         }
         .auto-style10 {
-            font-size: small;
+            font-size: 18px;
+            font-weight: lighter;
         }
         .auto-style11 {
             height: 37px;
@@ -94,12 +96,12 @@
         <hr style="margin-top: 30px"/>
         <div class="auto-style8">
             Violations
-            <div style="margin: 5px 50px 5px 50px">
+            <div style="margin: 5px 0px 5px 0px">
                  <asp:Repeater ID="repeater_violation" runat="server">
                     <ItemTemplate>
                          <div class="ViolationDiv">
                             <table class="auto-style7">
-                                <tr style="height: auto">
+                                <tr style="height: 200px">
                                     <td class="auto-style9">
                                         <asp:Label ID="label_date" runat="server" Text=""><%# Eval("ViolationDate")%></asp:Label>
                                     </td>
