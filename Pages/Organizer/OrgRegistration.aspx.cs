@@ -37,6 +37,7 @@ namespace MalayanEventHub.Layouts
             }
         }
 
+        // TODO: INSERT TO ADVISER TABLE AND MEMBERS TABLE
         private void UploadDataToServer()
         {
             // Collect data fields
