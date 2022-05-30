@@ -1,36 +1,56 @@
 ﻿h1 {
     text-align: center;
-    font-family: sans-serif;
     font-weight: 900;
     margin: 0;
+    color:var(--mcl-blue);
 }
 
 .par {
     text-align: center;
-    font-family: sans-serif;
+    font-size: 20px;
+    color:var(--dark-blue);
+}
+:root {
+    --blue: #0070EE;
+    --white: #FFFBFC;
+    --dark-blue: rgb(0 33 78 / 0.92);
+    --mcl-blue: #00214E;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
 }
 
 .par-div {
     margin: 0 auto;
-    width: 500px;
+    width: 70%;
+}
+
+.parent-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
 .container {
     display: flex;
     margin: 30px auto;
     justify-content: center;
-    border: solid;
-    border-width: 1px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 15px;
-    border-color: rgb(90, 90, 90);
-    background-color: rgb(90, 90, 90);
+    background-color: var(--blue);
     width: 840px;
 }
 
 /* class for the LOGIN and REGISTER labels*/
 .main-label {
-    font-size: 25px;
+    font-size: 40px;
+    font-weight:100;
+    letter-spacing:0.1em;
     margin: 20px auto;
+    color:var(--blue);
 }
 
 /*STYLES FOR LOG IN SECTION*/
@@ -41,10 +61,11 @@
     height: 390px;
     border-radius: 15px;
     background-color: white;
+   
 }
 
     .login-div > * {
-        font-family: sans-serif;
+        
     }
 
 .userAndPass-label {
@@ -67,7 +88,9 @@
     padding: 12px;
     border-radius: 7px;
     border-width: 0;
-    background-color: lightgray;
+    background-color: var(--blue);
+    cursor:pointer;
+    color:white;
 }
 
 
@@ -78,11 +101,11 @@
     flex-basis: 360px;
     height: 390px;
     border-radius: 15px;
-    background-color: rgb(90, 90, 90);
+    background-color: var(--blue);
 }
 
     .register-div > * {
-        font-family: sans-serif;
+        
         color: white;
     }
 
@@ -97,12 +120,14 @@
     margin: 15px 50px;
     border-radius: 7px;
     border-width: 0;
-    background-color: rgb(32,32,32);
+    background-color: var(--mcl-blue);
+    cursor:pointer;
+    color:var(--white);
 }
 
 /*STYLES FOR VALIDATION CONTROLS*/
 .req-field {
-    font-family: sans-serif;
+    
     text-align: center;
     margin-bottom: 5px;
 }
