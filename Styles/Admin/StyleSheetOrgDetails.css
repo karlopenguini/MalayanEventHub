@@ -38,7 +38,7 @@
 
 .side-container{
     font-size: 24px;
-    font-weight: 100;10
+    font-weight: 100;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -47,11 +47,11 @@
 
 .mv-container{
     display: flex;
-    jus
-    margin-top: 50px;
+    justify-content: center;
+    margin-top: 80px;
 }
 
-.mv-container{
-    display: flex;
-    justify-content: center;margin-bottom: 20px;
+.mv-desc{
+    font-size: 24px;
+    font-weight: 100;
 }
