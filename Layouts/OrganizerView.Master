@@ -21,6 +21,7 @@
             margin: 0; /* Remove the tiny space around the edge of the page */
             font-family: 'Roboto', sans-serif;
             position: relative;
+            min-height: 100%;
         }
 
             body::after {
