@@ -285,6 +285,15 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.TextBox tb_VicePresidentNumber;
 
         /// <summary>
+        /// cv_VicePresidentNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_VicePresidentNumber;
+
+        /// <summary>
         /// rfv_ control.
         /// </summary>
         /// <remarks>
@@ -303,6 +312,15 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.TextBox tb_SecretaryNumber;
 
         /// <summary>
+        /// cv_SecretaryNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_SecretaryNumber;
+
+        /// <summary>
         /// rfv_TreasurerNumber control.
         /// </summary>
         /// <remarks>
@@ -319,6 +337,15 @@ namespace MalayanEventHub.Layouts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_TreasurerNumber;
+
+        /// <summary>
+        /// cv_TreasurerNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_TreasurerNumber;
 
         /// <summary>
         /// rfv_Members control.

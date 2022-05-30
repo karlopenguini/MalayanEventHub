@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
 using System.IO;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MalayanEventHub.Layouts
 {
@@ -123,7 +124,94 @@ namespace MalayanEventHub.Layouts
             }
             return imageBytes;
         }
+
+        #region CustomValidators
+        private void VicePresident_IsExist(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection dbConn;
+            string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
+            try
+            {
+                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            using (dbConn)
+            {
+                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                {
+                    cmd.Parameters.AddWithValue("@orgName", tb_VicePresidentNumber.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count <= 0)
+                    {
+                        args.IsValid = false;
+                    }
+                }
+            }
+        }
+
+        private void Secretary_IsExist(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection dbConn;
+            string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
+            try
+            {
+                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            using (dbConn)
+            {
+                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                {
+                    cmd.Parameters.AddWithValue("@orgName", tb_SecretaryNumber.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count <= 0)
+                    {
+                        args.IsValid = false;
+                    }
+                }
+            }
+        }
+
+        private void Treasurer_IsExist(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection dbConn;
+            string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
+            try
+            {
+                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            using (dbConn)
+            {
+                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                {
+                    cmd.Parameters.AddWithValue("@orgName", tb_TreasurerNumber.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count <= 0)
+                    {
+                        args.IsValid = false;
+                    }
+                }
+            }
+        }
+        #endregion
     }
-
-
 }

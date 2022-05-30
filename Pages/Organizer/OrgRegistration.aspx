@@ -111,14 +111,17 @@
                 <div class="form-field">
                      <p>Vice President Student Number<asp:RequiredFieldValidator ID="rfv_VicePresidentNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_VicePresidentNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
                      <asp:TextBox ID="tb_VicePresidentNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                     <asp:CustomValidator ID="cv_VicePresidentNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="VicePresident_IsExist"></asp:CustomValidator>
                 </div>
                 <div class="form-field">
                      <p>Secretary Student Number<asp:RequiredFieldValidator ID="rfv_" runat="server" ErrorMessage="*" ControlToValidate="tb_SecretaryNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
                      <asp:TextBox ID="tb_SecretaryNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                     <asp:CustomValidator ID="cv_SecretaryNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="Secretary_IsExist"></asp:CustomValidator>
                 </div>
                 <div class="form-field">
                      <p>Treasurer Student Number<asp:RequiredFieldValidator ID="rfv_TreasurerNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_TreasurerNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
                      <asp:TextBox ID="tb_TreasurerNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <asp:CustomValidator ID="cv_TreasurerNumber" runat="server" ErrorMessage="Student Does Not Exist" ForeColor="Red" OnServerValidate="Treasurer_IsExist"></asp:CustomValidator>
                 </div>
                 <div class="form-field">
                      <p>Members<asp:RequiredFieldValidator ID="rfv_Members" runat="server" ErrorMessage="*" ControlToValidate="tb_Members" ForeColor="Red"></asp:RequiredFieldValidator></p>
