@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Create Event" Language="C#" MasterPageFile="~/Layouts/Common/Organizer/OrganizationView.Master" AutoEventWireup="true" CodeBehind="OrgCreateEvent.aspx.cs" Inherits="MalayanEventHub.OrgCreateEvent" %>
-
+<asp:Content ID ="Content1" ContentPlaceHolderID ="head2" runat="server">
+        <link rel="stylesheet" href="../../Styles/MasterStyleSheet.css" />
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT * FROM [AdminTBL]"></asp:SqlDataSource>
