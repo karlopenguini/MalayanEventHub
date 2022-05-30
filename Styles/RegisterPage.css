@@ -1,14 +1,23 @@
 ﻿@import url('RegisterPage.css');
 body, html {
     height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
 }
-
+:root {
+    --blue: #0070EE;
+    --white: #FFFBFC;
+    --dark-blue: rgb(0 33 78 / 0.92);
+    --mcl-blue: #00214E;
+}
 h1 {
-    font-family: sans-serif;
-    font-size: 50px;
+    
+    font-size: 64px;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-weight:900;
+    color:var(--mcl-blue);
 }
 
 
@@ -38,7 +47,7 @@ h1 {
 }
 
 .par {
-    font-family: sans-serif;
+    
     text-align: center;
     margin-bottom: 30px;
     margin-top: 0;
@@ -47,6 +56,8 @@ h1 {
 .hyper-link {
     font-weight: bold;
     margin-left: 2px;
+    cursor:pointer;
+    color:var(--blue);
 }
 
 /*STYLES FOR THE NAME SECTION*/
@@ -62,7 +73,7 @@ h1 {
 
 .fname-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     margin: 0 0 10px 20px;
     width: 200px;
 }
@@ -79,7 +90,7 @@ h1 {
 
 .mi-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     margin: 0 20px 10px 20px;
     width: 120px;
 }
@@ -96,7 +107,7 @@ h1 {
 
 .lname-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     margin-bottom: 10px;
     width: 200px;
 }
@@ -120,7 +131,7 @@ h1 {
 
 .details-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     margin-left: 20px;
 }
 
@@ -135,7 +146,7 @@ h1 {
     border-radius: 7px;
     background-color: lightgray;
     font-size: 20px;
-    font-family: sans-serif;
+    
 }
 
     .textbox:focus {
@@ -157,14 +168,14 @@ h1 {
 
 .college-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     width: 135px;
     margin-bottom: 10px;
 }
 
 .college-ddl {
     font-size: 20px;
-    font-family: sans-serif;
+    
     width: 135px;
 }
 
@@ -176,14 +187,14 @@ h1 {
 
 .course-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     width: 135px;
     margin-bottom: 10px;
 }
 
 .course-ddl {
     font-size: 20px;
-    font-family: sans-serif;
+    
     width: 135px;
 }
 
@@ -195,14 +206,14 @@ h1 {
 
 .year-label {
     font-size: 20px;
-    font-family: sans-serif;
+    
     width: 135px;
     margin-bottom: 10px;
 }
 
 .year-ddl {
     font-size: 20px;
-    font-family: sans-serif;
+    
     width: 135px;
 }
 
@@ -213,7 +224,7 @@ h1 {
     border-radius: 7px;
     background-color: lightgray;
     font-size: 20px;
-    font-family: sans-serif;
+    
 }
 
     .ddl:focus {
@@ -226,8 +237,10 @@ h1 {
     width: 200px;
     padding: 12px;
     margin: 30px auto 10px auto;
-    background-color: lightgray;
+    background-color: var(--dark-blue);
     border-radius: 7px;
     border-width: 0px;
     font-size: 20px;
+    color:white;
+    cursor:pointer;
 }
