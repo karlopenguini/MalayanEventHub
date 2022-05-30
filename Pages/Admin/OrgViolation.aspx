@@ -10,7 +10,7 @@
             width: 100%;
         }
         .auto-style8 {
-            margin: 70px 200px 0px 200px;
+            margin: 70px 200px 50px 200px;
             font-size: 20px;
         }
         .auto-style9 {
@@ -84,7 +84,7 @@
                                         </strong>
                                     </div>
                                     <div class="DivSpacing">
-                                        <asp:Label ID="label2_date" runat="server" Text="" CssClass="auto-style10"><%# Eval("ViolationDate")%></asp:Label>|<asp:Label ID="Label6" runat="server" Text="" CssClass="auto-style10"><%# Eval("ViolationTIme")%></asp:Label>
+                                        <asp:Label ID="label2_date" runat="server" Text="" CssClass="auto-style10"><%# Eval("DateCreated")%></asp:Label>|<asp:Label ID="Label6" runat="server" Text="" CssClass="auto-style10"><%# Eval("time")%></asp:Label>
                                     </div>
                                     <div class="DivSpacing">
                                         <asp:Label ID="label_time" runat="server" Text=""><%# Eval("verdict")%></asp:Label>
