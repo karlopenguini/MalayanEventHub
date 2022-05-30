@@ -24,7 +24,7 @@ namespace MalayanEventHub.Layouts
             // Fetch user
             if (!Page.IsPostBack)
             {
-                userID = Request.QueryString["userID"].ToString();
+                //userID = Request.QueryString["userID"].ToString();
             }
         }
 

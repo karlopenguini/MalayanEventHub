@@ -15,11 +15,11 @@
 
             <div id="information-section-fields" class="form-fields">
                 <div class="form-field">
-                     <p>Name<asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="*" ControlToValidate="tb_Name" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <p>Name<asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="*" ControlToValidate="tb_Name" ForeColor="Red"></asp:RequiredFieldValidator></p>
                      <asp:TextBox ID="tb_Name" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                     <p>Logo<asp:RequiredFieldValidator ID="rfvLogo" runat="server" ErrorMessage="*" ControlToValidate="fu_Logo" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <p>Logo<asp:RequiredFieldValidator ID="rfvLogo" runat="server" ErrorMessage="*" ControlToValidate="fu_Logo" CssClass="validator" ForeColor="Red"></asp:RequiredFieldValidator></p>
                      <asp:FileUpload ID="fu_Logo" runat="server" accept="image/png, image/jpeg"  />
                 </div>
                 
@@ -28,7 +28,7 @@
                      <asp:TextBox ID="tb_Acronym" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                     <p>Type<asp:RequiredFieldValidator ID="rfv_Type" runat="server" ErrorMessage="*" ControlToValidate="ddl_Type" CssClass="validator" InitialValue="Choose"></asp:RequiredFieldValidator></p>
+                     <p>Type<asp:RequiredFieldValidator ID="rfv_Type" runat="server" ErrorMessage="*" ControlToValidate="ddl_Type" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
                      <asp:DropDownList ID="ddl_Type" runat="server" CssClass="dropdown-lists" Width="200px">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
@@ -36,19 +36,19 @@
                     </asp:DropDownList>
                 </div>
                 <div class="form-field">
-                     <p>Contact<asp:RequiredFieldValidator ID="rfv_Contact" runat="server" ErrorMessage="*" ControlToValidate="tb_Contact" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <p>Contact<asp:RequiredFieldValidator ID="rfv_Contact" runat="server" ErrorMessage="*" ControlToValidate="tb_Contact" ForeColor="Red"></asp:RequiredFieldValidator></p>
                      <asp:TextBox ID="tb_Contact" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                     <p>Mission<asp:RequiredFieldValidator ID="rfv_Mission" runat="server" ErrorMessage="*" ControlToValidate="tb_Mission" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <p>Mission<asp:RequiredFieldValidator ID="rfv_Mission" runat="server" ErrorMessage="*" ControlToValidate="tb_Mission" ForeColor="Red"></asp:RequiredFieldValidator></p>
                 </div>
                 <asp:TextBox ID="tb_Mission" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
                 <div class="form-field">
-                     <p>Vision<asp:RequiredFieldValidator ID="rfv_Vision" runat="server" ErrorMessage="*" ControlToValidate="tb_Vision" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <p>Vision<asp:RequiredFieldValidator ID="rfv_Vision" runat="server" ErrorMessage="*" ControlToValidate="tb_Vision" ForeColor="Red"></asp:RequiredFieldValidator></p>
                 </div>
                 <asp:TextBox ID="tb_Vision" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
                 <div class="form-field">
-                     <p>College<asp:RequiredFieldValidator ID="rfv_College" runat="server" ErrorMessage="*" ControlToValidate="ddl_College" CssClass="validator" InitialValue="Choose"></asp:RequiredFieldValidator></p>
+                     <p>College<asp:RequiredFieldValidator ID="rfv_College" runat="server" ErrorMessage="*" ControlToValidate="ddl_College" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
                      <asp:DropDownList ID="ddl_College" runat="server" CssClass="dropdown-lists" Width="200px">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>SHS</asp:ListItem>
@@ -62,6 +62,46 @@
              </div>
         </div>
         <div class="form-section">
+            <div id="adviser-section" class="sub-header" onclick="toggleFormSections(this)">
+                <p style="width: 90%;">Adviser</p>
+                <p id="adviser-section-indicator" style="float: right; margin-right:15px;">-</p>
+            </div>
+            <div id="adviser-section-fields" class="form-fields">
+                <div class="form-field">
+                     <p>Adviser Employee Number<asp:RequiredFieldValidator ID="rfv_AdviserNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_AdviserNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                </div>
+                <div class="form-field">
+                     <p>First Name<asp:RequiredFieldValidator ID="rfv_AdviserFName" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserFName" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_AdviserFName" runat="server" CssClass="text-boxs"></asp:TextBox>
+                </div>
+                <div class="form-field">
+                     <p>Last Name<asp:RequiredFieldValidator ID="rfv_AdviserLName" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserLName" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_AdviserLName" runat="server" CssClass="text-boxs"></asp:TextBox>
+                </div>
+                <div class="form-field">
+                     <p>College<asp:RequiredFieldValidator ID="rfv_AdviserCollege" runat="server" ErrorMessage="*" ControlToValidate="ddl_AdviserCollege" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
+                     <asp:DropDownList ID="ddl_AdviserCollege" runat="server" CssClass="dropdown-lists" Width="200px">
+                        <asp:ListItem Selected="True">Choose</asp:ListItem>
+                        <asp:ListItem>SHS</asp:ListItem>
+                        <asp:ListItem>CAS</asp:ListItem>
+                        <asp:ListItem>CCIS</asp:ListItem>
+                        <asp:ListItem>ETYCB</asp:ListItem>
+                        <asp:ListItem>MITL</asp:ListItem>
+                        <asp:ListItem>CMET</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="form-field">
+                     <p>E-mail<asp:RequiredFieldValidator ID="rfv_AdviserEmail" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserEmail" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_AdviserEmail" runat="server" CssClass="text-boxs"></asp:TextBox>
+                </div>
+                <div class="form-field">
+                     <p>Contact<asp:RequiredFieldValidator ID="rfv_AdviserContact" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserContact" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_AdviserContact" runat="server" CssClass="text-boxs"></asp:TextBox>
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
             <div id="members-section" class="sub-header" onclick="toggleFormSections(this)">
                 <p style="width: 90%;">Members</p>
                 <p id="members-section-indicator" style="float: right; margin-right:15px;">-</p>
@@ -69,15 +109,19 @@
 
             <div id="members-section-fields" class="form-fields">
                 <div class="form-field">
-                     <p>Adviser Employee Number<asp:RequiredFieldValidator ID="rfv_AdviserNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserNumber" CssClass="validator"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_AdviserNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                     <p>Vice President Student Number<asp:RequiredFieldValidator ID="rfv_VicePresidentNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_VicePresidentNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_VicePresidentNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                     <p>Vice President Student Number<asp:RequiredFieldValidator ID="rfv_StudentNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_StudentNumber" CssClass="validator"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_StudentNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                     <p>Secretary Student Number<asp:RequiredFieldValidator ID="rfv_" runat="server" ErrorMessage="*" ControlToValidate="tb_SecretaryNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_SecretaryNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
                 </div>
                 <div class="form-field">
-                     <p>Members<asp:RequiredFieldValidator ID="rfv_Members" runat="server" ErrorMessage="*" ControlToValidate="tb_Members" CssClass="validator"></asp:RequiredFieldValidator></p>
+                     <p>Treasurer Student Number<asp:RequiredFieldValidator ID="rfv_TreasurerNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_TreasurerNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_TreasurerNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                </div>
+                <div class="form-field">
+                     <p>Members<asp:RequiredFieldValidator ID="rfv_Members" runat="server" ErrorMessage="*" ControlToValidate="tb_Members" ForeColor="Red"></asp:RequiredFieldValidator></p>
                 </div>
                 <asp:TextBox ID="tb_Members" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
             </div>
