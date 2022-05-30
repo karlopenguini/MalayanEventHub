@@ -1,6 +1,5 @@
 ﻿.auto-style2 {
     height: auto;
-    font-family: Arial;
 }
 
 .auto-style3 {
@@ -20,8 +19,9 @@
 }
 
 .ContainerTxtbox {
-    margin: 35px 90px 10px 90px;
+    margin: 25px 90px 10px 90px;
     height: auto;
+    font-weight: 100;
 }
 
 .TextBoxStyle {

@@ -21,6 +21,13 @@
         .auto-style10 {
             font-size: small;
         }
+        .auto-style11 {
+            height: 37px;
+        }
+        .auto-style12 {
+            width: 50%;
+            height: 27px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -29,34 +36,52 @@
             Submit a Violation Report
             <div class="ContainerTxtbox">
                 <div>
-                    Violation<asp:RequiredFieldValidator ID="rfv_violation" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tb_violation" ViewStateMode="Disabled"></asp:RequiredFieldValidator>
-&nbsp;<asp:TextBox ID="tb_violation" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
-                </div>
-                <div>
                     <table class="auto-style7">
                         <tr>
-                            <td style="width: 50%">Date<asp:RequiredFieldValidator ID="rfv_date" runat="server" ControlToValidate="tb_date" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <td colspan="2">
+                                Violation<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tb_violation" ViewStateMode="Disabled"></asp:RequiredFieldValidator>
                             </td>
-                            <td style="width: 50%">Time<asp:RequiredFieldValidator ID="rfv_time" runat="server" ControlToValidate="tb_time" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="auto-style11">
+                                <asp:TextBox ID="tb_violation" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">Date<asp:RequiredFieldValidator ID="rfv_date" runat="server" ControlToValidate="tb_date" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+                            <td class="auto-style12">Time<asp:RequiredFieldValidator ID="rfv_time" runat="server" ControlToValidate="tb_time" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:TextBox ID="tb_date" runat="server" CssClass="TextBoxStyle" Width="95%"></asp:TextBox>
+                                <asp:TextBox ID="tb_date" runat="server" CssClass="TextBoxStyle" Width="94%"></asp:TextBox>
                             </td>
                             <td>
                                 <asp:TextBox ID="tb_time" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="2">
+                                 Verdict<asp:RequiredFieldValidator ID="rfv_verdict" runat="server" ControlToValidate="tb_verdict" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:TextBox ID="tb_verdict" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Description<asp:RequiredFieldValidator ID="rfv_description" runat="server" ControlToValidate="tb_description" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:TextBox ID="tb_description" runat="server" CssClass="TextBoxStyle" Width="100%" TextMode="MultiLine" Height="200px"></asp:TextBox>
+                            </td>
+                        </tr>
                     </table>
-                </div>
-                <div class="DivSpacing">
-                    Verdict<asp:RequiredFieldValidator ID="rfv_verdict" runat="server" ControlToValidate="tb_verdict" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-&nbsp;<asp:TextBox ID="tb_verdict" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
-                </div>
-                <div class="DivSpacing">
-                    Description<asp:RequiredFieldValidator ID="rfv_description" runat="server" ControlToValidate="tb_description" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-&nbsp;<asp:TextBox ID="tb_description" runat="server" CssClass="TextBoxStyle" Width="100%" TextMode="MultiLine" Height="200px"></asp:TextBox>
                 </div>
 
                 <div class="DivButton">
