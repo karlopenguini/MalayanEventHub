@@ -3,14 +3,14 @@
     <link href="../../Styles/Admin/StyleSheetOrgViolation.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style6 {
-            margin: 25px 200px 0px 200px;
+            margin: 20px 0px 0px 0px;
             font-size: 20px;
         }
         .auto-style7 {
             width: 100%;
         }
         .auto-style8 {
-            margin: 70px 200px 50px 200px;
+            margin: 20px 0px 50px 0px;
             font-size: 20px;
         }
         .auto-style9 {
@@ -69,35 +69,37 @@
         <hr style="margin-top: 30px"/>
         <div class="auto-style8">
             Violations
-            <asp:Repeater ID="repeater_violation" runat="server">
-                <ItemTemplate>
-                     <div class="ViolationDiv">
-                        <table class="auto-style7">
-                            <tr style="height: auto">
-                                <td class="auto-style9">
-                                    <asp:Label ID="label_date" runat="server" Text=""><%# Eval("ViolationDate")%></asp:Label>
-                                </td>
-                                <td style="width: 80%">
-                                    <div class="DivSpacing">
-                                        <strong>
-                                        <asp:Label ID="label_title" runat="server" Text=""><%# Eval("title")%></asp:Label>
-                                        </strong>
-                                    </div>
-                                    <div class="DivSpacing">
-                                        <asp:Label ID="label2_date" runat="server" Text="" CssClass="auto-style10"><%# Eval("DateCreated")%></asp:Label>|<asp:Label ID="Label6" runat="server" Text="" CssClass="auto-style10"><%# Eval("time")%></asp:Label>
-                                    </div>
-                                    <div class="DivSpacing">
-                                        <asp:Label ID="label_time" runat="server" Text=""><%# Eval("verdict")%></asp:Label>
-                                    </div>
-                                    <div class="DivSpacing">
-                                        <asp:Label ID="label_description" runat="server" Text="" CssClass="auto-style10"><%# Eval("details")%></asp:Label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+            <div style="margin: 5px 50px 5px 50px">
+                 <asp:Repeater ID="repeater_violation" runat="server">
+                    <ItemTemplate>
+                         <div class="ViolationDiv">
+                            <table class="auto-style7">
+                                <tr style="height: auto">
+                                    <td class="auto-style9">
+                                        <asp:Label ID="label_date" runat="server" Text=""><%# Eval("ViolationDate")%></asp:Label>
+                                    </td>
+                                    <td style="width: 80%">
+                                        <div class="DivSpacing">
+                                            <strong>
+                                            <asp:Label ID="label_title" runat="server" Text=""><%# Eval("title")%></asp:Label>
+                                            </strong>
+                                        </div>
+                                        <div class="DivSpacing">
+                                            <asp:Label ID="label2_date" runat="server" Text="" CssClass="auto-style10"><%# Eval("DateCreated")%></asp:Label>|<asp:Label ID="Label6" runat="server" Text="" CssClass="auto-style10"><%# Eval("time")%></asp:Label>
+                                        </div>
+                                        <div class="DivSpacing">
+                                            <asp:Label ID="label_time" runat="server" Text=""><%# Eval("verdict")%></asp:Label>
+                                        </div>
+                                        <div class="DivSpacing">
+                                            <asp:Label ID="label_description" runat="server" Text="" CssClass="auto-style10"><%# Eval("details")%></asp:Label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>  
         </div>
     </div>
 </asp:Content>
