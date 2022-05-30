@@ -71,16 +71,14 @@
     <Content Include="App_Data\MCLEventHubDB_log.ldf">
       <DependentUpon>MCLEventHubDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Queries\InsertEvent.sql" />
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
-
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
-    <Content Include="Pages\Admin\test.html" />
     <Content Include="Pages\Organizer\test.html" />
-    <Content Include="Pages\test.html" />
     <Content Include="Styles\Admin\test.html" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
     <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
@@ -167,7 +165,6 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
-
     <Compile Include="Pages\Organizer\OrgRegistration.aspx.cs">
       <DependentUpon>OrgRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,9 +210,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Styles\Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
