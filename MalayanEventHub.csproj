@@ -77,6 +77,7 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Pages\Organizer\OrgEventParticipants.aspx" />
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
     <Content Include="Pages\Organizer\test.html" />
     <Content Include="Styles\Admin\test.html" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEventParticipants.aspx.cs">
+      <DependentUpon>OrgEventParticipants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEventParticipants.aspx.designer.cs">
+      <DependentUpon>OrgEventParticipants.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrgRegistration.aspx.cs">
       <DependentUpon>OrgRegistration.aspx</DependentUpon>
