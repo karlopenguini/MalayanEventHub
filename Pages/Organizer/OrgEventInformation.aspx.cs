@@ -31,6 +31,8 @@ namespace MalayanEventHub.Pages.Organizer
             {
                 dbHandler = new DatabaseHandler();
 
+                
+
                 lbl_eventID.Text = eventId;
 
                 //load event 
