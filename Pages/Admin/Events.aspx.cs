@@ -7,44 +7,58 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using MalayanEventHub.Classes;
 
 namespace MalayanEventHub.Layouts
 {
     public partial class Events : System.Web.UI.Page
     {
+        DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Page.IsPostBack)
-            //{
-            //    EventData SampleEvent = new EventData
-            //    {
-            //        EventImageURL = "../../Images/mcl_logo.png",
-            //        EventTitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit . . .",
-            //        EventDate = "May 27, 2022",
-            //        EventVenue = "Discord",
-            //        EventOrganizer = "MCL-ACM",
-            //        EventURL = "ViewEvent.aspx",
-            //    };
-            //    List<EventData> SampleEvents = new List<EventData>();
-
-            //    for(int i = 0; i < 9; i++)
-            //    {
-            //        SampleEvents.Add(SampleEvent);
-            //    }
-
-            //    EventsRepeater.DataSource = SampleEvents;
-            //    EventsRepeater.DataBind();
-            //}
-            
+            if (!Page.IsPostBack)
+            {
+                
+                EventsRepeater.DataSource = GETEvents();
+                EventsRepeater.DataBind();
+            }
         }
-        //public class EventData
-        //{
-        //    public string EventImageURL { get; set; }
-        //    public string EventTitle { get; set; }
-        //    public string EventDate { get; set; }
-        //    public string EventVenue { get; set; }
-        //    public string EventOrganizer { get; set; }
-        //    public string EventURL { get; set; }
-        //}
+        protected class EventData
+        {
+            public string EventImageURL { get; set; }
+            public string EventTitle { get; set; }
+            public string EventDate { get; set; }
+            public string EventVenue { get; set; }
+            public string EventOrganizer { get; set; }
+            public string EventURL { get; set; }
+        }
+
+        protected List<EventData> GETEvents()
+        {
+            List<EventData> Events = new List<EventData>();
+            string query = "SELECT" +
+                "r.Re.eventID, o.organizationAcronym, e.startDateTime, e.activityTitle, e.proposedVenue, e.pubmat" +
+                "FROM EventTBL as e" +
+                "INNER JOIN OrganizationTBL as o ON" +
+                "e.organizerID = o.OrganizationID" +
+                "INNER JOIN Req";
+
+            foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
+            {
+                string eventID = row["eventID"];
+                Events.Add(
+                    new EventData()
+                    {
+                        EventImageURL=row["pubmat"],
+                        EventTitle=row["activityTitle"],
+                        EventDate= row["startDateTime"],
+                        EventVenue= row["proposedVenue"],
+                        EventOrganizer= row["organizationAcronym"],
+                        EventURL= $"ViewEvent.aspx?eventId={eventID}",
+                    }
+                );
+            }
+        }
+
     }
 }
