@@ -9,10 +9,13 @@ namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
+        string userID;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+                userID = Request.QueryString["userID"];
+
                 OrganizationData SampleOrganization = new OrganizationData
                 {
                     OrganizationImageURL = "../../Images/mcl_logo.png",
@@ -36,6 +39,7 @@ namespace MalayanEventHub.Layouts
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            Response.Redirect("OrgRegistration.aspx?userID=" + userID);
         }
     }
 }
