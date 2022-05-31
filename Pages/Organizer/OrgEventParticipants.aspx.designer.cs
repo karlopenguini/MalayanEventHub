@@ -24,6 +24,24 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.ScriptManager ScriptManager;
 
         /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// lbl_ID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ID;
+
+        /// <summary>
         /// TextBoxEventTitle control.
         /// </summary>
         /// <remarks>
@@ -60,15 +78,6 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.WebControls.TextBox TextBoxFirstName;
 
         /// <summary>
-        /// TextBoxMiddleName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMiddleName;
-
-        /// <summary>
         /// TextBoxLastName control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace MalayanEventHub.Pages.Organizer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxLastName;
+
+        /// <summary>
+        /// TextBoxMiddleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxMiddleName;
 
         /// <summary>
         /// TextBoxStudentNo control.
