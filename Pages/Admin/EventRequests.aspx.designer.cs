@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MalayanEventHub.Layouts.Common.Organizer
+namespace MalayanEventHub.Layouts.Common.Admin
 {
 
 
-    public partial class OrganizationView
+    public partial class EventRequests
     {
 
         /// <summary>
-        /// head2 control.
+        /// EventRequestsRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head2;
-
-        /// <summary>
-        /// ContentPlaceHolder2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.Repeater EventRequestsRepeater;
     }
 }

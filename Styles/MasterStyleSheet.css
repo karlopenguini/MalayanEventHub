@@ -17,25 +17,22 @@
 .form-body .header {
     font-size: 2em;
     font-weight: normal;
-    color:var(--mcl-blue);
-    margin-bottom:0.7em;
+    color: var(--mcl-blue);
+    margin-bottom: 0.7em;
 }
 
 .form-body .sub-header {
     font-size: 25px;
-    color:var(--mcl-blue);
+    color: var(--mcl-blue);
     border-bottom: 0.5px solid;
-    padding:0.5em 0.4em;
-    margin-bottom:0.2em;
-    font-weight:400;
-    
-    
+    padding: 0.5em 0.4em;
+    margin-bottom: 0.2em;
+    font-weight: 400;
 }
 
     .form-body .sub-header p {
         margin: 0;
         display: inline-block;
-        
     }
 
 .form-fields {
@@ -50,8 +47,8 @@
 .form-field {
     display: flex;
     margin-bottom: 5px;
-    flex-direction:column;
-    width:100%;
+    flex-direction: column;
+    width: 100%;
 }
 
 
@@ -69,24 +66,34 @@
 /*html form elements*/
 .text-boxs {
     font-size: 18px;
-    flex-grow: 1;
     padding: 0.6em;
-    border-radius:0.4em;
-    border:unset;
-    background-color:rgb(7 47 74 / 0.15);
+    border-radius: 0.4em;
+    border: unset;
+    background-color: rgb(7 47 74 / 0.15);
 }
+
     .text-boxs:focus {
+        border: solid;
         outline: none;
-        background-color: rgb(7 47 74 / 0.27);
+        background-color: white;
     }
 
 .dropdown-lists {
     margin-left: 16px;
     border-radius: 7px;
     font-size: 18px;
-    flex-grow: 1;
     padding: 5px;
+    padding: 0.6em;
+    border-radius: 0.4em;
+    border: unset;
+    background-color: rgb(7 47 74 / 0.15);
 }
+
+    .dropdown-lists:focus {
+        border: solid;
+        outline: none;
+        background-color: white;
+    }
 
 .check-boxs {
     list-style: none;
@@ -122,7 +129,6 @@ input[type='text'] {
 }
 
 textarea {
-    flex-basis: 100%;
     height: 200px;
 }
 
@@ -212,4 +218,10 @@ textarea {
 .card-detail {
     margin-top: 10px;
     margin-bottom: 25px;
+}
+
+
+.d-flex {
+    display: flex;
+    justify-content: flex-start;
 }
