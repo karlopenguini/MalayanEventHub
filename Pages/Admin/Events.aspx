@@ -57,7 +57,7 @@
             <asp:Repeater ID="EventsRepeater" runat="server" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
                     <div class="event-card">
-                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%# "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage")) %>' />
+                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%#Eval("EventImage") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage"))%>' />
                         <div class="event-details">
                             <asp:Label CssClass="event-title" ID="lbl_event_title" runat="server" Text='<%#Eval("EventTitle")%>'></asp:Label>
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_date" runat="server" Text='<%#Eval("EventDate")%>'></asp:Label>
