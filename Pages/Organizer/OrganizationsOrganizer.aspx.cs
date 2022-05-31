@@ -11,28 +11,28 @@ namespace MalayanEventHub.Layouts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                OrganizationData SampleOrganization = new OrganizationData
-                {
-                    OrganizationImageURL = "../../Images/mcl_logo.png",
-                };
-                List<OrganizationData> SampleOrganizations = new List<OrganizationData>();
+            //if (!Page.IsPostBack)
+            //{
+            //    OrganizationData SampleOrganization = new OrganizationData
+            //    {
+            //        OrganizationImageURL = "../../Images/mcl_logo.png",
+            //    };
+            //    List<OrganizationData> SampleOrganizations = new List<OrganizationData>();
 
-                for (int i = 0; i < 9; i++)
-                {
-                    SampleOrganizations.Add(SampleOrganization);
-                }
+            //    for (int i = 0; i < 9; i++)
+            //    {
+            //        SampleOrganizations.Add(SampleOrganization);
+            //    }
 
-                OrganizationsRepeater.DataSource = SampleOrganizations;
-                OrganizationsRepeater.DataBind();
-            }
+            //    OrganizationsRepeater.DataSource = SampleOrganizations;
+            //    OrganizationsRepeater.DataBind();
+            //}
         }
 
-        public class OrganizationData
-        {
-            public string OrganizationImageURL { get; set; }
-        }
+        //public class OrganizationData
+        //{
+        //    public string OrganizationImageURL { get; set; }
+        //}
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
