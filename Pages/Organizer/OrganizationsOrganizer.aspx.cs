@@ -3,36 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using MalayanEventHub.Classes;
 using System.Web.UI.WebControls;
 
 namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
+        DatabaseHandler dbHandler;
+        string userID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Page.IsPostBack)
-            //{
-            //    OrganizationData SampleOrganization = new OrganizationData
-            //    {
-            //        OrganizationImageURL = "../../Images/mcl_logo.png",
-            //    };
-            //    List<OrganizationData> SampleOrganizations = new List<OrganizationData>();
+            if (!Page.IsPostBack)
+            {
+                dbHandler = new DatabaseHandler();
 
-            //    for (int i = 0; i < 9; i++)
-            //    {
-            //        SampleOrganizations.Add(SampleOrganization);
-            //    }
+                userID = Request.QueryString["userID"];
 
-            //    OrganizationsRepeater.DataSource = SampleOrganizations;
-            //    OrganizationsRepeater.DataBind();
-            //}
+                //load event 
+                Load_Organization();
+            }
         }
 
-        //public class OrganizationData
-        //{
-        //    public string OrganizationImageURL { get; set; }
-        //}
+        private void Load_Organization()
+        {
+            string query = "SELECT e.*, e_req.*,req.*  FROM EventTBL as e " +
+            "INNER JOIN EventRequestTBL as e_req " +
+            "ON e.eventID = e_req.eventID " +
+            "INNER JOIN RequestTBL as req " +
+            "ON e_req.requestID = req.requestID " +
+            $"WHERE e.eventID = {eventId}; ";
+        }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
