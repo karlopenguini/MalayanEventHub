@@ -17,6 +17,7 @@
 .description-style{
     font-size: 24px;
     font-weight: 100;
+    text-align: justify;
 }
 
 .memberTitle-style{
@@ -54,4 +55,5 @@
 .mv-desc{
     font-size: 24px;
     font-weight: 100;
+    text-align: justify;
 }
