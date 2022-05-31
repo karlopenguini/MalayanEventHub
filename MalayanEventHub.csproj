@@ -78,7 +78,6 @@
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
     <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
-	<Content Include="Pages\Organizer\OrgEventParticipants.aspx" />
     <Content Include="Styles\Admin\dummyHtml.html" />
     <Content Include="Styles\Event_Violation_Card.css" />
     <Content Include="Pages\Admin\ViewEvent.aspx" />
