@@ -54,7 +54,7 @@
             </div>
         </section>
         <section class="general-container">
-            <asp:Repeater ID="EventsRepeater" runat="server" DataSourceID="SqlDataSource1">
+            <asp:Repeater ID="EventsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="event-card">
                         <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%#Eval("EventImage") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage"))%>' />
@@ -68,10 +68,6 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-                <asp:SqlDataSource ID="SqlDataSource1"
-                ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
-                SelectCommand="SELECT [pubmat] as 'EventImage', [activityTitle] as 'EventTitle', [startDateTime] as 'EventDate', [proposedVenue] as 'EventVenue', [organizerID] as 'EventOrganizer', [invitationLink] as 'EventURL' FROM [EventTBL]"
-                runat="server"></asp:SqlDataSource>
         </section>
     </main>
 </asp:Content>
