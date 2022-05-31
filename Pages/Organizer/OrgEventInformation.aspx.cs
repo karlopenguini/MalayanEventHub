@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
 using System.Text;
+using System.IO;
 
 namespace MalayanEventHub.Pages.Organizer
 {
@@ -131,6 +132,24 @@ namespace MalayanEventHub.Pages.Organizer
         protected void btn_showParticipants_Click(object sender, EventArgs e)
         {
             Response.Redirect($"OrgEventParticipants.aspx?eventID={eventId}");
+        }
+
+        protected void btn_genAccReport_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            TextWriter textWriter = new StreamWriter(ms);
+            textWriter.WriteLine("Accomplisment Report");
+            textWriter.WriteLine("Date Generated: {0}", DateTime.Now.ToString());
+            textWriter.WriteLine("Event ID: " + eventId);
+            textWriter.Flush();
+            byte[] twBytes = ms.ToArray();
+            ms.Close();
+
+            Response.Clear();
+            Response.ContentType = "application/force-download";
+            Response.AddHeader("content-disposition", $"attachment;    filename=AccomplishmentReport_Event#{eventId}.txt");
+            Response.BinaryWrite(twBytes);
+            Response.End();
         }
     }
 }
