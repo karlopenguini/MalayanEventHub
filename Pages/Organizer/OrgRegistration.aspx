@@ -43,11 +43,11 @@
                 <div class="form-field">
                      <p>Mission<asp:RequiredFieldValidator ID="rfv_Mission" runat="server" ErrorMessage="*" ControlToValidate="tb_Mission" ForeColor="Red"></asp:RequiredFieldValidator></p>
                 </div>
-                <asp:TextBox ID="tb_Mission" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
+                <asp:TextBox ID="tb_Mission" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px" Font-Names="Roboto, Sans Seriff"></asp:TextBox>
                 <div class="form-field">
-                     <p>Vision<asp:RequiredFieldValidator ID="rfv_Vision" runat="server" ErrorMessage="*" ControlToValidate="tb_Vision" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <p>Vision<asp:RequiredFieldValidator ID="rfv_Vision" runat="server" ErrorMessage="*" ControlToValidate="tb_Vision" ForeColor="Red" ></asp:RequiredFieldValidator></p>
                 </div>
-                <asp:TextBox ID="tb_Vision" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
+                <asp:TextBox ID="tb_Vision" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px" Font-Names="Roboto, Sans Seriff"></asp:TextBox>
                 <div class="form-field">
                      <p>College<asp:RequiredFieldValidator ID="rfv_College" runat="server" ErrorMessage="*" ControlToValidate="ddl_College" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
                      <asp:DropDownList ID="ddl_College" runat="server" CssClass="dropdown-lists" Width="200px">
@@ -126,19 +126,20 @@
                 <div class="form-field">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
-                            <p>Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_Member" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                            <p>Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_MemberList" ForeColor="Red"></asp:RequiredFieldValidator></p>
                             <div>
                                 <asp:TextBox ID="tb_Member" runat="server" CssClass="text-boxs" Width="200px"></asp:TextBox>
-                                <asp:Button ID="btn_Add" runat="server" Text="Add" CssClass="sub-button" Width="100px" OnClick="btn_Add_Click"/>
-                                <asp:Button ID="btn_Delete" runat="server" Text="Delete" CssClass="sub-button" Width="100px" OnClick="btn_Delete_Click"/>
+                                <asp:Button ID="btn_Add" runat="server" Text="Add" CssClass="sub-button" Width="100px" OnClick="btn_Add_Click" CausesValidation="False"/>
+                                <asp:Button ID="btn_Delete" runat="server" Text="Delete" CssClass="sub-button" Width="100px" OnClick="btn_Delete_Click" CausesValidation="False"/>
                             </div>
-                            <asp:CustomValidator ID="cv_Member" runat="server" ErrorMessage="Student Does Not Exist" ControlToValidate="tb_Member" ForeColor="Red" OnServerValidate="Member_IsExist"></asp:CustomValidator>
+                            <asp:RegularExpressionValidator ID="rev_Member" runat="server" ErrorMessage="Invalid Student ID" ControlToValidate="tb_Member" ValidationExpression="^\d{10}$" ForeColor="Red"></asp:RegularExpressionValidator>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
-                        <asp:TextBox ID="tb_MemberList" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px"></asp:TextBox>
+                        <asp:TextBox ID="tb_MemberList" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px" Enabled="False" Font-Names="Roboto, Sans Seriff"></asp:TextBox>
+                        <asp:CustomValidator ID="cv_MemberList" runat="server" ErrorMessage="Not All Students Exist" ControlToValidate="tb_MemberList" ForeColor="Red" OnServerValidate="Member_IsExist"></asp:CustomValidator>
                     </ContentTemplate>
                 </asp:UpdatePanel>
                 

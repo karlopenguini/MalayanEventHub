@@ -224,6 +224,9 @@ namespace MalayanEventHub.Layouts
         {
             SqlConnection dbConn;
             string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
+            string[] members = tb_MemberList.Text.Split(
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
             try
             {
                 dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
@@ -239,13 +242,17 @@ namespace MalayanEventHub.Layouts
 
                 using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
                 {
-                    cmd.Parameters.AddWithValue("@studentID", tb_TreasurerNumber.Text);
-
-                    int count = (int)cmd.ExecuteScalar();
-
-                    if (count <= 0)
+                    foreach (string member in members)
                     {
-                        args.IsValid = false;
+                        cmd.Parameters.AddWithValue("@studentID", member);
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        if (count <= 0)
+                        {
+                            args.IsValid = false;
+                            break;
+                        }
                     }
                 }
             }
@@ -255,11 +262,11 @@ namespace MalayanEventHub.Layouts
         #region Add and Delete Member buttons
         protected void btn_Add_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (tb_Member.Text.Length == 10)
             {
                 string[] members = tb_MemberList.Text.Split(
-                new string[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None);
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
 
                 if (!members.Contains(tb_Member.Text))
                 {
@@ -273,11 +280,11 @@ namespace MalayanEventHub.Layouts
 
         protected void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (tb_Member.Text.Length == 10)
             {
                 string[] members = tb_MemberList.Text.Split(
-                new string[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None);
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
 
                 if (members.Contains(tb_Member.Text))
                 {
@@ -291,6 +298,7 @@ namespace MalayanEventHub.Layouts
                     tb_MemberList.Text += toAdd;
                 }
             }
+            
         }
         #endregion
     }

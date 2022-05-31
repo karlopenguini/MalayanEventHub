@@ -402,13 +402,13 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.Button btn_Delete;
 
         /// <summary>
-        /// cv_Member control.
+        /// rev_Member control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cv_Member;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_Member;
 
         /// <summary>
         /// UpdatePanel2 control.
@@ -427,6 +427,15 @@ namespace MalayanEventHub.Layouts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_MemberList;
+
+        /// <summary>
+        /// cv_MemberList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_MemberList;
 
         /// <summary>
         /// btn_Register control.
