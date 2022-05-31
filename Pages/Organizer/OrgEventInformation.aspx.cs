@@ -17,7 +17,7 @@ namespace MalayanEventHub.Pages.Organizer
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-       
+
             if (!Page.IsPostBack)
             {
                 dbHandler = new DatabaseHandler();
@@ -67,21 +67,21 @@ namespace MalayanEventHub.Pages.Organizer
             tb_venue.Text = eventDataList["proposedVenue"];
             tb_obj.Text = eventDataList["objectives"];
             tb_specDet.Text = eventDataList["details"];
-            hl_venue.Text = String.IsNullOrEmpty(eventDataList["invitationLink"]) ? "None": eventDataList["invitationLink"];
+            hl_venue.Text = String.IsNullOrEmpty(eventDataList["invitationLink"]) ? "None" : eventDataList["invitationLink"];
 
             //audience target
             ListItem collegeItem = new ListItem();
-            if (eventDataList["audienceCollege"]=="All")
+            if (eventDataList["audienceCollege"] == "All")
             {
                 collegeItem.Text = "All";
-                collegeItem.Value = "All"; 
+                collegeItem.Value = "All";
             }
             else
             {
                 string queryLocal = $"SELECT name FROM CollegeTBL WHERE id='{eventDataList["audienceCollege"]}'";
                 Dictionary<string, string> collegeData = dbHandler.RetrieveData(queryLocal)[0];
                 collegeItem.Text = collegeData["name"];
-                collegeItem.Value = collegeData["name"]; 
+                collegeItem.Value = collegeData["name"];
             }
             ddl_college.Items.Add(collegeItem);
 
@@ -100,28 +100,29 @@ namespace MalayanEventHub.Pages.Organizer
             }
             ddl_degree.Items.Add(degreeItem);
 
-            ddl_startGradeYear.Items.Add(new ListItem(eventDataList["audienceGradeYearStart"],""));
+            ddl_startGradeYear.Items.Add(new ListItem(eventDataList["audienceGradeYearStart"], ""));
             ddl_endGradeYear.Items.Add(new ListItem(eventDataList["audienceGradeYearEnd"], ""));
 
             // for check list
             string query2 = $"SELECT * FROM RequiredInformationTBL Where eventID = {eventId}";
             List<Dictionary<string, string>> dl_targetData = dbHandler.RetrieveData(query2);
 
-            foreach(Dictionary<string, string> record in dl_targetData)
+            foreach (Dictionary<string, string> record in dl_targetData)
             {
                 ListItem item = cbl_targetData.Items.FindByValue(record["dataOfParticipant"]);
                 item.Selected = true;
                 item.Enabled = false;
             }
 
-
-            //for pubmat
-            if (!String.IsNullOrEmpty(eventDataList["pubmat"])) {
-                byte[] imageByte = Encoding.ASCII.GetBytes(eventDataList["pubmat"]);
-                string imgStr = Convert.ToBase64String(imageByte);
-                pubmatImg.ImageUrl = String.Format("data:image/Bmp;base64,{0}\"", imgStr);
+            if (!String.IsNullOrEmpty(eventDataList["pubmat"]))
+            {
+                //get base 64 string of Imag
+                string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                        $"WHERE eventID = {eventId}";
+                Dictionary<string, string> data = dbHandler.RetrieveData(queryImg)[0];
+                string base64 = data["imgBase64Str"];
+                pubmatImg.ImageUrl = "data:image/png;base64, " + base64;
             }
-
         }
-    }
+}
 }
