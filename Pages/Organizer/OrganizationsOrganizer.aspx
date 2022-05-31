@@ -59,19 +59,19 @@
                         </div>
                         <div class="label-container">
                             <div class="name">
-                                <asp:Label ID="lbl_Name" runat="server" Text="<%# Eval("organizationName") %>" Font-Underline="false"></asp:Label>
+                                <asp:Label ID="lbl_Name" runat="server" Text='<%# Eval("organizationName") %>' Font-Underline="false"></asp:Label>
                             </div>
                             <div class="sub-name">
-                                <asp:Label ID="lbl_Type" runat="server" Text="<%# Eval("organizationType") %>" Font-Underline="false"></asp:Label>
+                                <asp:Label ID="lbl_Type" runat="server" Text='<%# Eval("organizationType") %>' Font-Underline="false"></asp:Label>
                                 |
-                                <asp:Label ID="lbl_College" runat="server" Text="<%# Eval("college") %>" Font-Underline="false"></asp:Label>
+                                <asp:Label ID="lbl_College" runat="server" Text='<%# Eval("college") %>' Font-Underline="false"></asp:Label>
                             </div>
                         </div>
 
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand= "SELECT [OrganizationTBL].[organizationID], [OrganizationTBL].[organizationName], [OrganizationTBL].[organizationType], [OrganizationTBL].[college] FROM [OrganizationTBL] INNER JOIN [MemberTBL] ON [OrganizationTBL].[organizationID] = [MemberTBL].[organizationID]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand= "SELECT [OrganizationTBL].[organizationID], [OrganizationTBL].[organizationName], [OrganizationTBL].[organizationType], [OrganizationTBL].[college] FROM [OrganizationTBL] INNER JOIN [MemberTBL] ON [OrganizationTBL].[organizationID] = [MemberTBL].[organizationID] WHERE [MemberTBL].[userId] = userID"></asp:SqlDataSource>
         </section>
     </main>
 </asp:Content>
