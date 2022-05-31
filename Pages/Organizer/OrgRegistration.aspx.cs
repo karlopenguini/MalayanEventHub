@@ -40,7 +40,6 @@ namespace MalayanEventHub.Layouts
         // TODO: INSERT TO ADVISER TABLE AND MEMBERS TABLE
         private void UploadDataToServer()
         {
-            // Collect data fields
             #region OrganizationTBL Insert Data
             // Information
             string orgName = tb_Name.Text.Trim();
@@ -88,18 +87,63 @@ namespace MalayanEventHub.Layouts
             string organizationID = dbHandler.ExecuteInsertQueryInReturn(cmd);
             #endregion
 
+            #region MemberTBL Insert Data
+            // Collect Key Members
+            int president_ID = int.Parse(Request.QueryString["userID"]);
+            int vicepresident_ID = int.Parse(tb_VicePresidentNumber.Text);
+            int secretary_ID = int.Parse(tb_SecretaryNumber.Text);
+            int treasurer_ID = int.Parse(tb_TreasurerNumber.Text);
+
+            // Collect Members
+            string[] members = tb_MemberList.Text.Split(
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
+
+            // MemberTBL queries
+            // Key Member
+            string keyMembers_query = "INSERT INTO MemberTBL (organizationID, userId, membershipStatus, memberRole) VALUES" +
+                $" ({organizationID}, {userID}, 'Pending', 'President')," +
+                $" ({organizationID}, {vicepresident_ID}, 'Pending', 'Vice President')," +
+                $" ({organizationID}, {secretary_ID}, 'Pending', 'Secretary')," +
+                $" ({organizationID}, {treasurer_ID}, 'Pending', 'Treasurer');";
+
+            // Members
+            string members_query = "INSERT INTO MemberTBL (organizationID, userId, membershipStatus, memberRole) VALUES ";
+
+            
+            // Fetch last member in members array
+            string last_member = members.Last();
+
+            // Iterate over each member and add to query
+            foreach (string member in members)
+            {
+                if (member == last_member)
+                {
+                    members_query += $"({organizationID}, {member}, 'Pending', 'Member');";
+                }
+                else
+                {
+                    members_query += $"({organizationID}, {member}, 'Pending', 'Member'), ";
+                }
+            }
+
+            // Execute queries
+            dbHandler.ExecuteInsertQuery(keyMembers_query);
+            dbHandler.ExecuteInsertQuery(members_query);
+            #endregion
+
             #region OrganizationRequestTBL & RequestTBL Insert Data
             // Insert into OrganizationRequestTBL
             DateTime now = DateTime.Now;
             string OrganizationRequestTBL_query = "INSERT INTO OrganizationRequestTBL (organizationId, userId, created)" +
-                $"VALUES ({organizationID}, {userID}, {now.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                $"VALUES ({organizationID}, {userID}, '{now.ToString("yyyy-MM-dd HH:mm:ss")}');";
 
             // Execute command & fetch requestID
             string requestID = dbHandler.ExecuteInsertQueryInReturn(OrganizationRequestTBL_query);
 
             // Insert into RequestsTBL
             string RequestTBL_query = "INSERT INTO RequestTBL (requestID, requestStatus, requestType)" +
-                $"VALUES ({requestID}, '{"Pending"}', '{"Organization-Request"}')";
+                $"VALUES ({requestID}, '{"Pending"}', '{"Organization-Request"}');";
 
             dbHandler.ExecuteInsertQuery(RequestTBL_query);
             #endregion
