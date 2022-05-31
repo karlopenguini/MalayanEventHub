@@ -15,6 +15,33 @@ namespace MalayanEventHub.Pages.Organizer
     {
 
         /// <summary>
+        /// btn_back control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_back;
+
+        /// <summary>
+        /// lbl_eventID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_eventID;
+
+        /// <summary>
+        /// tb_eventTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_eventTitle;
+
+        /// <summary>
         /// ScriptManager control.
         /// </summary>
         /// <remarks>
@@ -22,33 +49,6 @@ namespace MalayanEventHub.Pages.Organizer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// lbl_ID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ID;
-
-        /// <summary>
-        /// TextBoxEventTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEventTitle;
 
         /// <summary>
         /// UpdatePanel1 control.
@@ -60,93 +60,165 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// RadioButtonListParticipants control.
+        /// btn_refresh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListParticipants;
+        protected global::System.Web.UI.WebControls.Button btn_refresh;
 
         /// <summary>
-        /// TextBoxFirstName control.
+        /// rb_listParticipants control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxFirstName;
+        protected global::System.Web.UI.WebControls.RadioButtonList rb_listParticipants;
 
         /// <summary>
-        /// TextBoxLastName control.
+        /// tb_firstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxLastName;
+        protected global::System.Web.UI.WebControls.TextBox tb_firstName;
 
         /// <summary>
-        /// TextBoxMiddleName control.
+        /// tb_lastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMiddleName;
+        protected global::System.Web.UI.WebControls.TextBox tb_lastName;
 
         /// <summary>
-        /// TextBoxStudentNo control.
+        /// form_field_middleName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxStudentNo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_middleName;
 
         /// <summary>
-        /// TextBoxContactNo control.
+        /// tb_middleName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxContactNo;
+        protected global::System.Web.UI.WebControls.TextBox tb_middleName;
 
         /// <summary>
-        /// TextBoxEmail control.
+        /// form_field_studentNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_studentNo;
 
         /// <summary>
-        /// TextBoxCollege control.
+        /// tb_studentNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCollege;
+        protected global::System.Web.UI.WebControls.TextBox tb_studentNo;
 
         /// <summary>
-        /// TextBoxMajor control.
+        /// form_field_contactNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMajor;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_contactNo;
 
         /// <summary>
-        /// TextBoxYearLvl control.
+        /// tb_contactNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxYearLvl;
+        protected global::System.Web.UI.WebControls.TextBox tb_contactNo;
+
+        /// <summary>
+        /// form_field_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_email;
+
+        /// <summary>
+        /// tb_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_email;
+
+        /// <summary>
+        /// form_field_college control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_college;
+
+        /// <summary>
+        /// tb_college control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_college;
+
+        /// <summary>
+        /// form_field_degree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_degree;
+
+        /// <summary>
+        /// tb_degree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_degree;
+
+        /// <summary>
+        /// form_field_year control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form_field_year;
+
+        /// <summary>
+        /// tb_year control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_year;
     }
 }

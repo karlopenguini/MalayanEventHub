@@ -54,61 +54,42 @@
            width: 30%;
         }
         .vert-container{
-            width: 40%;
-           flex-basis: 40%;
+            width: 45%;
+           flex-basis: 45%;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
-    <div class="form-body">
-        <asp:Button ID="Button1" runat="server" CssClass="main-button" Width="15%" style="margin-bottom: 35px;" Text="Back" />
-        <div class="form-section">
+    <div class="form-body" >
+        <asp:Button ID="btn_back" runat="server" Width="15%" CssClass="sub-button" style="margin-bottom: 35px;" Text="Back" OnClick="btn_back_Click" />
+        <div class="form-section" style="margin-bottom: 35px;">
             <div class="form-fields">
-                <p class="header">View Participant of Event ID# <asp:Label ID="lbl_ID" runat="server" Text="00011"></asp:Label> </p>
+                <p class="header">View Participant of Event ID# <asp:Label ID="lbl_eventID" runat="server" Text="00011"></asp:Label> </p>
                 <div class="form-field">
                     <p>Event Title</p>
-                    <asp:TextBox ID="TextBoxEventTitle" runat="server" CssClass="text-boxs" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="tb_eventTitle" runat="server" CssClass="text-boxs" Enabled="false"></asp:TextBox>
                 </div>
             </div>
         </div>
     </div>
+    <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <div class="mymodel-container" style="margin-bottom: 30px;">
-                        <div style="width: 40%; padding: 20px; ">
+                        <div style="width: 35%; ">
+                             <asp:Button ID="btn_refresh" runat="server" CssClass="main-button" style="margin-bottom: 15px;" Text="Refresh" OnClick="btn_refresh_Click" />
                             <div class="mymodel-participant-card">
-
                                 <div class="header">
                                      <p>Participant List</p>
                                 </div>
                                 <div style="width: 100%;">
-                                    <asp:RadioButtonList ID="RadioButtonListParticipants" runat="server" style="display: block;" AutoPostBack="True" CssClass="list-view" Height="360px" RepeatLayout="Flow">
-                                        <asp:ListItem>James Michael Paz</asp:ListItem>
-                                        <asp:ListItem>Karlo Palisoc</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                         <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Student</asp:ListItem>
+                                    <asp:RadioButtonList ID="rb_listParticipants" runat="server" style="display: block;" AutoPostBack="True" CssClass="list-view" Height="360px" RepeatLayout="Flow" OnSelectedIndexChanged="rb_listParticipants_SelectedIndexChanged">
                                         
                                     </asp:RadioButtonList>
                                 </div>
                             </div>
                         </div>
-                        <div style="width:55%; height: 600px;" class="mymodel-participant-card">
+                        <div style="width:58%; height: 600px;" class="mymodel-participant-card">
                              <div style="height:100%;">
                                 <div class="header">
                                      <p>Participant Info</p>
@@ -118,46 +99,41 @@
                                         <div class="form-field d-flex" style="flex-flow: row wrap; justify-content: space-around;">
                                             <div class="vert-container">
                                                 <p>First Name:</p>
-                                                <asp:TextBox ID="TextBoxFirstName" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="tb_firstName" CssClass="text-boxs" Width="100%" runat="server" Enabled="false"></asp:TextBox>
                                             </div>
                                             <div  class="vert-container">
                                                  <p>Last Name:</p>
-                                                <asp:TextBox ID="TextBoxLastName" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="tb_lastName" CssClass="text-boxs" Width="100%" runat="server" Enabled="false"></asp:TextBox>
                                             </div>
-                                            <div  class="vert-container">
+                                            <div id="form_field_middleName" runat="server"   class="vert-container">
                                                 <p>Middle Name:</p>
-                                                <asp:TextBox ID="TextBoxMiddleName" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                                <asp:TextBox ID="tb_middleName" CssClass="text-boxs" Width="100%" runat="server" Enabled="false"></asp:TextBox>
                                             </div>
                                         </div>
-                                  <%--      <div class="form-field">
-                                            
-                                        </div>
-                                        <div class="form-field">
-                                           
-                                        </div>--%>
-                                        <div class="form-field">
+                                        <div id="form_field_studentNo"  runat="server" class="form-field">
                                             <p>Student No.</p>
-                                            <asp:TextBox ID="TextBoxStudentNo" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                            <asp:TextBox ID="tb_studentNo" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
                                         </div>
-                                        <div class="form-field">
+                                        <div id="form_field_contactNo"   runat="server" class="form-field">
                                             <p>Contact No</p>
-                                            <asp:TextBox ID="TextBoxContactNo" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                            <asp:TextBox ID="tb_contactNo" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
                                         </div>
-                                        <div class="form-field">
+                                  
+                                        <div id="form_field_email"  runat="server" class="form-field">
                                             <p>E-mail</p>
-                                            <asp:TextBox ID="TextBoxEmail" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                            <asp:TextBox ID="tb_email" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
                                         </div>
-                                         <div class="form-field">
+                                         <div id="form_field_college"  runat="server" class="form-field">
                                             <p>College</p>
-                                            <asp:TextBox ID="TextBoxCollege" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                            <asp:TextBox ID="tb_college" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
                                         </div>
-                                        <div class="form-field">
-                                            <p>Major</p>
-                                            <asp:TextBox ID="TextBoxMajor" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                        <div id="form_field_degree"  runat="server"  class="form-field">
+                                            <p>Degree</p>
+                                            <asp:TextBox ID="tb_degree" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
                                         </div>
-                                         <div class="form-field">
+                                         <div id="form_field_year"  runat="server"  class="form-field">
                                             <p>Year Level</p>
-                                            <asp:TextBox ID="TextBoxYearLvl" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
+                                            <asp:TextBox ID="tb_year" CssClass="text-boxs" runat="server" Enabled="false"></asp:TextBox>
                                         </div>
                                     </div>
                                   </div>
