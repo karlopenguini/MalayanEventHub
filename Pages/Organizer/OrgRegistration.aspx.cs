@@ -254,31 +254,39 @@ namespace MalayanEventHub.Layouts
             string[] members = tb_MemberList.Text.Split(
                     new string[] { "\r\n", "\r", "\n" },
                     StringSplitOptions.None);
-            try
-            {
-                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
 
-            using (dbConn)
+            if (members.Count() < 16)
             {
-                dbConn.Open();
-
-                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                args.IsValid = false;
+            }
+            else
+            {
+                try
                 {
-                    foreach (string member in members)
+                    dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+                using (dbConn)
+                {
+                    dbConn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
                     {
-                        cmd.Parameters.AddWithValue("@studentID", member);
-
-                        int count = (int)cmd.ExecuteScalar();
-
-                        if (count <= 0)
+                        foreach (string member in members)
                         {
-                            args.IsValid = false;
-                            break;
+                            cmd.Parameters.AddWithValue("@studentID", member);
+
+                            int count = (int)cmd.ExecuteScalar();
+
+                            if (count <= 0)
+                            {
+                                args.IsValid = false;
+                                break;
+                            }
                         }
                     }
                 }
