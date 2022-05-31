@@ -128,6 +128,7 @@
                         <asp:ListItem Value="userID" >Student No.</asp:ListItem>
                         <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
                         <asp:ListItem Value="email">E-mail</asp:ListItem>
+                        <asp:ListItem Value="address">Address</asp:ListItem>
                         <asp:ListItem Value="college">College</asp:ListItem>
                         <asp:ListItem Value="course">Course</asp:ListItem>
                         <asp:ListItem Value="yearLevel">Year Level</asp:ListItem>
@@ -159,7 +160,7 @@
              <div id="report-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Accomplishment:</p>
-                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" OnClick="btn_genAccReport_Click" />
+                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" />
                 </div>  
                 <div class="form-field">
                     <p>Incident</p>

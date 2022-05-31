@@ -37,14 +37,14 @@ namespace MalayanEventHub.Layouts
             //}
             
         }
-        //public class EventData
+        //public class eventdata
         //{
-        //    public string EventImageURL { get; set; }
-        //    public string EventTitle { get; set; }
-        //    public string EventDate { get; set; }
-        //    public string EventVenue { get; set; }
-        //    public string EventOrganizer { get; set; }
-        //    public string EventURL { get; set; }
+        //    public string eventimageurl { get; set; }
+        //    public string eventtitle { get; set; }
+        //    public string eventdate { get; set; }
+        //    public string eventvenue { get; set; }
+        //    public string eventorganizer { get; set; }
+        //    public string eventurl { get; set; }
         //}
     }
 }
