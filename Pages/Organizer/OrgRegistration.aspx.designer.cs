@@ -186,94 +186,13 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.TextBox tb_AdviserNumber;
 
         /// <summary>
-        /// rfv_AdviserFName control.
+        /// cv_AdviserNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_AdviserFName;
-
-        /// <summary>
-        /// tb_AdviserFName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_AdviserFName;
-
-        /// <summary>
-        /// rfv_AdviserLName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_AdviserLName;
-
-        /// <summary>
-        /// tb_AdviserLName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_AdviserLName;
-
-        /// <summary>
-        /// rfv_AdviserCollege control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_AdviserCollege;
-
-        /// <summary>
-        /// ddl_AdviserCollege control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_AdviserCollege;
-
-        /// <summary>
-        /// rfv_AdviserEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_AdviserEmail;
-
-        /// <summary>
-        /// tb_AdviserEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_AdviserEmail;
-
-        /// <summary>
-        /// rfv_AdviserContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_AdviserContact;
-
-        /// <summary>
-        /// tb_AdviserContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_AdviserContact;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_AdviserNumber;
 
         /// <summary>
         /// rfv_VicePresidentNumber control.

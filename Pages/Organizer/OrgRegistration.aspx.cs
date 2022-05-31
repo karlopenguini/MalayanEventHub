@@ -46,6 +46,7 @@ namespace MalayanEventHub.Layouts
             string orgName = tb_Name.Text.Trim();
             string orgAcronym = tb_Acronym.Text.Trim();
             string orgType = ddl_Type.SelectedValue.Trim();
+            int orgAdviser = int.Parse(tb_AdviserNumber.Text.Trim());
             int orgContact = int.Parse(tb_Contact.Text.Trim());
             string orgStatus = "Pending";
             string orgMission = tb_Mission.Text.Trim();
@@ -54,9 +55,6 @@ namespace MalayanEventHub.Layouts
 
             // Logo
             bool hasUploadImg = fu_Logo.HasFile;
-
-            // Organization Members
-            int orgAdviser = int.Parse(tb_AdviserNumber.Text.Trim());
 
             // Connect to SQL
             string OrganizationTBL_query = "INSERT INTO OrganizationTBL (organizationName, organizationAcronym, organizationType, organizationAdviser, organizationContact," +
@@ -69,6 +67,7 @@ namespace MalayanEventHub.Layouts
             cmd.Parameters.AddWithValue("@orgName", orgName);
             cmd.Parameters.AddWithValue("@orgAcronym", orgAcronym);
             cmd.Parameters.AddWithValue("@orgType", orgType);
+            cmd.Parameters.AddWithValue("@orgAdviser", orgAdviser);
             cmd.Parameters.AddWithValue("@orgContact", orgContact);
             cmd.Parameters.AddWithValue("@orgStatus", orgStatus);
             cmd.Parameters.AddWithValue("@orgMission", orgMission);
@@ -84,9 +83,6 @@ namespace MalayanEventHub.Layouts
             {
                 cmd.Parameters.AddWithValue("@orgLogo", System.Data.SqlTypes.SqlBinary.Null);
             }
-
-            // Members
-            cmd.Parameters.AddWithValue("@orgAdviser", orgAdviser);
 
             // Execute command & fetch organizationID
             string organizationID = dbHandler.ExecuteInsertQueryInReturn(cmd);
@@ -127,6 +123,37 @@ namespace MalayanEventHub.Layouts
         }
 
         #region CustomValidators
+        protected void Adviser_IsExist(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection dbConn;
+            string cmdText = "SELECT COUNT(*) FROM AdviserTBL WHERE adviserID LIKE '%' + @adviserID + '%'";
+            try
+            {
+                dbConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            using (dbConn)
+            {
+                dbConn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                {
+                    cmd.Parameters.AddWithValue("@adviserID", tb_AdviserNumber.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+
+                    if (count <= 0)
+                    {
+                        args.IsValid = false;
+                    }
+                }
+            }
+        }
+
         protected void VicePresident_IsExist(object source, ServerValidateEventArgs args)
         {
             SqlConnection dbConn;

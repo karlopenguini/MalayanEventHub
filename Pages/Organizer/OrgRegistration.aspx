@@ -13,7 +13,6 @@
                 <p style="width: 90%;">Information</p>
                 <p id="information-section-indicator" style="float: right; margin-right:15px;">-</p>
             </div>
-
             <div id="information-section-fields" class="form-fields">
                 <div class="form-field">
                      <p>Name<asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="*" ControlToValidate="tb_Name" ForeColor="Red"></asp:RequiredFieldValidator></p>
@@ -63,51 +62,16 @@
              </div>
         </div>
         <div class="form-section">
-            <div id="adviser-section" class="sub-header" onclick="toggleFormSections(this)">
-                <p style="width: 90%;">Adviser</p>
-                <p id="adviser-section-indicator" style="float: right; margin-right:15px;">-</p>
-            </div>
-            <div id="adviser-section-fields" class="form-fields">
-                <div class="form-field">
-                     <p>Adviser Employee Number<asp:RequiredFieldValidator ID="rfv_AdviserNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_AdviserNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
-                </div>
-                <div class="form-field">
-                     <p>First Name<asp:RequiredFieldValidator ID="rfv_AdviserFName" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserFName" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_AdviserFName" runat="server" CssClass="text-boxs"></asp:TextBox>
-                </div>
-                <div class="form-field">
-                     <p>Last Name<asp:RequiredFieldValidator ID="rfv_AdviserLName" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserLName" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_AdviserLName" runat="server" CssClass="text-boxs"></asp:TextBox>
-                </div>
-                <div class="form-field">
-                     <p>College<asp:RequiredFieldValidator ID="rfv_AdviserCollege" runat="server" ErrorMessage="*" ControlToValidate="ddl_AdviserCollege" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
-                     <asp:DropDownList ID="ddl_AdviserCollege" runat="server" CssClass="dropdown-lists" Width="200px">
-                        <asp:ListItem Selected="True">Choose</asp:ListItem>
-                        <asp:ListItem>SHS</asp:ListItem>
-                        <asp:ListItem>CAS</asp:ListItem>
-                        <asp:ListItem>CCIS</asp:ListItem>
-                        <asp:ListItem>ETYCB</asp:ListItem>
-                        <asp:ListItem>MITL</asp:ListItem>
-                        <asp:ListItem>CMET</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-                <div class="form-field">
-                     <p>E-mail<asp:RequiredFieldValidator ID="rfv_AdviserEmail" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserEmail" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_AdviserEmail" runat="server" CssClass="text-boxs"></asp:TextBox>
-                </div>
-                <div class="form-field">
-                     <p>Contact<asp:RequiredFieldValidator ID="rfv_AdviserContact" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserContact" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:TextBox ID="tb_AdviserContact" runat="server" CssClass="text-boxs"></asp:TextBox>
-                </div>
-            </div>
-        </div>
-        <div class="form-section">
             <div id="members-section" class="sub-header" onclick="toggleFormSections(this)">
                 <p style="width: 90%;">Members</p>
                 <p id="members-section-indicator" style="float: right; margin-right:15px;">-</p>
             </div>
             <div id="members-section-fields" class="form-fields">
+                <div class="form-field">
+                     <p>Adviser Employee Number<asp:RequiredFieldValidator ID="rfv_AdviserNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_AdviserNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
+                     <asp:TextBox ID="tb_AdviserNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
+                     <asp:CustomValidator ID="cv_AdviserNumber" runat="server" ErrorMessage="Adviser Does Not Exist" ForeColor="Red" OnServerValidate="Adviser_IsExist"></asp:CustomValidator>
+                </div>
                 <div class="form-field">
                     <p>Vice President Student Number<asp:RequiredFieldValidator ID="rfv_VicePresidentNumber" runat="server" ErrorMessage="*" ControlToValidate="tb_VicePresidentNumber" ForeColor="Red"></asp:RequiredFieldValidator></p>
                     <asp:TextBox ID="tb_VicePresidentNumber" runat="server" CssClass="text-boxs"></asp:TextBox>
