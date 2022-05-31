@@ -17,17 +17,20 @@ namespace MalayanEventHub.Pages.Organizer
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
+            eventId = Request.QueryString["eventID"];
+            if (String.IsNullOrEmpty(eventId))
+            {
+                Response.Redirect("OrgCreateEvent.aspx");
+                return;
+            }
+
+
 
             if (!Page.IsPostBack)
             {
                 dbHandler = new DatabaseHandler();
 
-                eventId = Request.QueryString["eventID"];
-                if (String.IsNullOrEmpty(eventId))
-                {
-                    Response.Redirect("OrgCreateEvent.aspx");
-                    return;
-                }
+                
 
                 lbl_eventID.Text = eventId;
 
@@ -124,5 +127,10 @@ namespace MalayanEventHub.Pages.Organizer
                 pubmatImg.ImageUrl = "data:image/png;base64, " + base64;
             }
         }
-}
+
+        protected void btn_showParticipants_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"OrgEventParticipants.aspx?eventID={eventId}");
+        }
+    }
 }

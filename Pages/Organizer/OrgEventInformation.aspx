@@ -128,7 +128,6 @@
                         <asp:ListItem Value="userID" >Student No.</asp:ListItem>
                         <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
                         <asp:ListItem Value="email">E-mail</asp:ListItem>
-                        <asp:ListItem Value="address">Address</asp:ListItem>
                         <asp:ListItem Value="college">College</asp:ListItem>
                         <asp:ListItem Value="course">Course</asp:ListItem>
                         <asp:ListItem Value="yearLevel">Year Level</asp:ListItem>
@@ -136,7 +135,7 @@
                  </div>
                 <div class="form-field">
                     <p>Participants:</p>
-                    <asp:Button ID="btn_show" runat="server" Text="Show Participants"  CssClass="main-button" Width="35%" />
+                    <asp:Button ID="btn_showParticipants" runat="server" Text="Show Participants"  CssClass="main-button" Width="35%" OnClick="btn_showParticipants_Click" />
                 </div>
             </div>
         </div>
