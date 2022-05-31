@@ -20,20 +20,36 @@ namespace MalayanEventHub.Layouts
                 dbHandler = new DatabaseHandler();
 
                 userID = Request.QueryString["userID"];
-
-                //load event 
-                Load_Organization();
             }
         }
 
-        private void Load_Organization()
+        private void Load_ActiveOrganization()
         {
             string query = "SELECT OrganizationTBL.organizationID," +
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
                 " OrganizationTBL.college FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationID" +
-                $" WHERE MemberTBL.userId = {userID}";
+                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Active'" +
+                " AND MemberTBL.memberRole = 'President';";
+        }
 
+        private void Load_MemberOrganization()
+        {
+            string query = "SELECT OrganizationTBL.organizationID," +
+                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
+                " OrganizationTBL.college FROM OrganizationTBL" +
+                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationID" +
+                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Active'" +
+                " AND MemberTBL.memberRole = 'Member';";
+        }
+
+        private void Load_PendingOrganization()
+        {
+            string query = "SELECT OrganizationTBL.organizationID," +
+                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
+                " OrganizationTBL.college FROM OrganizationTBL" +
+                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationID" +
+                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Pending';";
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
