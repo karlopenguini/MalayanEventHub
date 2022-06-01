@@ -110,7 +110,7 @@ namespace MalayanEventHub.Layouts
 
                 if(DBNull.Value.Equals(row["pubmat"]))
                 {
-                    image = "../../Images/mcl_logo.png";
+                    image = "../Images/mcl_logo.png";
                 }
 
                 Events.Add(
