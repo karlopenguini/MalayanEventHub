@@ -74,10 +74,12 @@
     <Content Include="Pages\Admin\OrganizationViolation.aspx" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
+
     <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
-    <Content Include="Pages\Message.aspx" />
+    <Content Include="Pages\OrgMessage.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
+    <Content Include="Pages\Organizer\OrgEventIncident.aspx" />
     <Content Include="Pages\Organizer\OrgEventParticipants.aspx" />
     <Content Include="Pages\Organizer\OrgRegistration.aspx" />
     <Content Include="Pages\Admin\EventRequests.aspx" />
@@ -202,16 +204,23 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Message.aspx.cs">
-      <DependentUpon>Message.aspx</DependentUpon>
+    <Compile Include="Pages\OrgMessage.aspx.cs">
+      <DependentUpon>OrgMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Message.aspx.designer.cs">
-      <DependentUpon>Message.aspx</DependentUpon>
+    <Compile Include="Pages\OrgMessage.aspx.designer.cs">
+      <DependentUpon>OrgMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrganizationsOrganizer.aspx.cs">
       <DependentUpon>OrganizationsOrganizer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEventIncident.aspx.cs">
+      <DependentUpon>OrgEventIncident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEventIncident.aspx.designer.cs">
+      <DependentUpon>OrgEventIncident.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrgEventParticipants.aspx.cs">
       <DependentUpon>OrgEventParticipants.aspx</DependentUpon>

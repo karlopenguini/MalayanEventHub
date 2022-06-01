@@ -163,7 +163,7 @@
                 </div>  
                 <div class="form-field">
                     <p>Incident</p>
-                   <asp:Button ID="btn_gotoIncident" runat="server" Text="Create Incident Report"  CssClass="main-button"  />
+                   <asp:Button ID="btn_gotoIncident" runat="server" Text="Create Incident Report"  CssClass="main-button" OnClick="btn_gotoIncident_Click"  />
                 </div>  
             </div>
         </div>
