@@ -21,6 +21,7 @@
             margin: 0; /* Remove the tiny space around the edge of the page */
             font-family: 'Roboto', sans-serif;
             position: relative;
+            min-height: 100%;
         }
 
             body::after {
@@ -199,7 +200,7 @@
             </section>
         </nav>
 
-        <main style="width: 1112px; margin: auto;">
+        <main style="width:1112px; margin:auto;">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </main>
