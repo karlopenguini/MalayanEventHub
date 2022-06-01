@@ -92,25 +92,6 @@ namespace MalayanEventHub.Layouts
                 " AND MemberTBL.memberRole = 'President';";
         }
 
-        private void Load_MemberOrganization()
-        {
-            string query = "SELECT OrganizationTBL.organizationID," +
-                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                " OrganizationTBL.college FROM OrganizationTBL" +
-                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationID" +
-                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Active'" +
-                " AND MemberTBL.memberRole = 'Member';";
-        }
-
-        private void Load_PendingOrganization()
-        {
-            string query = "SELECT OrganizationTBL.organizationID," +
-                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                " OrganizationTBL.college FROM OrganizationTBL" +
-                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationID" +
-                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Pending';";
-        }
-
         protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             GETOrganizations();
