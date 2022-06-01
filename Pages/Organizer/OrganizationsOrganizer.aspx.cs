@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string userID = "2020949499";
+        string userID = "2020181818";
 
         string name;
         string type;
@@ -57,9 +57,7 @@ namespace MalayanEventHub.Layouts
             {
                 string organizationID = row["organizationID"];
                 string organizationURL = $"userID={userID}&organizationID={organizationID}";
-                //string organizationURL = "~/Pages/Organizer/OrganizationView.aspx?";
 
-                //organizationURL += $"userID={userID}&organizationID={organizationID}";
                 string logo = row["logo"];
                 if (DBNull.Value.Equals(row["logo"]))
                 {
@@ -82,14 +80,33 @@ namespace MalayanEventHub.Layouts
             OrganizationsRepeater.DataSource = Organizations;
             OrganizationsRepeater.DataBind();
         }
-        private void Load_ActiveOrganization()
+        protected void Organizations_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            string query = "SELECT OrganizationTBL.organizationID," +
-                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                " OrganizationTBL.college FROM OrganizationTBL" +
-                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationID" +
-                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Active'" +
-                " AND MemberTBL.memberRole = 'President';";
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                // Fetch controls
+                Label status = (Label)e.Item.FindControl("lbl_Status") as Label;
+                LinkButton btn_Details = (LinkButton)e.Item.FindControl("btn_Details") as LinkButton;
+                LinkButton btn_CreateEvent = (LinkButton)e.Item.FindControl("btn_CreateEvent") as LinkButton;
+                LinkButton btn_ViewEvent = (LinkButton)e.Item.FindControl("btn_ViewEvent") as LinkButton;
+                LinkButton btn_Violations = (LinkButton)e.Item.FindControl("btn_Violations") as LinkButton;
+
+                // If pending status, disable LinkButton controls and change text of Buttons to "Pending"
+                if (status.Text == "Pending")
+                {
+                    btn_Details.Enabled = false;
+                    btn_Details.Text = "Pending";
+
+                    btn_CreateEvent.Enabled = false;
+                    btn_CreateEvent.Text = "Pending";
+
+                    btn_ViewEvent.Enabled = false;
+                    btn_ViewEvent.Text = "Pending";
+
+                    btn_Violations.Enabled = false;
+                    btn_Violations.Text = "Pending";
+                }
+            }
         }
 
         protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
