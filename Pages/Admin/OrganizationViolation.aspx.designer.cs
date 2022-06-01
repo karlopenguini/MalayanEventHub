@@ -11,151 +11,115 @@ namespace MalayanEventHub.Layouts.Common.Admin
 {
 
 
-    public partial class EventReview
+    public partial class WebForm2
     {
 
         /// <summary>
-        /// TextBoxTitle control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTitle;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// TextBoxStartDateTime control.
+        /// tb_violation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxStartDateTime;
+        protected global::System.Web.UI.WebControls.TextBox tb_violation;
 
         /// <summary>
-        /// TextBoxEndDateTime control.
+        /// rfv_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEndDateTime;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_date;
 
         /// <summary>
-        /// TextBoxVenue control.
+        /// rfv_time control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxVenue;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_time;
 
         /// <summary>
-        /// TextBoxInvLink control.
+        /// tb_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxInvLink;
+        protected global::System.Web.UI.WebControls.TextBox tb_date;
 
         /// <summary>
-        /// TextBoxObjectives control.
+        /// tb_time control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxObjectives;
+        protected global::System.Web.UI.WebControls.TextBox tb_time;
 
         /// <summary>
-        /// TextBoxSpecificDet control.
+        /// rfv_verdict control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSpecificDet;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_verdict;
 
         /// <summary>
-        /// TextBoxCollege control.
+        /// tb_verdict control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCollege;
+        protected global::System.Web.UI.WebControls.TextBox tb_verdict;
 
         /// <summary>
-        /// TextBoxDegree control.
+        /// rfv_description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDegree;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_description;
 
         /// <summary>
-        /// TextBoxStartYear control.
+        /// tb_description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxStartYear;
+        protected global::System.Web.UI.WebControls.TextBox tb_description;
 
         /// <summary>
-        /// TextBoxEndYear control.
+        /// Btn_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEndYear;
+        protected global::System.Web.UI.WebControls.Button Btn_submit;
 
         /// <summary>
-        /// CheckBoxListTargetData control.
+        /// repeater_violation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListTargetData;
-
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-
-        /// <summary>
-        /// tb_comment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_comment;
-
-        /// <summary>
-        /// ButtonSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
-
-        /// <summary>
-        /// ButtonCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancel;
+        protected global::System.Web.UI.WebControls.Repeater repeater_violation;
     }
 }

@@ -25,7 +25,6 @@
                         <asp:Label CssClass="subtitle" ID="lbl_link" runat="server" Text='<%# Eval("EventVenue")  %>'></asp:Label>
                         <asp:Label CssClass="subtitle2" ID="lbl_org" runat="server" Text='<%# Eval("EventOrganizer")  %>'></asp:Label>
                     </div>
-
                     <asp:HyperLink CssClass="link-card" ID="hl_event_page_link" runat="server"  NavigateUrl='<%#Eval("EventURL")%>'></asp:HyperLink>
                 </div>
             </ItemTemplate>
