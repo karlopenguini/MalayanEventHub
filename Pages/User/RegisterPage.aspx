@@ -27,14 +27,14 @@
                             <asp:TextBox CssClass="fname-tb textbox" ID="tb_fname" runat="server"></asp:TextBox>
                             <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_fname" runat="server" ErrorMessage="invalid" ControlToValidate="tb_fname" ValidationExpression="[a-z A-Z]+"></asp:RegularExpressionValidator>
                         </div>
-                        <%--middle initial--%>
+                        <%--middle name--%>
                         <div class="mi-container">
                             <span class="label-span">
-                                <label class="mi-label">middle initial</label>
-                                <asp:RequiredFieldValidator CssClass="req-field-validator" ID="rfv_mi" runat="server" ErrorMessage="*" ControlToValidate="tb_mi"></asp:RequiredFieldValidator>
+                                <label class="mi-label">middle name</label>
+                                <asp:RequiredFieldValidator CssClass="req-field-validator" ID="rfv_mname" runat="server" ErrorMessage="*" ControlToValidate="tb_mname"></asp:RequiredFieldValidator>
                             </span>
-                            <asp:TextBox CssClass="mi-tb textbox" ID="tb_mi" runat="server" MaxLength="1"></asp:TextBox>
-                            <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_mi" runat="server" ErrorMessage="invalid" ControlToValidate="tb_mi" ValidationExpression="[A-Z]{1}"></asp:RegularExpressionValidator>
+                            <asp:TextBox CssClass="mi-tb textbox" ID="tb_mname" runat="server"></asp:TextBox>
+                            <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_mname" runat="server" ErrorMessage="invalid" ControlToValidate="tb_mname" ValidationExpression="[A-Z a-z]+"></asp:RegularExpressionValidator>
                         </div>
                         <%--last name--%>
                         <div class ="lname-container">
@@ -49,9 +49,16 @@
 
                     <%--section for the email contact and password--%>
                     <div class="details-container">
+                        <%--student number--%>
+                        <span class="label-span">
+                            <label class="details-label">student number</label>
+                            <asp:RequiredFieldValidator CssClass="req-field-validator" ID="rfv_studno" runat="server" ErrorMessage="*" ControlToValidate="tb_studno"></asp:RequiredFieldValidator>
+                        </span>
+                        <asp:TextBox CssClass="details-tb textbox" ID="tb_studno" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_studno" runat="server" ErrorMessage="invalid" ControlToValidate="tb_studno" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
                         <%--email--%>
                         <span class="label-span">
-                            <label class="details-label"> email address</label>
+                            <label class="details-label">email address</label>
                             <asp:RequiredFieldValidator CssClass="req-field-validator" ID="rfv_email" runat="server" ErrorMessage="*" ControlToValidate="tb_email"></asp:RequiredFieldValidator>
                         </span>
                         <asp:TextBox CssClass="details-tb textbox"  ID="tb_email" runat="server"></asp:TextBox>
@@ -69,10 +76,10 @@
                             <asp:RequiredFieldValidator CssClass="req-field-validator" ID="rfv_password" runat="server" ErrorMessage="*" ControlToValidate="tb_password"></asp:RequiredFieldValidator>
                         </span>
                         <asp:TextBox CssClass="details-tb textbox" ID="tb_password" runat="server" TextMode="Password"></asp:TextBox>
-                        <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_password" runat="server" ErrorMessage="invalid" ControlToValidate="tb_password"></asp:RegularExpressionValidator>
+                        <%--<asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_password" runat="server" ErrorMessage="invalid" ControlToValidate="tb_password"></asp:RegularExpressionValidator>--%>
                     </div>
 
-                    <%--section for the college course and year level--%>
+                    <%--section for the college course and year level--%>                    
                     <%--update panel to avoid full postback--%>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
