@@ -65,14 +65,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="Images\hawk.png" />
-
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\OrgDetails.aspx" />
@@ -95,6 +94,7 @@
     <Content Include="Styles\EventsPage.css" />
     <Content Include="Styles\MasterStyleSheet.css" />
     <Content Include="Styles\Organizer\organizations-organizer.css" />
+    <Content Include="Styles\User\ViewEventPage.css" />
     <Content Include="Styles\RegisterPage.css" />
     <Content Include="Styles\User\LogInPage.css" />
     <Content Include="Styles\User\ProfilePage.css" />
@@ -120,6 +120,12 @@
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\User\ViewEventPage.aspx.cs">
+      <DependentUpon>ViewEventPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\ViewEventPage.aspx.designer.cs">
+      <DependentUpon>ViewEventPage.aspx</DependentUpon>
     <Compile Include="Pages\User\UserProfilePage.aspx.cs">
       <DependentUpon>UserProfilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -28,6 +28,7 @@
                 content: '';
                 display: block;
                 height: 240px; /* Set same as footer's height */
+                min-height: 100%;
             }
 
         p {
