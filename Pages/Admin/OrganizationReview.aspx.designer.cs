@@ -11,115 +11,142 @@ namespace MalayanEventHub.Layouts
 {
 
 
-    public partial class OrganizationsOrganizer
+    public partial class WebForm4
     {
 
         /// <summary>
-        /// sm_Organizers control.
+        /// tb_orgname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager sm_Organizers;
+        protected global::System.Web.UI.WebControls.TextBox tb_orgname;
 
         /// <summary>
-        /// btnRegister control.
+        /// img_logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.Image img_logo;
 
         /// <summary>
-        /// up_OrganizerType control.
+        /// tb_acronym control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_OrganizerType;
+        protected global::System.Web.UI.WebControls.TextBox tb_acronym;
 
         /// <summary>
-        /// ddl_type control.
+        /// tb_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_type;
+        protected global::System.Web.UI.WebControls.TextBox tb_type;
 
         /// <summary>
-        /// up_OrganizerCollege control.
+        /// tb_contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_OrganizerCollege;
+        protected global::System.Web.UI.WebControls.TextBox tb_contact;
 
         /// <summary>
-        /// ddl_college control.
+        /// tb_mission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_college;
+        protected global::System.Web.UI.WebControls.TextBox tb_mission;
 
         /// <summary>
-        /// up_OrganizerRole control.
+        /// tb_vision control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_OrganizerRole;
+        protected global::System.Web.UI.WebControls.TextBox tb_vision;
 
         /// <summary>
-        /// ddl_Role control.
+        /// tb_college control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Role;
+        protected global::System.Web.UI.WebControls.TextBox tb_college;
 
         /// <summary>
-        /// up_OrganizerStatus control.
+        /// tb_adviser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_OrganizerStatus;
+        protected global::System.Web.UI.WebControls.TextBox tb_adviser;
 
         /// <summary>
-        /// ddl_Status control.
+        /// tb_vice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Status;
+        protected global::System.Web.UI.WebControls.TextBox tb_vice;
 
         /// <summary>
-        /// up_OrganizerRepeater control.
+        /// tb_secretary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_OrganizerRepeater;
+        protected global::System.Web.UI.WebControls.TextBox tb_secretary;
 
         /// <summary>
-        /// OrganizationsRepeater control.
+        /// tb_treasurer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater OrganizationsRepeater;
+        protected global::System.Web.UI.WebControls.TextBox tb_treasurer;
+
+        /// <summary>
+        /// member_lists control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater member_lists;
+
+        /// <summary>
+        /// Btn_accept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_accept;
+
+        /// <summary>
+        /// Btn_reject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_reject;
     }
 }

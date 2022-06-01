@@ -72,10 +72,12 @@
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
     <Content Include="Pages\Admin\ViewOrganizations.aspx" />
-    <Content Include="Pages\Admin\OrganizationViolation.aspx" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
-    <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
+    <Content Include="Pages\Admin\OrganizationReview.aspx" />
     <Content Include="Pages\Admin\OrgDetails.aspx" />
+    <Content Include="Pages\Admin\OrganizationRequestsView.aspx" />
+    <Content Include="Pages\Admin\OrganizationViolation.aspx" />
+    <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\OrgMessage.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
@@ -87,7 +89,8 @@
     <Content Include="Pages\User\LogInPage.aspx" />
     <Content Include="Pages\User\RegisterPage.aspx" />
     <Content Include="Styles\Admin\dummyHtml.html" />
-    <Content Include="Styles\Admin\StyleSheetOrgDetails.css" />
+    <Content Include="Styles\Admin\StyleOrgDetails.css" />
+    <Content Include="Styles\Admin\StyleOrgReview.css" />
     <Content Include="Styles\Admin\StyleSheetOrgViolation.css" />
     <Content Include="Styles\Admin\StyleSheetViewOrgs.css" />
     <Content Include="Styles\Event_Violation_Card.css" />
@@ -103,6 +106,7 @@
     <Content Include="Styles\User\LogInPage.css" />
     <Content Include="Styles\User\ProfilePage.css" />
     <Content Include="Styles\User\UserProfilePage%28update%29.css" />
+    <Content Include="Styles\Admin\StyleSheetOrgViewRequests.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +135,27 @@
     <Compile Include="Pages\Admin\ViewOrganizations.aspx.designer.cs">
       <DependentUpon>ViewOrganizations.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\OrganizationReview.aspx.cs">
+      <DependentUpon>OrganizationReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\OrganizationReview.aspx.designer.cs">
+      <DependentUpon>OrganizationReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
+      <DependentUpon>OrgDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\OrgDetails.aspx.designer.cs">
+      <DependentUpon>OrgDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\OrganizationRequestsView.aspx.cs">
+      <DependentUpon>OrganizationRequestsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\OrganizationRequestsView.aspx.designer.cs">
+      <DependentUpon>OrganizationRequestsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\OrganizationViolation.aspx.cs">
       <DependentUpon>OrganizationViolation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,13 +176,6 @@
     </Compile>
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
-      <DependentUpon>OrgDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Admin\OrgDetails.aspx.designer.cs">
-      <DependentUpon>OrgDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\EventRequests.aspx.cs">
       <DependentUpon>EventRequests.aspx</DependentUpon>
