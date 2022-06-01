@@ -6,6 +6,9 @@
         }
     </style>
     <link href="../../Styles/Admin/StyleSheetViewOrgs.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../Styles/Event_Organization_Headers.css" />
+    <link rel="stylesheet" href="../../Styles/EventsPage.css" />
+    <link rel="stylesheet" href="../../styles/masterstylesheet.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <main>
