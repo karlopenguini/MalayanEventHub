@@ -13,16 +13,6 @@
         <div class="image-container">
             <img src="../../Images/hawk.png" class="imageStyle"/>
         </div>
-        <!--Org name-->
-        <div>
-            <h4 class="auto-style1">About organization name</h4>
-        </div>
-        <!--description org name-->
-        <div class="description-style">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
         <!--Key members container-->
         <div class="memberTitle-style">
             Key Members
