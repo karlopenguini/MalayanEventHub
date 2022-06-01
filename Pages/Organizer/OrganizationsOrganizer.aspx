@@ -48,7 +48,7 @@
                 <asp:UpdatePanel ID="up_OrganizerRole" runat="server">
                     <ContentTemplate>
                         <div class="filter">
-                            <p class="filter-var">Type:</p>
+                            <p class="filter-var">Role:</p>
                             <asp:DropDownList ID="ddl_Role" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_Role_SelectedIndexChanged">
                                 <asp:ListItem Selected="True">Choose</asp:ListItem>
                                 <asp:ListItem>Member</asp:ListItem>
