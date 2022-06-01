@@ -52,7 +52,7 @@
                     <div class="organization-card">
                         <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />
                         <div class="info">
-                            <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn">DETAILS</asp:LinkButton>
+                            <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl="~/Pages/Organizer/OrgRegistration.aspx">DETAILS</asp:LinkButton>
                             <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn">CREATE EVENT</asp:LinkButton>
                             <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn">VIEW EVENT</asp:LinkButton>
                             <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn">VIOLATIONS</asp:LinkButton>

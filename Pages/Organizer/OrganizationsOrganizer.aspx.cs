@@ -35,6 +35,7 @@ namespace MalayanEventHub.Layouts
             public string OrganizationType { get; set; }
             public string OrganizationStatus { get; set; }
             public string OrganizationCollege { get; set; }
+            public string OrganizationURL { get; set; }
         }
 
         protected void GETOrganizations()
@@ -55,7 +56,9 @@ namespace MalayanEventHub.Layouts
             foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
                 string organizationID = row["organizationID"];
+                string organizationURL;
 
+                organizationURL = $"OrganizationView.aspx?userID={userID}&organizationID={organizationID}";
                 string logo = row["logo"];
                 if (DBNull.Value.Equals(row["logo"]))
                 {
@@ -70,6 +73,7 @@ namespace MalayanEventHub.Layouts
                         OrganizationType = row ["organizationType"],
                         OrganizationStatus = row["organizationStatus"],
                         OrganizationCollege = row["college"],
+                        OrganizationURL = organizationURL,
                     }
                 );
             }
