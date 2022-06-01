@@ -30,10 +30,14 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            eventID = Request.QueryString["eventID"];
+            eventID = Request.QueryString["eventId"];
             LoadEventData();
+            LoadCheckBoxData();
             requestID = GetRequestID();
         }
+
+
+
         protected void LoadEventData()
         {
             string query = $"SELECT * FROM EventTBL WHERE eventID = {eventID}";
@@ -64,7 +68,21 @@ namespace MalayanEventHub.Layouts.Common.Admin
             TextBoxDegree.Text = AudienceDegree;
             TextBoxStartYear.Text = GradeYearStart;
             TextBoxEndYear.Text = GradeYearEnd;
+
+
+
+            if (!String.IsNullOrEmpty(data["pubmat"]))
+            {
+                //get base 64 string of Imag
+                string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                        $"WHERE eventID = {eventID}";
+                Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
+                string base64 = data2["imgBase64Str"];
+                pubmatImg.ImageUrl = "data:image/png;base64, " + base64;
+            }
         }
+
+
 
         protected string GetRequestID()
         {
@@ -97,6 +115,19 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 $" SET requestStatus = 'Rejected', modified='{now}', feedback='{tb_comment.Text}'" +
                 $" WHERE '{requestID}' = RequestTBL.requestID";
             dbHandler.ExecuteUpdateQuery(query);
+        }
+
+        private void LoadCheckBoxData()
+        {
+            string query2 = $"SELECT * FROM RequiredInformationTBL Where eventID = {eventID}";
+            List<Dictionary<string, string>> dl_targetData = dbHandler.RetrieveData(query2);
+
+            foreach (Dictionary<string, string> record in dl_targetData)
+            {
+                ListItem item = cbl_targetData.Items.FindByValue(record["dataOfParticipant"]);
+                item.Selected = true;
+                item.Enabled = false;
+            }
         }
     }
 }

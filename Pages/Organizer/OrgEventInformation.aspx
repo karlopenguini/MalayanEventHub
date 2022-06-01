@@ -122,15 +122,15 @@
                 <div class="form-field">
                     <p>Preferred Information of Participants:</p>
                         <asp:CheckBoxList ID="cbl_targetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList">
-                        <asp:ListItem Enabled="False" Selected="True" Value="firstName">First Name</asp:ListItem>
-                        <asp:ListItem Value="middleName">Middle Name</asp:ListItem>
-                        <asp:ListItem Enabled="False" Selected="True" Value="lastName">Last Name</asp:ListItem>
-                        <asp:ListItem Value="userID" >Student No.</asp:ListItem>
-                        <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
-                        <asp:ListItem Value="email">E-mail</asp:ListItem>
-                        <asp:ListItem Value="college">College</asp:ListItem>
-                        <asp:ListItem Value="course">Course</asp:ListItem>
-                        <asp:ListItem Value="year">Year Level</asp:ListItem>
+                            <asp:ListItem Enabled="False" Selected="True" Value="firstName">First Name</asp:ListItem>
+                            <asp:ListItem Value="middleName">Middle Name</asp:ListItem>
+                            <asp:ListItem Enabled="False" Selected="True" Value="lastName">Last Name</asp:ListItem>
+                            <asp:ListItem Value="userID" >Student No.</asp:ListItem>
+                            <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
+                            <asp:ListItem Value="email">E-mail</asp:ListItem>
+                            <asp:ListItem Value="college">College</asp:ListItem>
+                            <asp:ListItem Value="course">Course</asp:ListItem>
+                            <asp:ListItem Value="year">Year Level</asp:ListItem>
                     </asp:CheckBoxList>
                  </div>
                 <div class="form-field">
