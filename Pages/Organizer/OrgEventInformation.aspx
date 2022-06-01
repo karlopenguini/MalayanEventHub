@@ -169,7 +169,7 @@
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px;margin-bottom: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
            
-            <asp:Button ID="btn_delete" runat="server" OnClientClick="return confirm('Are you sure you want to delete this event?')" BackColor="Maroon" ForeColor="White" Text="Delete" Width="35%" OnClick="btn_delete_Click" />
+            <asp:Button ID="btn_delete" runat="server" OnClientClick="return confirm('Are you sure you want to delete this event? Once confirmed it cannot be undone')" BackColor="Maroon" ForeColor="White" Text="Delete" Width="35%" OnClick="btn_delete_Click" />
             <asp:Button ID="btn_cancel" runat="server" CssCLass="sub-button" Text="Cancel" Width="35%" />
         </div>
     </div>
