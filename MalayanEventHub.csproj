@@ -124,20 +124,23 @@
       <DependentUpon>ViewEventPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\User\ViewEventPage.aspx.designer.cs">
-      <DependentUpon>ViewEventPage.aspx</DependentUpon>
+	<Compile Include="Pages\User\ViewEventPage.aspx.designer.cs">
+	  <DependentUpon>ViewEventPage.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Pages\User\UserProfilePage.aspx.cs">
       <DependentUpon>UserProfilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\User\UserProfilePage.aspx.designer.cs">
       <DependentUpon>UserProfilePage.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
       <DependentUpon>OrgDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
