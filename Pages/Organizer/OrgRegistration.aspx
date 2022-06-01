@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-field">
                      <p>Type<asp:RequiredFieldValidator ID="rfv_Type" runat="server" ErrorMessage="*" ControlToValidate="ddl_Type" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
-                     <asp:DropDownList ID="ddl_Type" runat="server" CssClass="dropdown-lists" Width="200px">
+                     <asp:DropDownList ID="ddl_Type" runat="server" CssClass="dropdown-lists">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
                         <asp:ListItem>Academic</asp:ListItem>
@@ -49,7 +49,7 @@
                 <asp:TextBox ID="tb_Vision" runat="server" CssClass="text-boxs" Height="200px" TextMode="MultiLine" Width="890px" Font-Names="Roboto, Sans Seriff"></asp:TextBox>
                 <div class="form-field">
                      <p>College<asp:RequiredFieldValidator ID="rfv_College" runat="server" ErrorMessage="*" ControlToValidate="ddl_College" ForeColor="Red" InitialValue="Choose"></asp:RequiredFieldValidator></p>
-                     <asp:DropDownList ID="ddl_College" runat="server" CssClass="dropdown-lists" Width="200px">
+                     <asp:DropDownList ID="ddl_College" runat="server" CssClass="dropdown-lists">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
