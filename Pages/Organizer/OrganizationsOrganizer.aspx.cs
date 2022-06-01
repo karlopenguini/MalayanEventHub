@@ -21,11 +21,9 @@ namespace MalayanEventHub.Layouts
         {
             if (!Page.IsPostBack)
             {
-
                 OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
                 GETOrganizations();
-
             }
         }
 

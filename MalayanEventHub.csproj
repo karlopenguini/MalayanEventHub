@@ -75,6 +75,7 @@
     <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\OrganizationRequestsView.aspx" />
     <Content Include="Pages\Admin\OrganizationViolation.aspx" />
+    <Content Include="Pages\Organizer\OrgDetailsOrganizer.aspx" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="Pages\Admin\OrganizationViolation.aspx.designer.cs">
       <DependentUpon>OrganizationViolation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgDetailsOrganizer.aspx.cs">
+      <DependentUpon>OrgDetailsOrganizer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgDetailsOrganizer.aspx.designer.cs">
+      <DependentUpon>OrgDetailsOrganizer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\User\ViewEventPage.aspx.cs">
       <DependentUpon>ViewEventPage.aspx</DependentUpon>
