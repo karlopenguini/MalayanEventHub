@@ -73,11 +73,8 @@
     <Content Include="Images\SVG\UserCircle.svg" />
     <Content Include="Pages\Admin\OrganizationRequestsView.aspx" />
     <Content Include="Pages\Admin\OrganizationViolation.aspx" />
-    <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
-    <Content Include="Pages\Admin\OrganizationViewRequests.aspx" />
-    <Content Include="Pages\Admin\OrgReview.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\OrgMessage.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
@@ -141,13 +138,6 @@
     <Compile Include="Pages\Admin\OrganizationViolation.aspx.designer.cs">
       <DependentUpon>OrganizationViolation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
-      <DependentUpon>OrgDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Admin\OrgDetails.aspx.designer.cs">
-      <DependentUpon>OrgDetails.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\User\ViewEventPage.aspx.cs">
       <DependentUpon>ViewEventPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,24 +151,6 @@
     </Compile>
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
-    </Compile>
-	<Compile Include="Pages\Admin\OrgDetails.aspx.cs">
-	  <DependentUpon>OrgDetails.aspx</DependentUpon>
-	</Compile>
-	  <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.cs">
-		  <DependentUpon>OrganizationViewRequests.aspx</DependentUpon>
-	  </Compile>
-    <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
-	  <DependentUpon>OrgDetails.aspx</DependentUpon>
-	</Compile>
-    <Compile Include="Pages\Admin\OrgReview.aspx.cs">
-      <DependentUpon>OrgReview.aspx</DependentUpon>
-    <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.cs">
-      <DependentUpon>OrganizationViewRequests.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.designer.cs">
-      <DependentUpon>OrganizationViewRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\EventRequests.aspx.cs">
       <DependentUpon>EventRequests.aspx</DependentUpon>
