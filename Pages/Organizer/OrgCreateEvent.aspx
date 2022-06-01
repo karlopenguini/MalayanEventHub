@@ -123,10 +123,9 @@
                         <asp:ListItem Value="userID" >Student No.</asp:ListItem>
                         <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
                         <asp:ListItem Value="email">E-mail</asp:ListItem>
-                        <asp:ListItem Value="address">Address</asp:ListItem>
                         <asp:ListItem Value="college">College</asp:ListItem>
                         <asp:ListItem Value="course">Course</asp:ListItem>
-                        <asp:ListItem Value="yearLevel">Year Level</asp:ListItem>
+                        <asp:ListItem Value="year">Year Level</asp:ListItem>
                     </asp:CheckBoxList>
                  </div>
             </div>
