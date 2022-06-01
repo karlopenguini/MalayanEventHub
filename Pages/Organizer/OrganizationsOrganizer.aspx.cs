@@ -36,7 +36,7 @@ namespace MalayanEventHub.Layouts
             public string OrganizationCollege { get; set; }
         }
 
-        protected List<OrganizationData> GETOrganizations()
+        protected void GETOrganizations()
         {
             List<OrganizationData> Organizations = new List<OrganizationData>();
             type = ddl_type.SelectedItem.Text;
@@ -48,8 +48,33 @@ namespace MalayanEventHub.Layouts
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
                 " OrganizationTBL.college FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
-                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = '{status}'" +
-                " AND MemberTBL.memberRole = 'President';";
+                $" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
+                $" AND OrganizationTBL.college = '{college}');";
+
+            foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
+            {
+                string organizationID = row["organizationID"];
+
+                string logo = row["logo"];
+                if (DBNull.Value.Equals(row["pubmat"]))
+                {
+                    logo = "~/Images/mcl_logo.png";
+                }
+
+                Organizations.Add(
+                    new OrganizationData()
+                    {
+                        OrganizationLogo = logo,
+                        OrganizationName = row["organizationName"],
+                        OrganizationType = row ["organizationType"],
+                        OrganizationStatus = row["organizationStatus"],
+                        OrganizationCollege = row["college"],
+                    }
+                );
+            }
+
+            OrganizationsRepeater.DataSource = Organizations;
+            OrganizationsRepeater.DataBind();
         }
         private void Load_ActiveOrganization()
         {

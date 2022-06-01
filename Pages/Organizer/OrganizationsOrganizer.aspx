@@ -47,10 +47,10 @@
             </div>
         </section>
         <section class="general-container">
-            <asp:Repeater ID="OrganizationsRepeater" runat="server" DataSourceID="SqlDataSource">
+            <asp:Repeater ID="OrganizationsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="organization-card">
-                        <asp:Image ID="img_Logo" runat="server" ImageUrl="~/Images/mcl_logo.png" CssClass="img" />
+                        <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("logo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage"))%>' CssClass="img" />
                         <div class="info">
                             <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn">DETAILS</asp:LinkButton>
                             <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn">CREATE EVENT</asp:LinkButton>
