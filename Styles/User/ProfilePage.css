@@ -1,0 +1,84 @@
+﻿.main-container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.child-container { /*div holding the table*/
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.table{
+    width: 1115px;
+}
+
+.main-label {
+    display: block;
+    font-weight: initial;
+    font-family: 'Roboto', sans-serif;
+    color: #101926;
+    font-size: 30px;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.labels {
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: #101926;
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.label-span {
+    display: flex;
+}
+
+.regex-validator {
+    display: block;
+    text-align: center;
+    color: red;
+}
+
+.req-validator {
+    margin: 10px 30px 10px 0;
+    color: red;
+}
+
+.textbox {
+    padding: 12px;
+    width: 360px;
+    margin-top: 15px;
+    background-color: #E9E9E9;
+    border: none;
+}
+
+    .textbox:focus {
+        outline-width: 0;
+    }
+
+.ddl {
+    padding: 12px;
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+    .ddl:focus {
+        outline-width: 0;
+    }
+
+.button {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    background-color: #1C3A63;
+    font-size: 22px;
+    font-weight: 300;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    margin: 30px auto 10px auto;
+}

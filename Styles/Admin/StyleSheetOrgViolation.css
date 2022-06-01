@@ -1,0 +1,63 @@
+﻿.auto-style2 {
+    height: auto;
+}
+
+.auto-style3 {
+    height: 60px;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
+.auto-style4 {
+    height: 38px;
+    font-size: 25px;
+}
+
+.auto-style5 {
+    height: 23px;
+    font-size: 25px;
+}
+
+.ContainerTxtbox {
+    margin: 25px 90px 10px 90px;
+    height: auto;
+    font-weight: 100;
+}
+
+.TextBoxStyle {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 7px;
+    border-width: 0px;
+    background-color: lightgray;
+}
+
+.ContainerFlex {
+    display: flex;
+}
+
+.DivSpacing {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.DivButton {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.StyleButton {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 7px;
+    border-width: 0;
+    background-color: lightgray;
+    width: auto;
+    padding: 3px 45px 3px 45px;
+}
+
+.ViolationDiv {
+    margin-top: 20px;
+    border: 1px red solid;
+    border-radius: 7px;
+}

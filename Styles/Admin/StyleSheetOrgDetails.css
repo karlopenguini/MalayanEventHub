@@ -1,0 +1,59 @@
+﻿.imageStyle {
+    width: 250px;
+    height: 250px;
+}
+
+.image-container{
+    margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container{
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.description-style{
+    font-size: 24px;
+    font-weight: 100;
+    text-align: justify;
+}
+
+.memberTitle-style{
+    font-size: 36px;
+    font-weight: 100;
+    margin-top: 80px;
+}
+
+.adviser-container{
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.list-container{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.side-container{
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.mv-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.mv-desc{
+    font-size: 24px;
+    font-weight: 100;
+    text-align: justify;
+}
