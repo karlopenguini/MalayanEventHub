@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="ViewOrganizations.aspx.cs" Inherits="MalayanEventHub.Layouts.WebForm4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="ViewOrganizations.aspx.cs" Inherits="MalayanEventHub.Layouts.ViewOrganizations" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style type="text/css">
         .auto-style1 {
@@ -46,7 +46,7 @@
         <section class="general-container">
             <asp:UpdatePanel ID="up_OrganizerRepeater" runat="server">
                 <ContentTemplate>
-                    <asp:Repeater ID="OrganizationsRepeater" runat="server" OnItemDataBound="Organizations_ItemDataBound">
+                    <asp:Repeater ID="OrganizationsRepeater" runat="server">
                         <ItemTemplate>
                             <div class="organization-card">
                                 <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />

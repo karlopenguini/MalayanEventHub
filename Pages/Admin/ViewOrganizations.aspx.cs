@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace MalayanEventHub.Layouts
 {
-    public partial class WebForm4 : System.Web.UI.Page
+    public partial class ViewOrganizations : System.Web.UI.Page
     {
         string organizationID;
         DatabaseHandler dbHandler = new DatabaseHandler();

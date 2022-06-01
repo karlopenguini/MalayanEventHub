@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts
 {
 
 
-    public partial class WebForm4
+    public partial class ViewOrganizations
     {
 
         /// <summary>
