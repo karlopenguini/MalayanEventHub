@@ -52,7 +52,6 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-
                 <div class="filter" style="margin-left: 10px">
                     <asp:Button ID="btnRegister" runat="server" Text="Register Organization" OnClick="btnRegister_Click" />
                 </div>
@@ -66,10 +65,10 @@
                             <div class="organization-card">
                                 <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />
                                 <div class="info">
-                                    <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# Eval("OrganizationURL") %>'>DETAILS</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn">CREATE EVENT</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn">VIEW EVENT</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn">VIOLATIONS</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrganizationView.aspx?" + Eval("OrganizationURL") %>'>DETAILS</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrgCreateEvent.aspx?" + Eval("OrganizationURL") %>'>CREATE EVENT</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrganizationEvents.aspx?" + Eval("OrganizationURL") %>'>VIEW EVENT</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrganizationViolations.aspx?" + Eval("OrganizationURL") %>'>VIOLATIONS</asp:LinkButton>
                                 </div>
                                 <div class="label-container">
                                     <div class="name">
