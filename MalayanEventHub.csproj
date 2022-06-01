@@ -65,13 +65,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+
     <Content Include="Images\hawk.png" />
+
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+
     <Content Include="Pages\Admin\OrgDetails.aspx" />
+
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Message.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
