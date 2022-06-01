@@ -11,7 +11,7 @@
             <div class="filter-container">
                 <div class="filter">
                     <p class="filter-var">Type:</p>
-                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem Selected="True">Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
                         <asp:ListItem>All</asp:ListItem>
@@ -21,7 +21,7 @@
                 <div class="filter">
                     <p class="filter-var">College:</p>
 
-                    <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
                         <asp:ListItem Selected="True">CCIS</asp:ListItem>
@@ -34,9 +34,10 @@
                 <div class="filter">
                     <p class="filter-var">Date:</p>
 
-                    <asp:DropDownList ID="ddl_date" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_date_SelectedIndexChanged">
-                        <asp:ListItem>Today</asp:ListItem>
-                        <asp:ListItem Selected="True">This Week</asp:ListItem>
+                    <asp:DropDownList ID="ddl_date" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_date_SelectedIndexChanged" ViewStateMode="Enabled">
+                        <asp:ListItem >All</asp:ListItem>
+                        <asp:ListItem Selected="True">Today</asp:ListItem>
+                        <asp:ListItem >This Week</asp:ListItem>
                         <asp:ListItem>This Month</asp:ListItem>
                     </asp:DropDownList>
 
@@ -44,7 +45,7 @@
                 <div class="filter">
                     <p class="filter-var">Status:</p>
 
-                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_status_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_status_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem >Active</asp:ListItem>
                         <asp:ListItem Selected="True">Pending</asp:ListItem>
                         <asp:ListItem>Rejected</asp:ListItem>

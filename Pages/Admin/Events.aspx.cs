@@ -26,8 +26,7 @@ namespace MalayanEventHub.Layouts
         {
             if (!Page.IsPostBack)
             {
-                EventsRepeater.DataSource = GETEvents();
-                EventsRepeater.DataBind();
+                GETEvents();
             }
 
         }
@@ -41,35 +40,49 @@ namespace MalayanEventHub.Layouts
             public string EventURL { get; set; }
         }
 
-        protected List<EventData> GETEvents()
+        protected void GETEvents()
         {
             List<EventData> Events = new List<EventData>();
-            type = ddl_type.SelectedItem.Value;
-            college = ddl_college.SelectedItem.Value;
-            date = ddl_date.SelectedItem.Value;
-            status = ddl_status.SelectedItem.Value;
+            type = ddl_type.SelectedValue;
+            college = ddl_college.SelectedValue;
+            date = ddl_date.SelectedValue;
+            status = ddl_status.SelectedValue;
+            
+            string dateQuery = "";
             switch (date){
+
+                case "All":
+                    break;
+
                 case "Today":
                     startD = now;
                     endD = now;
+                    dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
+                    
                     break;
                 case "This Week":
                     startD = now;
                     endD = DateTime.Now.AddDays(7).ToString("yyyy-MM-dd");
+                    dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
                     break;
                 case "This Month":
                     startD = now;
                     endD = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd");;
+                    dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
                     break;
             }
 
+
+            
             string query =
                         "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE OrganizationTBL.organizationType = '{type}' OR OrganizationTBL.college = '{college}' OR RequestTBL.requestStatus = '{status}' OR CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}';";
+                        $" WHERE OrganizationTBL.organizationType = '{type}' AND OrganizationTBL.college = '{college}' AND RequestTBL.requestStatus = '{status}' {dateQuery};";
+
+            
 
             foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
@@ -100,7 +113,7 @@ namespace MalayanEventHub.Layouts
                 Events.Add(
                     new EventData()
                     {
-                        EventImageURL= image,
+                        EventImageURL = image,
                         EventTitle=row["activityTitle"],
                         EventDate= row["startDateTime"],
                         EventVenue= row["proposedVenue"],
@@ -109,7 +122,8 @@ namespace MalayanEventHub.Layouts
                     }
                 );
             }
-            return Events;
+            EventsRepeater.DataSource = Events;
+            EventsRepeater.DataBind();
         }
 
         protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
