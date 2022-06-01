@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string userID = "2020181818";
+        string userID = "2020161601";
 
         string name;
         string type;
@@ -36,6 +36,7 @@ namespace MalayanEventHub.Layouts
             public string OrganizationStatus { get; set; }
             public string OrganizationCollege { get; set; }
             public string OrganizationURL { get; set; }
+            public string OrganizationRole { get; set; }
         }
 
         protected void GETOrganizations()
@@ -48,7 +49,7 @@ namespace MalayanEventHub.Layouts
             string query =
                 "SELECT OrganizationTBL.organizationID," +
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus FROM OrganizationTBL" +
+                " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus, MemberTBL.memberRole FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
                 $" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
                 $" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}');";
@@ -73,6 +74,7 @@ namespace MalayanEventHub.Layouts
                         OrganizationStatus = row["organizationStatus"],
                         OrganizationCollege = row["college"],
                         OrganizationURL = organizationURL,
+                        OrganizationRole = row["memberRole"],
                     }
                 );
             }
@@ -80,12 +82,14 @@ namespace MalayanEventHub.Layouts
             OrganizationsRepeater.DataSource = Organizations;
             OrganizationsRepeater.DataBind();
         }
+
         protected void Organizations_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 // Fetch controls
                 Label status = (Label)e.Item.FindControl("lbl_Status") as Label;
+                Label role = (Label)e.Item.FindControl("lbl_Role") as Label;
                 LinkButton btn_Details = (LinkButton)e.Item.FindControl("btn_Details") as LinkButton;
                 LinkButton btn_CreateEvent = (LinkButton)e.Item.FindControl("btn_CreateEvent") as LinkButton;
                 LinkButton btn_ViewEvent = (LinkButton)e.Item.FindControl("btn_ViewEvent") as LinkButton;
@@ -105,6 +109,17 @@ namespace MalayanEventHub.Layouts
 
                     btn_Violations.Enabled = false;
                     btn_Violations.Text = "Pending";
+                }
+                else if (role.Text == "Member") {
+
+                    btn_CreateEvent.Enabled = false;
+                    btn_CreateEvent.Text = "-----";
+
+                    btn_ViewEvent.Enabled = false;
+                    btn_ViewEvent.Text = "-----";
+
+                    btn_Violations.Enabled = false;
+                    btn_Violations.Text = "-----";
                 }
             }
         }

@@ -80,6 +80,7 @@
                                         |
                                         <asp:Label ID="lbl_College" runat="server" Text='<%# Eval("OrganizationCollege") %>' Font-Underline="false"></asp:Label>
                                         <asp:Label ID="lbl_Status" runat="server" Text='<%# Eval("OrganizationStatus") %>' Visible="False"></asp:Label>
+                                        <asp:Label ID="lbl_Role" runat="server" Text='<%# Eval("OrganizationRole") %>' Visible="False"></asp:Label>
                                     </div>
                                 </div>
                             </div>
