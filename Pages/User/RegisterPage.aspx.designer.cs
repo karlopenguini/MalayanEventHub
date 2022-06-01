@@ -60,31 +60,31 @@ namespace MalayanEventHub.Pages.User
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_fname;
 
         /// <summary>
-        /// rfv_mi control.
+        /// rfv_mname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_mi;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_mname;
 
         /// <summary>
-        /// tb_mi control.
+        /// tb_mname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_mi;
+        protected global::System.Web.UI.WebControls.TextBox tb_mname;
 
         /// <summary>
-        /// rev_mi control.
+        /// rev_mname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_mi;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_mname;
 
         /// <summary>
         /// rfv_lname control.
@@ -112,6 +112,33 @@ namespace MalayanEventHub.Pages.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// rfv_studno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_studno;
+
+        /// <summary>
+        /// tb_studno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_studno;
+
+        /// <summary>
+        /// rev_studno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_studno;
 
         /// <summary>
         /// rfv_email control.
@@ -184,15 +211,6 @@ namespace MalayanEventHub.Pages.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_password;
-
-        /// <summary>
-        /// rev_password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_password;
 
         /// <summary>
         /// UpdatePanel1 control.
