@@ -114,22 +114,22 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected global::System.Web.UI.WebControls.TextBox TextBoxEndYear;
 
         /// <summary>
-        /// CheckBoxListTargetData control.
+        /// cbl_targetData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListTargetData;
+        protected global::System.Web.UI.WebControls.CheckBoxList cbl_targetData;
 
         /// <summary>
-        /// Image1 control.
+        /// pubmatImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Image pubmatImg;
 
         /// <summary>
         /// tb_incident_report control.
