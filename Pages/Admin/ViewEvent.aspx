@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="../../Styles/MasterStyleSheet.css" />
     <style>
         .event-status{
+            text-decoration:unset;
             font-size: 1.6em;
-            padding:0.5em 2em;
-            background-color:#00ff21;
+            text-align:center;
             border-radius: 24px;
         }
     </style>
@@ -26,11 +26,11 @@
                 </div>
                 <div class="form-field">
                     <p>Start Date & Time:</p>
-                    <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>End Date & Time:</p>
-                    <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Venue:</p>
@@ -58,34 +58,21 @@
             <div id="audience-section-fields" class="form-fields">
                 <div class="form-field">
                     <p>College:</p>
-                    <asp:DropDownList ID="DropDownListCollege" CssClass="dropdown-lists" runat="server" Enabled="False">
-                        <asp:ListItem Value="SHS">Senior High School (SHS)</asp:ListItem>
-                        <asp:ListItem Value="CAS">College of Arts and Science (CAS)</asp:ListItem>
-                        <asp:ListItem Value="CCIS">College of Computer and Information Science (CCIS)</asp:ListItem>
-                        <asp:ListItem Value="ETYCB">E.T. Yuchengco College of Business (ETYCB)</asp:ListItem>
-                        <asp:ListItem Value="MITL">Mapúa Institute of Technology at Laguna (MITL)</asp:ListItem>
-                        <asp:ListItem Value="CMET">Mapúa-PTC College of Maritime Education and Training (CMET)</asp:ListItem>
-                        <asp:ListItem Value="All" Selected="True">All</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBoxCollege" CssClass="text-boxs" runat="server" ReadOnly="true">
+                    </asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Degree/Strand:</p>
-                    <asp:DropDownList ID="DropDownListDegree" CssClass="dropdown-lists" runat="server" Enabled="False">
-                        <asp:ListItem Value="" Selected="True" hidden="hidden">-- Please specify a College first.</asp:ListItem>
-                        <asp:ListItem Value="All">All</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBoxDegree" CssClass="text-boxs" runat="server" ReadOnly="true">
+                    </asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Year:</p>
-                    <asp:DropDownList ID="DropDownListStartGradeYear" CssClass="year-dropdown-lists" runat="server" Enabled="False">
-                        <asp:ListItem>--</asp:ListItem>
-                        <asp:ListItem>All</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBoxStartYear" CssClass="text-boxs" runat="server" ReadOnly="true">
+                    </asp:TextBox>
                     <p>to</p>
-                    <asp:DropDownList ID="DropDownListEndGradeYear" CssClass="year-dropdown-lists" runat="server" Enabled="False">
-                        <asp:ListItem>--</asp:ListItem>
-                        <asp:ListItem>All</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBoxEndYear" CssClass="text-boxs" runat="server" ReadOnly="true">
+                    </asp:TextBox>
                 </div>
             </div>
         </div>
@@ -97,20 +84,20 @@
             <div id="participant-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Target Information of Participants:</p>
-                    <asp:CheckBoxList ID="CheckBoxListTargetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList" Enabled="False">
-                        <asp:ListItem>Student No.</asp:ListItem>
-                        <asp:ListItem Enabled="False" Selected="True">First Name</asp:ListItem>
-                        <asp:ListItem>Middle Name</asp:ListItem>
-                        <asp:ListItem Enabled="False" Selected="True">Last Name</asp:ListItem>
-                        <asp:ListItem>Contact No.</asp:ListItem>
-                        <asp:ListItem>E-mail</asp:ListItem>
-                        <asp:ListItem>Address</asp:ListItem>
-                        <asp:ListItem>College</asp:ListItem>
-                        <asp:ListItem>Course</asp:ListItem>
-                        <asp:ListItem>Year Level</asp:ListItem>
-                    </asp:CheckBoxList>
+                <asp:CheckBoxList ID="CheckBoxListTargetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList" Enabled="False">
+                    <asp:ListItem>Student No.</asp:ListItem>
+                    <asp:ListItem Enabled="False" Selected="True">First Name</asp:ListItem>
+                    <asp:ListItem>Middle Name</asp:ListItem>
+                    <asp:ListItem Enabled="False" Selected="True">Last Name</asp:ListItem>
+                    <asp:ListItem>Contact No.</asp:ListItem>
+                    <asp:ListItem>E-mail</asp:ListItem>
+                    <asp:ListItem>Address</asp:ListItem>
+                    <asp:ListItem>College</asp:ListItem>
+                    <asp:ListItem>Course</asp:ListItem>
+                    <asp:ListItem>Year Level</asp:ListItem>
+                </asp:CheckBoxList>
                 </div>
-
+                
             </div>
         </div>
         <div class="form-section">
@@ -133,7 +120,7 @@
             <div id="incident-report-fields" class="form-fields">
                 <div class="form-field">
                     <p>Incident:</p>
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="text-boxs" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="tb_incident_report" runat="server" CssClass="text-boxs" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -150,7 +137,7 @@
             </div>
         </div>
         <div style="width: 60%; margin: auto; margin-top: 30px; display: flex; flex-flow: row wrap; justify-content: space-around;">
-            <p class="event-status">On-Going</p>
+            <asp:TextBox ID="tb_status" runat="server" CssClass="event-status" ReadOnly="true"></asp:TextBox>
         </div>
 
     </div>
