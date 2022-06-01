@@ -18,10 +18,10 @@ namespace MalayanEventHub.Layouts
             if (!Page.IsPostBack)
             {
                 dbHandler = new DatabaseHandler();
-
                 userID = Request.QueryString["userID"];
             }
         }
+
 
         private void Load_ActiveOrganization()
         {
