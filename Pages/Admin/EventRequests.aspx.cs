@@ -12,13 +12,6 @@ namespace MalayanEventHub.Layouts.Common.Admin
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
         string organizerID = "80001";
-        string type = "";
-        string college = "";
-        string date = "";
-        string status = "";
-        string now = DateTime.Now.ToString("yyyy-MM-dd");
-        string startD = "";
-        string endD = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
