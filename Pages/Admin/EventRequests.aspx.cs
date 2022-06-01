@@ -22,7 +22,10 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GETEvents();
+            if (!Page.IsPostBack)
+            {
+                GETEvents();
+            }
         }
         public class EventData
         {

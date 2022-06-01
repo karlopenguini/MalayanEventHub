@@ -31,8 +31,11 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             eventID = Request.QueryString["eventId"];
-            LoadEventData();
-            LoadCheckBoxData();
+            if (!Page.IsPostBack)
+            {
+                LoadEventData();
+                LoadCheckBoxData();
+            }
             requestID = GetRequestID();
         }
 
@@ -105,6 +108,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 $" SET requestStatus = 'Active', modified='{now}', feedback='{tb_comment.Text}'" +
                 $" WHERE '{requestID}' = RequestTBL.requestID";
             dbHandler.ExecuteUpdateQuery(query);
+            Response.Redirect($"ViewEvent.aspx?eventId={eventID}");
         }
 
         protected void ButtonCancel_Click(object sender, EventArgs e)
@@ -115,6 +119,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 $" SET requestStatus = 'Rejected', modified='{now}', feedback='{tb_comment.Text}'" +
                 $" WHERE '{requestID}' = RequestTBL.requestID";
             dbHandler.ExecuteUpdateQuery(query);
+            Response.Redirect($"ViewEvent.aspx?eventId={eventID}");
         }
 
         private void LoadCheckBoxData()
