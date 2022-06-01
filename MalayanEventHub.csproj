@@ -72,7 +72,6 @@
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
-    <Content Include="Pages\User\UserProfilePage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
@@ -124,23 +123,16 @@
       <DependentUpon>ViewEventPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-	<Compile Include="Pages\User\ViewEventPage.aspx.designer.cs">
-	  <DependentUpon>ViewEventPage.aspx</DependentUpon>
-	</Compile>
-    <Compile Include="Pages\User\UserProfilePage.aspx.cs">
-      <DependentUpon>UserProfilePage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Pages\User\ViewEventPage.aspx.designer.cs">
+      <DependentUpon>ViewEventPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User\UserProfilePage.aspx.designer.cs">
-      <DependentUpon>UserProfilePage.aspx</DependentUpon>
-	</Compile>
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
       <DependentUpon>OrgDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
