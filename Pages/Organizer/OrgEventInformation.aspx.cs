@@ -153,14 +153,14 @@ namespace MalayanEventHub.Pages.Organizer
             tw.WriteLine("Created {0}",DateTime.Now.ToString());
             tw.WriteLine("Event ID; #{0}", eventId);
             tw.WriteLine("Event Title: {0}", recordDetails["activityTitle"]);
-            tw.WriteLine("DateTime: {0}-{1} ", DateTime.Parse(recordDetails["startDateTime"]).ToString(),
+            tw.WriteLine("DateTime: {0} to {1} ", DateTime.Parse(recordDetails["startDateTime"]).ToString(),
                 DateTime.Parse(recordDetails["endDateTime"]).ToString());
             tw.WriteLine("Venue: {0}", recordDetails["proposedVenue"]);
             if (String.IsNullOrEmpty(recordDetails["invitationLink"]))
             {
                 tw.WriteLine("Inv Link: {0}", recordDetails["invitationLink"]);
             }
-            tw.WriteLine("No of Participant: {0}", recordParticipant["totalParticipant"]);
+            tw.WriteLine("No of Participants: {0}", recordParticipant["totalParticipant"]);
 
             //
             recordDetails.Clear();
