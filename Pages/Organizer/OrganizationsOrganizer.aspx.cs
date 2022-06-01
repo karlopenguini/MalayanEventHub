@@ -10,7 +10,7 @@ namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
-        string userID;
+        string userID = "2020949499";
         DatabaseHandler dbHandler = new DatabaseHandler();
 
         string type;
@@ -21,7 +21,6 @@ namespace MalayanEventHub.Layouts
         {
             if (!Page.IsPostBack)
             {
-                userID = "2020949499";
 
                 OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
