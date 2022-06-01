@@ -17,6 +17,7 @@
         <div class="memberTitle-style">
             Key Members
         </div>
+
         <!--List of members-->
         <div class="list-container">
             <div class="adviser-container">
