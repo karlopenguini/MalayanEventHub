@@ -15,6 +15,24 @@ namespace MalayanEventHub.Layouts
     {
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// up_Type control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_Type;
+
+        /// <summary>
         /// ddl_type control.
         /// </summary>
         /// <remarks>
@@ -24,6 +42,15 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.DropDownList ddl_type;
 
         /// <summary>
+        /// up_College control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_College;
+
+        /// <summary>
         /// ddl_college control.
         /// </summary>
         /// <remarks>
@@ -31,6 +58,15 @@ namespace MalayanEventHub.Layouts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_college;
+
+        /// <summary>
+        /// up_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_Status;
 
         /// <summary>
         /// ddl_Status control.
@@ -49,6 +85,15 @@ namespace MalayanEventHub.Layouts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
+
+        /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
         /// OrganizationsRepeater control.
