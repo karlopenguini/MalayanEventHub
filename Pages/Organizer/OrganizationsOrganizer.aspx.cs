@@ -13,6 +13,11 @@ namespace MalayanEventHub.Layouts
         DatabaseHandler dbHandler;
         string userID;
 
+        string name;
+        string type;
+        string status;
+        string college;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -22,7 +27,30 @@ namespace MalayanEventHub.Layouts
             }
         }
 
+        protected class OrganizationData
+        {
+            public string OrganizationLogo { get; set; }
+            public string OrganizationName { get; set; }
+            public string OrganizationType { get; set; }
+            public string OrganizationStatus { get; set; }
+            public string OrganizationCollege { get; set; }
+        }
 
+        protected List<OrganizationData> GETOrganizations()
+        {
+            List<OrganizationData> Organizations = new List<OrganizationData>();
+            type = ddl_type.SelectedItem.Text;
+            status = ddl_Status.SelectedItem.Text;
+            college = ddl_college.SelectedItem.Text;
+
+            string query =
+                "SELECT OrganizationTBL.organizationID," +
+                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
+                " OrganizationTBL.college FROM OrganizationTBL" +
+                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
+                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = '{status}'" +
+                " AND MemberTBL.memberRole = 'President';";
+        }
         private void Load_ActiveOrganization()
         {
             string query = "SELECT OrganizationTBL.organizationID," +
