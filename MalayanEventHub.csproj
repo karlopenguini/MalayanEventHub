@@ -75,7 +75,7 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
-    <Content Include="Layouts\Common\User\UserProfilePage%28update%29.aspx" />
+    <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
     <Content Include="Pages\User\RegisterPage.aspx" />
@@ -116,11 +116,11 @@
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
-    <Compile Include="Layouts\Common\User\UserProfilePage%28update%29.aspx.cs">
+    <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Layouts\Common\User\UserProfilePage%28update%29.aspx.designer.cs">
+    <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\EventRequests.aspx.cs">

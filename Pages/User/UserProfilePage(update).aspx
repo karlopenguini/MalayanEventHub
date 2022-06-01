@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/User/AccountDetailsView.master" AutoEventWireup="true" CodeBehind="UserProfilePage(update).aspx.cs" Inherits="MalayanEventHub.Layouts.Common.User.WebForm1" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <link href="../../../Styles/User/UserProfilePage(update).css" rel="stylesheet" />
