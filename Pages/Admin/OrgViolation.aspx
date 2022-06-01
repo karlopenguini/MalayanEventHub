@@ -44,6 +44,7 @@
                                 Violation<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tb_violation" ViewStateMode="Disabled"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
+
                         <tr>
                             <td colspan="2" class="auto-style11">
                                 <asp:TextBox ID="tb_violation" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
