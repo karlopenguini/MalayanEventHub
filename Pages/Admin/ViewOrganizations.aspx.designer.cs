@@ -15,21 +15,66 @@ namespace MalayanEventHub.Layouts
     {
 
         /// <summary>
-        /// ddlCollege control.
+        /// sm_Organizers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCollege;
+        protected global::System.Web.UI.ScriptManager sm_Organizers;
 
         /// <summary>
-        /// DataList1 control.
+        /// up_OrganizerType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.UpdatePanel up_OrganizerType;
+
+        /// <summary>
+        /// ddl_type control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_type;
+
+        /// <summary>
+        /// up_OrganizerCollege control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_OrganizerCollege;
+
+        /// <summary>
+        /// ddl_college control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_college;
+
+        /// <summary>
+        /// up_OrganizerRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_OrganizerRepeater;
+
+        /// <summary>
+        /// OrganizationsRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater OrganizationsRepeater;
     }
 }

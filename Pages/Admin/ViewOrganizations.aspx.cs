@@ -11,46 +11,90 @@ namespace MalayanEventHub.Layouts
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        string organizationID;
+        DatabaseHandler dbHandler = new DatabaseHandler();
 
-        DatabaseHandler dbHandler;
+        string type;
+        string college;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                dbHandler = new DatabaseHandler();
-                LoadOrganizations();
+                organizationID = Request.QueryString["organizationID"];
+
+                OrganizationData SampleOrganization = new OrganizationData();
+                //userID = Request.QueryString["userID"];
+                GETOrganizations();
+
             }
         }
 
-        protected void LoadOrgData()
+        protected class OrganizationData
         {
-            string query = "Select * from OrganizationTBL where college = "
+            public string OrganizationLogo { get; set; }
+            public string OrganizationName { get; set; }
+            public string OrganizationType { get; set; }
+            public string OrganizationCollege { get; set; }
+            public string OrganizationURL { get; set; }
         }
-            
 
-
-            //{
-
-            //    SqlConnection connect = new SqlConnection("Server = tcp:mcleventhub.database.windows.net, 1433; Initial Catalog = MalayanEventHubDB; Persist Security Info = False; User ID = group2; Password = !Malayaneventhub1234; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
-            //    SqlCommand cmd = new SqlCommand("select * from OrganizationTBL where college = @college", connect);
-            //    connect.Open();
-            //    cmd.Parameters.AddWithValue("@college", ddlCollege.SelectedItem.Text.ToString());
-            //    SqlDataReader sdr = cmd.ExecuteReader();
-            //    if (sdr.HasRows)
-            //    {
-            //        DataList1.DataSource = sdr;
-            //        DataList1.DataBind();
-            //    }
-            //    else
-            //    {
-            //        DataList1.DataSource = "";
-            //        DataList1.DataBind();
-            //    }
-            //    connect.Close();
-            //}
-        protected string FormatUrl(string site, int orgID)
+        protected void GETOrganizations()
         {
-            return site + "?organizationID=" + orgID;
+            List<OrganizationData> Organizations = new List<OrganizationData>();
+            type = ddl_type.SelectedItem.Text;
+            college = ddl_college.SelectedItem.Text;
+
+            string query =
+                $"Select * from OrganizationTBL where college = '{college}' and organizationType = '{type}';";
+
+
+                //"SELECT OrganizationTBL.organizationID," +
+                //" OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
+                //" OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus, MemberTBL.memberRole FROM OrganizationTBL" +
+                //" INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
+                //$" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
+                //$" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}' AND MemberTBL.memberRole = '{role}');";
+
+            foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
+            {
+                string organizationID = row["organizationID"];
+                string organizationURL = $"organizationID={organizationID}";
+
+                string logo = row["logo"];
+                if (DBNull.Value.Equals(row["logo"]))
+                {
+                    logo = "~/Images/mcl_logo.png";
+                }
+
+                Organizations.Add(
+                    new OrganizationData()
+                    {
+                        OrganizationLogo = logo,
+                        OrganizationName = row["organizationName"],
+                        OrganizationType = row["organizationType"],
+                        OrganizationCollege = row["college"],
+                        OrganizationURL = organizationURL,
+                    }
+                );
+            }
+
+            OrganizationsRepeater.DataSource = Organizations;
+            OrganizationsRepeater.DataBind();
+        }
+
+        protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GETOrganizations();
+        }
+
+        protected void ddl_college_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GETOrganizations();
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgRegistration.aspx?userID=" + organizationID);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace MalayanEventHub.Layouts
             {
                 userID = Request.QueryString["userID"];
 
-                OrganizationData SampleOrganization = new OrganizationData
+                OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
                 GETOrganizations();
 

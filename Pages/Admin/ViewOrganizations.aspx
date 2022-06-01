@@ -8,26 +8,68 @@
     <link href="../../Styles/Admin/StyleSheetViewOrgs.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="main">
-            <div class="auto-style1">
-                <asp:DropDownList ID="ddlCollege" runat="server" AutoPostBack="True">
-                    <asp:ListItem>CAS</asp:ListItem>
-                    <asp:ListItem>CCIS</asp:ListItem>
-                    <asp:ListItem>ETYCB</asp:ListItem>
-                    <asp:ListItem>MITL</asp:ListItem>
-                    <asp:ListItem>CMET</asp:ListItem>
-                </asp:DropDownList>
-                <asp:DataList ID="DataList1" runat="server" CellPadding="20" RepeatDirection="Horizontal" RepeatColumns="3">
-                    <ItemTemplate>
-                        <div class="card">
-                            <img src="ImagesLogo/1.png" />
-                            <div class="info">
-                               <a href="<%# FormatUrl( "OrgDetails.aspx",(int) Eval("organizationID")) %>" class="btn">Details</a>
-                            </div>
+     <main>
+        <asp:ScriptManager ID="sm_Organizers" runat="server"></asp:ScriptManager>
+        <section class="details">
+            <p class="header">Student Organizations</p>
+            <div class="filter-container">
+                <asp:UpdatePanel ID="up_OrganizerType" runat="server">
+                    <ContentTemplate>
+                        <div class="filter">
+                            <p class="filter-var">Type:</p>
+                            <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged">
+                                <asp:ListItem Selected="True">Choose</asp:ListItem>
+                                <asp:ListItem>Academic</asp:ListItem>
+                                <asp:ListItem>Non-Academic</asp:ListItem>
+                            </asp:DropDownList>
                         </div>
-                    </ItemTemplate>
-                    <SeparatorTemplate></SeparatorTemplate>
-                </asp:DataList>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel ID="up_OrganizerCollege" runat="server">
+                    <ContentTemplate>
+                        <div class="filter">
+                            <p class="filter-var">College:</p>
+                            <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
+                                <asp:ListItem Selected="True">Choose</asp:ListItem>
+                                <asp:ListItem>SHS</asp:ListItem>
+                                <asp:ListItem>CAS</asp:ListItem>
+                                <asp:ListItem>CCIS</asp:ListItem>
+                                <asp:ListItem>ETYCB</asp:ListItem>
+                                <asp:ListItem>MITL</asp:ListItem>
+                                <asp:ListItem>CMET</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
-        </div>
+        </section>
+        <section class="general-container">
+            <asp:UpdatePanel ID="up_OrganizerRepeater" runat="server">
+                <ContentTemplate>
+                    <asp:Repeater ID="OrganizationsRepeater" runat="server" OnItemDataBound="Organizations_ItemDataBound">
+                        <ItemTemplate>
+                            <div class="organization-card">
+                                <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />
+                                <div class="info">
+                                    <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Admin/OrgDetails.aspx?" + Eval("OrganizationURL") %>'>DETAILS</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_Requests" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Admin/OrganizationRequestView.aspx?" + Eval("OrganizationURL") %>'>REQUESTS</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Admin/OrganizationViolation.aspx?" + Eval("OrganizationURL") %>'>VIOLATIONS</asp:LinkButton>
+                                </div>
+                                <div class="label-container">
+                                    <div class="name">
+                                        <asp:Label ID="lbl_Name" runat="server" Text='<%# Eval("OrganizationName") %>' Font-Underline="false"></asp:Label>
+                                    </div>
+                                    <div class="sub-name">
+                                        <asp:Label ID="lbl_Type" runat="server" Text='<%# Eval("OrganizationType") %>' Font-Underline="false"></asp:Label>
+                                        |
+                                        <asp:Label ID="lbl_College" runat="server" Text='<%# Eval("OrganizationCollege") %>' Font-Underline="false"></asp:Label>
+                                    </div>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </section>
+    </main>
 </asp:Content>
