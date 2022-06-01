@@ -14,7 +14,7 @@
                 <div class="filter">
                     <p class="filter-var">Type:</p>
 
-                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl">
+                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="filter">
                     <p class="filter-var">College:</p>
-                    <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl">
+                    <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="filter">
                     <p class="filter-var">Status:</p>
-                    <asp:DropDownList ID="ddl_Status" runat="server" CssClass="filter-ddl">
+                    <asp:DropDownList ID="ddl_Status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_Status_SelectedIndexChanged">
                         <asp:ListItem Selected="True">Choose</asp:ListItem>
                         <asp:ListItem>Active</asp:ListItem>
                         <asp:ListItem>Pending</asp:ListItem>
@@ -50,7 +50,7 @@
             <asp:Repeater ID="OrganizationsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="organization-card">
-                        <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("logo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage"))%>' CssClass="img" />
+                        <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />
                         <div class="info">
                             <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn">DETAILS</asp:LinkButton>
                             <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn">CREATE EVENT</asp:LinkButton>
@@ -59,19 +59,18 @@
                         </div>
                         <div class="label-container">
                             <div class="name">
-                                <asp:Label ID="lbl_Name" runat="server" Text='<%# Eval("organizationName") %>' Font-Underline="false"></asp:Label>
+                                <asp:Label ID="lbl_Name" runat="server" Text='<%# Eval("OrganizationName") %>' Font-Underline="false"></asp:Label>
                             </div>
                             <div class="sub-name">
-                                <asp:Label ID="lbl_Type" runat="server" Text='<%# Eval("organizationType") %>' Font-Underline="false"></asp:Label>
+                                <asp:Label ID="lbl_Type" runat="server" Text='<%# Eval("OrganizationType") %>' Font-Underline="false"></asp:Label>
                                 |
-                                <asp:Label ID="lbl_College" runat="server" Text='<%# Eval("college") %>' Font-Underline="false"></asp:Label>
+                                <asp:Label ID="lbl_College" runat="server" Text='<%# Eval("OrganizationCollege") %>' Font-Underline="false"></asp:Label>
                             </div>
                         </div>
 
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand= "SELECT [OrganizationTBL].[organizationID], [OrganizationTBL].[organizationName], [OrganizationTBL].[organizationType], [OrganizationTBL].[college] FROM [OrganizationTBL] INNER JOIN [MemberTBL] ON [OrganizationTBL].[organizationID] = [MemberTBL].[organizationID] WHERE [MemberTBL].[userId] = userID"></asp:SqlDataSource>
         </section>
     </main>
 </asp:Content>

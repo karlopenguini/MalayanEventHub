@@ -10,8 +10,8 @@ namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
-        DatabaseHandler dbHandler;
-        string userID;
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        string userID = "2020949499";
 
         string name;
         string type;
@@ -22,8 +22,9 @@ namespace MalayanEventHub.Layouts
         {
             if (!Page.IsPostBack)
             {
-                dbHandler = new DatabaseHandler();
-                userID = Request.QueryString["userID"];
+                //userID = Request.QueryString["userID"];
+                GETOrganizations();
+
             }
         }
 
@@ -46,17 +47,17 @@ namespace MalayanEventHub.Layouts
             string query =
                 "SELECT OrganizationTBL.organizationID," +
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                " OrganizationTBL.college FROM OrganizationTBL" +
+                " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
                 $" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
-                $" AND OrganizationTBL.college = '{college}');";
+                $" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}');";
 
             foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
                 string organizationID = row["organizationID"];
 
                 string logo = row["logo"];
-                if (DBNull.Value.Equals(row["pubmat"]))
+                if (DBNull.Value.Equals(row["logo"]))
                 {
                     logo = "~/Images/mcl_logo.png";
                 }
@@ -107,6 +108,21 @@ namespace MalayanEventHub.Layouts
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+        }
+
+        protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GETOrganizations();
+        }
+
+        protected void ddl_college_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GETOrganizations();
+        }
+
+        protected void ddl_Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GETOrganizations();
         }
     }
 }
