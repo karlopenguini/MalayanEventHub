@@ -178,5 +178,9 @@ namespace MalayanEventHub.Pages.Organizer
             Response.End();
         }
 
+        protected void btn_gotoIncident_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgEventIncident.aspx?eventID="+eventId);
+        }
     }
 }
