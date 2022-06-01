@@ -1,0 +1,55 @@
+﻿.title-container {
+    font-size: 48px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.content-container {
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.text-boxs {
+    font-size: 18px;
+    padding: 0.6em;
+    border-radius: 0.4em;
+    border: unset;
+    background-color: rgb(7 47 74 / 0.15);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+
+.img-style {
+    height: 250px;
+    width: 250px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-container {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.accept-btn {
+    background-color: #197411;
+    border-color: #197411;
+    border-radius: 7px;
+    padding: 7px 50px 7px 50px;
+    color: white;
+    margin-right: 20px;
+    font-size: 20px
+}
+
+.reject-btn {
+    background-color: #C91C3B;
+    border-color: #C91C3B;
+    border-radius: 7px;
+    padding: 7px 50px 7px 50px;
+    color: white;
+    margin-left: 20px;
+    font-size: 20px
+}

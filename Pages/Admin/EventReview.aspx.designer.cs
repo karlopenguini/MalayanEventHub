@@ -78,58 +78,58 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected global::System.Web.UI.WebControls.TextBox TextBoxSpecificDet;
 
         /// <summary>
-        /// DropDownListCollege control.
+        /// TextBoxCollege control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListCollege;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCollege;
 
         /// <summary>
-        /// DropDownListDegree control.
+        /// TextBoxDegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListDegree;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDegree;
 
         /// <summary>
-        /// DropDownListStartGradeYear control.
+        /// TextBoxStartYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListStartGradeYear;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxStartYear;
 
         /// <summary>
-        /// DropDownListEndGradeYear control.
+        /// TextBoxEndYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEndGradeYear;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEndYear;
 
         /// <summary>
-        /// CheckBoxListTargetData control.
+        /// cbl_targetData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListTargetData;
+        protected global::System.Web.UI.WebControls.CheckBoxList cbl_targetData;
 
         /// <summary>
-        /// Image1 control.
+        /// pubmatImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Image pubmatImg;
 
         /// <summary>
         /// tb_comment control.
