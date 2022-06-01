@@ -13,10 +13,10 @@ namespace MalayanEventHub.Layouts
         DatabaseHandler dbHandler = new DatabaseHandler();
         string userID = "2020161601";
 
-        string name;
         string type;
         string status;
         string college;
+        string role;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -45,6 +45,7 @@ namespace MalayanEventHub.Layouts
             type = ddl_type.SelectedItem.Text;
             status = ddl_Status.SelectedItem.Text;
             college = ddl_college.SelectedItem.Text;
+            role = ddl_Role.SelectedItem.Value;
 
             string query =
                 "SELECT OrganizationTBL.organizationID," +
@@ -52,7 +53,7 @@ namespace MalayanEventHub.Layouts
                 " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus, MemberTBL.memberRole FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
                 $" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
-                $" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}');";
+                $" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}' AND MemberTBL.memberRole = '{role}');";
 
             foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
@@ -135,6 +136,11 @@ namespace MalayanEventHub.Layouts
         }
 
         protected void ddl_Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GETOrganizations();
+        }
+        
+        protected void ddl_Role_SelectedIndexChanged(object sender, EventArgs e)
         {
             GETOrganizations();
         }
