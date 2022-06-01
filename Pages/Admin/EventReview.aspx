@@ -14,31 +14,31 @@
             <div id="event-section-fields" class="form-fields">
                 <div class="form-field">
                     <p>Event Title:</p>
-                    <asp:TextBox ID="TextBoxTitle" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxTitle" runat="server" CssClass="text-boxs" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Start Date & Time:</p>
-                    <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxStartDateTime" runat="server" CssClass="text-boxs" ReadOnly="true" TextMode="DateTimeLocal"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>End Date & Time:</p>
-                    <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" TextMode="DateTimeLocal"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxEndDateTime" runat="server" CssClass="text-boxs" ReadOnly="true" TextMode="DateTimeLocal"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Venue:</p>
-                    <asp:TextBox ID="TextBoxVenue" runat="server" CssClass="text-boxs"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxVenue" runat="server" CssClass="text-boxs" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Invitation Link:</p>
-                    <asp:TextBox ID="TextBoxInvLink" runat="server" CssClass="text-boxs" TextMode="Url"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxInvLink" runat="server" CssClass="text-boxs" TextMode="Url" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Objectives:</p>
-                    <asp:TextBox ID="TextBoxObjectives" runat="server" CssClass="text-boxs" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxObjectives" runat="server" CssClass="text-boxs" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
                 </div>
                 <div class="form-field">
                     <p>Specific Details:</p>
-                    <asp:TextBox ID="TextBoxSpecificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxSpecificDet" runat="server" CssClass="text-boxs" TextMode="MultiLine" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div id="audience-section-fields" class="form-fields">
                 <div class="form-field">
                     <p>College:</p>
-                    <asp:DropDownList ID="DropDownListCollege" CssClass="dropdown-lists" runat="server">
+                    <asp:DropDownList ID="DropDownListCollege" CssClass="dropdown-lists" runat="server" Enabled="False">
                         <asp:ListItem Value="SHS">Senior High School (SHS)</asp:ListItem>
                         <asp:ListItem Value="CAS">College of Arts and Science (CAS)</asp:ListItem>
                         <asp:ListItem Value="CCIS">College of Computer and Information Science (CCIS)</asp:ListItem>
@@ -62,19 +62,19 @@
                 </div>
                 <div class="form-field">
                     <p>Degree/Strand:</p>
-                    <asp:DropDownList ID="DropDownListDegree" CssClass="dropdown-lists" runat="server">
+                    <asp:DropDownList ID="DropDownListDegree" CssClass="dropdown-lists" runat="server" Enabled="False">
                         <asp:ListItem Value="" Selected="True" hidden="hidden">-- Please specify a College first.</asp:ListItem>
                         <asp:ListItem Value="All">All</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-field">
                     <p>Year:</p>
-                    <asp:DropDownList ID="DropDownListStartGradeYear" CssClass="year-dropdown-lists" runat="server">
+                    <asp:DropDownList ID="DropDownListStartGradeYear" CssClass="year-dropdown-lists" runat="server" Enabled="False">
                         <asp:ListItem>--</asp:ListItem>
                         <asp:ListItem>All</asp:ListItem>
                     </asp:DropDownList>
                     <p>to</p>
-                    <asp:DropDownList ID="DropDownListEndGradeYear" CssClass="year-dropdown-lists" runat="server">
+                    <asp:DropDownList ID="DropDownListEndGradeYear" CssClass="year-dropdown-lists" runat="server" Enabled="False">
                         <asp:ListItem>--</asp:ListItem>
                         <asp:ListItem>All</asp:ListItem>
                     </asp:DropDownList>
@@ -89,7 +89,7 @@
             <div id="participant-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Target Information of Participants:</p>
-                <asp:CheckBoxList ID="CheckBoxListTargetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList">
+                <asp:CheckBoxList ID="CheckBoxListTargetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList" Enabled="False">
                     <asp:ListItem>Student No.</asp:ListItem>
                     <asp:ListItem Enabled="False" Selected="True">First Name</asp:ListItem>
                     <asp:ListItem>Middle Name</asp:ListItem>
