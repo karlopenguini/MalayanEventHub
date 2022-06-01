@@ -59,7 +59,10 @@ namespace MalayanEventHub.Pages.Organizer
 
             //set by status card
             lbl_status.Text = eventDataList["requestStatus"].ToUpper();
-            tb_commentResponse.Text = String.IsNullOrEmpty(eventDataList["feedback"]) ? "No comment yet." : eventDataList["feedback"];
+            ChangeStatusColor(eventDataList["requestStatus"]);
+
+
+            tb_commentResponse.Text = String.IsNullOrEmpty(eventDataList["feedback"]) ? "No comment." : eventDataList["feedback"];
 
             //set eventDetails
             tb_eventTitle.Text = eventDataList["activityTitle"];
@@ -128,6 +131,18 @@ namespace MalayanEventHub.Pages.Organizer
             }
         }
 
+        private void ChangeStatusColor(string currentStatus)
+        {
+            if (currentStatus == "Active")
+            {
+                lbl_status.ForeColor = System.Drawing.Color.GreenYellow; 
+            }
+            else if (currentStatus == "Deleted")
+            {
+                lbl_status.ForeColor = System.Drawing.Color.DarkRed;
+            }
+        }
+
         protected void btn_showParticipants_Click(object sender, EventArgs e)
         {
             Response.Redirect($"OrgEventParticipants.aspx?eventID={eventId}");
@@ -181,6 +196,18 @@ namespace MalayanEventHub.Pages.Organizer
         protected void btn_gotoIncident_Click(object sender, EventArgs e)
         {
             Response.Redirect("OrgEventIncident.aspx?eventID="+eventId);
+        }
+
+        protected void btn_delete_Click(object sender, EventArgs e)
+        {
+            string sql = $"UPDATE RequestTBL SET requestStatus='Deleted', modified ='{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' "+
+                        "WHERE requestID = ( "+
+                        "SELECT requestID FROM EventRequestTBL "+
+                        $"WHERE eventID = {eventId})";
+
+            dbHandler.ExecuteInsertQuery(sql);
+            Response.Redirect($"OrgEventInformation.aspx?eventID={eventId}");
+
         }
     }
 }
