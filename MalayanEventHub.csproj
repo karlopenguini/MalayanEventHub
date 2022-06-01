@@ -147,7 +147,8 @@
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
-      <DependentUpon>OrgDetails.aspx</DependentUpon>
+	  <DependentUpon>OrgDetails.aspx</DependentUpon>
+	</Compile>
     <Compile Include="Pages\Admin\OrgReview.aspx.cs">
       <DependentUpon>OrgReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
