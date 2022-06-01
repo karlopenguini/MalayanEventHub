@@ -67,7 +67,6 @@
                                 <asp:Label ID="lbl_College" runat="server" Text='<%# Eval("OrganizationCollege") %>' Font-Underline="false"></asp:Label>
                             </div>
                         </div>
-
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

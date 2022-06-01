@@ -106,10 +106,6 @@ namespace MalayanEventHub.Layouts
                 $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationStatus = 'Pending';";
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-        }
-
         protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
         {
             GETOrganizations();
@@ -123,6 +119,11 @@ namespace MalayanEventHub.Layouts
         protected void ddl_Status_SelectedIndexChanged(object sender, EventArgs e)
         {
             GETOrganizations();
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgRegistration.aspx?userID=" + userID);
         }
     }
 }
