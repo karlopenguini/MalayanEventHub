@@ -71,11 +71,11 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Pages\Admin\OrganizationRequestsView.aspx" />
     <Content Include="Pages\Admin\OrganizationViolation.aspx" />
+    <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
-
-    <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\OrganizationViewRequests.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\OrgMessage.aspx" />
@@ -125,6 +125,13 @@
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\OrganizationRequestsView.aspx.cs">
+      <DependentUpon>OrganizationRequestsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\OrganizationRequestsView.aspx.designer.cs">
+      <DependentUpon>OrganizationRequestsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\OrganizationViolation.aspx.cs">
       <DependentUpon>OrganizationViolation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -146,9 +153,6 @@
     <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
       <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
     </Compile>
-	<Compile Include="Pages\Admin\OrgDetails.aspx.cs">
-	  <DependentUpon>OrgDetails.aspx</DependentUpon>
-	</Compile>
     <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.cs">
       <DependentUpon>OrganizationViewRequests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
