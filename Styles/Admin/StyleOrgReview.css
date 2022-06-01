@@ -1,10 +1,10 @@
-﻿.title-container{
+﻿.title-container {
     font-size: 48px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.content-container{
+.content-container {
     font-size: 32px;
     font-weight: 100;
 }
@@ -27,7 +27,7 @@
     margin-bottom: 10px;
 }
 
-.btn-container{
+.btn-container {
     margin-top: 50px;
     margin-bottom: 80px;
     display: flex;
@@ -43,6 +43,7 @@
     margin-right: 20px;
     font-size: 20px
 }
+
 .reject-btn {
     background-color: #C91C3B;
     border-color: #C91C3B;
