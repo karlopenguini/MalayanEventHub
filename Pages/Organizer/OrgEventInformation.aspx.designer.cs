@@ -168,13 +168,13 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.WebControls.CheckBoxList cbl_targetData;
 
         /// <summary>
-        /// btn_show control.
+        /// btn_showParticipants control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_show;
+        protected global::System.Web.UI.WebControls.Button btn_showParticipants;
 
         /// <summary>
         /// pubmatImg control.
