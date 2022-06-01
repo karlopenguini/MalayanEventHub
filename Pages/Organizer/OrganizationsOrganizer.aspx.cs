@@ -21,7 +21,7 @@ namespace MalayanEventHub.Layouts
         {
             if (!Page.IsPostBack)
             {
-                userID = Request.QueryString["userID"];
+                userID = "2020949499";
 
                 OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
@@ -48,7 +48,7 @@ namespace MalayanEventHub.Layouts
             status = ddl_Status.SelectedItem.Text;
             college = ddl_college.SelectedItem.Text;
             role = ddl_Role.SelectedItem.Value;
-
+           
             string query =
                 "SELECT OrganizationTBL.organizationID," +
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
