@@ -77,6 +77,7 @@
 
     <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\OrganizationViewRequests.aspx" />
+    <Content Include="Pages\Admin\OrgReview.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\OrgMessage.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
@@ -88,6 +89,7 @@
     <Content Include="Pages\User\LogInPage.aspx" />
     <Content Include="Pages\User\RegisterPage.aspx" />
     <Content Include="Styles\Admin\dummyHtml.html" />
+    <Content Include="Styles\Admin\StyleSheetOrgReview.css" />
     <Content Include="Styles\Admin\StyleSheetOrgDetails.css" />
     <Content Include="Styles\Admin\StyleSheetOrgViolation.css" />
     <Content Include="Styles\Event_Violation_Card.css" />
@@ -149,8 +151,14 @@
 	<Compile Include="Pages\Admin\OrgDetails.aspx.cs">
 	  <DependentUpon>OrgDetails.aspx</DependentUpon>
 	</Compile>
-    <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.cs">
-      <DependentUpon>OrganizationViewRequests.aspx</DependentUpon>
+	  <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.cs">
+		  <DependentUpon>OrganizationViewRequests.aspx</DependentUpon>
+	  </Compile>
+    <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
+	  <DependentUpon>OrgDetails.aspx</DependentUpon>
+	</Compile>
+    <Compile Include="Pages\Admin\OrgReview.aspx.cs">
+      <DependentUpon>OrgReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Admin\OrganizationViewRequests.aspx.designer.cs">
