@@ -483,7 +483,23 @@ namespace MalayanEventHub
             }
         }
 
+        protected void cv_pubmatImg_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            int fileSizeInBytes = f_uploadImg.PostedFile.ContentLength;
+            int maxFileSizeInBytes = 4194304; 
+            if (fileSizeInBytes > maxFileSizeInBytes)
+            {
+                cv_pubmatImg.ErrorMessage = "File upload pubmat image should be less than 4mb";
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+          
+        }
 
+      
     }
     #endregion
 }

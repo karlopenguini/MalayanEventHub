@@ -137,10 +137,13 @@
             </div>
             <div id="pubmat-info-fields" class="form-fields">
                 <div class="form-field">
-                    <p>Pubmat Image:</p>
-                    <asp:FileUpload ID="f_uploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"  />
+                    <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator ID="cv_pubmatImg" ForeColor="Maroon" runat="server" ValidationGroup="form" ControlToValidate="f_uploadImg" Text="*" Font-Size="Large" OnServerValidate="cv_pubmatImg_ServerValidate" ></asp:CustomValidator>
+                        <p>Pubmat Image:</p>
+                    </div>
+                    <asp:FileUpload ID="f_uploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"   />
                 </div>  
-                <p>Note: (Optional) preferred to be landscape and  must be less than 10mb.</p>
+                <p>Note: (Optional) preferred to be landscape and  must be less than 4mb.</p>
             </div>
         </div>
         <div style="width: 40%; display:block; margin: auto;" >
