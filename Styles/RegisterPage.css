@@ -1,0 +1,246 @@
+﻿@import url('RegisterPage.css');
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+}
+:root {
+    --blue: #0070EE;
+    --white: #FFFBFC;
+    --dark-blue: rgb(0 33 78 / 0.92);
+    --mcl-blue: #00214E;
+}
+h1 {
+    
+    font-size: 64px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight:900;
+    color:var(--mcl-blue);
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.main-div {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.label-span {
+    margin-bottom: 10px;
+}
+
+.req-field-validator {
+    color: red;
+}
+
+.regex-validator {
+    color: red;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.par {
+    
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.hyper-link {
+    font-weight: bold;
+    margin-left: 2px;
+    cursor:pointer;
+    color:var(--blue);
+}
+
+/*STYLES FOR THE NAME SECTION*/
+.main-name-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fname-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fname-label {
+    font-size: 20px;
+    
+    margin: 0 0 10px 20px;
+    width: 200px;
+}
+
+.fname-tb {
+    margin-left: 20px;
+    width: 200px;
+}
+
+.mi-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mi-label {
+    font-size: 20px;
+    
+    margin: 0 20px 10px 20px;
+    width: 120px;
+}
+
+.mi-tb {
+    margin: 0 20px;
+    width: 120px;
+}
+
+.lname-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.lname-label {
+    font-size: 20px;
+    
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.lname-tb {
+    margin-right: 20px;
+    width: 200px;
+}
+
+@media only screen and (max-width: 656px) {
+    .lname-container {
+        margin: 0 20px 10px 20px;
+    }
+}
+
+/*STYLES FOR THE EMAIL NUMBER AND PASSWORD */
+.details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-label {
+    font-size: 20px;
+    
+    margin-left: 20px;
+}
+
+.details-tb {
+    margin: 0 20px 0 20px;
+}
+
+/*STYLE FOR ALL TEXTBOXES*/
+.textbox {
+    padding: 12px;
+    border-width: 0px;
+    border-radius: 7px;
+    background-color: lightgray;
+    font-size: 20px;
+    
+}
+
+    .textbox:focus {
+        outline-width: 0;
+    }
+
+/*STYLES FOR THE PART WHERE THE DDLists ARE PLACED*/
+.ddl-section-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.college-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.college-label {
+    font-size: 20px;
+    
+    width: 135px;
+    margin-bottom: 10px;
+}
+
+.college-ddl {
+    font-size: 20px;
+    
+    width: 135px;
+}
+
+.course-container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 20px 0 20px;
+}
+
+.course-label {
+    font-size: 20px;
+    
+    width: 135px;
+    margin-bottom: 10px;
+}
+
+.course-ddl {
+    font-size: 20px;
+    
+    width: 135px;
+}
+
+.year-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.year-label {
+    font-size: 20px;
+    
+    width: 135px;
+    margin-bottom: 10px;
+}
+
+.year-ddl {
+    font-size: 20px;
+    
+    width: 135px;
+}
+
+/*STYLE FOR ALL DDLists*/
+.ddl {
+    padding: 5px;
+    border-width: 0px;
+    border-radius: 7px;
+    background-color: lightgray;
+    font-size: 20px;
+    
+}
+
+    .ddl:focus {
+        outline-width: 0;
+    }
+
+/*BUTTON STYLE*/
+.button {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    margin: 30px auto 10px auto;
+    background-color: var(--dark-blue);
+    border-radius: 7px;
+    border-width: 0px;
+    font-size: 20px;
+    color:white;
+    cursor:pointer;
+}

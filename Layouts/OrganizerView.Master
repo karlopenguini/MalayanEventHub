@@ -200,7 +200,7 @@
             </section>
         </nav>
 
-        <main style="width: 1112px; margin: auto;">
+        <main style="width:1112px; margin:auto;">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </main>
