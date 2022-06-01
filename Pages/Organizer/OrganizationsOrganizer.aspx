@@ -12,21 +12,21 @@
         <section class="details">
             <p class="header">My Organizations</p>
             <div class="filter-container">
-                <div class="filter">
-                    <asp:UpdatePanel ID="up_Type" runat="server">
-                        <ContentTemplate>
+                <asp:UpdatePanel ID="up_Type" runat="server">
+                    <ContentTemplate>
+                        <div class="filter">
                             <p class="filter-var">Type:</p>
                             <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged">
                                 <asp:ListItem Selected="True">Choose</asp:ListItem>
                                 <asp:ListItem>Academic</asp:ListItem>
                                 <asp:ListItem>Non-Academic</asp:ListItem>
                             </asp:DropDownList>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
-                <div class="filter">
-                    <asp:UpdatePanel ID="up_College" runat="server">
-                        <ContentTemplate>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel ID="up_College" runat="server">
+                    <ContentTemplate>
+                        <div class="filter">
                             <p class="filter-var">College:</p>
                             <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
                                 <asp:ListItem Selected="True">Choose</asp:ListItem>
@@ -37,22 +37,21 @@
                                 <asp:ListItem>MITL</asp:ListItem>
                                 <asp:ListItem>CMET</asp:ListItem>
                             </asp:DropDownList>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
-                <div class="filter">
-                    <asp:UpdatePanel ID="up_Status" runat="server">
-                        <ContentTemplate>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel ID="up_Status" runat="server">
+                    <ContentTemplate>
+                        <div class="filter">
                             <p class="filter-var">Status:</p>
                             <asp:DropDownList ID="ddl_Status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_Status_SelectedIndexChanged">
                                 <asp:ListItem Selected="True">Choose</asp:ListItem>
                                 <asp:ListItem>Active</asp:ListItem>
                                 <asp:ListItem>Pending</asp:ListItem>
                             </asp:DropDownList>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                    
-                </div>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
 
                 <div class="filter" style="margin-left: 10px">
                     <asp:Button ID="btnRegister" runat="server" Text="Register Organization" OnClick="btnRegister_Click" />
