@@ -14,7 +14,7 @@ namespace MalayanEventHub.Layouts
     public partial class OrgRegistration : System.Web.UI.Page
     {
         DatabaseHandler dbHandler;
-        string userID;
+        string userID = "2020949499";
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
