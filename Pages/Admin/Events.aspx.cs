@@ -72,15 +72,18 @@ namespace MalayanEventHub.Layouts
                     break;
             }
 
-
-            
+            string typeQuery = $"OrganizationTBL.organizationType = '{type}' AND";
+            if (type == "All")
+            {
+                typeQuery = "";
+            }
             string query =
                         "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE OrganizationTBL.organizationType = '{type}' AND OrganizationTBL.college = '{college}' AND RequestTBL.requestStatus = '{status}' {dateQuery};";
+                        $" WHERE {typeQuery} OrganizationTBL.college = '{college}' AND RequestTBL.requestStatus = '{status}' {dateQuery};";
 
             
 
@@ -107,7 +110,7 @@ namespace MalayanEventHub.Layouts
 
                 if(DBNull.Value.Equals(row["pubmat"]))
                 {
-                    image = "~/Images/mcl_logo.png";
+                    image = "../Images/mcl_logo.png";
                 }
 
                 Events.Add(

@@ -24,17 +24,15 @@ namespace MalayanEventHub.Layouts.Common.Admin
         string Details = "";
         string Pubmat = "";
         string InvitationLink = "";
+        string requestID = "";
 
-        DatabaseHandler dbHandler;
+        DatabaseHandler dbHandler = new DatabaseHandler();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                eventID = Request.QueryString["eventID"];
-                dbHandler = new DatabaseHandler();
-                LoadEventData();
-
-            }
+            eventID = Request.QueryString["eventID"];
+            LoadEventData();
+            requestID = GetRequestID();
         }
         protected void LoadEventData()
         {
@@ -62,6 +60,43 @@ namespace MalayanEventHub.Layouts.Common.Admin
             TextBoxInvLink.Text = InvitationLink;
             TextBoxObjectives.Text = Objectives;
             TextBoxSpecificDet.Text = Details;
+            TextBoxCollege.Text = AudienceCollege;
+            TextBoxDegree.Text = AudienceDegree;
+            TextBoxStartYear.Text = GradeYearStart;
+            TextBoxEndYear.Text = GradeYearEnd;
+        }
+
+        protected string GetRequestID()
+        {
+
+            string query =
+                "SELECT EventRequestTBL.requestID" +
+                " FROM EventRequestTBL" +
+                " INNER JOIN EventTBL ON EventTBL.eventID = EventRequestTBL.eventID" +
+                $" WHERE {eventID} = EventRequestTBL.eventID;";
+            requestID = dbHandler.RetrieveData(query)[0]["requestID"];
+            return requestID;
+        }
+
+        protected void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + requestID + "');", true);
+            string now = DateTime.Now.ToString("dd-MM-yy hh:mm:ss");
+            string query =
+                "UPDATE RequestTBL" +
+                $" SET requestStatus = 'Active', modified='{now}', feedback='{tb_comment.Text}'" +
+                $" WHERE '{requestID}' = RequestTBL.requestID";
+            dbHandler.ExecuteUpdateQuery(query);
+        }
+
+        protected void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            string now = DateTime.Now.ToString("dd-MM-yy hh:mm:ss");
+            string query =
+                "UPDATE RequestTBL" +
+                $" SET requestStatus = 'Rejected', modified='{now}', feedback='{tb_comment.Text}'" +
+                $" WHERE '{requestID}' = RequestTBL.requestID";
+            dbHandler.ExecuteUpdateQuery(query);
         }
     }
 }

@@ -78,40 +78,40 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected global::System.Web.UI.WebControls.TextBox TextBoxSpecificDet;
 
         /// <summary>
-        /// DropDownListCollege control.
+        /// TextBoxCollege control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListCollege;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCollege;
 
         /// <summary>
-        /// DropDownListDegree control.
+        /// TextBoxDegree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListDegree;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDegree;
 
         /// <summary>
-        /// DropDownListStartGradeYear control.
+        /// TextBoxStartYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListStartGradeYear;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxStartYear;
 
         /// <summary>
-        /// DropDownListEndGradeYear control.
+        /// TextBoxEndYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEndGradeYear;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEndYear;
 
         /// <summary>
         /// CheckBoxListTargetData control.
@@ -132,13 +132,13 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// TextBox1 control.
+        /// tb_incident_report control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tb_incident_report;
 
         /// <summary>
         /// tb_comment control.
@@ -148,5 +148,14 @@ namespace MalayanEventHub.Layouts.Common.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_comment;
+
+        /// <summary>
+        /// tb_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_status;
     }
 }
