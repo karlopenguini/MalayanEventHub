@@ -30,8 +30,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //eventID = Request.QueryString["eventID"];
-            eventID = "61004";
+            eventID = Request.QueryString["eventId"];
             LoadEventData();
             LoadCheckBoxData();
             requestID = GetRequestID();

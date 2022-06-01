@@ -29,8 +29,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
         DatabaseHandler dbHandler;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //eventID = Request.QueryString["eventID"];
-            eventID = "61003";
+            eventID = Request.QueryString["eventId"];
             dbHandler = new DatabaseHandler();
             if (!Page.IsPostBack)
             {
