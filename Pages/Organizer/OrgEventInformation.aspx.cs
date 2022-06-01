@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
 using System.Text;
+using System.IO;
 
 namespace MalayanEventHub.Pages.Organizer
 {
@@ -17,17 +18,19 @@ namespace MalayanEventHub.Pages.Organizer
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-       
+            eventId = Request.QueryString["eventID"];
+            if (String.IsNullOrEmpty(eventId))
+            {
+                Response.Redirect("OrgCreateEvent.aspx");
+                return;
+            }
+
+            dbHandler = new DatabaseHandler();
+
+
             if (!Page.IsPostBack)
             {
-                dbHandler = new DatabaseHandler();
-
-                eventId = Request.QueryString["eventID"];
-                if (String.IsNullOrEmpty(eventId))
-                {
-                    Response.Redirect("OrgCreateEvent.aspx");
-                    return;
-                }
+                
 
                 lbl_eventID.Text = eventId;
 
@@ -67,21 +70,21 @@ namespace MalayanEventHub.Pages.Organizer
             tb_venue.Text = eventDataList["proposedVenue"];
             tb_obj.Text = eventDataList["objectives"];
             tb_specDet.Text = eventDataList["details"];
-            hl_venue.Text = String.IsNullOrEmpty(eventDataList["invitationLink"]) ? "None": eventDataList["invitationLink"];
+            hl_venue.Text = String.IsNullOrEmpty(eventDataList["invitationLink"]) ? "None" : eventDataList["invitationLink"];
 
             //audience target
             ListItem collegeItem = new ListItem();
-            if (eventDataList["audienceCollege"]=="All")
+            if (eventDataList["audienceCollege"] == "All")
             {
                 collegeItem.Text = "All";
-                collegeItem.Value = "All"; 
+                collegeItem.Value = "All";
             }
             else
             {
                 string queryLocal = $"SELECT name FROM CollegeTBL WHERE id='{eventDataList["audienceCollege"]}'";
                 Dictionary<string, string> collegeData = dbHandler.RetrieveData(queryLocal)[0];
                 collegeItem.Text = collegeData["name"];
-                collegeItem.Value = collegeData["name"]; 
+                collegeItem.Value = collegeData["name"];
             }
             ddl_college.Items.Add(collegeItem);
 
@@ -100,28 +103,84 @@ namespace MalayanEventHub.Pages.Organizer
             }
             ddl_degree.Items.Add(degreeItem);
 
-            ddl_startGradeYear.Items.Add(new ListItem(eventDataList["audienceGradeYearStart"],""));
+            ddl_startGradeYear.Items.Add(new ListItem(eventDataList["audienceGradeYearStart"], ""));
             ddl_endGradeYear.Items.Add(new ListItem(eventDataList["audienceGradeYearEnd"], ""));
 
             // for check list
             string query2 = $"SELECT * FROM RequiredInformationTBL Where eventID = {eventId}";
             List<Dictionary<string, string>> dl_targetData = dbHandler.RetrieveData(query2);
 
-            foreach(Dictionary<string, string> record in dl_targetData)
+            foreach (Dictionary<string, string> record in dl_targetData)
             {
                 ListItem item = cbl_targetData.Items.FindByValue(record["dataOfParticipant"]);
                 item.Selected = true;
                 item.Enabled = false;
             }
 
-
-            //for pubmat
-            if (!String.IsNullOrEmpty(eventDataList["pubmat"])) {
-                byte[] imageByte = Encoding.ASCII.GetBytes(eventDataList["pubmat"]);
-                string imgStr = Convert.ToBase64String(imageByte);
-                pubmatImg.ImageUrl = String.Format("data:image/Bmp;base64,{0}\"", imgStr);
+            if (!String.IsNullOrEmpty(eventDataList["pubmat"]))
+            {
+                //get base 64 string of Imag
+                string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                        $"WHERE eventID = {eventId}";
+                Dictionary<string, string> data = dbHandler.RetrieveData(queryImg)[0];
+                string base64 = data["imgBase64Str"];
+                pubmatImg.ImageUrl = "data:image/png;base64, " + base64;
             }
+        }
 
+        protected void btn_showParticipants_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"OrgEventParticipants.aspx?eventID={eventId}");
+        }
+
+
+        protected void btn_genAccReport_Click(object sender, EventArgs e)
+        {
+            //get data
+            string query = $"SELECT * FROM EventTBL WHERE eventID = {eventId} ";
+            var recordDetails = dbHandler.RetrieveData(query)[0];
+            string query2 = $"SELECT COUNT(*) as totalParticipant FROM ParticipantTBL WHERE eventId ={eventId} AND participantStatus = 'Admitted'";
+            var recordParticipant = dbHandler.RetrieveData(query2)[0];
+            Byte[] txtBytes;
+ 
+
+            // making a text file
+            MemoryStream ms = new MemoryStream();
+            TextWriter tw = new StreamWriter(ms);
+
+            //write text out put
+            tw.WriteLine("======Accomplishment Report ==========");
+            tw.WriteLine("Created {0}",DateTime.Now.ToString());
+            tw.WriteLine("Event ID; #{0}", eventId);
+            tw.WriteLine("Event Title: {0}", recordDetails["activityTitle"]);
+            tw.WriteLine("DateTime: {0} to {1} ", DateTime.Parse(recordDetails["startDateTime"]).ToString(),
+                DateTime.Parse(recordDetails["endDateTime"]).ToString());
+            tw.WriteLine("Venue: {0}", recordDetails["proposedVenue"]);
+            if (String.IsNullOrEmpty(recordDetails["invitationLink"]))
+            {
+                tw.WriteLine("Inv Link: {0}", recordDetails["invitationLink"]);
+            }
+            tw.WriteLine("No of Participants: {0}", recordParticipant["totalParticipant"]);
+
+            //
+            recordDetails.Clear();
+            recordParticipant.Clear();
+            tw.Flush();
+            txtBytes = ms.ToArray();
+            ms.Close();
+
+            //downloading this on the web
+
+            Response.Clear();
+            Response.ContentType = "application/force-download";
+            Response.AddHeader("content-disposition", $"attachment;    filename=AccReport_Event#{eventId}.txt");
+            Response.BinaryWrite(txtBytes);
+            Response.End();
+        }
+
+        protected void btn_gotoIncident_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgEventIncident.aspx?eventID="+eventId);
         }
     }
 }

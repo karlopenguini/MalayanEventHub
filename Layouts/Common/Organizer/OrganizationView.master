@@ -1,7 +1,8 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrganizationView.master.cs" Inherits="MalayanEventHub.Layouts.Common.Organizer.OrganizationView" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link  rel="stylesheet" href="../../Styles/MasterStyleSheet.css"/>
     <style>
-      .organization-header{
+        .organization-header{
             
             display: flex;
             justify-content:space-between;
@@ -23,16 +24,17 @@
             gap:1em;
         }
         .organization-header-border {
-            border-bottom: 2px solid;
+            border-bottom: 10px solid;
             border-color: var(--dark-blue);
             width: 100%;
             border-radius: 10px;
+          
+          
         }
         .org-name{
             font-size: 2.6em;
             letter-spacing:0.12em;
         }
-
         .separator{
             padding: 0 0.4em;
         }
