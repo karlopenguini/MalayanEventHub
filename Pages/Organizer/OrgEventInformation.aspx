@@ -159,7 +159,7 @@
              <div id="report-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Accomplishment:</p>
-                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" OnClick="btn_genAccReport_Click" />
+                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" />
                 </div>  
                 <div class="form-field">
                     <p>Incident</p>

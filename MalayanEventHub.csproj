@@ -65,11 +65,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="Images\hawk.png" />
+
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+
+    <Content Include="Pages\Admin\OrgDetails.aspx" />
+
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Message.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
@@ -80,6 +86,7 @@
     <Content Include="Pages\User\LogInPage.aspx" />
     <Content Include="Pages\User\RegisterPage.aspx" />
     <Content Include="Styles\Admin\dummyHtml.html" />
+    <Content Include="Styles\Admin\StyleSheetOrgDetails.css" />
     <Content Include="Styles\Event_Violation_Card.css" />
     <Content Include="Pages\Admin\ViewEvent.aspx" />
     <Content Include="Pages\Admin\EventReview.aspx" />
@@ -110,6 +117,13 @@
     </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
+      <DependentUpon>OrgDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\OrgDetails.aspx.designer.cs">
+      <DependentUpon>OrgDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\EventRequests.aspx.cs">
       <DependentUpon>EventRequests.aspx</DependentUpon>

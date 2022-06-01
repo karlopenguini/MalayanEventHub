@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
 using System.Text;
-using System.IO;
 
 namespace MalayanEventHub.Pages.Organizer
 {
@@ -133,6 +132,7 @@ namespace MalayanEventHub.Pages.Organizer
             Response.Redirect($"OrgEventParticipants.aspx?eventID={eventId}");
         }
 
+
         protected void btn_genAccReport_Click(object sender, EventArgs e)
         {
             //get data
@@ -176,5 +176,6 @@ namespace MalayanEventHub.Pages.Organizer
             Response.BinaryWrite(txtBytes);
             Response.End();
         }
+
     }
 }
