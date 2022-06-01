@@ -65,11 +65,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MCLEventHubDB.mdf" />
-    <Content Include="App_Data\MCLEventHubDB_log.ldf">
-      <DependentUpon>MCLEventHubDB.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Queries\InsertEvent.sql" />
     <Content Include="Images\hawk.png" />
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\SVG\arrow.svg" />
