@@ -73,9 +73,8 @@
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
-
+    <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\OrgDetails.aspx" />
-
     <Content Include="Pages\Admin\Events.aspx" />
     <Content Include="Pages\Message.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
@@ -97,6 +96,7 @@
     <Content Include="Styles\Organizer\organizations-organizer.css" />
     <Content Include="Styles\RegisterPage.css" />
     <Content Include="Styles\User\LogInPage.css" />
+    <Content Include="Styles\User\UserProfilePage%28update%29.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +118,12 @@
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.cs">
+      <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\UserProfilePage%28update%29.aspx.designer.cs">
+      <DependentUpon>UserProfilePage%28update%29.aspx</DependentUpon>
     <Compile Include="Pages\Admin\OrgDetails.aspx.cs">
       <DependentUpon>OrgDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
