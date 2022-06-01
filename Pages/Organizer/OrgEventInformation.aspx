@@ -136,7 +136,7 @@
                  </div>
                 <div class="form-field">
                     <p>Participants:</p>
-                    <asp:Button ID="btn_show" runat="server" Text="Show Participants"  CssClass="main-button" Width="35%" />
+                    <asp:Button ID="btn_showParticipants" runat="server" Text="Show Participants"  CssClass="main-button" Width="35%" OnClick="btn_showParticipants_Click" />
                 </div>
             </div>
         </div>
