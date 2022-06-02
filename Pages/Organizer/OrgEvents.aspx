@@ -1,26 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="MalayanEventHub.Layouts.Events" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../../Styles/Event_Organization_Headers.css" />
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/Organizer/OrganizationView.master" AutoEventWireup="true" CodeBehind="OrgEvents.aspx.cs" Inherits="MalayanEventHub.Pages.Organizer.OrgEvents" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
+        <link rel="stylesheet" href="../../Styles/Event_Organization_Headers.css" />
     <link rel="stylesheet" href="../../Styles/EventsPage.css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <main>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+     <main>
         <section class="details">
-            <p class="header">Organizations' Event Requests</p>
+            <p class="header">Organization's Events</p>
             <div class="filter-container">
                 <div class="filter">
-                    <p class="filter-var">Type:</p>
-                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged" ViewStateMode="Enabled">
-                        <asp:ListItem Selected="True">Academic</asp:ListItem>
-                        <asp:ListItem>Non-Academic</asp:ListItem>
-                        <asp:ListItem>All</asp:ListItem>
-                    </asp:DropDownList>
-                    
-                </div>
-                <div class="filter">
-                    <p class="filter-var">College:</p>
-
+                    <p class="filter-var">Target College:</p>
                     <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
@@ -28,7 +17,7 @@
                         <asp:ListItem>ETYCB</asp:ListItem>
                         <asp:ListItem>MITL</asp:ListItem>
                         <asp:ListItem>CMET</asp:ListItem>
-                        <asp:ListItem Selected="True">All</asp:ListItem>
+                         <asp:ListItem Selected="True">All</asp:ListItem>
                     </asp:DropDownList>
 
                 </div>

@@ -209,5 +209,10 @@ namespace MalayanEventHub.Pages.Organizer
             Response.Redirect($"OrgEventInformation.aspx?eventID={eventId}");
 
         }
+
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"OrgEvents.aspx");
+        }
     }
 }
