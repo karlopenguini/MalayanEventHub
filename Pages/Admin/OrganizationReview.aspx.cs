@@ -32,8 +32,8 @@ namespace MalayanEventHub.Layouts
             {
                 LoadOrgData();
                 LoadVice();
-                //LoadSecretary();
-                //LoadTreasurer();
+                LoadSecretary();
+                LoadTreasurer();
                 LoadImage();
                 LoadMembers();
             }
