@@ -11,7 +11,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="main-container">
             <div class="image-container">
-                <img src="../../Images/hawk.png" class="imageStyle"/>
+                <img src="../../Images/hawk.png" class="imageStyle" id="image_logo"/>
             </div>
             <!--Key members container-->
             <div class="memberTitle-style">
