@@ -159,6 +159,15 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.WebControls.Button btn_Delete;
 
         /// <summary>
+        /// btn_AddMembers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_AddMembers;
+
+        /// <summary>
         /// rev_Member control.
         /// </summary>
         /// <remarks>
