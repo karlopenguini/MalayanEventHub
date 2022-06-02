@@ -137,8 +137,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">
-                        <asp:Button CssClass="button" ID="btn_update" runat="server" Text="update" CausesValidation="False" OnClick="update_Click" />
+                    <td colspan="2">
+                        <asp:Button CssClass="button btn-update-margin" ID="btn_update" runat="server" Text="update" CausesValidation="False" OnClick="update_Click" />
+                    </td>
+                    <td colspan="2">
+                        <asp:Button CssClass="button" ID="btn_logout" runat="server" Text="logout" CausesValidation="False" OnClick="btn_logout_Click"/>
                     </td>
                 </tr>
             </table>

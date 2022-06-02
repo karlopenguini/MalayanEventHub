@@ -10,7 +10,7 @@ namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
-        string userID = "2020949499";
+        string userID;
         DatabaseHandler dbHandler = new DatabaseHandler();
 
         string type;
@@ -20,11 +20,9 @@ namespace MalayanEventHub.Layouts
         protected void Page_Load(object sender, EventArgs e)
         {
             userID = Session["userID"].ToString();
-            System.Diagnostics.Debug.WriteLine(userID);
             if (!Page.IsPostBack)
             {
                 OrganizationData SampleOrganization = new OrganizationData();
-                //userID = Request.QueryString["userID"];
                 GETOrganizations();
             }
         }
@@ -60,6 +58,7 @@ namespace MalayanEventHub.Layouts
             {
                 roleQuery = "";
             }
+
             string query =
                 "SELECT OrganizationTBL.organizationID," +
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
@@ -126,9 +125,6 @@ namespace MalayanEventHub.Layouts
 
                     btn_ViewEvent.Enabled = false;
                     btn_ViewEvent.Text = "Pending";
-
-                    btn_Violations.Enabled = false;
-                    btn_Violations.Text = "Pending";
                 }
                 else if (role.Text == "Member") {
 
@@ -137,9 +133,6 @@ namespace MalayanEventHub.Layouts
 
                     btn_ViewEvent.Enabled = false;
                     btn_ViewEvent.Text = "-----";
-
-                    btn_Violations.Enabled = false;
-                    btn_Violations.Text = "-----";
                 }
             }
         }

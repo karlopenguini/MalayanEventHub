@@ -93,7 +93,6 @@
     <Content Include="Pages\Organizer\OrgEventInformation.aspx" />
     <Content Include="Pages\User\LogInPage.aspx" />
     <Content Include="Pages\User\RegisterPage.aspx" />
-    <Content Include="Styles\Admin\dummyHtml.html" />
     <Content Include="Styles\Admin\StyleOrgDetails.css" />
     <Content Include="Styles\Admin\StyleOrgReview.css" />
     <Content Include="Styles\Admin\StyleSheetOrgViolation.css" />

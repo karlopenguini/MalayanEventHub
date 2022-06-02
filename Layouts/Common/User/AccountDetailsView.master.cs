@@ -11,7 +11,6 @@ namespace MalayanEventHub.Layouts.Common.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
