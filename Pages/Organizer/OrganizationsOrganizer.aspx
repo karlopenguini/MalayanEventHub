@@ -22,7 +22,7 @@
                         <div class="filter">
                             <p class="filter-var">Type:</p>
                             <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged">
-                                <asp:ListItem >Choose</asp:ListItem>
+                                <asp:ListItem >All</asp:ListItem>
                                 <asp:ListItem Selected="True">Academic</asp:ListItem>
                                 <asp:ListItem>Non-Academic</asp:ListItem>
                             </asp:DropDownList>
@@ -34,7 +34,6 @@
                         <div class="filter">
                             <p class="filter-var">College:</p>
                             <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
-                                <asp:ListItem>Choose</asp:ListItem>
                                 <asp:ListItem>SHS</asp:ListItem>
                                 <asp:ListItem>CAS</asp:ListItem>
                                 <asp:ListItem Selected="True">CCIS</asp:ListItem>
@@ -50,9 +49,12 @@
                         <div class="filter">
                             <p class="filter-var">Role:</p>
                             <asp:DropDownList ID="ddl_Role" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_Role_SelectedIndexChanged">
-                                <asp:ListItem>Choose</asp:ListItem>
+                                <asp:ListItem Value="All">All</asp:ListItem>
                                 <asp:ListItem Selected="True">Member</asp:ListItem>
-                                <asp:ListItem Value="President">Organizer</asp:ListItem>
+                                <asp:ListItem Value="President">President</asp:ListItem>
+                                <asp:ListItem Value="Vice President">Vice President</asp:ListItem>
+                                <asp:ListItem Value="Secretary">Secretary</asp:ListItem>
+                                <asp:ListItem Value="Treasurer">Treasurer</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </ContentTemplate>

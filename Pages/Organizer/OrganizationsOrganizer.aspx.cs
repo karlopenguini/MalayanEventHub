@@ -45,7 +45,20 @@ namespace MalayanEventHub.Layouts
             type = ddl_type.SelectedItem.Text;
             status = ddl_Status.SelectedItem.Text;
             college = ddl_college.SelectedItem.Text;
-            role = ddl_Role.SelectedItem.Value;
+            role = ddl_Role.SelectedItem.Text;
+
+            string typeQuery = $" AND OrganizationTBL.organizationType = '{type}'";
+            string roleQuery = $" AND MemberTBL.memberRole = '{role}'";
+
+            if (type == "All")
+            {
+                typeQuery = "";
+            }
+
+            if (role == "All")
+            {
+                roleQuery = "";
+            }
 
             string query =
                 "SELECT OrganizationTBL.organizationID," +
@@ -53,7 +66,7 @@ namespace MalayanEventHub.Layouts
                 " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus, MemberTBL.memberRole FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
                 $" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
-                $" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}' AND MemberTBL.memberRole = '{role}');";
+                $" AND OrganizationTBL.college = '{college}'{typeQuery}{roleQuery});";
 
             foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
