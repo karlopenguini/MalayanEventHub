@@ -40,14 +40,27 @@
             font-weight:100;
             opacity:0.8;
         }
-        .button{
-            all:unset;
-        }
         .dropdown-container{
             display:flex;
             flex-direction:column;
             width:200px;
             gap:1em;
+        }
+        .button{
+            all:unset;
+            padding:0.5em 1em;
+            font-weight:100;
+            border: 1px solid;
+            border-color:rgb(0 0 0 / 0.32);
+            text-align:center;
+            width:200px;
+            cursor:pointer;
+        }
+        .Delete{
+            background-color:rgb(255 0 0 / 0.24);
+        }
+        .Inactive{
+            background-color:rgb(0 130 255 / 0.50);
         }
     </style>
     <asp:ContentPlaceHolder ID="head2" runat="server"></asp:ContentPlaceHolder>
@@ -64,8 +77,8 @@
             <div class="organization-header-border"></div>
         </div>
         <div class="dropdown-container">
-            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClas="button" UseSubmitBehavior="False" />
-            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClas="button" UseSubmitBehavior="False"/>
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClass="button Delete" UseSubmitBehavior="False" />
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClass="button Inactive" UseSubmitBehavior="False"/>
         </div>
     </section>
 
