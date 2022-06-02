@@ -164,5 +164,10 @@ namespace MalayanEventHub.Pages.Organizer
 
             GETEvents();
         }
+
+        protected void btn_create_event_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgCreateEvent.aspx");
+        }
     }
 }

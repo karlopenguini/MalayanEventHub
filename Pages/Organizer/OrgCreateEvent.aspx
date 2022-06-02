@@ -151,7 +151,7 @@
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; margin-bottom: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
             <asp:Button ID="btn_submit"  OnClientClick="return confirm('Are you sure about the input information? Note: once created cannot be updated')" runat="server" Text="Submit"  CssClass="main-button" Width="35%" OnClick="ButtonSubmit_Click" ValidationGroup="form"  />
-            <asp:Button ID="btn_cancel" runat="server" Text="Cancel" Width="35%" />
+            <asp:Button ID="btn_cancel" runat="server" Text="Cancel" Width="35%" OnClick="btn_cancel_Click" />
         </div>
     </div>
     <script type="text/javascript">

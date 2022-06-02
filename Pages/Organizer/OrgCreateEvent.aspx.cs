@@ -499,7 +499,10 @@ namespace MalayanEventHub
           
         }
 
-      
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgEvents.aspx");
+        }
     }
     #endregion
 }

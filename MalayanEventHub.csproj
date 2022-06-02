@@ -80,7 +80,7 @@
     <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
-    <Content Include="Pages\OrgMessage.aspx" />
+    <Content Include="Pages\Organizer\OrgMessage.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
     <Content Include="Pages\Organizer\OrgEventIncident.aspx" />
     <Content Include="Pages\Organizer\OrgEventParticipants.aspx" />
@@ -111,8 +111,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Degree.cs" />
-    <Compile Include="Classes\College.cs" />
     <Compile Include="Classes\DatabaseHandler.cs" />
     <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Layouts\AdminView.Master.cs">
@@ -231,11 +229,11 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\OrgMessage.aspx.cs">
+    <Compile Include="Pages\Organizer\OrgMessage.aspx.cs">
       <DependentUpon>OrgMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\OrgMessage.aspx.designer.cs">
+    <Compile Include="Pages\Organizer\OrgMessage.aspx.designer.cs">
       <DependentUpon>OrgMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrganizationsOrganizer.aspx.cs">

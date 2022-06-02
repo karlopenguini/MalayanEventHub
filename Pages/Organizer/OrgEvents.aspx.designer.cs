@@ -42,6 +42,15 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.WebControls.DropDownList ddl_status;
 
         /// <summary>
+        /// btn_create_event control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_create_event;
+
+        /// <summary>
         /// EventsRepeater control.
         /// </summary>
         /// <remarks>

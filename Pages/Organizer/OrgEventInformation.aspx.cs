@@ -135,7 +135,7 @@ namespace MalayanEventHub.Pages.Organizer
         {
             if (currentStatus == "Active")
             {
-                lbl_status.ForeColor = System.Drawing.Color.GreenYellow; 
+                lbl_status.ForeColor = System.Drawing.Color.Green; 
             }
             else if (currentStatus == "Deleted" || currentStatus=="Rejected")
             {
@@ -206,7 +206,7 @@ namespace MalayanEventHub.Pages.Organizer
                         $"WHERE eventID = {eventId})";
 
             dbHandler.ExecuteInsertQuery(sql);
-            Response.Redirect($"OrgEventInformation.aspx?eventID={eventId}");
+            Response.Redirect($"OrgEvents.aspx");
 
         }
 
