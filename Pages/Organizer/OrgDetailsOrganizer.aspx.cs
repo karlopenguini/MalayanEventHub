@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using MalayanEventHub.Classes;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace MalayanEventHub.Pages.Organizer
 {
@@ -32,6 +33,7 @@ namespace MalayanEventHub.Pages.Organizer
         {
             //organizationID = Request.QueryString["organizationID"];
             //userID = Request.QueryString["userID"];
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             if (!Page.IsPostBack)
             {
@@ -52,17 +54,9 @@ namespace MalayanEventHub.Pages.Organizer
                 $"SELECT * FROM OrganizationTBL where organizationID = {organizationID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
 
-            //di ko alam pano yung sa logo
-            //logo = data["logo"];
-            //organizationName = data["organizationName"];
-            //organizationType = data["organizationType"];
-            //college = data["college"];
-            //organizationStatus = data["organizationStatus"];
-
             mission = data["mission"];
             vision = data["vision"];
             organizationContact = data["organizationContact"];
-
 
             mission_desc.InnerText = mission;
             vision_desc.InnerText = vision;
@@ -162,6 +156,45 @@ namespace MalayanEventHub.Pages.Organizer
 
             repeater_Members.DataSource = Members;
             repeater_Members.DataBind();
+        }
+
+        protected void Member_IsExist(object source, ServerValidateEventArgs args)
+        {
+            SqlConnection dbConn;
+            string cmdText = "SELECT COUNT(*) FROM StudentTBL WHERE userID LIKE '%' + @studentID + '%'";
+            string[] members = tb_MemberList.Text.Split(
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
+
+            try
+            {
+                dbConn = new SqlConnection("Server = tcp:mcleventhub.database.windows.net, 1433; Initial Catalog = MalayanEventHubDB; Persist Security Info = False; User ID = group2; Password = !Malayaneventhub1234; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            using (dbConn)
+            {
+                dbConn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, dbConn))
+                {
+                    foreach (string member in members)
+                    {
+                        cmd.Parameters.AddWithValue("@studentID", member);
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        if (count <= 0)
+                        {
+                            args.IsValid = false;
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         protected void btn_Add_Click(object sender, EventArgs e)

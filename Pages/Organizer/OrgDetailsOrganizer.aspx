@@ -9,6 +9,7 @@
     <link href="../../Styles/Admin/StyleOrgDetails.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="main-container">
             <div class="image-container">
                 <img src="../../Images/hawk.png" class="imageStyle" id="image_logo" runat="server"/>
