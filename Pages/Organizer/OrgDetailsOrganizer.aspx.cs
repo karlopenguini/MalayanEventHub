@@ -42,6 +42,7 @@ namespace MalayanEventHub.Pages.Organizer
                 //LoadSecretary();
                 LoadAdviser();
                 LoadImage();
+                LoadMembers();
             }
         }
 
@@ -66,6 +67,11 @@ namespace MalayanEventHub.Pages.Organizer
             mission_desc.InnerText = mission;
             vision_desc.InnerText = vision;
             contact_details.InnerText = organizationContact;
+        }
+
+        protected class MemberData
+        {
+            public string MemberName { get; set; }
         }
 
         protected void LoadPresident()
@@ -138,13 +144,24 @@ namespace MalayanEventHub.Pages.Organizer
 
         protected void LoadMembers()
         {
+            List<MemberData> Members = new List<MemberData>();
+
             string query =
                 "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
-                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Members'";
-            List<Dictionary<string, string>> data = dbHandler.RetrieveData(query);
+                $"= b.userID where b.organizationID = '{organizationID}' and b.memberRole = 'Member';";
 
-            president = data["full_name"];
-            president_name.InnerText = president;
+            foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
+            {
+                Members.Add(
+                    new MemberData()
+                    {
+                        MemberName = row["full_name"]
+                    }
+                );
+            }
+
+            repeater_Members.DataSource = Members;
+            repeater_Members.DataBind();
         }
     }
 }

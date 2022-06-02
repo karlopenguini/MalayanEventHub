@@ -67,7 +67,11 @@
             <%-- members --%>
             <div style="font-size: 28px; margin-top: 70px; margin-bottom: 100px">
                 Members:
-                <asp:Repeater ID="repeater_Members" runat="server"></asp:Repeater>
+                <asp:Repeater ID="repeater_Members" runat="server">
+                    <ItemTemplate>
+                        <div><%# Eval("MemberName") %></div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <!--contact-->
             <div style="font-size: 28px; margin-top: 70px; margin-bottom: 100px">
