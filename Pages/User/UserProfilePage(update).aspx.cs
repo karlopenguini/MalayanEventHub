@@ -98,7 +98,7 @@ namespace MalayanEventHub.Layouts.Common.User
                     i.Enabled = true;
                 }
                 btn_update.Text = "apply changes";
-                btn_update.Attributes.Add("style", "display: block; width: 200px; padding: 12px; background-color: red; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin: 30px auto 10px auto;");
+                btn_update.Attributes.Add("style", "display: block; margin-left: 350px; width: 200px; padding: 12px; background-color: red; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
                 btn_update.CausesValidation = true;
             }
             else
@@ -107,13 +107,14 @@ namespace MalayanEventHub.Layouts.Common.User
                 string userUpdate_query = "update UserTBL set firstName = '" + tb_fname.Text
                     + "', middleName = '" + tb_mname.Text + "', lastName = '" + tb_lname.Text
                     + "', password = '" + tb_password.Text + "', email = '" + tb_email.Text
-                    + "', contactNo = '" + tb_contact.Text + "'; ";
+                    + "', contactNo = '" + tb_contact.Text + "' where userID = '" + userID + "' ";
 
                 string studentUpdate_query = "update StudentTBL set course = '" + ddl_course.SelectedValue
-                    + "', college = '" + ddl_college.SelectedValue + "', yearLevel = '" + Convert.ToInt32(ddl_yearLevel.Text) + "' ";
+                    + "', college = '" + ddl_college.SelectedValue + "', yearLevel = '" + Convert.ToInt32(ddl_yearLevel.Text) 
+                    + "' where userID = '" + userID + "'";
 
-                dbHandler.ExecuteUpdateQuery("userUpdate_query");
-                dbHandler.ExecuteUpdateQuery("studentUpdate_query");
+                dbHandler.ExecuteUpdateQuery(userUpdate_query);
+                dbHandler.ExecuteUpdateQuery(studentUpdate_query);
 
                 //disable buttons again after update
                 foreach (var i in textboxes)
@@ -125,8 +126,14 @@ namespace MalayanEventHub.Layouts.Common.User
                     i.Enabled = false;
                 }
                 btn_update.Text = "update";
+                btn_update.Attributes.Add("style", "display: block; width: 200px; padding: 12px; background-color: #1C3A63; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
                 btn_update.CausesValidation = false;
             }
+        }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogInPage.aspx");
         }
     }
 }

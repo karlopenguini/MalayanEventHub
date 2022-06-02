@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MalayanEventHub.Layouts.Common.User
+namespace MalayanEventHub
 {
-    public partial class AccountDetailsView : System.Web.UI.MasterPage
+    public partial class dummy : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

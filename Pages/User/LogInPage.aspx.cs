@@ -30,8 +30,10 @@ namespace MalayanEventHub.Pages.User
         {
             try
             {
-                string query = "select * from UserTBL where userID = '" + Convert.ToInt32(TB_UserName.Text) + "' and password = '" + TB_Password.Text + "' ";
-                List<Dictionary<string, string>> dataList = dbHandler.RetrieveData(query);
+                //check if values exist in the database
+                string userTBL_query = "select * from UserTBL where userID = '" + Convert.ToInt32(TB_UserName.Text) + "' and password = '" + TB_Password.Text + "' ";
+
+                List<Dictionary<string, string>> dataList = dbHandler.RetrieveData(userTBL_query);
                 //if datalist doen't contain any, it means username or password doesn't exist
                 if (dataList.Count == 0)
                 {
@@ -39,9 +41,10 @@ namespace MalayanEventHub.Pages.User
                     TB_UserName.Text = "";
                 }
                 else
-                //redirect
                 {
+                    //store data in dictionary
                     Dictionary<string, string> eventDataList = dataList[0];
+
                     Session["userID"] = eventDataList["userID"];
                     Session["fullName"] = eventDataList["firstName"]+" "+eventDataList["lastName"];
                     Session["role"] = eventDataList["role"];
