@@ -17,7 +17,7 @@
             <p class="header">Student Organizations</p>
             <div class="filter-container">
                  <div class="filter" style="margin-left: 10px">
-                    <asp:Button ID="Btn_Requests" runat="server" Text="View Organization Requests" />
+                    <asp:Button ID="Btn_Requests" runat="server" Text="View Organization Requests" OnClick="Btn_requests_Click" />
                 </div>
             </div>
             <div class="filter-container">
