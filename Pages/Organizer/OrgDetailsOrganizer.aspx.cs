@@ -39,9 +39,9 @@ namespace MalayanEventHub.Pages.Organizer
             {
                 LoadDataDetails();
                 LoadPresident();
-                //LoadVice();
-                //LoadTreasurer();
-                //LoadSecretary();
+                LoadVice();
+                LoadTreasurer();
+                LoadSecretary();
                 LoadAdviser();
                 LoadImage();
                 LoadMembers();
