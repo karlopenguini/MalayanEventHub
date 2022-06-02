@@ -11,10 +11,11 @@ namespace MalayanEventHub.Layouts.Common.User
     public partial class WebForm1 : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        int dummyUserNo = 2020121212;
+        int userID;
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            userID = Int32.Parse(Session["userID"].ToString());
             if (!IsPostBack)
             {
                 //get student data and set it to the controls
@@ -25,8 +26,8 @@ namespace MalayanEventHub.Layouts.Common.User
         private void GetCurrentData()
         {
             //select queries to retrieve data
-            string userTBL_query = "select userID, firstName, middleName, lastName, password, email, contactNo from UserTBL where userID='" + dummyUserNo + "'";
-            string studentTBL_query = "select course, college, yearLevel from StudentTBL where userID='" + dummyUserNo + "'";
+            string userTBL_query = "select userID, firstName, middleName, lastName, password, email, contactNo from UserTBL where userID='" + userID + "'";
+            string studentTBL_query = "select course, college, yearLevel from StudentTBL where userID='" + userID + "'";
             List<Dictionary<string, string>> UserTBL = dbHandler.RetrieveData(userTBL_query);
             List<Dictionary<string, string>> StudentTBL = dbHandler.RetrieveData(studentTBL_query);
             if (UserTBL.Count == 0 && StudentTBL.Count == 0)

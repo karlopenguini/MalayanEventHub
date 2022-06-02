@@ -12,10 +12,11 @@ namespace MalayanEventHub.Layouts.Common.Admin
     public partial class WebForm2 : System.Web.UI.Page
     {
         DatabaseHandler databaseHandler = new DatabaseHandler();
-        int organizationID = 80001;
+        int organizationID;
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            organizationID = Int32.Parse(Session["organizationID"].ToString());
             LoadDataViolation();
         }
 

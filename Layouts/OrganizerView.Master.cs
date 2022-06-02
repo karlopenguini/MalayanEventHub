@@ -11,7 +11,13 @@ namespace MCLEventHub.Layouts
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btn_account.Text = Session["fullName"].ToString();
+      
+        }
 
+        protected void GotoUserAccPage(object sender, EventArgs e)
+        {
+            Response.Redirect("UserProfilePage(update).aspx");
         }
     }
 }

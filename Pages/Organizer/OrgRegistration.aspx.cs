@@ -14,12 +14,13 @@ namespace MalayanEventHub.Layouts
     public partial class OrgRegistration : System.Web.UI.Page
     {
         DatabaseHandler dbHandler;
-        string userID = "2020121212";
+        string userID;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
+            userID = Session["userID"].ToString();
             // Create a handler
             dbHandler = new DatabaseHandler();
 

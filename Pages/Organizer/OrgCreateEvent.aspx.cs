@@ -13,18 +13,18 @@ namespace MalayanEventHub
     public partial class OrgCreateEvent : System.Web.UI.Page
     {
         DatabaseHandler dbHandler;
-        string organizerID = "80001-2020171781";
+        string organizerID;
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             //create a dbHandler
             dbHandler = new DatabaseHandler();
-
+            organizerID =  Session["organizationID"]+"-"+ Session["userID"];
             //populate
             if (!Page.IsPostBack)
             {
-                organizerID = "80001-2020171781";
+
                 //appenddatabound
                 ddl_college.AppendDataBoundItems = false;
                 ddl_degree.AppendDataBoundItems = false;

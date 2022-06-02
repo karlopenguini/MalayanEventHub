@@ -11,9 +11,10 @@ namespace MalayanEventHub
     public partial class ViewTickets : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        int userID = 2020181818;
+        int userID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userID = Int32.Parse(Session["userID"].ToString());
             if (!Page.IsPostBack)
             {
                 GETEvents();

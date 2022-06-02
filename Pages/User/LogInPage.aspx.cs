@@ -17,7 +17,7 @@ namespace MalayanEventHub.Pages.User
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
-                Session["userID"] = "";
+               // Session["userID"] = "";
             }
         }
 
@@ -30,32 +30,25 @@ namespace MalayanEventHub.Pages.User
         {
             try
             {
-                string query = "select userID, password, role from UserTBL where userID = '" + Convert.ToInt32(TB_UserName.Text) + "' and password = '" + TB_Password.Text + "' ";
+                string query = "select * from UserTBL where userID = '" + Convert.ToInt32(TB_UserName.Text) + "' and password = '" + TB_Password.Text + "' ";
                 List<Dictionary<string, string>> dataList = dbHandler.RetrieveData(query);
                 //if datalist doen't contain any, it means username or password doesn't exist
                 if (dataList.Count == 0)
                 {
-                    this.DisplayError("Incorrect username of password");
+                    this.DisplayError("Incorrect username or password");
                     TB_UserName.Text = "";
                 }
                 else
                 //redirect
                 {
                     Dictionary<string, string> eventDataList = dataList[0];
+                    Session["userID"] = eventDataList["userID"];
+                    Session["fullName"] = eventDataList["firstName"]+" "+eventDataList["lastName"];
+                    Session["role"] = eventDataList["role"];
                     if (eventDataList["role"] == "Student")
                     {
-                        Session["userID"] = eventDataList["userID"];
-                        Response.Redirect("UserViewCurrentEvents.aspx");
+                        Response.Redirect("UserViewCurrentEvents.aspx");                        
                     }
-                    //else if (eventDataList["role"] == "Admin")
-                    //{
-                    //    Session["userID"] = eventDataList["userID"];
-                    //    Response.Redirect("");
-                    //}
-                    //else
-                    //{
-
-                    //}
                 }
             }
             catch (Exception)

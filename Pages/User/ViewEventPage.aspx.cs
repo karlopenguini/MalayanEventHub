@@ -12,11 +12,12 @@ namespace MalayanEventHub.Layouts
     public partial class WebForm3 : System.Web.UI.Page
     {
         private string eventID = "";
-        private string userID = "2020161601";
+        private string userID;
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
             eventID = Request.QueryString["eventID"];
+            userID = Session["userID"].ToString();
             if (!Page.IsPostBack)
             {
                 this.LoadData();

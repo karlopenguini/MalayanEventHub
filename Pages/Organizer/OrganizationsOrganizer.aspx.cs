@@ -19,10 +19,12 @@ namespace MalayanEventHub.Layouts
         string role;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userID = Session["userID"].ToString();
+            System.Diagnostics.Debug.WriteLine(userID);
             if (!Page.IsPostBack)
             {
-                userID = Request.QueryString["userID"];
 
+              
                 OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
                 GETOrganizations();
@@ -73,7 +75,8 @@ namespace MalayanEventHub.Layouts
             foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
                 string organizationID = row["organizationID"];
-                string organizationURL = $"userID={userID}&organizationID={organizationID}";
+                string organizationURL = "";
+                Session["organizationID"] = organizationID;
 
                 string logo = row["logo"];
                 if (!String.IsNullOrEmpty(row["logo"]))
@@ -167,7 +170,7 @@ namespace MalayanEventHub.Layouts
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Response.Redirect("OrgRegistration.aspx?userID=" + userID);
+            Response.Redirect("OrgRegistration.aspx");
         }
     }
 }

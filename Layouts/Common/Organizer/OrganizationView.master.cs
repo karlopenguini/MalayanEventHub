@@ -10,10 +10,11 @@ namespace MalayanEventHub.Layouts.Common.Organizer
 {
     public partial class OrganizationView : System.Web.UI.MasterPage
     {
-        string orgID = "80001";
+        string orgID;
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
+            orgID = Session["organizationID"].ToString();
             if (!Page.IsPostBack)
             {
                 //orgID = SessionThing? 
