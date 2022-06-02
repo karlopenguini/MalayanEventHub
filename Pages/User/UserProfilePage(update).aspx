@@ -47,7 +47,7 @@
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_mname" runat="server" MaxLength="1" Enabled="False"></asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="tb_mname" runat="server" Enabled="False"></asp:TextBox>
                         <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_mname" runat="server" ErrorMessage="invalid" ControlToValidate="tb_mname" ValidationExpression="[A-Z a-z]+"></asp:RegularExpressionValidator>
                     </td>
                     <td>

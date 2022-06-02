@@ -119,7 +119,7 @@ namespace MalayanEventHub.Layouts.Common.User
 
 
                 btn_update.Text = "apply changes";
-                btn_update.Attributes.Add("style", "display: block; margin-left: 350px; width: 200px; padding: 12px; background-color: red; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin: 30px auto 10px auto;");
+                btn_update.Attributes.Add("style", "display: block; margin-left:350px; width: 200px; padding: 12px; background-color: red; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
                 btn_update.CausesValidation = true;
             }
             else
@@ -152,7 +152,7 @@ namespace MalayanEventHub.Layouts.Common.User
                 }
                 btn_update.Text = "update";
                 btn_update.CausesValidation = false;
-                btn_update.Attributes.Add("style", "display: block; width: 200px; padding: 12px; background-color: #1C3A63; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
+                btn_update.Attributes.Add("style", "display: block; margin-left:350px; width: 200px; padding: 12px; background-color: #1C3A63; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
             }
         }
         protected void btn_logout_Click(object sender, EventArgs e)
