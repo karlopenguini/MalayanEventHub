@@ -42,31 +42,13 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_date;
 
         /// <summary>
-        /// rfv_time control.
+        /// tb_dateTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_time;
-
-        /// <summary>
-        /// tb_date control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_date;
-
-        /// <summary>
-        /// tb_time control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_time;
+        protected global::System.Web.UI.WebControls.TextBox tb_dateTime;
 
         /// <summary>
         /// rfv_verdict control.
