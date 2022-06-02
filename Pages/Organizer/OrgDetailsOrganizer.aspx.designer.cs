@@ -15,75 +15,75 @@ namespace MalayanEventHub.Pages.Organizer
     {
 
         /// <summary>
-        /// img_Logo control.
+        /// adviser_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img_Logo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adviser_name;
 
         /// <summary>
-        /// lbl_Adviser control.
+        /// president_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Adviser;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl president_name;
 
         /// <summary>
-        /// lbl_President control.
+        /// vice_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_President;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vice_name;
 
         /// <summary>
-        /// lbl_VicePresident control.
+        /// secretary_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_VicePresident;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl secretary_name;
 
         /// <summary>
-        /// lbl_Secretary control.
+        /// treasurer_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Secretary;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl treasurer_name;
 
         /// <summary>
-        /// lbl_Treasurer control.
+        /// mission_desc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Treasurer;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mission_desc;
 
         /// <summary>
-        /// lbl_Mission control.
+        /// vision_desc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Mission;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vision_desc;
 
         /// <summary>
-        /// lbl_Vision control.
+        /// contact_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Vision;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contact_details;
     }
 }
