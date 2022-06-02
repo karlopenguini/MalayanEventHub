@@ -84,7 +84,7 @@ namespace MalayanEventHub.Layouts
             GETOrganizations();
         }
 
-        protected void btnRegister_Click(object sender, EventArgs e)
+        protected void Btn_requests_Click(object sender, EventArgs e)
         {
             Response.Redirect("OrganizationRequestsView.aspx?userID=" + organizationID);
         }
