@@ -22,8 +22,8 @@
                         <div class="filter">
                             <p class="filter-var">Type:</p>
                             <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged">
-                                <asp:ListItem >All</asp:ListItem>
-                                <asp:ListItem Selected="True">Academic</asp:ListItem>
+                                <asp:ListItem Selected="True">All</asp:ListItem>
+                                <asp:ListItem>Academic</asp:ListItem>
                                 <asp:ListItem>Non-Academic</asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -49,8 +49,8 @@
                         <div class="filter">
                             <p class="filter-var">Role:</p>
                             <asp:DropDownList ID="ddl_Role" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_Role_SelectedIndexChanged">
-                                <asp:ListItem Value="All">All</asp:ListItem>
-                                <asp:ListItem Selected="True">Member</asp:ListItem>
+                                <asp:ListItem Value="All" Selected="True">All</asp:ListItem>
+                                <asp:ListItem>Member</asp:ListItem>
                                 <asp:ListItem Value="President">President</asp:ListItem>
                                 <asp:ListItem Value="Vice President">Vice President</asp:ListItem>
                                 <asp:ListItem Value="Secretary">Secretary</asp:ListItem>
