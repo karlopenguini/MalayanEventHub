@@ -82,5 +82,11 @@
     color: white;
     border: none;
     border-radius: 7px;
-    margin: 30px auto 10px auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.btn-update-margin {
+    margin-left: 350px;
 }

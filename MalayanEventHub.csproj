@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Styles\User\dummy.aspx" />
     <Content Include="Images\hawk.png" />
     <Content Include="Images\mcl_logo.png" />
     <Content Include="Images\Settings.png" />
@@ -120,6 +121,13 @@
   <ItemGroup>
     <Compile Include="Classes\DatabaseHandler.cs" />
     <Compile Include="Classes\DataManager.cs" />
+    <Compile Include="Styles\User\dummy.aspx.cs">
+      <DependentUpon>dummy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Styles\User\dummy.aspx.designer.cs">
+      <DependentUpon>dummy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Layouts\AdminView.Master.cs">
       <DependentUpon>AdminView.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
