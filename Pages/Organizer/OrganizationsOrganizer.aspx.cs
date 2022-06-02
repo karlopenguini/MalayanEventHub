@@ -47,7 +47,20 @@ namespace MalayanEventHub.Layouts
             type = ddl_type.SelectedItem.Text;
             status = ddl_Status.SelectedItem.Text;
             college = ddl_college.SelectedItem.Text;
-            role = ddl_Role.SelectedItem.Value;
+            role = ddl_Role.SelectedItem.Text;
+
+            string typeQuery = $" AND OrganizationTBL.organizationType = '{type}'";
+            string roleQuery = $" AND MemberTBL.memberRole = '{role}'";
+
+            if (type == "All")
+            {
+                typeQuery = "";
+            }
+
+            if (role == "All")
+            {
+                roleQuery = "";
+            }
 
             string query =
                 "SELECT OrganizationTBL.organizationID," +
@@ -55,7 +68,7 @@ namespace MalayanEventHub.Layouts
                 " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus, MemberTBL.memberRole FROM OrganizationTBL" +
                 " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
                 $" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
-                $" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}' AND MemberTBL.memberRole = '{role}');";
+                $" AND OrganizationTBL.college = '{college}'{typeQuery}{roleQuery});";
 
             foreach(Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
@@ -63,9 +76,14 @@ namespace MalayanEventHub.Layouts
                 string organizationURL = $"userID={userID}&organizationID={organizationID}";
 
                 string logo = row["logo"];
-                if (DBNull.Value.Equals(row["logo"]))
+                if (!String.IsNullOrEmpty(row["logo"]))
                 {
-                    logo = "~/Images/mcl_logo.png";
+                    //get base 64 string of Imag
+                    string queryImg = "SELECT imgBase64Str FROM OrganizationTBL cross apply (select logo '*' for xml path('')) T (imgBase64Str) " +
+                            $"WHERE organizationID = {organizationID}";
+                    Dictionary<string, string> data = dbHandler.RetrieveData(queryImg)[0];
+                    string base64 = data["imgBase64Str"];
+                    logo = "data:image/png;base64, " + base64;
                 }
 
                 Organizations.Add(
