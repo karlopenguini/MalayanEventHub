@@ -12,7 +12,7 @@ namespace MalayanEventHub.Pages.Organizer
     {
         string userID;
         string logo;
-        int organizationID = 80001;
+        string organizationID = "80001";
         string organizationName;
         string organizationType;
         string organizationContact;
@@ -41,6 +41,7 @@ namespace MalayanEventHub.Pages.Organizer
                 //LoadTreasurer();
                 //LoadSecretary();
                 LoadAdviser();
+                LoadImage();
             }
         }
 
@@ -65,7 +66,6 @@ namespace MalayanEventHub.Pages.Organizer
             mission_desc.InnerText = mission;
             vision_desc.InnerText = vision;
             contact_details.InnerText = organizationContact;
-
         }
 
         protected void LoadPresident()
@@ -122,9 +122,9 @@ namespace MalayanEventHub.Pages.Organizer
             adviser = data["full_name"];
             adviser_name.InnerText = adviser;
         }
+
         private void LoadImage()
         {
-
             //get base 64 string of Imag
             string queryImg = "SELECT imgBase64Str FROM OrganizationTBL cross apply (select logo '*' for xml path('')) T (imgBase64Str) " +
                          $"WHERE organizationID = {organizationID}";
@@ -134,6 +134,17 @@ namespace MalayanEventHub.Pages.Organizer
             {
                 image_logo.Src = "data:image/png;base64, " + base64;
             }
+        }
+
+        protected void LoadMembers()
+        {
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
+                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Members'";
+            List<Dictionary<string, string>> data = dbHandler.RetrieveData(query);
+
+            president = data["full_name"];
+            president_name.InnerText = president;
         }
     }
 }

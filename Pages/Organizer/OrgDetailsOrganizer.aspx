@@ -11,7 +11,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="main-container">
             <div class="image-container">
-                <img src="../../Images/hawk.png" class="imageStyle" id="image_logo"/>
+                <img src="../../Images/hawk.png" class="imageStyle" id="image_logo" runat="server"/>
             </div>
             <!--Key members container-->
             <div class="memberTitle-style">
@@ -63,6 +63,11 @@
                     </div>
 
                 </div>
+            </div>
+            <%-- members --%>
+            <div style="font-size: 28px; margin-top: 70px; margin-bottom: 100px">
+                Members:
+                <asp:Repeater ID="repeater_Members" runat="server"></asp:Repeater>
             </div>
             <!--contact-->
             <div style="font-size: 28px; margin-top: 70px; margin-bottom: 100px">

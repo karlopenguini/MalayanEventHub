@@ -15,6 +15,15 @@ namespace MalayanEventHub.Pages.Organizer
     {
 
         /// <summary>
+        /// image_logo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage image_logo;
+
+        /// <summary>
         /// adviser_name control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace MalayanEventHub.Pages.Organizer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl vision_desc;
+
+        /// <summary>
+        /// repeater_Members control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeater_Members;
 
         /// <summary>
         /// contact_details control.
