@@ -163,5 +163,46 @@ namespace MalayanEventHub.Pages.Organizer
             repeater_Members.DataSource = Members;
             repeater_Members.DataBind();
         }
+
+        protected void btn_Add_Click(object sender, EventArgs e)
+        {
+            if (tb_Member.Text.Length == 10)
+            {
+                string[] members = tb_MemberList.Text.Split(
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
+
+                if (!members.Contains(tb_Member.Text))
+                {
+                    string toAdd = tb_Member.Text + "\n";
+
+                    tb_Member.Text = "";
+                    tb_MemberList.Text += toAdd;
+                }
+            }
+        }
+
+        protected void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (tb_Member.Text.Length == 10)
+            {
+                string[] members = tb_MemberList.Text.Split(
+                    new string[] { "\r\n", "\r", "\n" },
+                    StringSplitOptions.None);
+
+                if (members.Contains(tb_Member.Text))
+                {
+                    members = members.Where(val => val != tb_Member.Text).ToArray();
+                    tb_MemberList.Text = "";
+                }
+
+                foreach (string member in members)
+                {
+                    string toAdd = member;
+                    tb_MemberList.Text += toAdd;
+                }
+            }
+
+        }
     }
 }
