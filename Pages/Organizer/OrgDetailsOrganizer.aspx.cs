@@ -26,6 +26,7 @@ namespace MalayanEventHub.Pages.Organizer
         string vice;
         string secretary;
         string treasurer;
+        string role;
 
         DatabaseHandler dbHandler = new DatabaseHandler();
 
@@ -33,6 +34,7 @@ namespace MalayanEventHub.Pages.Organizer
         {
             organizationID = Request.QueryString["orgID"];
             userID = Session["userID"].ToString();
+            role = Request.QueryString["role"];
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             if (!Page.IsPostBack)
@@ -46,6 +48,15 @@ namespace MalayanEventHub.Pages.Organizer
                 LoadImage();
                 LoadMembers();
 
+            }
+
+            if (role == "Member")
+            {
+                btn_Add.Visible = false;
+                btn_Delete.Visible = false;
+                tb_Member.Visible = false;
+                tb_MemberList.Visible = false;
+                member_list.InnerText = "";
             }
         }
 

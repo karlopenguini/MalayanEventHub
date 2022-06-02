@@ -79,7 +79,7 @@
             <div class="form-field">
                 <asp:UpdatePanel ID="up_Members" runat="server">
 	                <ContentTemplate>
-		                <p>Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_MemberList" ForeColor="Red"></asp:RequiredFieldValidator></p>
+		                <p id="member_list" runat="server">Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_MemberList" ForeColor="Red"></asp:RequiredFieldValidator></p>
 		                <div>
 			                <asp:TextBox ID="tb_Member" runat="server" CssClass="text-boxs" Width="200px"></asp:TextBox>
 			                <asp:Button ID="btn_Add" runat="server" Text="Add" CssClass="sub-button" Width="100px" OnClick="btn_Add_Click" CausesValidation="False"/>
