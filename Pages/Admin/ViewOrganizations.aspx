@@ -16,6 +16,11 @@
         <section class="details">
             <p class="header">Student Organizations</p>
             <div class="filter-container">
+                 <div class="filter" style="margin-left: 10px">
+                    <asp:Button ID="Btn_Requests" runat="server" Text="View Organization Requests" />
+                </div>
+            </div>
+            <div class="filter-container">
                 <asp:UpdatePanel ID="up_OrganizerType" runat="server">
                     <ContentTemplate>
                         <div class="filter">
@@ -55,7 +60,6 @@
                                 <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />
                                 <div class="info">
                                     <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Admin/OrgDetails.aspx?" + Eval("OrganizationURL") %>'>DETAILS</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_Requests" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Admin/OrganizationRequestView.aspx?" + Eval("OrganizationURL") %>'>REQUESTS</asp:LinkButton>
                                     <asp:LinkButton ID="btn_Violations" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Admin/OrganizationViolation.aspx?" + Eval("OrganizationURL") %>'>VIOLATIONS</asp:LinkButton>
                                 </div>
                                 <div class="label-container">

@@ -23,7 +23,6 @@ namespace MalayanEventHub.Layouts
                 organizationID = Request.QueryString["organizationID"];
 
                 OrganizationData SampleOrganization = new OrganizationData();
-                //userID = Request.QueryString["userID"];
                 GETOrganizations();
 
             }
@@ -47,13 +46,6 @@ namespace MalayanEventHub.Layouts
             string query =
                 $"Select * from OrganizationTBL where college = '{college}' and organizationType = '{type}';";
 
-
-                //"SELECT OrganizationTBL.organizationID," +
-                //" OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                //" OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus, MemberTBL.memberRole FROM OrganizationTBL" +
-                //" INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
-                //$" WHERE MemberTBL.userId = {userID} AND (OrganizationTBL.organizationStatus = '{status}'" +
-                //$" AND OrganizationTBL.college = '{college}' AND OrganizationTBL.organizationType = '{type}' AND MemberTBL.memberRole = '{role}');";
 
             foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
@@ -94,7 +86,7 @@ namespace MalayanEventHub.Layouts
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Response.Redirect("OrgRegistration.aspx?userID=" + organizationID);
+            Response.Redirect("OrganizationRequestsView.aspx?userID=" + organizationID);
         }
     }
 }
