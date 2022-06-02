@@ -22,6 +22,7 @@ namespace MalayanEventHub.Pages.Organizer
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["organizationID"] = Request.QueryString["orgID"];
             organizationID = Session["OrganizationID"].ToString();
             if (!Page.IsPostBack)
             {

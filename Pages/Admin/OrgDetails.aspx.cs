@@ -12,7 +12,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
     {
         string userID;
         string logo;
-        int organizationID = 80001;
+        int organizationID;
         string organizationName;
         string organizationType;
         string organizationContact;
@@ -29,13 +29,16 @@ namespace MalayanEventHub.Layouts.Common.Admin
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["organizationID"] = Request.QueryString["orgID"];
+            userID = Session["organizationID"].ToString();
+            organizationID = Int32.Parse(Session["organizationID"].ToString());
             if (!Page.IsPostBack)
             {
                 LoadDataDetails();
                 LoadPresident();
-                LoadVice();
-                LoadTreasurer();
-                LoadSecretary();
+                //LoadVice();
+                //LoadTreasurer();
+                //LoadSecretary();
                 LoadImage();
                 LoadAdviser();
             }

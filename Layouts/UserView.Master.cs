@@ -17,7 +17,7 @@ namespace MCLEventHub.Layouts
 
         protected void GotoUserAccPage(object sender, EventArgs e)
         {
-            Response.Redirect("UserProfilePage(update).aspx");
+            Response.Redirect("../User/UserProfilePage(update).aspx");
         }
     }
 }

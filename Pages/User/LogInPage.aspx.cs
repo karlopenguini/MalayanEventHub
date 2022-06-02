@@ -49,6 +49,10 @@ namespace MalayanEventHub.Pages.User
                     {
                         Response.Redirect("UserViewCurrentEvents.aspx");                        
                     }
+                    else if(eventDataList["role"] == "Admin")
+                    {
+                        Response.Redirect("../Admin/Events.aspx");
+                    }
                 }
             }
             catch (Exception)

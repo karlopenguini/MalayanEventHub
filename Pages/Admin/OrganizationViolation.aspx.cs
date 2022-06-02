@@ -16,6 +16,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            Session["organizationID"] = Request.QueryString["orgID"];
             organizationID = Int32.Parse(Session["organizationID"].ToString());
             LoadDataViolation();
         }

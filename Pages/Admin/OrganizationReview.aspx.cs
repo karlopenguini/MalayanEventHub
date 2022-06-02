@@ -27,7 +27,7 @@ namespace MalayanEventHub.Layouts
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            organizationID = Request.QueryString["organizationID"];
+            organizationID = Session["organizationID"].ToString();
             if (!Page.IsPostBack)
             {
                 LoadOrgData();

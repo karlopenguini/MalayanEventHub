@@ -50,7 +50,8 @@ namespace MalayanEventHub.Layouts
             foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
                 string organizationID = row["organizationID"];
-                string organizationURL = $"organizationID={organizationID}";
+                string organizationURL = $"orgID={organizationID}";
+
 
                 string logo = row["logo"];
                 if (DBNull.Value.Equals(row["logo"]))

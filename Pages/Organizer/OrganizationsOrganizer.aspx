@@ -81,9 +81,9 @@
                             <div class="organization-card">
                                 <asp:Image ID="img_Logo" runat="server" ImageUrl='<%# Eval("OrganizationLogo") %>' CssClass="img" />
                                 <div class="info">
-                                    <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrganizationView.aspx" %>'>DETAILS</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrgCreateEvent.aspx"  %>'>CREATE EVENT</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrgEvents.aspx" %>'>VIEW EVENT</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrganizationView.aspx{Eval("OrganizationUrl")}" %>'>DETAILS</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrgCreateEvent.aspx{Eval("OrganizationUrl")}"  %>'>CREATE EVENT</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrgEvents.aspx{Eval("OrganizationUrl")}" %>'>VIEW EVENT</asp:LinkButton>
                                 </div>
                                 <div class="label-container">
                                     <div class="name">
