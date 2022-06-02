@@ -62,9 +62,6 @@
             <asp:Label  ID="lbl_org_status" runat="server" CssClass="org-status">Active</asp:Label>
             <div class="organization-header-border"></div>
         </div>
-        <div class="dropdown-container">
-            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClass="button" UseSubmitBehavior="False" />
-        </div>
     </section>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
