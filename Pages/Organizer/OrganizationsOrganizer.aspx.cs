@@ -126,9 +126,6 @@ namespace MalayanEventHub.Layouts
 
                     btn_ViewEvent.Enabled = false;
                     btn_ViewEvent.Text = "Pending";
-
-                    btn_Violations.Enabled = false;
-                    btn_Violations.Text = "Pending";
                 }
                 else if (role.Text == "Member") {
 
@@ -137,9 +134,6 @@ namespace MalayanEventHub.Layouts
 
                     btn_ViewEvent.Enabled = false;
                     btn_ViewEvent.Text = "-----";
-
-                    btn_Violations.Enabled = false;
-                    btn_Violations.Text = "-----";
                 }
             }
         }
