@@ -37,6 +37,7 @@ namespace MalayanEventHub.Layouts
                 //LoadSecretary();
                 //LoadTreasurer();
                 LoadImage();
+                LoadMember();
             }
             //requestID = GetRequestID();
         }
@@ -69,7 +70,7 @@ namespace MalayanEventHub.Layouts
 
         protected void LoadVice()
         {
-            string query = "select a.userId from MemberTBL a inner join OrganizationRequestTBL b on a.organizationId = b.organizationId " +
+            string query = "select a.userId from MemberTBL as a inner join OrganizationRequestTBL as b on a.organizationId = b.organizationId " +
                 $"where a.memberRole = 'Vice-President' and b.requestId = {requestID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
             vice = data["userId"];
@@ -78,7 +79,7 @@ namespace MalayanEventHub.Layouts
 
         protected void LoadSecretary()
         {
-            string query = "select a.userId from MemberTBL a inner join OrganizationRequestTBL b on a.organizationId = b.organizationId " +
+            string query = "select a.userId from MemberTBL as a inner join OrganizationRequestTBL as b on a.organizationId = b.organizationId " +
                 $"where a.memberRole = 'Secretary' and b.requestId = {requestID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
             secretary = data["userId"];
@@ -87,13 +88,31 @@ namespace MalayanEventHub.Layouts
 
         protected void LoadTreasurer()
         {
-            string query = "select a.userId from MemberTBL a inner join OrganizationRequestTBL b on a.organizationId = b.organizationId " +
+            string query = "select a.userId from MemberTBL as a inner join OrganizationRequestTBL as b on a.organizationId = b.organizationId " +
                 $"where a.memberRole = 'Treasurer' and b.requestId = {requestID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
             treasurer = data["userId"];
             tb_treasurer.Text = treasurer;
         }
 
+        protected void LoadMember()
+        {
+            string query = "SELECT Concat(a.firstName,' ',a.lastName) as full_name from UserTBL as a inner join MemberTBL as b" +
+                $"on a.userID = b.userID where b.memberRole = 'Member' and b.organizationID = {organizationID}";
+            List<Dictionary<string, string>> data = dbHandler.RetrieveData(query);
+            List<Member> list = new List<Member>();
+            foreach(Dictionary<string, string> Member in data)
+            {
+                list.Add(new Member(){MemberName=Member["full_name"]});
+            }
+            member_lists.DataSource = list;
+            member_lists.DataBind();
+        }
+
+        protected class Member
+        {
+            public string MemberName { get; set; }
+        }
         
 
 
