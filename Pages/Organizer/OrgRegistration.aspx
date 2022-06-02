@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-field">
                      <p>Logo<asp:RequiredFieldValidator ID="rfvLogo" runat="server" ErrorMessage="*" ControlToValidate="fu_Logo" CssClass="validator" ForeColor="Red"></asp:RequiredFieldValidator></p>
-                     <asp:FileUpload ID="fu_Logo" runat="server" accept="image/png, image/jpeg"  />
+                     <asp:FileUpload ID="fu_Logo" runat="server" accept="image/png, image/jpeg" CssClass="text-boxs"  />
                 </div>
                 
                 <div class="form-field">

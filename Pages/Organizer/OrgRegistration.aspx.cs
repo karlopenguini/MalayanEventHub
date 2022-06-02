@@ -15,6 +15,7 @@ namespace MalayanEventHub.Layouts
     {
         DatabaseHandler dbHandler;
         string userID = "2020121212";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -37,7 +38,6 @@ namespace MalayanEventHub.Layouts
             }
         }
 
-        // TODO: INSERT TO ADVISER TABLE AND MEMBERS TABLE
         private void UploadDataToServer()
         {
             #region OrganizationTBL Insert Data
@@ -95,8 +95,8 @@ namespace MalayanEventHub.Layouts
             int treasurer_ID = int.Parse(tb_TreasurerNumber.Text);
 
             // Collect Members
-            string[] members = tb_MemberList.Text.Split(
-                    new string[] { "\r\n", "\r", "\n" },
+            string[] members = tb_MemberList.Text.Trim().Split(
+                    new string[] { "\n" },
                     StringSplitOptions.None);
 
             // MemberTBL queries
@@ -126,10 +126,10 @@ namespace MalayanEventHub.Layouts
             #endregion
 
             #region OrganizationRequestTBL & RequestTBL Insert Data
-            // Insert into OrganizationRequestTBL
+            //// Insert into OrganizationRequestTBL
             DateTime now = DateTime.Now;
             string OrganizationRequestTBL_query = "INSERT INTO OrganizationRequestTBL (organizationId, userId, created)" +
-                $" VALUES (80015, 2020121212, '2022-06-02 02:43:34');";
+                $" VALUES ({organizationID}, {userID}, '{now.ToString("yyyy-MM-dd")}'); ";
 
             // Execute command & fetch requestID
             string requestID = dbHandler.ExecuteInsertQueryInReturn(OrganizationRequestTBL_query);
@@ -142,7 +142,7 @@ namespace MalayanEventHub.Layouts
             #endregion
 
             // Redirect to Organization page
-            // NONE YET
+            Response.Redirect("OrganizationsOrganizer.aspx");
         }
 
         private Byte[] GetImageBytes()
