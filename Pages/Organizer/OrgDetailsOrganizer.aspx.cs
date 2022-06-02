@@ -54,6 +54,7 @@ namespace MalayanEventHub.Pages.Organizer
             {
                 btn_Add.Visible = false;
                 btn_Delete.Visible = false;
+                btn_AddMembers.Visible = false;
                 tb_Member.Visible = false;
                 tb_MemberList.Visible = false;
                 member_list.InnerText = "";
@@ -195,6 +196,7 @@ namespace MalayanEventHub.Pages.Organizer
                 {
                     foreach (string member in members)
                     {
+                        cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@studentID", member);
 
                         int count = (int)cmd.ExecuteScalar();
@@ -248,6 +250,39 @@ namespace MalayanEventHub.Pages.Organizer
                 }
             }
 
+        }
+
+        protected void btn_AddMembers_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                UploadDataToServer();
+                tb_Member.Text = "";
+                tb_MemberList.Text = "";
+            }
+        }
+
+        private void UploadDataToServer()
+        {
+            #region OrganizationTBL Insert Data
+            // Collect Members
+            string[] members = tb_MemberList.Text.Trim().Split(
+                    new string[] { "\n" },
+                    StringSplitOptions.None);
+
+            // Members
+            string members_query;
+
+            // Iterate over each member and add to query
+            foreach (string member in members)
+            {
+                members_query = $"INSERT INTO MemberTBL (organizationID, userId, membershipStatus, memberRole) VALUES ({organizationID}, {member}, 'Pending', 'Member');";
+                dbHandler.ExecuteInsertQuery(members_query);
+            }
+            #endregion
+
+            // Redirect to Organization page
+            //Response.Redirect("OrganizationsOrganizer.aspx");
         }
     }
 }
