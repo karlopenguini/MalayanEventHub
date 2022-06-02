@@ -51,17 +51,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style12">Date<asp:RequiredFieldValidator ID="rfv_date" runat="server" ControlToValidate="tb_date" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                            </td>
-                            <td class="auto-style12">Time<asp:RequiredFieldValidator ID="rfv_time" runat="server" ControlToValidate="tb_time" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <td class="auto-style12">Date | Time<asp:RequiredFieldValidator ID="rfv_date" runat="server" ControlToValidate="tb_dateTime" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:TextBox ID="tb_date" runat="server" CssClass="TextBoxStyle" Width="94%"></asp:TextBox>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="tb_time" runat="server" CssClass="TextBoxStyle" Width="100%"></asp:TextBox>
+                                <asp:TextBox ID="tb_dateTime" runat="server" CssClass="TextBoxStyle" TextMode="DateTimeLocal" Width="94%"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -88,7 +83,7 @@
                 </div>
 
                 <div class="DivButton">
-                    <asp:Button ID="Btn_submit" runat="server" Text="Submit" CssClass="StyleButton"/>
+                    <asp:Button ID="Btn_submit" runat="server" Text="Submit" CssClass="StyleButton" OnClick="Btn_submit_Click"/>
                 </div>
                
 
@@ -104,22 +99,22 @@
                             <table class="auto-style7">
                                 <tr style="height: 200px">
                                     <td class="auto-style9">
-                                        <asp:Label ID="label_date" runat="server" Text=""><%# Eval("ViolationDate")%></asp:Label>
+                                        <asp:Label ID="label_date" runat="server" Text='<%# Eval("ShortDate")%>'></asp:Label>
                                     </td>
                                     <td style="width: 80%">
                                         <div class="DivSpacing">
                                             <strong>
-                                            <asp:Label ID="label_title" runat="server" Text=""><%# Eval("title")%></asp:Label>
+                                            <asp:Label ID="label_title" runat="server" Text='<%# Eval("ViolationTitle")%>'></asp:Label>
                                             </strong>
                                         </div>
                                         <div class="DivSpacing">
-                                            <asp:Label ID="label2_date" runat="server" Text="" CssClass="auto-style10"><%# Eval("DateCreated")%></asp:Label>|<asp:Label ID="Label6" runat="server" Text="" CssClass="auto-style10"><%# Eval("time")%></asp:Label>
+                                            <asp:Label ID="label2_date" runat="server" Text='<%# Eval("ViolationDate")%>' CssClass="auto-style10"></asp:Label>
                                         </div>
                                         <div class="DivSpacing">
-                                            <asp:Label ID="label_time" runat="server" Text=""><%# Eval("verdict")%></asp:Label>
+                                            <asp:Label ID="label_time" runat="server" Text='<%# Eval("ViolationVerdict")%>'></asp:Label>
                                         </div>
                                         <div class="DivSpacing">
-                                            <asp:Label ID="label_description" runat="server" Text="" CssClass="auto-style10"><%# Eval("details")%></asp:Label>
+                                            <asp:Label ID="label_description" runat="server" Text='<%# Eval("ViolationDetails")%>' CssClass="auto-style10"></asp:Label>
                                         </div>
                                     </td>
                                 </tr>

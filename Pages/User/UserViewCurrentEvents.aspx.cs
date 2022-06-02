@@ -71,13 +71,20 @@ namespace MalayanEventHub
             {
                 typeQuery = "";
             }
+
+            string collegeQuery =  $"OrganizationTBL.college = '{college}' AND";
+
+            if (college == "All")
+            {
+                collegeQuery = "";
+            }
             string query =
                         "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE {typeQuery} OrganizationTBL.college = '{college}' AND RequestTBL.requestStatus = 'Pending' {dateQuery};";
+                        $" WHERE {typeQuery} {collegeQuery} RequestTBL.requestStatus = 'Active' {dateQuery};";
 
 
 
@@ -86,10 +93,16 @@ namespace MalayanEventHub
                 string eventID = row["eventID"];
                 string image = row["pubmat"];
 
-                if (DBNull.Value.Equals(row["pubmat"]))
+                if (!String.IsNullOrEmpty(row["pubmat"]))
                 {
-                    image = "../Images/mcl_logo.png";
+                    //get base 64 string of Imag
+                    string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                            $"WHERE eventID = {eventID}";
+                    Dictionary<string, string> data = dbHandler.RetrieveData(queryImg)[0];
+                    string base64 = data["imgBase64Str"];
+                    image = "data:image/png;base64, " + base64;
                 }
+         
 
                 Events.Add(
                     new EventData()

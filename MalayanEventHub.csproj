@@ -47,6 +47,7 @@
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -108,6 +109,8 @@
     <Content Include="Styles\User\UserProfilePage%28update%29.css" />
     <Content Include="Styles\Admin\StyleSheetOrgViewRequests.css" />
     <Content Include="Pages\User\UserViewCurrentEvents.aspx" />
+    <Content Include="Pages\User\ViewTickets.aspx" />
+    <Content Include="Styles\User\ViewTickets.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +305,13 @@
     </Compile>
     <Compile Include="Pages\User\UserViewCurrentEvents.aspx.designer.cs">
       <DependentUpon>UserViewCurrentEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\ViewTickets.aspx.cs">
+      <DependentUpon>ViewTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\ViewTickets.aspx.designer.cs">
+      <DependentUpon>ViewTickets.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
