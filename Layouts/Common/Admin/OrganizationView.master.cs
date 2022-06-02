@@ -13,10 +13,18 @@ namespace MalayanEventHub.Layouts.Common.Admin
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(Request.QueryString["orgID"]))
+            {
+                orgID = Request.QueryString["orgID"];
+                Session["organizationID"] = orgID;
+            }
+            else if (Session["organizationID"] != null)
+            {
+                orgID = Session["organizationID"].ToString();
+            }
 
             if (!Page.IsPostBack)
             {
-                orgID = Request.QueryString["orgID"];
                 GETOrg();
             }
         }
