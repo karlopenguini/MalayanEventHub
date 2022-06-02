@@ -33,9 +33,9 @@ namespace MalayanEventHub.Layouts.Common.Admin
             {
                 LoadDataDetails();
                 LoadPresident();
-                //LoadVice();
-                //LoadTreasurer();
-                //LoadSecretary();
+                LoadVice();
+                LoadTreasurer();
+                LoadSecretary();
                 LoadImage();
                 LoadAdviser();
             }
@@ -47,8 +47,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 $"SELECT * FROM OrganizationTBL where organizationID = {organizationID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
 
-            //di ko alam pano yung sa logo
-            //logo = data["logo"];
+
             //organizationName = data["organizationName"];
             //organizationType = data["organizationType"];
             //college = data["college"];
