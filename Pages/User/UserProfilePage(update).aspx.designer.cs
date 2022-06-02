@@ -24,6 +24,15 @@ namespace MalayanEventHub.Layouts.Common.User
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
         /// rfv_fname control.
         /// </summary>
         /// <remarks>
@@ -78,31 +87,31 @@ namespace MalayanEventHub.Layouts.Common.User
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_email;
 
         /// <summary>
-        /// rfv_mi control.
+        /// rfv_mname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_mi;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_mname;
 
         /// <summary>
-        /// tb_mi control.
+        /// tb_mname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_mi;
+        protected global::System.Web.UI.WebControls.TextBox tb_mname;
 
         /// <summary>
-        /// rev_mi control.
+        /// rev_mname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_mi;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_mname;
 
         /// <summary>
         /// UpdatePanelCollege control.
@@ -222,12 +231,12 @@ namespace MalayanEventHub.Layouts.Common.User
         protected global::System.Web.UI.WebControls.TextBox tb_password;
 
         /// <summary>
-        /// btn_apply control.
+        /// btn_update control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_apply;
+        protected global::System.Web.UI.WebControls.Button btn_update;
     }
 }

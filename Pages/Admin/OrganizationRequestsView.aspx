@@ -7,7 +7,7 @@
             margin-bottom:1em;
         }
     </style>
-    <link href="../../Styles/Admin/StyleSheetViewRequest.css" rel="stylesheet" />
+    <link href="../../Styles/Admin/StyleSheetOrgViewRequests.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>

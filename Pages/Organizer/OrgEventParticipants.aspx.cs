@@ -153,7 +153,7 @@ namespace MalayanEventHub.Pages.Organizer
             }
             if (targetDataSet.Contains("year"))
             {
-                tb_year.Text = recordUser["year"];
+                tb_year.Text = recordUser["yearLevel"];
                 form_field_year.Visible = true;
             }
             else

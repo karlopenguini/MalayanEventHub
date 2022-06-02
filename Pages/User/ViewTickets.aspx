@@ -1,18 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/Common/Admin/OrganizationView.master" AutoEventWireup="true" CodeBehind="EventRequests.aspx.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.EventRequests" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head2" runat="server">
-    <style>
-        .header{
-            font-size:1.6em;
-            font-weight:300;
-            margin-bottom:1em;
-        }
-    </style>s
-    <link rel="stylesheet" href="../../Styles/Event_Violation_Card.css" />
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/UserView.Master" AutoEventWireup="true" CodeBehind="ViewTickets.aspx.cs" Inherits="MalayanEventHub.ViewTickets" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../../Styles/User/ViewTickets.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
-        <p class="header">Event Requests</p>
+        <p class="header">My Tickets</p>
         <section class="event-requests-container">
             <asp:Repeater ID="EventRequestsRepeater" runat="server">
             <ItemTemplate>
@@ -23,7 +16,7 @@
                         <asp:Label CssClass="title" ID="lbl_title" runat="server" Text='<%# Eval("EventTitle")  %>'></asp:Label>
                         <asp:Label CssClass="subtitle" ID="lbl_date" runat="server" Text='<%# Eval("EventDate")  %>'></asp:Label>
                         <asp:Label CssClass="subtitle" ID="lbl_link" runat="server" Text='<%# Eval("EventVenue")  %>'></asp:Label>
-                        <asp:Label CssClass="subtitle2" ID="lbl_org" runat="server" Text='<%# Eval("EventOrganizer")  %>'></asp:Label>
+                        <asp:HyperLink CssClass="subtitle" ID="invitationLink" runat="server" Text='<%#"Invitation Link: " + Eval("EventInvitationText")  %>' NavigateUrl='<%# Eval("EventInvitationText")  %>'></asp:HyperLink>
                     </div>
                     <asp:HyperLink CssClass="link-card" ID="hl_event_page_link" runat="server"  NavigateUrl='<%#Eval("EventURL")%>'></asp:HyperLink>
                 </div>
@@ -32,3 +25,6 @@
         </section>
     </main>
 </asp:Content>
+
+
+

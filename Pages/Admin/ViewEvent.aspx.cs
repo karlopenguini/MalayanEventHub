@@ -29,14 +29,36 @@ namespace MalayanEventHub.Layouts.Common.Admin
         DatabaseHandler dbHandler;
         protected void Page_Load(object sender, EventArgs e)
         {
+            eventID = Request.QueryString["eventId"];
+            dbHandler = new DatabaseHandler();
             if (!Page.IsPostBack)
             {
-                eventID = Request.QueryString["eventID"];
-                dbHandler = new DatabaseHandler();
                 LoadEventData();
-
+                LoadEventIncident();
+                LoadCheckBoxData();
             }
         }
+        private void LoadEventIncident()
+        {
+            string query = $"SELECT * FROM IncidentReportTBL WHERE eventID={eventID}";
+            var records = dbHandler.RetrieveData(query);
+            if (records.Count == 0)
+            {
+                tb_incident_report.Text = "No incident reported.";
+                return;
+            }
+            List<string> list = new List<string>();
+            foreach(var record in records)
+            {
+                string incident = $"Incident Report: ({record["title"]})\n" +
+                      $"DateTime: {record["reportDate"]}\n" +
+                      $"Details: {record["details"]}\n";
+                list.Add(incident);
+            }
+            tb_incident_report.Text = String.Join("==========================================\n\n", list);
+        } 
+
+
         protected void LoadEventData()
         {
             string query = $"SELECT e.*, RequestTBL.feedback, RequestTBL.requestStatus FROM EventTBL as e" +
@@ -74,6 +96,30 @@ namespace MalayanEventHub.Layouts.Common.Admin
             TextBoxEndYear.Text = GradeYearEnd;
             tb_status.Text = Status;
             tb_comment.Text = Feedback;
+
+
+            if (!String.IsNullOrEmpty(data["pubmat"]))
+            {
+                //get base 64 string of Imag
+                string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                        $"WHERE eventID = {eventID}";
+                Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
+                string base64 = data2["imgBase64Str"];
+                pubmatImg.ImageUrl = "data:image/png;base64, " + base64;
+            }
+        }
+    
+        private void LoadCheckBoxData()
+        {
+            string query2 = $"SELECT * FROM RequiredInformationTBL Where eventID = {eventID}";
+            List<Dictionary<string, string>> dl_targetData = dbHandler.RetrieveData(query2);
+
+            foreach (Dictionary<string, string> record in dl_targetData)
+            {
+                ListItem item = cbl_targetData.Items.FindByValue(record["dataOfParticipant"]);
+                item.Selected = true;
+                item.Enabled = false;
+            }
         }
     }
 }

@@ -137,18 +137,21 @@
             </div>
             <div id="pubmat-info-fields" class="form-fields">
                 <div class="form-field">
-                    <p>Pubmat Image:</p>
-                    <asp:FileUpload ID="f_uploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"  />
+                    <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
+                        <asp:CustomValidator ID="cv_pubmatImg" ForeColor="Maroon" runat="server" ValidationGroup="form" ControlToValidate="f_uploadImg" Text="*" Font-Size="Large" OnServerValidate="cv_pubmatImg_ServerValidate" ></asp:CustomValidator>
+                        <p>Pubmat Image:</p>
+                    </div>
+                    <asp:FileUpload ID="f_uploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"   />
                 </div>  
-                <p>Note: (Optional) preferred to be landscape and  must be less than 10mb.</p>
+                <p>Note: (Optional) preferred to be landscape and  must be less than 4mb.</p>
             </div>
         </div>
         <div style="width: 40%; display:block; margin: auto;" >
             <asp:ValidationSummary ID="validate_summary"  runat="server" Font-Size="Large" ForeColor="#990000" HeaderText="Invalid Submission:" ValidationGroup="form" />
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; margin-bottom: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
-            <asp:Button ID="btn_submit" runat="server" Text="Submit"  CssClass="main-button" Width="35%" OnClick="ButtonSubmit_Click" ValidationGroup="form"  />
-            <asp:Button ID="btn_cancel" runat="server" Text="Cancel" Width="35%" />
+            <asp:Button ID="btn_submit"  OnClientClick="return confirm('Are you sure about the input information? Note: once created cannot be updated')" runat="server" Text="Submit"  CssClass="main-button" Width="35%" OnClick="ButtonSubmit_Click" ValidationGroup="form"  />
+            <asp:Button ID="btn_cancel" runat="server" Text="Cancel" Width="35%" OnClick="btn_cancel_Click" />
         </div>
     </div>
     <script type="text/javascript">

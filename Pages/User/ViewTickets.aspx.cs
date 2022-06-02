@@ -6,20 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
 
-namespace MalayanEventHub.Layouts.Common.Admin
+namespace MalayanEventHub
 {
-    public partial class EventRequests : System.Web.UI.Page
+    public partial class ViewTickets : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string organizerID = "80001";
-        string type = "";
-        string college = "";
-        string date = "";
-        string status = "";
-        string now = DateTime.Now.ToString("yyyy-MM-dd");
-        string startD = "";
-        string endD = "";
-
+        int userID = 2020181818;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -34,30 +26,25 @@ namespace MalayanEventHub.Layouts.Common.Admin
             public string EventTitle { get; set; }
             public string EventDate { get; set; }
             public string EventVenue { get; set; }
-            public string EventOrganizer { get; set; }
+            public string EventInvitationText { get; set; }
             public string EventURL { get; set; }
         }
 
         protected void GETEvents()
         {
             List<EventData> Events = new List<EventData>();
-            string query =
-                        "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
-                        " FROM EventTBL as e" +
-                        " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
-                        " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
-                        $" INNER JOIN OrganizationTBL ON {organizerID} = OrganizationTBL.organizationID";
+            string query = "SELECT e.* FROM ParticipantTBL as p INNER JOIN EventTBL as e "+
+                            $"ON p.eventId = e.eventID WHERE p.userId = {userID} " +
+                            "ORDER BY p.dateRegistered DESC";
             foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
                 string eventID = row["eventID"];
-
-                string eventurl = "";
 
                 string image;
 
                 if (!String.IsNullOrEmpty(row["pubmat"]))
                 {
-                    //get base 64 string of Imag
+                    //get base 64 string of Image
                     string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
                             $"WHERE eventID = {eventID}";
                     Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
@@ -68,7 +55,10 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 {
                     image = "";
                 }
-
+                if (String.IsNullOrEmpty(row["invitationLink"]))
+                {
+                    row["invitationLink"] = "None";
+                }
                 Events.Add(
                     new EventData()
                     {
@@ -77,8 +67,8 @@ namespace MalayanEventHub.Layouts.Common.Admin
                         EventTitle = row["activityTitle"],
                         EventDate = row["startDateTime"],
                         EventVenue = row["proposedVenue"],
-                        EventOrganizer = row["organizationAcronym"],
-                        EventURL = $"EventReview.aspx?eventId={eventID}",
+                        EventInvitationText = row["invitationLink"],
+                        EventURL = $"ViewEventPage.aspx?eventId={eventID}",
                     }
                 );
             }

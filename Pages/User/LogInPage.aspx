@@ -11,12 +11,13 @@
     <form id="form1" runat="server">
         <div class="parent-container">
             <main>
+                <%--MCL header--%>
                 <h1 style="font-size:56px;">Malayan Colleges Laguna <br /> Event Hub</h1>
                 <div class="par-div">
                     <p class="par">Lorem ipsum dolor sit amet, consectetur officia? Doloribus molestias ad dignissimos magnam nostrum! Dolorum en.</p>
                 </div>
                 <section class="container">
-
+                    <%--div containing the log in part--%>
                     <div class="login-div">
                         <p class="main-label">LOGIN</p>
                         <label class="userAndPass-label">username</label>
@@ -25,17 +26,16 @@
                         <label class="userAndPass-label">password</label>
                         <asp:TextBox CssClass="textbox" ID="TB_Password" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter password" ControlToValidate="TB_Password" CssClass="req-field" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:Button CssClass="signIn-button" ID="Btn_Signin" runat="server" Text="sign in" />
+                        <asp:Button CssClass="signIn-button" ID="Btn_Signin" runat="server" Text="sign in" OnClick="Btn_Signin_Click" />
                     </div>
-
+                    <%--div containing the register part--%>
                     <div class="register-div">
                         <p class="main-label" style="font-weight:300;">REGISTER</p>
                         <label class="as-label">as</label>
-                        <asp:Button class="reg-button" ID="BtnReg" runat="server" Text="student" CausesValidation="False" />
+                        <asp:Button class="reg-button" ID="BtnReg" runat="server" Text="student" CausesValidation="False" OnClick="BtnReg_Click" />
                     </div>
                 </section>
             </main>
-
         </div>
     </form>
 </body>

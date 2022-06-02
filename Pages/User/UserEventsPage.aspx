@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="MalayanEventHub.Layouts.Events" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/UserView.Master" AutoEventWireup="true" CodeBehind="UserEventsPage.aspx.cs" Inherits="MalayanEventHub.Layouts.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../../Styles/Event_Organization_Headers.css" />
-    <link rel="stylesheet" href="../../Styles/EventsPage.css" />
+    <link href="../../Styles/Event_Organization_Headers.css" rel="stylesheet" />
+    <link href="../../Styles/EventsPage.css" rel="stylesheet" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
         <section class="details">
-            <p class="header">Organizations' Event Requests</p>
+            <p class="header">Active Academic Events in <span class="selected-college">CCIS</span> This Week</p>
             <div class="filter-container">
                 <div class="filter">
                     <p class="filter-var">Type:</p>
@@ -24,11 +24,10 @@
                     <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
-                        <asp:ListItem>CCIS</asp:ListItem>
+                        <asp:ListItem Selected="True">CCIS</asp:ListItem>
                         <asp:ListItem>ETYCB</asp:ListItem>
                         <asp:ListItem>MITL</asp:ListItem>
                         <asp:ListItem>CMET</asp:ListItem>
-                        <asp:ListItem Selected="True">All</asp:ListItem>
                     </asp:DropDownList>
 
                 </div>
@@ -43,18 +42,7 @@
                     </asp:DropDownList>
 
                 </div>
-                <div class="filter">
-                    <p class="filter-var">Status:</p>
-
-                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_status_SelectedIndexChanged" ViewStateMode="Enabled">
-                        <asp:ListItem >Active</asp:ListItem>
-                        <asp:ListItem Selected="True">Pending</asp:ListItem>
-                        <asp:ListItem>Rejected</asp:ListItem>
-                        <asp:ListItem>Deleted</asp:ListItem>
-                    </asp:DropDownList>
-
-                </div>
-
+   
             </div>
         </section>
         <section class="general-container">

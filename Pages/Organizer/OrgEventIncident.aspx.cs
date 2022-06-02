@@ -92,7 +92,7 @@ namespace MalayanEventHub.Pages.Organizer
                 string reportID = dbHandler.ExecuteInsertQueryInReturn(sqlCom);
                 //
                 string msg = $"Incident Report ID:{reportID} Successfully Submitted";
-                Response.Redirect($"../OrgMessage.aspx?Msg={msg}");
+                Response.Redirect($"OrgMessage.aspx?Msg={msg}");
             }
 
         }

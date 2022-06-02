@@ -4,16 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
 using MalayanEventHub.Classes;
 
-namespace MalayanEventHub.Layouts
+namespace MalayanEventHub.Pages.Organizer
 {
-    public partial class Events : System.Web.UI.Page
+    public partial class OrgEvents : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
+        string organizationID;
         string type = "";
         string college = "";
         string date = "";
@@ -24,6 +22,7 @@ namespace MalayanEventHub.Layouts
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            organizationID = "80001";
             if (!Page.IsPostBack)
             {
                 GETEvents();
@@ -43,13 +42,13 @@ namespace MalayanEventHub.Layouts
         protected void GETEvents()
         {
             List<EventData> Events = new List<EventData>();
-            type = ddl_type.SelectedValue;
             college = ddl_college.SelectedValue;
             date = ddl_date.SelectedValue;
             status = ddl_status.SelectedValue;
-            
+
             string dateQuery = "";
-            switch (date){
+            switch (date)
+            {
 
                 case "All":
                     break;
@@ -58,7 +57,7 @@ namespace MalayanEventHub.Layouts
                     startD = now;
                     endD = now;
                     dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
-                    
+
                     break;
                 case "This Week":
                     startD = now;
@@ -67,21 +66,16 @@ namespace MalayanEventHub.Layouts
                     break;
                 case "This Month":
                     startD = now;
-                    endD = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd");;
+                    endD = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd"); ;
                     dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
                     break;
             }
 
-            string typeQuery = $"OrganizationTBL.organizationType = '{type}' AND";
-            if (type == "All")
-            {
-                typeQuery = "";
-            }
 
-            string collegeQuery = "";
+            string typeCollegeQuery = "";
             if (college != "All")
             {
-                collegeQuery = $"OrganizationTBL.college = '{college}' AND";
+                typeCollegeQuery = $"e.audienceCollege = '{college}' AND";
             }
             string query =
                         "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
@@ -89,9 +83,9 @@ namespace MalayanEventHub.Layouts
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE {typeQuery} {collegeQuery} RequestTBL.requestStatus = '{status}' {dateQuery};";
+                        $" WHERE OrganizationTBL.organizationID ={organizationID}  AND {typeCollegeQuery} RequestTBL.requestStatus = '{status}' {dateQuery};";
 
-            
+
 
             foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
@@ -101,14 +95,14 @@ namespace MalayanEventHub.Layouts
 
                 switch (row["requestStatus"])
                 {
-                    case "Active": 
-                        eventurl = $"ViewEvent.aspx?eventId={eventID}";
+                    case "Active":
+                        eventurl = $"OrgEventInformation.aspx?eventId={eventID}";
                         break;
                     case "Rejected":
-                        eventurl = $"ViewEvent.aspx?eventId={eventID}";
+                        eventurl = $"OrgEventInformation.aspx?eventId={eventID}";
                         break;
                     case "Pending":
-                        eventurl = $"EventReview.aspx?eventId={eventID}";
+                        eventurl = $"OrgEventInformation.aspx?eventId={eventID}";
                         break;
                 }
 
@@ -117,14 +111,14 @@ namespace MalayanEventHub.Layouts
                 string image;
                 if (!String.IsNullOrEmpty(row["pubmat"]))
                 {
-                    //get base 64 string of Imag
+                    //get base 64 string of Image
                     string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
                             $"WHERE eventID = {eventID}";
                     Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
                     string base64 = data2["imgBase64Str"];
                     image = "data:image/png;base64, " + base64;
                 }
-                else 
+                else
                 {
                     image = "";
                 }
@@ -133,11 +127,11 @@ namespace MalayanEventHub.Layouts
                     new EventData()
                     {
                         EventImageURL = image,
-                        EventTitle=row["activityTitle"],
-                        EventDate= row["startDateTime"],
-                        EventVenue= row["proposedVenue"],
-                        EventOrganizer= row["organizationAcronym"],
-                        EventURL= eventurl,
+                        EventTitle = row["activityTitle"],
+                        EventDate = row["startDateTime"],
+                        EventVenue = row["proposedVenue"],
+                        EventOrganizer = row["organizationAcronym"],
+                        EventURL = eventurl,
                     }
                 );
             }
@@ -149,26 +143,31 @@ namespace MalayanEventHub.Layouts
 
         protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             GETEvents();
         }
 
         protected void ddl_college_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             GETEvents();
         }
 
         protected void ddl_date_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             GETEvents();
         }
 
         protected void ddl_status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             GETEvents();
+        }
+
+        protected void btn_create_event_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgCreateEvent.aspx");
         }
     }
 }

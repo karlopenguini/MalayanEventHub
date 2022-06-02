@@ -7,65 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MalayanEventHub.Layouts.Common.Organizer
+namespace MalayanEventHub
 {
 
 
-    public partial class OrganizationView
+    public partial class UserViewCurrentEvents
     {
 
         /// <summary>
-        /// head2 control.
+        /// ddl_type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head2;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_type;
 
         /// <summary>
-        /// lbl_org_name control.
+        /// ddl_college control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_org_name;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_college;
 
         /// <summary>
-        /// lbl_org_type control.
+        /// ddl_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_org_type;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_date;
 
         /// <summary>
-        /// lbl_org_college control.
+        /// EventsRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_org_college;
-
-        /// <summary>
-        /// lbl_org_status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_org_status;
-
-        /// <summary>
-        /// ContentPlaceHolder2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.Repeater EventsRepeater;
     }
 }
