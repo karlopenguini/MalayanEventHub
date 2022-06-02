@@ -16,6 +16,7 @@ namespace MalayanEventHub.Layouts.Common.Organizer
         {
             if (!Page.IsPostBack)
             {
+                //orgID = SessionThing? 
                 GETOrg();
             }
         }
