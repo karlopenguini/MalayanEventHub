@@ -10,58 +10,117 @@ namespace MalayanEventHub.Pages.Organizer
 {
     public partial class OrgDetailsOrganizer : System.Web.UI.Page
     {
-        DatabaseHandler dbHandler = new DatabaseHandler();
-        string organizationID;
         string userID;
+        string logo;
+        int organizationID = 80001;
+        string organizationName;
+        string organizationType;
+        string organizationContact;
+        string mission;
+        string vision;
+        string college;
+        string organizationStatus;
+        string president;
+        string adviser;
+        string vice;
+        string secretary;
+        string treasurer;
+
+        DatabaseHandler dbHandler = new DatabaseHandler();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            organizationID = Request.QueryString["organizationID"];
-            userID = Request.QueryString["userID"];
-        }
+            //organizationID = Request.QueryString["organizationID"];
+            //userID = Request.QueryString["userID"];
 
-        protected class OrganizationData
-        {
-            public string OrganizationLogo { get; set; }
-            public string OrganizationName { get; set; }
-            public string OrganizationType { get; set; }
-            public string OrganizationStatus { get; set; }
-            public string OrganizationCollege { get; set; }
-            public string OrganizationURL { get; set; }
-            public string OrganizationRole { get; set; }
-        }
-
-        protected void InsertData()
-        {
-            List<OrganizationData> Organizations = new List<OrganizationData>();
-
-            string query =
-                "SELECT OrganizationTBL.organizationID," +
-                " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +
-                " OrganizationTBL.college, OrganizationTBL.logo, OrganizationTBL.organizationStatus FROM OrganizationTBL" +
-                " INNER JOIN MemberTBL ON OrganizationTBL.organizationID = MemberTBL.organizationId" +
-                $" WHERE MemberTBL.userId = {userID} AND OrganizationTBL.organizationID = {organizationID});";
-
-            foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
+            if (!Page.IsPostBack)
             {
-                string logo = row["logo"];
-                if (DBNull.Value.Equals(row["logo"]))
-                {
-                    logo = "~/Images/mcl_logo.png";
-                }
-
-                Organizations.Add(
-                    new OrganizationData()
-                    {
-                        OrganizationLogo = logo,
-                        OrganizationName = row["organizationName"],
-                        OrganizationType = row["organizationType"],
-                        OrganizationStatus = row["organizationStatus"],
-                        OrganizationCollege = row["college"],
-                        OrganizationRole = row["memberRole"],
-                    }
-                );
+                LoadDataDetails();
+                LoadPresident();
+                //LoadVice();
+                //LoadTreasurer();
+                //LoadSecretary();
+                LoadAdviser();
             }
+        }
+
+        protected void LoadDataDetails()
+        {
+            string query =
+                $"SELECT * FROM OrganizationTBL where organizationID = {organizationID}";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+
+            //di ko alam pano yung sa logo
+            //logo = data["logo"];
+            //organizationName = data["organizationName"];
+            //organizationType = data["organizationType"];
+            //college = data["college"];
+            //organizationStatus = data["organizationStatus"];
+
+            mission = data["mission"];
+            vision = data["vision"];
+            organizationContact = data["organizationContact"];
+
+
+            mission_desc.InnerText = mission;
+            vision_desc.InnerText = vision;
+            contact_details.InnerText = organizationContact;
+
+        }
+
+        protected void LoadPresident()
+        {
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
+                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'President'";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+
+            president = data["full_name"];
+            president_name.InnerText = president;
+        }
+
+        protected void LoadVice()
+        {
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
+                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Vice-President'";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+
+            vice = data["full_name"];
+            vice_name.InnerText = vice;
+        }
+
+        protected void LoadSecretary()
+        {
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
+                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Secretary'";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+
+            secretary = data["full_name"];
+            secretary_name.InnerText = secretary;
+        }
+
+        protected void LoadTreasurer()
+        {
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
+                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Treasurer'";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+
+            treasurer = data["full_name"];
+            treasurer_name.InnerText = treasurer;
+        }
+
+        protected void LoadAdviser()
+        {
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from AdviserTBL a inner join OrganizationTBL b on a.adviserID" +
+                $"= b.organizationAdviser where b.organizationID = {organizationID}";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+
+            adviser = data["full_name"];
+            adviser_name.InnerText = adviser;
         }
     }
 }
