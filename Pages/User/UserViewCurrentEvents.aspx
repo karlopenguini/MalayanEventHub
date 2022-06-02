@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
         <section class="details">
-            <p class="header">Active Academic Events in <span class="selected-college">CCIS</span> This Week</p>
+            <p class="header">MCL Events</p>
             <div class="filter-container">
                 <div class="filter">
                     <p class="filter-var">Type:</p>
@@ -24,10 +24,11 @@
                     <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
-                        <asp:ListItem Selected="True">CCIS</asp:ListItem>
+                        <asp:ListItem>CCIS</asp:ListItem>
                         <asp:ListItem>ETYCB</asp:ListItem>
                         <asp:ListItem>MITL</asp:ListItem>
                         <asp:ListItem>CMET</asp:ListItem>
+                        <asp:ListItem Selected="True">All</asp:ListItem>
                     </asp:DropDownList>
 
                 </div>

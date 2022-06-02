@@ -5,6 +5,8 @@
     <link href="../../../Styles/User/UserProfilePage(update).css" rel="stylesheet" />
     <section class="main-container">
         <div class="child-container">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
             <table class="table">
                 <tr>
                     <th colspan="2">
@@ -22,7 +24,7 @@
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_fname" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="tb_fname" runat="server" Enabled="False"></asp:TextBox>
                         <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_fname" runat="server" ErrorMessage="invalid" ControlToValidate="tb_fname" ValidationExpression="[a-z A-Z]+"></asp:RegularExpressionValidator>
                     </td>
                     <td>
@@ -32,7 +34,7 @@
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_email" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="tb_email" runat="server" Enabled="False"></asp:TextBox>
                         <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_email" runat="server" ErrorMessage="invalid" ControlToValidate="tb_email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -40,13 +42,13 @@
                 <tr style="border: solid">
                     <td>
                         <span class="label-span">
-                            <label class="labels">Middle Initial:</label>
-                            <asp:RequiredFieldValidator CssClass="req-validator" ID="rfv_mi" runat="server" ErrorMessage="*" ControlToValidate="tb_mi"></asp:RequiredFieldValidator>
+                            <label class="labels">Middle Name:</label>
+                            <asp:RequiredFieldValidator CssClass="req-validator" ID="rfv_mname" runat="server" ErrorMessage="*" ControlToValidate="tb_mname"></asp:RequiredFieldValidator>
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_mi" runat="server" MaxLength="1"></asp:TextBox>
-                        <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_mi" runat="server" ErrorMessage="invalid" ControlToValidate="tb_mi" ValidationExpression="[A-Z]{1}"></asp:RegularExpressionValidator>
+                        <asp:TextBox CssClass="textbox" ID="tb_mname" runat="server" MaxLength="1" Enabled="False"></asp:TextBox>
+                        <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_mname" runat="server" ErrorMessage="invalid" ControlToValidate="tb_mname" ValidationExpression="[A-Z a-z]+"></asp:RegularExpressionValidator>
                     </td>
                     <td>
                         <span class="label-span">
@@ -56,7 +58,7 @@
                     <td>
                         <asp:UpdatePanel ID="UpdatePanelCollege" runat="server">
                         <ContentTemplate>
-                        <asp:DropDownList CssClass="ddl" ID="ddl_college" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged">
+                        <asp:DropDownList CssClass="ddl" ID="ddl_college" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged" Enabled="False">
                             <asp:ListItem>CCIS</asp:ListItem>
                             <asp:ListItem>CAS</asp:ListItem>
                             <asp:ListItem>ETYCB</asp:ListItem>
@@ -76,7 +78,7 @@
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_lname" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="tb_lname" runat="server" Enabled="False"></asp:TextBox>
                         <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_lname" runat="server" ErrorMessage="invalid" ControlToValidate="tb_lname" ValidationExpression="[a-z A-Z]+"></asp:RegularExpressionValidator>
                     </td>
                     <td>
@@ -87,7 +89,7 @@
                     <td>
                         <asp:UpdatePanel ID="UpdatePanelCourse" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
-                        <asp:DropDownList CssClass="ddl" ID="ddl_course" runat="server">
+                        <asp:DropDownList CssClass="ddl" ID="ddl_course" runat="server" Enabled="False">
                             <asp:ListItem>BSCS</asp:ListItem>
                             <asp:ListItem>BSIT</asp:ListItem>
                         </asp:DropDownList>
@@ -104,7 +106,7 @@
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_contact" runat="server" MaxLength="11"></asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="tb_contact" runat="server" MaxLength="11" Enabled="False"></asp:TextBox>
                         <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_contact" runat="server" ErrorMessage="invalid" ControlToValidate="tb_contact" ValidationExpression="[0-9]{11}"></asp:RegularExpressionValidator>
                     </td>
                     <td>
@@ -113,7 +115,7 @@
                         </span>
                     </td>
                     <td>
-                        <asp:DropDownList CssClass="ddl" ID="ddl_yearLevel" runat="server">
+                        <asp:DropDownList CssClass="ddl" ID="ddl_yearLevel" runat="server" Enabled="False">
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
                             <asp:ListItem>3</asp:ListItem>
@@ -130,16 +132,18 @@
                         </span>
                     </td>
                     <td>
-                        <asp:TextBox CssClass="textbox" ID="tb_password" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox CssClass="textbox" ID="tb_password" runat="server" TextMode="Password" Enabled="False"></asp:TextBox>
                         <%--<asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_password" runat="server" ErrorMessage="invalid" ControlToValidate="tb_password"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:Button CssClass="button" ID="btn_apply" runat="server" Text="apply changes" />
+                        <asp:Button CssClass="button" ID="btn_update" runat="server" Text="update" CausesValidation="False" OnClick="update_Click" />
                     </td>
                 </tr>
             </table>
+            </ContentTemplate>
+            </asp:UpdatePanel>
         </div>
     </section>
 </asp:Content>
