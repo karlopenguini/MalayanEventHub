@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="Images\hawk.png" />
     <Content Include="Images\mcl_logo.png" />
+    <Content Include="Images\Settings.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />

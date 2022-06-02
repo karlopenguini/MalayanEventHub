@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="OrganizationView.master.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.OrganizationView" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .organization-header{
@@ -39,30 +40,34 @@
             font-weight:100;
             opacity:0.8;
         }
-        button{
+        .button{
             all:unset;
         }
-        .org-settings{
-            margin: 0em 2em;
+        .dropdown-container{
+            display:flex;
+            flex-direction:column;
+            width:200px;
+            gap:1em;
         }
     </style>
     <asp:ContentPlaceHolder ID="head2" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <section class="organization-header">
         <div class="organization-info">
             <asp:Label ID="lbl_org_name" runat="server" CssClass="org-name">Organization Name</asp:Label>
-            <div class="org-details"><asp:Label  ID="lbl_org_type" runat="server" CssClass="org-type">Type</asp:Label><p class="separator">|</p><asp:Label  ID="lbl_org_college" runat="server" CssClass="org-college">College</asp:Label></div>
-            <asp:Label  ID="lbl_org_status" runat="server" CssClass="org-status">Active</asp:Label>
+            <div class="org-details">
+                <asp:Label ID="lbl_org_type" runat="server" CssClass="org-type">Type</asp:Label><p class="separator">|</p>
+                <asp:Label ID="lbl_org_college" runat="server" CssClass="org-college">College</asp:Label></div>
+            <asp:Label ID="lbl_org_status" runat="server" CssClass="org-status">Active</asp:Label>
             <div class="organization-header-border"></div>
         </div>
-        <div>
-            <button>
-                <object class="org-settings" data="../../../Images/SVG/Settings.svg" width="36"></object>
-            </button>
+        <div class="dropdown-container">
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClas="button" UseSubmitBehavior="False" />
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClas="button" UseSubmitBehavior="False"/>
         </div>
     </section>
-     
+
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>

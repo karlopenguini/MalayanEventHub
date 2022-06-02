@@ -60,6 +60,15 @@ namespace MalayanEventHub.Layouts.Common.Organizer
         protected global::System.Web.UI.WebControls.Label lbl_org_status;
 
         /// <summary>
+        /// btn_delete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_delete;
+
+        /// <summary>
         /// ContentPlaceHolder2 control.
         /// </summary>
         /// <remarks>
