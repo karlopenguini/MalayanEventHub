@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string userID = "2020161601";
+        string userID = "2020949499";
 
         string type;
         string status;
