@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="ViewOrganizations.aspx.cs" Inherits="MalayanEventHub.Layouts.ViewOrganizations" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/SiteLayout.Master"  AutoEventWireup="true" CodeBehind="ViewOrganizations.aspx.cs" Inherits="MalayanEventHub.Layouts.ViewOrganizations" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style type="text/css">
         .auto-style1 {

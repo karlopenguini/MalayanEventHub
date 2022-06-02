@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/UserView.Master" AutoEventWireup="true" CodeBehind="UserViewCurrentEvents.aspx.cs" Inherits="MalayanEventHub.UserViewCurrentEvents" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/SiteLayout.Master"  AutoEventWireup="true" CodeBehind="UserViewCurrentEvents.aspx.cs" Inherits="MalayanEventHub.UserViewCurrentEvents" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../../Styles/Event_Organization_Headers.css" rel="stylesheet" />
     <link href="../../Styles/EventsPage.css" rel="stylesheet" />

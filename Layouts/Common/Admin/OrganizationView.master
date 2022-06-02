@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="OrganizationView.master.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.OrganizationView" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Layouts/SiteLayout.Master" AutoEventWireup="true" CodeBehind="OrganizationView.master.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.OrganizationView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/OrganizerView.Master" AutoEventWireup="true" CodeBehind="OrgRegistration.aspx.cs" Inherits="MalayanEventHub.Layouts.OrgRegistration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/SiteLayout.Master"  AutoEventWireup="true" CodeBehind="OrgRegistration.aspx.cs" Inherits="MalayanEventHub.Layouts.OrgRegistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../../Styles/Organizer/organization-registration.css" rel="stylesheet" />
     <link href="../../Styles/MasterStyleSheet.css" rel="stylesheet" />
