@@ -171,29 +171,23 @@
         <nav class="navbar">
             <a href="~/Sample.aspx" class="nav-logo">MCL<span>EventHub.</span>
             </a>
-            <section class="search-bar-container">
-                <div style="width: 50%;">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="search-bar"></asp:TextBox>
-                </div>
-            </section>
-
             <section class="nav-links">
-                <asp:HyperLink ID="hl_tickets" runat="server" Target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
+                <asp:HyperLink ID="hl_tickets" runat="server" Target="_self"   NavigateUrl="~/Pages/User/ViewTickets.aspx" class="nav-link">
                     <p>tickets</p>
                     <object data="/../Images/SVG/arrow.svg"></object>
                 </asp:HyperLink>
-                <asp:HyperLink ID="hl_my_events" runat="server" Target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
-                    <p>my events</p>
+                <asp:HyperLink ID="hl_events" runat="server" Target="_self"  NavigateUrl="~/Pages/User/UserViewCurrentEvents.aspx" class="nav-link">
+                    <p>events</p>
                     <object data="/../Images/SVG/arrow.svg"></object>
                 </asp:HyperLink>
-                <asp:HyperLink ID="hl_events" runat="server" Target="_self" NavigateUrl="~/Sample.aspx" class="nav-link">
-                    <p>events</p>
+                <asp:HyperLink ID="hl_my_events" runat="server" Target="_self" NavigateUrl="~/Pages/Organizer/OrganizationsOrganizer.aspx" class="nav-link">
+                    <p>my Orgs</p>
                     <object data="/../Images/SVG/arrow.svg"></object>
                 </asp:HyperLink>
                 <div class="nav-account">
                     <object data="/../Images/SVG/UserCircle.svg"></object>
                     <div class="nav-account-btn">
-                        <asp:Button ID="btn_account" runat="server" Text="Karlo Miguel Palisoc" CssClass="nav-account-btn-name" />
+                        <asp:Button ID="btn_account" runat="server" Text="Karlo Miguel Palisoc" CssClass="nav-account-btn-name" OnClick="GotoUserAccPage"  />
                         <object data="/../Images/SVG/Caret_Circle_Down.svg"></object>
                     </div>
                 </div>

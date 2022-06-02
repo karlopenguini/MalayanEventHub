@@ -47,6 +47,7 @@
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,19 +68,23 @@
   <ItemGroup>
     <Content Include="Images\hawk.png" />
     <Content Include="Images\mcl_logo.png" />
+    <Content Include="Images\Settings.png" />
     <Content Include="Images\SVG\arrow.svg" />
     <Content Include="Images\SVG\Caret_Circle_Down.svg" />
     <Content Include="Images\SVG\Settings.svg" />
     <Content Include="Images\SVG\UserCircle.svg" />
+    <Content Include="Pages\Admin\ViewOrganizations.aspx" />
+    <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\Admin\OrganizationReview.aspx" />
     <Content Include="Pages\Admin\OrgDetails.aspx" />
     <Content Include="Pages\Admin\OrganizationRequestsView.aspx" />
     <Content Include="Pages\Admin\OrganizationViolation.aspx" />
     <Content Include="Pages\Organizer\OrgDetailsOrganizer.aspx" />
+    <Content Include="Pages\Organizer\OrgEvents.aspx" />
     <Content Include="Pages\User\ViewEventPage.aspx" />
     <Content Include="Pages\User\UserProfilePage%28update%29.aspx" />
     <Content Include="Pages\Admin\Events.aspx" />
-    <Content Include="Pages\OrgMessage.aspx" />
+    <Content Include="Pages\Organizer\OrgMessage.aspx" />
     <Content Include="Pages\Organizer\OrganizationsOrganizer.aspx" />
     <Content Include="Pages\Organizer\OrgEventIncident.aspx" />
     <Content Include="Pages\Organizer\OrgEventParticipants.aspx" />
@@ -92,6 +97,7 @@
     <Content Include="Styles\Admin\StyleOrgDetails.css" />
     <Content Include="Styles\Admin\StyleOrgReview.css" />
     <Content Include="Styles\Admin\StyleSheetOrgViolation.css" />
+    <Content Include="Styles\Admin\StyleSheetViewOrgs.css" />
     <Content Include="Styles\Event_Violation_Card.css" />
     <Content Include="Pages\Admin\ViewEvent.aspx" />
     <Content Include="Pages\Admin\EventReview.aspx" />
@@ -106,11 +112,12 @@
     <Content Include="Styles\User\ProfilePage.css" />
     <Content Include="Styles\User\UserProfilePage%28update%29.css" />
     <Content Include="Styles\Admin\StyleSheetOrgViewRequests.css" />
+    <Content Include="Pages\User\UserViewCurrentEvents.aspx" />
+    <Content Include="Pages\User\ViewTickets.aspx" />
+    <Content Include="Styles\User\ViewTickets.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Degree.cs" />
-    <Compile Include="Classes\College.cs" />
     <Compile Include="Classes\DatabaseHandler.cs" />
     <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Layouts\AdminView.Master.cs">
@@ -126,6 +133,13 @@
     </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewOrganizations.aspx.cs">
+      <DependentUpon>ViewOrganizations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ViewOrganizations.aspx.designer.cs">
+      <DependentUpon>ViewOrganizations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\OrganizationReview.aspx.cs">
       <DependentUpon>OrganizationReview.aspx</DependentUpon>
@@ -161,6 +175,13 @@
     </Compile>
     <Compile Include="Pages\Organizer\OrgDetailsOrganizer.aspx.designer.cs">
       <DependentUpon>OrgDetailsOrganizer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEvents.aspx.cs">
+      <DependentUpon>OrgEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Organizer\OrgEvents.aspx.designer.cs">
+      <DependentUpon>OrgEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\User\ViewEventPage.aspx.cs">
       <DependentUpon>ViewEventPage.aspx</DependentUpon>
@@ -229,11 +250,11 @@
     <Compile Include="Layouts\UserView.Master.designer.cs">
       <DependentUpon>UserView.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\OrgMessage.aspx.cs">
+    <Compile Include="Pages\Organizer\OrgMessage.aspx.cs">
       <DependentUpon>OrgMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\OrgMessage.aspx.designer.cs">
+    <Compile Include="Pages\Organizer\OrgMessage.aspx.designer.cs">
       <DependentUpon>OrgMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Organizer\OrganizationsOrganizer.aspx.cs">
@@ -296,6 +317,20 @@
       <DependentUpon>LogInPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pages\User\UserViewCurrentEvents.aspx.cs">
+      <DependentUpon>UserViewCurrentEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\UserViewCurrentEvents.aspx.designer.cs">
+      <DependentUpon>UserViewCurrentEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\ViewTickets.aspx.cs">
+      <DependentUpon>ViewTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\User\ViewTickets.aspx.designer.cs">
+      <DependentUpon>ViewTickets.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Layouts\AdminView.Master" />

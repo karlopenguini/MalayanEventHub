@@ -5,10 +5,13 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <section class="container">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
         <%--first row containing the image--%>
         <div class="first-row">
-            <asp:Image class="image" id="img_event" runat="server" ImageUrl="~/Images/dummyImg.jpg"></asp:Image>
+            <asp:Image class="image" id="img_event" runat="server" ImageUrl="~/Images/dummyImg.jp"></asp:Image>
         </div>
 
         <%--second row containing the event name, register button, org name and date--%>
@@ -26,7 +29,7 @@
                 </span>
             </div>
             <div class="register-container">
-                <asp:Button CssClass="button" ID="btn_register" runat="server" Text="Register" />
+                <asp:Button CssClass="button" ID="btn_register" runat="server" Text="Register" OnClick="btn_register_Click" />
             </div>
         </div>
         <%--hr to separate--%>
@@ -45,5 +48,7 @@
 
             </div>
         </div>
+    </ContentTemplate>
+    </asp:UpdatePanel>
     </section>
 </asp:Content>

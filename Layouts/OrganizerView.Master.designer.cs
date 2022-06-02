@@ -24,15 +24,6 @@ namespace MCLEventHub.Layouts
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
         /// hl_tickets control.
         /// </summary>
         /// <remarks>
@@ -42,15 +33,6 @@ namespace MCLEventHub.Layouts
         protected global::System.Web.UI.WebControls.HyperLink hl_tickets;
 
         /// <summary>
-        /// hl_my_events control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl_my_events;
-
-        /// <summary>
         /// hl_events control.
         /// </summary>
         /// <remarks>
@@ -58,6 +40,15 @@ namespace MCLEventHub.Layouts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hl_events;
+
+        /// <summary>
+        /// hl_my_events control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_my_events;
 
         /// <summary>
         /// btn_account control.

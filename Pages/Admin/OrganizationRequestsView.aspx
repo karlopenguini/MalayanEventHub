@@ -7,7 +7,7 @@
             margin-bottom:1em;
         }
     </style>
-    <link href="../../Styles/Admin/StyleSheetViewRequest.css" rel="stylesheet" />
+    <link href="../../Styles/Admin/StyleSheetOrgViewRequests.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main>
@@ -25,7 +25,7 @@
                         <asp:Label CssClass="subtitle2" ID="lbl_vision" runat="server" Text='<%# Eval("Vision")  %>'></asp:Label>
                     </div>
 
-                    <asp:HyperLink CssClass="link-card" ID="hl_requests_page_link" runat="server"  NavigateUrl='<%#Eval("EventURL")%>'></asp:HyperLink>
+                    <asp:HyperLink CssClass="link-card" ID="hl_requests_page_link" runat="server"  NavigateUrl='<%#Eval("OrganizationURL")%>'></asp:HyperLink>
                 </div>
             </ItemTemplate>
         </asp:Repeater>

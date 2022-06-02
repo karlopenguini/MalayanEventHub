@@ -77,13 +77,19 @@ namespace MalayanEventHub.Layouts
             {
                 typeQuery = "";
             }
+
+            string collegeQuery = "";
+            if (college != "All")
+            {
+                collegeQuery = $"OrganizationTBL.college = '{college}' AND";
+            }
             string query =
                         "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE {typeQuery} OrganizationTBL.college = '{college}' AND RequestTBL.requestStatus = '{status}' {dateQuery};";
+                        $" WHERE {typeQuery} {collegeQuery} RequestTBL.requestStatus = '{status}' {dateQuery};";
 
             
 
@@ -106,11 +112,21 @@ namespace MalayanEventHub.Layouts
                         break;
                 }
 
-                string image = row["pubmat"];
 
-                if(DBNull.Value.Equals(row["pubmat"]))
+
+                string image;
+                if (!String.IsNullOrEmpty(row["pubmat"]))
                 {
-                    image = "../Images/mcl_logo.png";
+                    //get base 64 string of Imag
+                    string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                            $"WHERE eventID = {eventID}";
+                    Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
+                    string base64 = data2["imgBase64Str"];
+                    image = "data:image/png;base64, " + base64;
+                }
+                else 
+                {
+                    image = "";
                 }
 
                 Events.Add(
@@ -128,6 +144,8 @@ namespace MalayanEventHub.Layouts
             EventsRepeater.DataSource = Events;
             EventsRepeater.DataBind();
         }
+
+
 
         protected void ddl_type_SelectedIndexChanged(object sender, EventArgs e)
         {

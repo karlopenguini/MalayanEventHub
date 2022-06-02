@@ -119,8 +119,8 @@
                     </asp:UpdatePanel>
 
                     <%--sing in and sign up section--%>
-                    <asp:Button CssClass="button" ID="btn_signup" runat="server" Text="sign up" />
-                    <p class="par">Have an account?<asp:HyperLink CssClass="hyper-link" ID="hl_signin" runat="server">Sign in</asp:HyperLink> </p>
+                    <asp:Button CssClass="button" ID="btn_signup" runat="server" Text="sign up" OnClick="btn_signup_Click" />
+                    <p class="par">Have an account?<asp:HyperLink CssClass="hyper-link" ID="hl_signin" runat="server" NavigateUrl="~/Pages/User/LogInPage.aspx">Sign in</asp:HyperLink> </p>
                 </div>
             </section>
         </div>
