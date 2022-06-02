@@ -10,7 +10,7 @@ namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
-        string userID;
+        string userID = "2020949499";
         DatabaseHandler dbHandler = new DatabaseHandler();
 
         string type;
@@ -23,12 +23,9 @@ namespace MalayanEventHub.Layouts
             System.Diagnostics.Debug.WriteLine(userID);
             if (!Page.IsPostBack)
             {
-
-              
                 OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
                 GETOrganizations();
-
             }
         }
 
@@ -63,7 +60,6 @@ namespace MalayanEventHub.Layouts
             {
                 roleQuery = "";
             }
-
             string query =
                 "SELECT OrganizationTBL.organizationID," +
                 " OrganizationTBL.organizationName, OrganizationTBL.organizationType," +

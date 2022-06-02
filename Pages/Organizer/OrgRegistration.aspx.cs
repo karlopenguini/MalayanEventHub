@@ -374,7 +374,6 @@ namespace MalayanEventHub.Layouts
                     tb_MemberList.Text += toAdd;
                 }
             }
-            
         }
         #endregion
     }
