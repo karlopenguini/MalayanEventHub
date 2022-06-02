@@ -36,12 +36,12 @@
                     </div>
                 </div>
                 <div class="side-container">
-                    <div style="width: 50%" id="secretary_name" runat="server">
-                        <p style="font-size: 28px">Don T. Requintina </p>
+                    <div style="width: 50%" runat="server">
+                        <p style="font-size: 28px" id="secretary_name" runat="server">Don T. Requintina </p>
                         Secretary
                     </div>
-                    <div style="width: 50%" id="treasurer_name" runat="server">
-                        <p style="font-size: 28px">Zenaida N. Requintina </p>
+                    <div style="width: 50%" runat="server">
+                        <p style="font-size: 28px" id="treasurer_name" runat="server">Zenaida N. Requintina </p>
                         Treasurer
                     </div>
                 </div>

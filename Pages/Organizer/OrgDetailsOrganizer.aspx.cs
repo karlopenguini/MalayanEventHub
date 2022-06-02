@@ -13,7 +13,7 @@ namespace MalayanEventHub.Pages.Organizer
     {
         string userID;
         string logo;
-        string organizationID = "80001";
+        string organizationID;
         string organizationName;
         string organizationType;
         string organizationContact;
@@ -31,8 +31,8 @@ namespace MalayanEventHub.Pages.Organizer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //organizationID = Request.QueryString["organizationID"];
-            //userID = Request.QueryString["userID"];
+            organizationID = Request.QueryString["orgID"];
+            userID = Session["userID"].ToString();
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             if (!Page.IsPostBack)
