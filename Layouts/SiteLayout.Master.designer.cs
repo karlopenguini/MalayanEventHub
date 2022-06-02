@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MCLEventHub.Layouts
+namespace MalayanEventHub.Layouts
 {
 
 
-    public partial class Site1
+    public partial class SiteLayout
     {
 
         /// <summary>
@@ -24,31 +24,13 @@ namespace MCLEventHub.Layouts
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// hl_tickets control.
+        /// linksrepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl_tickets;
-
-        /// <summary>
-        /// hl_events control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl_events;
-
-        /// <summary>
-        /// hl_my_events control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl_my_events;
+        protected global::System.Web.UI.WebControls.Repeater linksrepeater;
 
         /// <summary>
         /// btn_account control.

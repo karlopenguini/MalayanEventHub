@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/UserView.Master" AutoEventWireup="true" CodeBehind="ViewTickets.aspx.cs" Inherits="MalayanEventHub.ViewTickets" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layouts/SiteLayout.Master"  AutoEventWireup="true" CodeBehind="ViewTickets.aspx.cs" Inherits="MalayanEventHub.ViewTickets" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../../Styles/User/ViewTickets.css" rel="stylesheet" />
 </asp:Content>

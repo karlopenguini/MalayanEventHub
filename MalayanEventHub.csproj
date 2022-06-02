@@ -119,19 +119,19 @@
   <ItemGroup>
     <Compile Include="Classes\DatabaseHandler.cs" />
     <Compile Include="Classes\DataManager.cs" />
-    <Compile Include="Layouts\AdminView.Master.cs">
-      <DependentUpon>AdminView.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\AdminView.Master.designer.cs">
-      <DependentUpon>AdminView.Master</DependentUpon>
-    </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Layouts\Common\Admin\OrganizationView.master.designer.cs">
       <DependentUpon>OrganizationView.master</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\SiteLayout.Master.cs">
+      <DependentUpon>SiteLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\SiteLayout.Master.designer.cs">
+      <DependentUpon>SiteLayout.Master</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\ViewOrganizations.aspx.cs">
       <DependentUpon>ViewOrganizations.aspx</DependentUpon>
@@ -235,20 +235,6 @@
     <Compile Include="Layouts\Common\User\AccountDetailsView.master.designer.cs">
       <DependentUpon>AccountDetailsView.master</DependentUpon>
     </Compile>
-    <Compile Include="Layouts\OrganizerView.Master.cs">
-      <DependentUpon>OrganizerView.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\OrganizerView.Master.designer.cs">
-      <DependentUpon>OrganizerView.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Layouts\UserView.Master.cs">
-      <DependentUpon>UserView.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Layouts\UserView.Master.designer.cs">
-      <DependentUpon>UserView.Master</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Organizer\OrgMessage.aspx.cs">
       <DependentUpon>OrgMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,12 +318,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Layouts\AdminView.Master" />
-    <Content Include="Layouts\OrganizerView.Master" />
-    <Content Include="Layouts\UserView.Master" />
     <Content Include="Layouts\Common\Admin\OrganizationView.master" />
     <Content Include="Layouts\Common\Organizer\OrganizationView.master" />
     <Content Include="Layouts\Common\User\AccountDetailsView.master" />
+    <Content Include="Layouts\SiteLayout.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
