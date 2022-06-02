@@ -137,7 +137,7 @@ namespace MalayanEventHub.Pages.Organizer
             {
                 lbl_status.ForeColor = System.Drawing.Color.GreenYellow; 
             }
-            else if (currentStatus == "Deleted")
+            else if (currentStatus == "Deleted" || currentStatus=="Rejected")
             {
                 lbl_status.ForeColor = System.Drawing.Color.DarkRed;
             }

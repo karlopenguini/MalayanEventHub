@@ -22,7 +22,10 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GETEvents();
+            if (!Page.IsPostBack)
+            {
+                GETEvents();
+            }
         }
         public class EventData
         {
@@ -50,11 +53,20 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
                 string eventurl = "";
 
-                string image = row["pubmat"];
+                string image;
 
-                if (DBNull.Value.Equals(row["pubmat"]))
+                if (!String.IsNullOrEmpty(row["pubmat"]))
                 {
-                    image = "../Images/mcl_logo.png";
+                    //get base 64 string of Imag
+                    string queryImg = "SELECT imgBase64Str FROM EventTBL cross apply (select pubmat '*' for xml path('')) T (imgBase64Str) " +
+                            $"WHERE eventID = {eventID}";
+                    Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
+                    string base64 = data2["imgBase64Str"];
+                    image = "data:image/png;base64, " + base64;
+                }
+                else
+                {
+                    image = "";
                 }
 
                 Events.Add(
