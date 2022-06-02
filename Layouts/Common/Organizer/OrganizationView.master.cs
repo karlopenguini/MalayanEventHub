@@ -10,22 +10,33 @@ namespace MalayanEventHub.Layouts.Common.Organizer
 {
     public partial class OrganizationView : System.Web.UI.MasterPage
     {
-        string orgID;
-        DatabaseHandler dbHandler = new DatabaseHandler();
+        string orgID2 = "";
+        DatabaseHandler dbHandler2 = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["organizationID"] = Request.QueryString["orgID"];
-            orgID = Session["organizationID"].ToString();
+            if (!String.IsNullOrEmpty(Request.QueryString["orgID"]))
+            {
+                orgID2 = Request.QueryString["orgID"];
+                Session["organizationID"] = orgID2;
+            }
+            else if(Session["organizationID"]!=null)
+            {
+                orgID2 = Session["organizationID"].ToString();
+            }
+
             if (!Page.IsPostBack)
             {
                 //orgID = SessionThing? 
-                GETOrg();
+                if (!String.IsNullOrEmpty(orgID2))
+                {
+                    GETOrg();
+                }
             }
         }
         protected void GETOrg()
         {
-            string query = $"SELECT organizationName, organizationType, college, organizationStatus FROM OrganizationTBL WHERE organizationID = {orgID}";
-            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+            string query = $"SELECT organizationName, organizationType, college, organizationStatus FROM OrganizationTBL WHERE organizationID = {orgID2}";
+            Dictionary<string, string> data = dbHandler2.RetrieveData(query)[0];
             lbl_org_name.Text = data["organizationName"];
             lbl_org_type.Text = data["organizationType"];
             lbl_org_college.Text = data["college"];

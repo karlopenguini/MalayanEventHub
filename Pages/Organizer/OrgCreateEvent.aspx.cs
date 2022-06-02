@@ -20,9 +20,8 @@ namespace MalayanEventHub
 
             //create a dbHandler
             dbHandler = new DatabaseHandler();
-            Session["organizationID"] = Request.QueryString["orgID"];
-            organizerID =  Session["organizationID"]+"-"+ Session["userID"];
-            //populate
+            organizerID = Session["organizationID"] + "-"+ Session["userID"];
+
             if (!Page.IsPostBack)
             {
 
