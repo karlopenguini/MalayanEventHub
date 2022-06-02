@@ -79,11 +79,12 @@
             <div class="form-field">
                 <asp:UpdatePanel ID="up_Members" runat="server">
 	                <ContentTemplate>
-		                <p>Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_MemberList" ForeColor="Red"></asp:RequiredFieldValidator></p>
+		                <p id="member_list" runat="server">Members<asp:RequiredFieldValidator ID="rfv_MemberList" runat="server" ErrorMessage="*" ControlToValidate="tb_MemberList" ForeColor="Red"></asp:RequiredFieldValidator></p>
 		                <div>
 			                <asp:TextBox ID="tb_Member" runat="server" CssClass="text-boxs" Width="200px"></asp:TextBox>
-			                <asp:Button ID="btn_Add" runat="server" Text="Add" CssClass="sub-button" Width="100px" OnClick="btn_Add_Click" CausesValidation="False"/>
-			                <asp:Button ID="btn_Delete" runat="server" Text="Delete" CssClass="sub-button" Width="100px" OnClick="btn_Delete_Click" CausesValidation="False"/>
+			                <asp:Button ID="btn_Add" runat="server" Text="Insert" CssClass="sub-button" Width="100px" OnClick="btn_Add_Click" CausesValidation="False"/>
+			                <asp:Button ID="btn_Delete" runat="server" Text="Remove" CssClass="sub-button" Width="100px" OnClick="btn_Delete_Click" CausesValidation="False"/>
+                            <asp:Button ID="btn_AddMembers" runat="server" Text="Add Members" CssClass="main-button" Width="200px" OnClick="btn_AddMembers_Click" OnClientClick="return confirm('Member/s Added')"/>
 		                </div>
 		                <asp:RegularExpressionValidator ID="rev_Member" runat="server" ErrorMessage="Invalid Student ID" ControlToValidate="tb_Member" ValidationExpression="^\d{10}$" ForeColor="Red"></asp:RegularExpressionValidator>
 	                </ContentTemplate>
