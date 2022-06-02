@@ -10,10 +10,9 @@ namespace MalayanEventHub.Layouts
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
-        string organizationID = "80008";
-        string requestID = "52000";
+        string organizationID;
+        string requestID;
         string organizationName;
-        string logo;
         string organizationAcronym;
         string organizationType;
         string organizationContact;
@@ -24,12 +23,11 @@ namespace MalayanEventHub.Layouts
         string vice;
         string treasurer;
         string secretary;
-        string member;
 
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //organizationID = Request.QueryString["organizationID"];
+            organizationID = Request.QueryString["organizationID"];
             if (!Page.IsPostBack)
             {
                 LoadOrgData();
@@ -37,9 +35,9 @@ namespace MalayanEventHub.Layouts
                 //LoadSecretary();
                 //LoadTreasurer();
                 LoadImage();
-                LoadMember();
+                LoadMembers();
             }
-            //requestID = GetRequestID();
+            requestID = GetRequestID();
         }
 
         protected void LoadOrgData()
@@ -95,21 +93,29 @@ namespace MalayanEventHub.Layouts
             tb_treasurer.Text = treasurer;
         }
 
-        protected void LoadMember()
+        protected void LoadMembers()
         {
-            string query = "SELECT Concat(a.firstName,' ',a.lastName) as full_name from UserTBL as a inner join MemberTBL as b" +
-                $"on a.userID = b.userID where b.memberRole = 'Member' and b.organizationID = {organizationID}";
-            List<Dictionary<string, string>> data = dbHandler.RetrieveData(query);
-            List<Member> list = new List<Member>();
-            foreach(Dictionary<string, string> Member in data)
+            List<MemberData> Members = new List<MemberData>();
+
+            string query =
+                "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
+                $"= b.userID where b.organizationID = '{organizationID}' and b.memberRole = 'Member';";
+
+            foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
-                list.Add(new Member(){MemberName=Member["full_name"]});
+                Members.Add(
+                    new MemberData()
+                    {
+                        MemberName = row["full_name"]
+                    }
+                );
             }
-            member_lists.DataSource = list;
+
+            member_lists.DataSource = Members;
             member_lists.DataBind();
         }
 
-        protected class Member
+        protected class MemberData
         {
             public string MemberName { get; set; }
         }
