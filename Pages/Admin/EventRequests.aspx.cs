@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
     public partial class EventRequests : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string organizerID = "80001";
+        string organizerID = "";
         string type = "";
         string college = "";
         string date = "";
@@ -22,6 +22,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            organizerID = Request.QueryString["orgID"];
             if (!Page.IsPostBack)
             {
                 GETEvents();

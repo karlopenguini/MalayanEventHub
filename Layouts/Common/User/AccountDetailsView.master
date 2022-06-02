@@ -38,9 +38,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="account-header">
         <div class="account-info">
-            <asp:Label ID="lbl_acc_name" runat="server" CssClass="acc-name">Karlo Miguel F Palisoc</asp:Label>
-            <div class="acc details"><asp:Label ID="lbl_acc_department" runat="server" CssClass="acc-college">CCIS</asp:Label><p class="separator">-</p><asp:Label ID="lbl_acc_position" runat="server" CssClass="acc-year">2nd year</asp:Label></div>
-            <div class="stud details"><asp:Label ID="lbl_acc_type" runat="server" CssClasss="acc-type">Student</asp:Label><p class="separator">-</p><asp:Label ID="lbl_acc_num" runat="server" CssClass="stud-num">2020167403</asp:Label></div>
+            <asp:Label ID="lbl_acc_name" runat="server" CssClass="acc-name"></asp:Label>
+            <div class="acc details"><asp:Label ID="lbl_acc_department" runat="server" CssClass="acc-college"></asp:Label><p class="separator">-</p><asp:Label ID="lbl_acc_position" runat="server" CssClass="acc-year"></asp:Label></div>
+            <div class="stud details"><asp:Label ID="lbl_acc_type" runat="server" CssClasss="acc-type"></asp:Label><p class="separator">-</p><asp:Label ID="lbl_acc_num" runat="server" CssClass="stud-num"></asp:Label></div>
         </div>
     </section>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>

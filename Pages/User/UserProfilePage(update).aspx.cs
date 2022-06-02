@@ -12,7 +12,6 @@ namespace MalayanEventHub.Layouts.Common.User
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
         int userID;
-        bool isAdmin = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -27,9 +26,9 @@ namespace MalayanEventHub.Layouts.Common.User
         private void GetCurrentData()
         {
             //select queries to retrieve data
-            string userTBL_query = "select userID, firstName, middleName, lastName, password, email, contactNo, role from UserTBL where userID='" + userID + "'";
-            List<Dictionary<string, string>> UserTBL = dbHandler.RetrieveData(userTBL_query);
+            string userTBL_query = "select userID, firstName, middleName, lastName, password, email, contactNo from UserTBL where userID='" + userID + "'";
             string studentTBL_query = "select course, college, yearLevel from StudentTBL where userID='" + userID + "'";
+            List<Dictionary<string, string>> UserTBL = dbHandler.RetrieveData(userTBL_query);
             List<Dictionary<string, string>> StudentTBL = dbHandler.RetrieveData(studentTBL_query);
             if (UserTBL.Count == 0 && StudentTBL.Count == 0)
             {
@@ -38,7 +37,7 @@ namespace MalayanEventHub.Layouts.Common.User
             else
             {
                 Dictionary<string, string> userData = UserTBL[0];
-
+                Dictionary<string, string> studentData = StudentTBL[0];
                 //set the values retrieved from the database to the controls
                 tb_fname.Text = userData["firstName"];
                 tb_mname.Text = userData["middleName"];
@@ -46,26 +45,9 @@ namespace MalayanEventHub.Layouts.Common.User
                 tb_password.Text = userData["password"];
                 tb_email.Text = userData["email"];
                 tb_contact.Text = userData["contactNo"];
-
-                if (userData["role"] != "Admin")
-                {
-                    Dictionary<string, string> studentData = StudentTBL[0];
-                    ddl_course.SelectedValue = studentData["course"];
-                    ddl_college.SelectedValue = studentData["college"];
-                    ddl_yearLevel.SelectedValue = studentData["yearLevel"];
-                    
-                }
-                else
-                {
-                    isAdmin = true;
-                    DropDownList[] ddls = { ddl_college, ddl_course, ddl_yearLevel };
-                    foreach (var i in ddls)
-                    {
-                        i.Visible = false;
-                    }
-                }
-                
-
+                ddl_course.SelectedValue = studentData["course"];
+                ddl_college.SelectedValue = studentData["college"];
+                ddl_yearLevel.SelectedValue = studentData["yearLevel"];
             }
         }
 
@@ -111,15 +93,12 @@ namespace MalayanEventHub.Layouts.Common.User
                 {
                     i.Enabled = true;
                 }
-
                 foreach (var i in ddls)
                 {
                     i.Enabled = true;
                 }
-
-
                 btn_update.Text = "apply changes";
-                btn_update.Attributes.Add("style", "display: block; margin-left:350px; width: 200px; padding: 12px; background-color: red; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
+                btn_update.Attributes.Add("style", "display: block; margin-left: 350px; width: 200px; padding: 12px; background-color: red; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
                 btn_update.CausesValidation = true;
             }
             else
@@ -130,16 +109,12 @@ namespace MalayanEventHub.Layouts.Common.User
                     + "', password = '" + tb_password.Text + "', email = '" + tb_email.Text
                     + "', contactNo = '" + tb_contact.Text + "' where userID = '" + userID + "' ";
 
-                if (!isAdmin)
-                {
-                    string studentUpdate_query = "update StudentTBL set course = '" + ddl_course.SelectedValue
-                    + "', college = '" + ddl_college.SelectedValue + "', yearLevel = '" + Convert.ToInt32(ddl_yearLevel.Text) + "' where userID = '" + userID + "'";
-                    dbHandler.ExecuteUpdateQuery(studentUpdate_query);
-                }
-                
+                string studentUpdate_query = "update StudentTBL set course = '" + ddl_course.SelectedValue
+                    + "', college = '" + ddl_college.SelectedValue + "', yearLevel = '" + Convert.ToInt32(ddl_yearLevel.Text) 
+                    + "' where userID = '" + userID + "'";
 
                 dbHandler.ExecuteUpdateQuery(userUpdate_query);
-                
+                dbHandler.ExecuteUpdateQuery(studentUpdate_query);
 
                 //disable buttons again after update
                 foreach (var i in textboxes)
@@ -151,15 +126,14 @@ namespace MalayanEventHub.Layouts.Common.User
                     i.Enabled = false;
                 }
                 btn_update.Text = "update";
+                btn_update.Attributes.Add("style", "display: block; width: 200px; padding: 12px; background-color: #1C3A63; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
                 btn_update.CausesValidation = false;
-                btn_update.Attributes.Add("style", "display: block; margin-left:350px; width: 200px; padding: 12px; background-color: #1C3A63; font-size: 22px; font-weight: 300; color: white; border: none; border-radius: 7px; margin-top: 50px; margin-bottom: 40px; cursor: pointer;");
             }
         }
+
         protected void btn_logout_Click(object sender, EventArgs e)
         {
-            Session.Abandon();
             Response.Redirect("LogInPage.aspx");
-
         }
     }
 }
