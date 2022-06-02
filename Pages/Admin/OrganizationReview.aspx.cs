@@ -10,8 +10,8 @@ namespace MalayanEventHub.Layouts
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
-        string organizationID;
-        string requestID;
+        string organizationID = "80008";
+        string requestID = "52000";
         string organizationName;
         string logo;
         string organizationAcronym;
@@ -29,13 +29,16 @@ namespace MalayanEventHub.Layouts
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            organizationID = Request.QueryString["organizationID"];
+            //organizationID = Request.QueryString["organizationID"];
             if (!Page.IsPostBack)
             {
                 LoadOrgData();
                 LoadVice();
+                //LoadSecretary();
+                //LoadTreasurer();
+                LoadImage();
             }
-            requestID = GetRequestID();
+            //requestID = GetRequestID();
         }
 
         protected void LoadOrgData()
@@ -44,16 +47,15 @@ namespace MalayanEventHub.Layouts
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
 
             organizationName = data["organizationName"];
-            //logo = data["logo"];
             organizationAcronym = data["organizationAcronym"];
             organizationType = data["organizationType"];
             organizationContact = data["organizationContact"];
             mission = data["mission"];
             vision = data["vision"];
             college = data["college"];
-            adviser = data["adviser"];
+            adviser = data["organizationAdviser"];
 
-            //img_logo.ImageUrl = data["logo"];
+
             tb_orgname.Text = organizationName;
             tb_acronym.Text = organizationAcronym;
             tb_type.Text = organizationType;
@@ -68,23 +70,55 @@ namespace MalayanEventHub.Layouts
         protected void LoadVice()
         {
             string query = "select a.userId from MemberTBL a inner join OrganizationRequestTBL b on a.organizationId = b.organizationId " +
-                $"where a.memberRole = 'President' and b.requestId = {requestID}; ";
+                $"where a.memberRole = 'Vice-President' and b.requestId = {requestID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
             vice = data["userId"];
             tb_vice.Text = vice;
         }
+
+        protected void LoadSecretary()
+        {
+            string query = "select a.userId from MemberTBL a inner join OrganizationRequestTBL b on a.organizationId = b.organizationId " +
+                $"where a.memberRole = 'Secretary' and b.requestId = {requestID}";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+            secretary = data["userId"];
+            tb_secretary.Text = secretary;
+        }
+
+        protected void LoadTreasurer()
+        {
+            string query = "select a.userId from MemberTBL a inner join OrganizationRequestTBL b on a.organizationId = b.organizationId " +
+                $"where a.memberRole = 'Treasurer' and b.requestId = {requestID}";
+            Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
+            treasurer = data["userId"];
+            tb_treasurer.Text = treasurer;
+        }
+
+        
 
 
         protected string GetRequestID()
         {
 
             string query =
-                "SELECT OrgaizationRequestTBL.requestID" +
-                " FROM OrgaizationRequestTBL" +
-                " INNER JOIN OrganizationTBL ON OrganizationTBL.organizationID = OrgaizationRequestTBL.organizationID" +
-                $" WHERE {organizationID} = OrgaizationRequestTBL.organizationID;";
+                "SELECT OrganizationRequestTBL.requestID" +
+                " FROM OrganizationRequestTBL" +
+                " INNER JOIN OrganizationTBL ON OrganizationTBL.organizationID = OrganizationRequestTBL.organizationID" +
+                $" WHERE {organizationID} = OrganizationRequestTBL.organizationID;";
             requestID = dbHandler.RetrieveData(query)[0]["requestID"];
             return requestID;
+        }
+
+        protected void LoadImage()
+        {
+            string queryImg = "SELECT imgBase64Str FROM OrganizationTBL cross apply (select logo '*' for xml path('')) T (imgBase64Str) " +
+                        $"WHERE organizationID = {organizationID}";
+            Dictionary<string, string> data2 = dbHandler.RetrieveData(queryImg)[0];
+            string base64 = data2["imgBase64Str"];
+            if (!String.IsNullOrEmpty(base64))
+            {
+                img_logo.ImageUrl = "data:image/png;base64, " + base64;
+            }
         }
 
         protected void Btn_accept_Click(object sender, EventArgs e)
