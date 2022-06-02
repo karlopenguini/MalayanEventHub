@@ -36,6 +36,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 //LoadVice();
                 //LoadTreasurer();
                 //LoadSecretary();
+                LoadImage();
                 LoadAdviser();
             }
         }
@@ -117,6 +118,22 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
             adviser = data["full_name"];
             adviser_name.InnerText = adviser;
+        }
+
+
+        private void LoadImage()
+        {
+
+                //get base 64 string of Imag
+           string queryImg = "SELECT imgBase64Str FROM OrganizationTBL cross apply (select logo '*' for xml path('')) T (imgBase64Str) " +
+                        $"WHERE organizationID = {organizationID}";
+           Dictionary<string, string> data = dbHandler.RetrieveData(queryImg)[0];
+           string base64 = data["imgBase64Str"];
+            if (!String.IsNullOrEmpty(base64))
+            {
+                image_logo.Src = "data:image/png;base64, " + base64;
+            }
+         
         }
     }
 }

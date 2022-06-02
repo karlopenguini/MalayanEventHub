@@ -15,6 +15,15 @@ namespace MalayanEventHub.Layouts.Common.Admin
     {
 
         /// <summary>
+        /// image_logo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage image_logo;
+
+        /// <summary>
         /// adviser_name control.
         /// </summary>
         /// <remarks>
