@@ -67,15 +67,19 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <div style="margin-top: 30px; margin-bottom: 40px">
+            Comment:
+            <asp:TextBox ID="tb_comment" runat="server" CssClass="text-boxs" TextMode="MultiLine" Width="100%" Height="150px"></asp:TextBox>
+        </div>
     </div>
     <hr style="color: #1C3A63" />
     <!--container for buttons-->
     <div class="btn-container">
         <div>
-            <asp:Button ID="Btn_accept" runat="server" Text="Accept" CssClass="accept-btn" />
+            <asp:Button ID="Btn_accept" runat="server" Text="Accept" CssClass="accept-btn" OnClick="Btn_accept_Click"/>
         </div>
         <div>
-            <asp:Button ID="Btn_reject" runat="server" Text="Reject" CssClass="reject-btn" />
+            <asp:Button ID="Btn_reject" runat="server" Text="Reject" CssClass="reject-btn" OnClick="Btn_reject_Click" />
         </div>
     </div>
 </asp:Content>
