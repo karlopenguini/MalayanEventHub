@@ -25,7 +25,7 @@
                         <asp:Label CssClass="subtitle2" ID="lbl_vision" runat="server" Text='<%# Eval("Vision")  %>'></asp:Label>
                     </div>
 
-                    <asp:HyperLink CssClass="link-card" ID="hl_requests_page_link" runat="server"  NavigateUrl='<%#Eval("EventURL")%>'></asp:HyperLink>
+                    <asp:HyperLink CssClass="link-card" ID="hl_requests_page_link" runat="server"  NavigateUrl='<%#Eval("OrganizationURL")%>'></asp:HyperLink>
                 </div>
             </ItemTemplate>
         </asp:Repeater>
