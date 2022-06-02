@@ -122,15 +122,15 @@
                 <div class="form-field">
                     <p>Preferred Information of Participants:</p>
                         <asp:CheckBoxList ID="cbl_targetData" runat="server" Width="100%" CssClass="check-boxs" RepeatLayout="UnorderedList">
-                        <asp:ListItem Enabled="False" Selected="True" Value="firstName">First Name</asp:ListItem>
-                        <asp:ListItem Value="middleName">Middle Name</asp:ListItem>
-                        <asp:ListItem Enabled="False" Selected="True" Value="lastName">Last Name</asp:ListItem>
-                        <asp:ListItem Value="userID" >Student No.</asp:ListItem>
-                        <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
-                        <asp:ListItem Value="email">E-mail</asp:ListItem>
-                        <asp:ListItem Value="college">College</asp:ListItem>
-                        <asp:ListItem Value="course">Course</asp:ListItem>
-                        <asp:ListItem Value="yearLevel">Year Level</asp:ListItem>
+                            <asp:ListItem Enabled="False" Selected="True" Value="firstName">First Name</asp:ListItem>
+                            <asp:ListItem Value="middleName">Middle Name</asp:ListItem>
+                            <asp:ListItem Enabled="False" Selected="True" Value="lastName">Last Name</asp:ListItem>
+                            <asp:ListItem Value="userID" >Student No.</asp:ListItem>
+                            <asp:ListItem Value="contactNo">Contact No.</asp:ListItem>
+                            <asp:ListItem Value="email">E-mail</asp:ListItem>
+                            <asp:ListItem Value="college">College</asp:ListItem>
+                            <asp:ListItem Value="course">Course</asp:ListItem>
+                            <asp:ListItem Value="year">Year Level</asp:ListItem>
                     </asp:CheckBoxList>
                  </div>
                 <div class="form-field">
@@ -159,18 +159,18 @@
              <div id="report-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Accomplishment:</p>
-                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" />
+                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" OnClick="btn_genAccReport_Click" />
                 </div>  
                 <div class="form-field">
                     <p>Incident</p>
-                   <asp:Button ID="btn_gotoIncident" runat="server" Text="Create Incident Report"  CssClass="main-button"  />
+                   <asp:Button ID="btn_gotoIncident" runat="server" Text="Create Incident Report"  CssClass="main-button" OnClick="btn_gotoIncident_Click"  />
                 </div>  
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px;margin-bottom: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
            
-            <asp:Button ID="btn_delete" runat="server" BackColor="Maroon" ForeColor="White" Text="Delete" Width="35%" />
-            <asp:Button ID="btn_cancel" runat="server" CssCLass="sub-button" Text="Cancel" Width="35%" />
+            <asp:Button ID="btn_delete" runat="server" OnClientClick="return confirm('Are you sure you want to delete this event? Once confirmed it cannot be undone')" BackColor="Maroon" ForeColor="White" Text="Delete" Width="35%" OnClick="btn_delete_Click" />
+            <asp:Button ID="btn_cancel" runat="server" CssCLass="sub-button" Text="Cancel" Width="35%" OnClick="btn_cancel_Click" />
         </div>
     </div>
     

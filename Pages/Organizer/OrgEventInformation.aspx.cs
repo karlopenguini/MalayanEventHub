@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MalayanEventHub.Classes;
 using System.Text;
+using System.IO;
 
 namespace MalayanEventHub.Pages.Organizer
 {
@@ -24,12 +25,11 @@ namespace MalayanEventHub.Pages.Organizer
                 return;
             }
 
+            dbHandler = new DatabaseHandler();
 
 
             if (!Page.IsPostBack)
             {
-                dbHandler = new DatabaseHandler();
-
                 
 
                 lbl_eventID.Text = eventId;
@@ -59,7 +59,10 @@ namespace MalayanEventHub.Pages.Organizer
 
             //set by status card
             lbl_status.Text = eventDataList["requestStatus"].ToUpper();
-            tb_commentResponse.Text = String.IsNullOrEmpty(eventDataList["feedback"]) ? "No comment yet." : eventDataList["feedback"];
+            ChangeStatusColor(eventDataList["requestStatus"]);
+
+
+            tb_commentResponse.Text = String.IsNullOrEmpty(eventDataList["feedback"]) ? "No comment." : eventDataList["feedback"];
 
             //set eventDetails
             tb_eventTitle.Text = eventDataList["activityTitle"];
@@ -128,9 +131,88 @@ namespace MalayanEventHub.Pages.Organizer
             }
         }
 
+        private void ChangeStatusColor(string currentStatus)
+        {
+            if (currentStatus == "Active")
+            {
+                lbl_status.ForeColor = System.Drawing.Color.Green; 
+            }
+            else if (currentStatus == "Deleted" || currentStatus=="Rejected")
+            {
+                lbl_status.ForeColor = System.Drawing.Color.DarkRed;
+            }
+        }
+
         protected void btn_showParticipants_Click(object sender, EventArgs e)
         {
             Response.Redirect($"OrgEventParticipants.aspx?eventID={eventId}");
+        }
+
+
+        protected void btn_genAccReport_Click(object sender, EventArgs e)
+        {
+            //get data
+            string query = $"SELECT * FROM EventTBL WHERE eventID = {eventId} ";
+            var recordDetails = dbHandler.RetrieveData(query)[0];
+            string query2 = $"SELECT COUNT(*) as totalParticipant FROM ParticipantTBL WHERE eventId ={eventId} AND participantStatus = 'Admitted'";
+            var recordParticipant = dbHandler.RetrieveData(query2)[0];
+            Byte[] txtBytes;
+ 
+
+            // making a text file
+            MemoryStream ms = new MemoryStream();
+            TextWriter tw = new StreamWriter(ms);
+
+            //write text out put
+            tw.WriteLine("======Accomplishment Report ==========");
+            tw.WriteLine("Created {0}",DateTime.Now.ToString());
+            tw.WriteLine("Event ID; #{0}", eventId);
+            tw.WriteLine("Event Title: {0}", recordDetails["activityTitle"]);
+            tw.WriteLine("DateTime: {0} to {1} ", DateTime.Parse(recordDetails["startDateTime"]).ToString(),
+                DateTime.Parse(recordDetails["endDateTime"]).ToString());
+            tw.WriteLine("Venue: {0}", recordDetails["proposedVenue"]);
+            if (String.IsNullOrEmpty(recordDetails["invitationLink"]))
+            {
+                tw.WriteLine("Inv Link: {0}", recordDetails["invitationLink"]);
+            }
+            tw.WriteLine("No of Participants: {0}", recordParticipant["totalParticipant"]);
+
+            //
+            recordDetails.Clear();
+            recordParticipant.Clear();
+            tw.Flush();
+            txtBytes = ms.ToArray();
+            ms.Close();
+
+            //downloading this on the web
+
+            Response.Clear();
+            Response.ContentType = "application/force-download";
+            Response.AddHeader("content-disposition", $"attachment;    filename=AccReport_Event#{eventId}.txt");
+            Response.BinaryWrite(txtBytes);
+            Response.End();
+        }
+
+        protected void btn_gotoIncident_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrgEventIncident.aspx?eventID="+eventId);
+        }
+
+        protected void btn_delete_Click(object sender, EventArgs e)
+        {
+            string sql = $"UPDATE RequestTBL SET requestStatus='Deleted', modified ='{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' "+
+                        "WHERE requestID = ( "+
+                        "SELECT requestID FROM EventRequestTBL "+
+                        $"WHERE eventID = {eventId})";
+
+            dbHandler.ExecuteInsertQuery(sql);
+            Response.Redirect($"OrgEvents.aspx");
+
+        }
+
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"OrgEvents.aspx");
         }
     }
 }

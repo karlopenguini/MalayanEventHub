@@ -35,15 +35,20 @@
             font-size: 2.6em;
             letter-spacing:0.12em;
         }
-
         .separator{
             padding: 0 0.4em;
         }
-        button{
+        .button{
             all:unset;
         }
         .org-settings{
             margin: 0em 2em;
+        }
+        .dropdown-container{
+            display:flex;
+            flex-direction:column;
+            width:200px;
+            gap:1em;
         }
     </style>
     <asp:ContentPlaceHolder ID="head2" runat="server"></asp:ContentPlaceHolder>
@@ -52,14 +57,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="organization-header">
         <div class="organization-info">
-            <p class="org-name">Organization Name</p>
-            <div class="org-details"><p class="org-type">Type</p><p class="separator">|</p><p class="org-college">College</p></div>
+            <asp:Label ID="lbl_org_name" runat="server" CssClass="org-name">Organization Name</asp:Label>
+            <div class="org-details"><asp:Label  ID="lbl_org_type" runat="server" CssClass="org-type">Type</asp:Label><p class="separator">|</p><asp:Label  ID="lbl_org_college" runat="server" CssClass="org-college">College</asp:Label></div>
+            <asp:Label  ID="lbl_org_status" runat="server" CssClass="org-status">Active</asp:Label>
             <div class="organization-header-border"></div>
-        </div>
-        <div>
-            <button>
-                <object class="org-settings" data="../../../Images/SVG/Settings.svg" width="36"></object>
-            </button>
         </div>
     </section>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>

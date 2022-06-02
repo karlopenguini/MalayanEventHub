@@ -2,14 +2,15 @@
     text-align: center;
     font-weight: 900;
     margin: 0;
-    color:var(--mcl-blue);
+    color: var(--mcl-blue);
 }
 
 .par {
     text-align: center;
     font-size: 20px;
-    color:var(--dark-blue);
+    color: var(--dark-blue);
 }
+
 :root {
     --blue: #0070EE;
     --white: #FFFBFC;
@@ -19,7 +20,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight:100;
+    font-weight: 100;
 }
 
 .par-div {
@@ -27,11 +28,11 @@ body {
     width: 70%;
 }
 
-.parent-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
@@ -47,10 +48,10 @@ body {
 /* class for the LOGIN and REGISTER labels*/
 .main-label {
     font-size: 40px;
-    font-weight:100;
-    letter-spacing:0.1em;
+    font-weight: 100;
+    letter-spacing: 0.1em;
     margin: 20px auto;
-    color:var(--blue);
+    color: var(--blue);
 }
 
 /*STYLES FOR LOG IN SECTION*/
@@ -61,11 +62,9 @@ body {
     height: 390px;
     border-radius: 15px;
     background-color: white;
-   
 }
 
     .login-div > * {
-        
     }
 
 .userAndPass-label {
@@ -75,7 +74,7 @@ body {
 
 .textbox {
     font-size: 20px;
-    margin: 10px 50px;
+    margin: 10px 50px 0 50px;
     padding: 12px;
     border-radius: 7px;
     border-width: 0px;
@@ -89,8 +88,8 @@ body {
     border-radius: 7px;
     border-width: 0;
     background-color: var(--blue);
-    cursor:pointer;
-    color:white;
+    cursor: pointer;
+    color: white;
 }
 
 
@@ -105,7 +104,6 @@ body {
 }
 
     .register-div > * {
-        
         color: white;
     }
 
@@ -121,13 +119,12 @@ body {
     border-radius: 7px;
     border-width: 0;
     background-color: var(--mcl-blue);
-    cursor:pointer;
-    color:var(--white);
+    cursor: pointer;
+    color: var(--white);
 }
 
 /*STYLES FOR VALIDATION CONTROLS*/
 .req-field {
-    
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }

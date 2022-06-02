@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Layouts/AdminView.Master" AutoEventWireup="true" CodeBehind="OrganizationView.master.cs" Inherits="MalayanEventHub.Layouts.Common.Admin.OrganizationView" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .organization-header{
@@ -39,30 +40,47 @@
             font-weight:100;
             opacity:0.8;
         }
-        button{
-            all:unset;
+        .dropdown-container{
+            display:flex;
+            flex-direction:column;
+            width:200px;
+            gap:1em;
         }
-        .org-settings{
-            margin: 0em 2em;
+        .button{
+            all:unset;
+            padding:0.5em 1em;
+            font-weight:100;
+            border: 1px solid;
+            border-color:rgb(0 0 0 / 0.32);
+            text-align:center;
+            width:200px;
+            cursor:pointer;
+        }
+        .Delete{
+            background-color:rgb(255 0 0 / 0.24);
+        }
+        .Inactive{
+            background-color:rgb(0 130 255 / 0.50);
         }
     </style>
     <asp:ContentPlaceHolder ID="head2" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <section class="organization-header">
         <div class="organization-info">
-            <p class="org-name">Organization Name</p>
-            <div class="org-details"><p class="org-type">Type</p><p class="separator">|</p><p class="org-college">College</p></div>
-            <p class="org-status">Active</p>
+            <asp:Label ID="lbl_org_name" runat="server" CssClass="org-name">Organization Name</asp:Label>
+            <div class="org-details">
+                <asp:Label ID="lbl_org_type" runat="server" CssClass="org-type">Type</asp:Label><p class="separator">|</p>
+                <asp:Label ID="lbl_org_college" runat="server" CssClass="org-college">College</asp:Label></div>
+            <asp:Label ID="lbl_org_status" runat="server" CssClass="org-status">Active</asp:Label>
             <div class="organization-header-border"></div>
         </div>
-        <div>
-            <button>
-                <object class="org-settings" data="../../../Images/SVG/Settings.svg" width="36"></object>
-            </button>
+        <div class="dropdown-container">
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClass="button Delete" UseSubmitBehavior="False" OnClick="btn_delete_Click" />
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClass="button Inactive" UseSubmitBehavior="False" OnClick="btn_inactive_Click"/>
         </div>
     </section>
-     
+
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>

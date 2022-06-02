@@ -10,18 +10,20 @@ namespace MalayanEventHub.Layouts
 {
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
+        string userID;
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string userID = "2020949499";
 
         string type;
         string status;
         string college;
         string role;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+                userID = Request.QueryString["userID"];
+
+                OrganizationData SampleOrganization = new OrganizationData();
                 //userID = Request.QueryString["userID"];
                 GETOrganizations();
 
