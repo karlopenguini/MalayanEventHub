@@ -55,6 +55,7 @@ namespace MalayanEventHub.Layouts
                         Mission = row["mission"],
                         Vision = row["vision"],
                         OrganizationURL = $"OrganizationReview.aspx?organizationID={organizationID}",
+
                     }
                 );
             }
