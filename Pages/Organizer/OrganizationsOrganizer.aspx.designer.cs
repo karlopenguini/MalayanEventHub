@@ -15,6 +15,33 @@ namespace MalayanEventHub.Layouts
     {
 
         /// <summary>
+        /// sm_Organizers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager sm_Organizers;
+
+        /// <summary>
+        /// btnRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegister;
+
+        /// <summary>
+        /// up_OrganizerType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_OrganizerType;
+
+        /// <summary>
         /// ddl_type control.
         /// </summary>
         /// <remarks>
@@ -22,6 +49,15 @@ namespace MalayanEventHub.Layouts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_type;
+
+        /// <summary>
+        /// up_OrganizerCollege control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_OrganizerCollege;
 
         /// <summary>
         /// ddl_college control.
@@ -33,6 +69,33 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.DropDownList ddl_college;
 
         /// <summary>
+        /// up_OrganizerRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_OrganizerRole;
+
+        /// <summary>
+        /// ddl_Role control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Role;
+
+        /// <summary>
+        /// up_OrganizerStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up_OrganizerStatus;
+
+        /// <summary>
         /// ddl_Status control.
         /// </summary>
         /// <remarks>
@@ -42,13 +105,13 @@ namespace MalayanEventHub.Layouts
         protected global::System.Web.UI.WebControls.DropDownList ddl_Status;
 
         /// <summary>
-        /// btnRegister control.
+        /// up_OrganizerRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.UpdatePanel up_OrganizerRepeater;
 
         /// <summary>
         /// OrganizationsRepeater control.

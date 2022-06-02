@@ -130,7 +130,7 @@
                         <asp:ListItem Value="email">E-mail</asp:ListItem>
                         <asp:ListItem Value="college">College</asp:ListItem>
                         <asp:ListItem Value="course">Course</asp:ListItem>
-                        <asp:ListItem Value="yearLevel">Year Level</asp:ListItem>
+                        <asp:ListItem Value="year">Year Level</asp:ListItem>
                     </asp:CheckBoxList>
                  </div>
                 <div class="form-field">
@@ -159,11 +159,11 @@
              <div id="report-info-fields" class="form-fields">
                 <div class="form-field">
                     <p>Accomplishment:</p>
-                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" />
+                   <asp:Button ID="btn_genAccReport" runat="server" Text="Generate Accomplishment Report"  CssClass="main-button" OnClick="btn_genAccReport_Click" />
                 </div>  
                 <div class="form-field">
                     <p>Incident</p>
-                   <asp:Button ID="btn_gotoIncident" runat="server" Text="Create Incident Report"  CssClass="main-button"  />
+                   <asp:Button ID="btn_gotoIncident" runat="server" Text="Create Incident Report"  CssClass="main-button" OnClick="btn_gotoIncident_Click"  />
                 </div>  
             </div>
         </div>

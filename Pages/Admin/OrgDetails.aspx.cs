@@ -5,14 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MalayanEventHub
+namespace MalayanEventHub.Layouts.Common.Admin
 {
-    public partial class Message : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string eventId = Request.QueryString["eventId"];
-            lbl_eventId.Text = eventId;
 
         }
     }

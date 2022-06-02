@@ -11,8 +11,8 @@
             <div class="filter-container">
                 <div class="filter">
                     <p class="filter-var">Type:</p>
-                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl">
-                        <asp:ListItem>Academic</asp:ListItem>
+                    <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged" ViewStateMode="Enabled">
+                        <asp:ListItem Selected="True">Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
                         <asp:ListItem>All</asp:ListItem>
                     </asp:DropDownList>
@@ -21,10 +21,10 @@
                 <div class="filter">
                     <p class="filter-var">College:</p>
 
-                    <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl">
+                    <asp:DropDownList ID="ddl_college" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_college_SelectedIndexChanged" ViewStateMode="Enabled">
                         <asp:ListItem>SHS</asp:ListItem>
                         <asp:ListItem>CAS</asp:ListItem>
-                        <asp:ListItem>CCIS</asp:ListItem>
+                        <asp:ListItem Selected="True">CCIS</asp:ListItem>
                         <asp:ListItem>ETYCB</asp:ListItem>
                         <asp:ListItem>MITL</asp:ListItem>
                         <asp:ListItem>CMET</asp:ListItem>
@@ -34,8 +34,10 @@
                 <div class="filter">
                     <p class="filter-var">Date:</p>
 
-                    <asp:DropDownList ID="ddl_date" runat="server" CssClass="filter-ddl">
-                        <asp:ListItem>This Week</asp:ListItem>
+                    <asp:DropDownList ID="ddl_date" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_date_SelectedIndexChanged" ViewStateMode="Enabled">
+                        <asp:ListItem Selected="True">All</asp:ListItem>
+                        <asp:ListItem >Today</asp:ListItem>
+                        <asp:ListItem >This Week</asp:ListItem>
                         <asp:ListItem>This Month</asp:ListItem>
                     </asp:DropDownList>
 
@@ -43,10 +45,10 @@
                 <div class="filter">
                     <p class="filter-var">Status:</p>
 
-                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="filter-ddl">
-                        <asp:ListItem>Active</asp:ListItem>
-                        <asp:ListItem>Finished</asp:ListItem>
-                        <asp:ListItem>Cancelled</asp:ListItem>
+                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_status_SelectedIndexChanged" ViewStateMode="Enabled">
+                        <asp:ListItem >Active</asp:ListItem>
+                        <asp:ListItem Selected="True">Pending</asp:ListItem>
+                        <asp:ListItem>Rejected</asp:ListItem>
                     </asp:DropDownList>
 
                 </div>
@@ -57,7 +59,7 @@
             <asp:Repeater ID="EventsRepeater" runat="server">
                 <ItemTemplate>
                     <div class="event-card">
-                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%#Eval("EventImage") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("EventImage"))%>' />
+                        <asp:Image CssClass="event-image" ID="img_event" runat="server" ImageUrl='<%# Eval("EventImageURL") %>' />
                         <div class="event-details">
                             <asp:Label CssClass="event-title" ID="lbl_event_title" runat="server" Text='<%#Eval("EventTitle")%>'></asp:Label>
                             <asp:Label CssClass="event-subtitle" ID="lbl_event_date" runat="server" Text='<%#Eval("EventDate")%>'></asp:Label>
