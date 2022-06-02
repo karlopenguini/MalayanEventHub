@@ -110,7 +110,7 @@
             </div>
         </div>
         <div  style="width: 60%; margin: auto; margin-top: 30px; display:flex; flex-flow: row wrap; justify-content: space-around;">
-            <asp:Button ID="btn_Register" runat="server" Text="Register" CssClass="main-button" style="margin-bottom:25px;" OnClick="btn_Register_Click"/>
+            <asp:Button ID="btn_Register" runat="server" Text="Register" CssClass="main-button" style="margin-bottom:25px;" OnClick="btn_Register_Click" OnClientClick="return confirm('Are you sure about the input information? Note: once created cannot be updated')"/>
         </div>
     </div>
     <script type="text/javascript">
