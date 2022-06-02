@@ -11,7 +11,7 @@ namespace MalayanEventHub.Layouts
     public partial class OrganizationsOrganizer : System.Web.UI.Page
     {
         DatabaseHandler dbHandler = new DatabaseHandler();
-        string userID = "2020161601";
+        string userID = "2020949499";
 
         string type;
         string status;
@@ -61,9 +61,14 @@ namespace MalayanEventHub.Layouts
                 string organizationURL = $"userID={userID}&organizationID={organizationID}";
 
                 string logo = row["logo"];
-                if (DBNull.Value.Equals(row["logo"]))
+                if (!String.IsNullOrEmpty(row["logo"]))
                 {
-                    logo = "~/Images/mcl_logo.png";
+                    //get base 64 string of Imag
+                    string queryImg = "SELECT imgBase64Str FROM OrganizationTBL cross apply (select logo '*' for xml path('')) T (imgBase64Str) " +
+                            $"WHERE organizationID = {organizationID}";
+                    Dictionary<string, string> data = dbHandler.RetrieveData(queryImg)[0];
+                    string base64 = data["imgBase64Str"];
+                    logo = "data:image/png;base64, " + base64;
                 }
 
                 Organizations.Add(

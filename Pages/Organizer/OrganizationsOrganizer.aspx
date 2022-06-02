@@ -77,7 +77,7 @@
                     <asp:Repeater ID="OrganizationsRepeater" runat="server" OnItemDataBound="Organizations_ItemDataBound">
                         <ItemTemplate>
                             <div class="organization-card">
-                                <asp:Image ID="img_Logo" runat="server" ImageUrl='<%#Eval("OrganizationLogo") != null ? "~/Images/mcl_logo.png"  : "data:Image/png;base64," + Convert.ToBase64String((byte[])Eval("OrganizationLogo"))%>' CssClass="img" />
+                                <asp:Image ID="img_Logo" runat="server" ImageUrl='<%# Eval("OrganizationLogo") %>' CssClass="img" />
                                 <div class="info">
                                     <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrganizationView.aspx?" + Eval("OrganizationURL") %>'>DETAILS</asp:LinkButton>
                                     <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn" PostBackUrl='<%# "~/Pages/Organizer/OrgCreateEvent.aspx?" + Eval("OrganizationURL") %>'>CREATE EVENT</asp:LinkButton>
