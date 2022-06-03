@@ -76,14 +76,27 @@ namespace MalayanEventHub.Layouts.Common.Admin
         {
             string getEventRequestsOfOrg = 
                 "SELECT EventRequestTBL.requestID FROM EventRequestTBL" +
-                " INNER JOIN EventTBL ON EventRequestTBL.eventID = EventRequestTBL.eventID" +
+                " INNER JOIN EventTBL ON EventRequestTBL.eventID = EventTBL.eventID" +
                 $" WHERE EventRequestTBL.organizationID = {orgID}";
 
             string eventWhereClause = "";
 
-            foreach(Dictionary<string,string> item in dbHandler.RetrieveData(getEventRequestsOfOrg))
+
+            List<Dictionary<string, string>> data = dbHandler.RetrieveData(getEventRequestsOfOrg);
+            int count = data.Count();
+            int counter = 0;
+            foreach (Dictionary<string,string> item in data)
             {
-                eventWhereClause += $" requestID = {item["requestID"]} ";
+                if(counter != count-1)
+                {
+                    eventWhereClause += $" requestID = {item["requestID"]} OR";
+                }
+                else
+                {
+                    eventWhereClause += $" requestID = {item["requestID"]}";
+                }
+               
+                counter += 1;
             }
 
             string query = $"UPDATE OrganizationTBL SET organizationStatus = 'Deleted'  WHERE organizationID = {orgID}";

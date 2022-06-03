@@ -31,11 +31,10 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             eventID = Request.QueryString["eventId"];
-            if (!Page.IsPostBack)
-            {
-                LoadEventData();
-                LoadCheckBoxData();
-            }
+            
+            LoadEventData();
+            LoadCheckBoxData();
+            
             requestID = GetRequestID();
         }
 
@@ -101,6 +100,13 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
+            string organizationID = OrgID.Split('-')[0];
+            string query2 =
+                "UPDATE OrganizationTBL" +
+                $" SET organizationStatus = 'Active'" +
+                $" WHERE {organizationID} = organizationID";
+            dbHandler.ExecuteUpdateQuery(query2);
+
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + requestID + "');", true);
             string now = DateTime.Now.ToString("dd-MM-yy hh:mm:ss");
             string query =
@@ -110,11 +116,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
             dbHandler.ExecuteUpdateQuery(query);
 
 
-            //string query2 =
-            //    "UPDATE OrganizationTBL" +
-            //    $" SET organizationStatus = 'Active'" +
-            //    $" WHERE {OrgID.Split('-')[0]} = organizationID";
-            //dbHandler.ExecuteUpdateQuery(query2);
+            
 
             Response.Redirect($"ViewEvent.aspx?eventId={eventID}");
             
