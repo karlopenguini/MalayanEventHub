@@ -47,7 +47,7 @@ namespace MalayanEventHub.Layouts
             string orgAcronym = tb_Acronym.Text.Trim();
             string orgType = ddl_Type.SelectedValue.Trim();
             int orgAdviser = int.Parse(tb_AdviserNumber.Text.Trim());
-            int orgContact = int.Parse(tb_Contact.Text.Trim());
+            string orgContact = tb_Contact.Text.Trim();
             string orgStatus = "Pending";
             string orgMission = tb_Mission.Text.Trim();
             string orgVision = tb_Vision.Text.Trim();
