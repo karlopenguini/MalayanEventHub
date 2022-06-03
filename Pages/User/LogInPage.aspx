@@ -14,7 +14,9 @@
                 <%--MCL header--%>
                 <h1 style="font-size:56px;">Malayan Colleges Laguna <br /> Event Hub</h1>
                 <div class="par-div">
-                    <p class="par">Lorem ipsum dolor sit amet, consectetur officia? Doloribus molestias ad dignissimos magnam nostrum! Dolorum en.</p>
+                    <p class="par">
+                        MCL Event HUB provides students of Malayan Colleges Laguna a medium for them to easily register for events hosted by MCL. It also offers a solution for Malayan Colleges of Laguna to organize events efficiently.
+                    </p>
                 </div>
                 <section class="container">
                     <%--div containing the log in part--%>

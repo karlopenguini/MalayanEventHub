@@ -64,6 +64,10 @@ namespace MalayanEventHub
                     endD = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd"); ;
                     dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
                     break;
+                case "Upcoming":
+                    startD = now;
+                    dateQuery += $"AND e.endDateTime > '{startD}'";
+                    break;
             }
 
             string typeQuery = $"OrganizationTBL.organizationType = '{type}' AND";

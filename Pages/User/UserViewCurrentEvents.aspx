@@ -40,6 +40,8 @@
                         <asp:ListItem >Today</asp:ListItem>
                         <asp:ListItem >This Week</asp:ListItem>
                         <asp:ListItem>This Month</asp:ListItem>
+                        <asp:ListItem>Upcoming</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
 
                 </div>
