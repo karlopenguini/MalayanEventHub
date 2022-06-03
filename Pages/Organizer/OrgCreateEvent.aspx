@@ -143,7 +143,7 @@
                     </div>
                     <asp:FileUpload ID="f_uploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"   />
                 </div>  
-                <p>Note: (Optional) preferred to be landscape and  must be less than 4mb.</p>
+                <p>Note: (Required) preferred to be landscape and  must be less than 4mb.</p>
             </div>
         </div>
         <div style="width: 40%; display:block; margin: auto;" >
