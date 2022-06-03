@@ -156,6 +156,11 @@ namespace MalayanEventHub.Layouts
                 $" SET requestStatus = 'Active', modified='{now}', feedback='{tb_comment.Text}'" +
                 $" WHERE '{requestID}' = RequestTBL.requestID";
             dbHandler.ExecuteUpdateQuery(query);
+            string query2 =
+                "UPDATE OrganizationTBL" +
+                $" SET organizationStatus = 'Active'" +
+                $" WHERE '{organizationID}' = OrganizationTBL.organizationID";
+            dbHandler.ExecuteUpdateQuery(query2);
             Response.Redirect($"ViewOrganizations.aspx?eventId={organizationID}");
         }
 
@@ -167,6 +172,11 @@ namespace MalayanEventHub.Layouts
                 $" SET requestStatus = 'Rejected', modified='{now}', feedback='{tb_comment.Text}'" +
                 $" WHERE '{requestID}' = RequestTBL.requestID";
             dbHandler.ExecuteUpdateQuery(query);
+            string query2 =
+                "UPDATE OrganizationTBL" +
+                $" SET organizationStatus = 'Rejected'" +
+                $" WHERE '{organizationID}' = OrganizationTBL.organizationID";
+            dbHandler.ExecuteUpdateQuery(query2);
             Response.Redirect($"ViewOrganizations.aspx?eventId={organizationID}");
         }
     }

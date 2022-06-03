@@ -60,7 +60,7 @@
     left: 35px;*/
         top: 0;
         left: 0;
-        padding: 2em;
+        margin: 2em;
         
     }
 
@@ -73,7 +73,7 @@
         width: 100%;
         justify-content: center;
         margin-bottom: 50px;
-        margin-top: 2em;
+        margin-top: 10em;
     }
 
 .label-container {

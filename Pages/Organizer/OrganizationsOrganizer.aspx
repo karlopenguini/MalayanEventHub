@@ -67,10 +67,12 @@
                                 <asp:ListItem>Choose</asp:ListItem>
                                 <asp:ListItem Selected="True">Active</asp:ListItem>
                                 <asp:ListItem>Pending</asp:ListItem>
+                                <asp:ListItem>Rejected</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+
             </div>
         </section>
         <section class="general-container">
