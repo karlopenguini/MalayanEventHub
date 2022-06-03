@@ -138,7 +138,7 @@
             <div id="pubmat-info-fields" class="form-fields">
                 <div class="form-field">
                     <div class="d-flex" style="flex-flow: row wrap; width: 100%; align-items: center;">
-                        <asp:CustomValidator ID="cv_pubmatImg" ForeColor="Maroon" runat="server" ValidationGroup="form" ControlToValidate="f_uploadImg" Text="*" Font-Size="Large" OnServerValidate="cv_pubmatImg_ServerValidate" ></asp:CustomValidator>
+                        <asp:CustomValidator ID="cv_pubmatImg" ForeColor="Maroon" runat="server"  ValidateEmptyText="true" ValidationGroup="form" ControlToValidate="f_uploadImg" Text="*" Font-Size="Large" OnServerValidate="cv_pubmatImg_ServerValidate" ></asp:CustomValidator>
                         <p>Pubmat Image:</p>
                     </div>
                     <asp:FileUpload ID="f_uploadImg" runat="server" CssClass="text-boxs" accept="image/png, image/jpeg"   />
