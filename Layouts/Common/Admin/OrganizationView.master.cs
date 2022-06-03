@@ -74,9 +74,24 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void btn_delete_Click(object sender, EventArgs e)
         {
+            string getEventRequestsOfOrg = 
+                "SELECT EventRequestTBL.requestID FROM EventRequestTBL" +
+                " INNER JOIN EventTBL ON EventRequestTBL.eventID = EventRequestTBL.eventID" +
+                $" WHERE EventRequestTBL.organizationID = {orgID}";
+
+            string eventWhereClause = "";
+
+            foreach(Dictionary<string,string> item in dbHandler.RetrieveData(getEventRequestsOfOrg))
+            {
+                eventWhereClause += $" requestID = {item["requestID"]} ";
+            }
+
             string query = $"UPDATE OrganizationTBL SET organizationStatus = 'Deleted'  WHERE organizationID = {orgID}";
-            
+            string query2 = $"UPDATE RequestTBL" +
+                $" SET requestStatus = 'Deleted'" +
+                $" WHERE {eventWhereClause};";
             dbHandler.ExecuteUpdateQuery(query);
+            dbHandler.ExecuteUpdateQuery(query2);
 
             Response.Redirect("~/Pages/Admin/ViewOrganizations.aspx");
         }
