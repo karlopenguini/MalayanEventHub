@@ -47,6 +47,11 @@ namespace MalayanEventHub.Layouts.Common.Admin
             {
                 btn_inactive.Visible = false;
             }
+            if(status == "Deleted")
+            {
+                btn_inactive.Visible = false;
+                btn_delete.Visible = false;
+            }
 
             linksrepeater.DataSource = items;
             linksrepeater.DataBind();
