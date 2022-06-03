@@ -69,6 +69,7 @@
                                 <asp:ListItem>Inactive</asp:ListItem>
                                 <asp:ListItem>Pending</asp:ListItem>
                                 <asp:ListItem>Rejected</asp:ListItem>
+                                <asp:ListItem>Deleted</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </ContentTemplate>

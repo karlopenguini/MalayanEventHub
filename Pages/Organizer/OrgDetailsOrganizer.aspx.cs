@@ -46,7 +46,7 @@ namespace MalayanEventHub.Pages.Organizer
             LoadAdviser();
             LoadImage();
             LoadMembers();
-          
+            
 
             if (role == "Member")
             {

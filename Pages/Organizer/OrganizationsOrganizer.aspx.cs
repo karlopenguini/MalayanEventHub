@@ -116,7 +116,7 @@ namespace MalayanEventHub.Layouts
                 LinkButton btn_Violations = (LinkButton)e.Item.FindControl("btn_Violations") as LinkButton;
 
                 // If pending status, disable LinkButton controls and change text of Buttons to "Pending"
-                if (status.Text == "Pending" || status.Text == "Rejected")
+                if (status.Text == "Pending" || status.Text == "Rejected" || status.Text == "Deleted")
                 {
                     btn_Details.Enabled = false;
                     btn_Details.Text = status.Text;
