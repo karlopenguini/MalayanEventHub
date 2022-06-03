@@ -36,9 +36,9 @@ namespace MalayanEventHub.Layouts.Common.Admin
             {
                 LoadDataDetails();
                 LoadPresident();
-                //LoadVice();
-                //LoadTreasurer();
-                //LoadSecretary();
+                LoadVice();
+                LoadTreasurer();
+                LoadSecretary();
                 LoadImage();
                 LoadAdviser();
             }
