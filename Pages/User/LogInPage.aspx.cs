@@ -60,7 +60,7 @@ namespace MalayanEventHub.Pages.User
             }
             catch (Exception)
             {
-                this.DisplayError("Invalid Username");
+                this.DisplayError("Incorrect username or password");
                 TB_UserName.Text = "";
             }
         }
