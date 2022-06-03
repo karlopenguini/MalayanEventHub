@@ -2,65 +2,74 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .organization-header{
+        .organization-header {
             display: flex;
-            justify-content:space-between;
-            margin:0;
-            margin-bottom:2em;
-            font-weight:100;
-        }
-        .org-details{
-            display:flex;
-            flex-direction: row;
-            font-size:2em;
-            color:var(--dark-blue);
-        }
-        .organization-info{
-            flex-grow:2;
-            display:flex;
-            flex-direction:column;
-            gap:1em;
-        }
-        .organization-header-border{
-            border-bottom: 1px solid;
-            border-color:var(--blue);
-            width:100%;
-        }
-        .org-name{
-            font-size: 2.6em;
-            letter-spacing:0.12em;
+            justify-content: space-between;
+            margin: 0;
+            margin-bottom: 2em;
+            font-weight: 100;
         }
 
-        .separator{
+        .org-details {
+            display: flex;
+            flex-direction: row;
+            font-size: 2em;
+            color: var(--dark-blue);
+        }
+
+        .organization-info {
+            flex-grow: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .organization-header-border {
+            border-bottom: 1px solid;
+            border-color: var(--blue);
+            width: 100%;
+        }
+
+        .org-name {
+            font-size: 2.6em;
+            letter-spacing: 0.12em;
+        }
+
+        .separator {
             padding: 0 0.4em;
         }
-        .org-status{
-            font-size:2em;
-            color:var(--dark-blue);
-            font-weight:100;
-            opacity:0.8;
+
+        .org-status {
+            font-size: 2em;
+            color: var(--dark-blue);
+            font-weight: 100;
+            opacity: 0.8;
         }
-        .dropdown-container{
-            display:flex;
-            flex-direction:column;
-            width:200px;
-            gap:1em;
+
+        .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            gap: 1em;
         }
-        .button{
-            all:unset;
-            padding:0.5em 1em;
-            font-weight:100;
+
+        .button {
+            all: unset;
+            padding: 0.5em 1em;
+            font-weight: 100;
             border: 1px solid;
-            border-color:rgb(0 0 0 / 0.32);
-            text-align:center;
-            width:200px;
-            cursor:pointer;
+            border-color: rgb(0 0 0 / 0.32);
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
         }
-        .Delete{
-            background-color:rgb(255 0 0 / 0.24);
+
+        .Delete {
+            background-color: rgb(255 0 0 / 0.24);
         }
-        .Inactive{
-            background-color:rgb(0 130 255 / 0.50);
+
+        .Inactive {
+            background-color: rgb(0 130 255 / 0.50);
         }
     </style>
     <asp:ContentPlaceHolder ID="head2" runat="server"></asp:ContentPlaceHolder>
@@ -72,14 +81,25 @@
             <asp:Label ID="lbl_org_name" runat="server" CssClass="org-name">Organization Name</asp:Label>
             <div class="org-details">
                 <asp:Label ID="lbl_org_type" runat="server" CssClass="org-type">Type</asp:Label><p class="separator">|</p>
-                <asp:Label ID="lbl_org_college" runat="server" CssClass="org-college">College</asp:Label></div>
+                <asp:Label ID="lbl_org_college" runat="server" CssClass="org-college">College</asp:Label>
+            </div>
             <asp:Label ID="lbl_org_status" runat="server" CssClass="org-status">Active</asp:Label>
             <div class="organization-header-border"></div>
         </div>
         <div class="dropdown-container">
             <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClass="button Delete" UseSubmitBehavior="False" OnClick="btn_delete_Click" />
-            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClass="button Inactive" UseSubmitBehavior="False" OnClick="btn_inactive_Click"/>
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClass="button Inactive" UseSubmitBehavior="False" OnClick="btn_inactive_Click" />
         </div>
+    </section>
+    <section style="display: flex; color:black; gap:2em; font-size:1.2em; text-decoration:underline;">
+        <asp:Repeater ID="linksrepeater" runat="server">
+            <ItemTemplate>
+                <asp:HyperLink ID="hl_1" runat="server" Target="_self" NavigateUrl='<%# Eval("url") %>'>
+                    <p><%# Eval("lbl") %></p>
+                    <object data="../../../Images/SVG/arrow.svg"></object>
+                </asp:HyperLink>
+            </ItemTemplate>
+        </asp:Repeater>
     </section>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>

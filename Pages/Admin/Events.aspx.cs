@@ -84,7 +84,7 @@ namespace MalayanEventHub.Layouts
                 collegeQuery = $"OrganizationTBL.college = '{college}' AND";
             }
             string query =
-                        "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
+                        "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue,OrganizationTBL.organizationID, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
@@ -99,16 +99,18 @@ namespace MalayanEventHub.Layouts
 
                 string eventurl = "";
 
+                string orgID = row["organizationID"];
+
                 switch (row["requestStatus"])
                 {
                     case "Active": 
-                        eventurl = $"ViewEvent.aspx?eventId={eventID}";
+                        eventurl = $"ViewEvent.aspx?eventId={eventID}&orgID={orgID}";
                         break;
                     case "Rejected":
-                        eventurl = $"ViewEvent.aspx?eventId={eventID}";
+                        eventurl = $"ViewEvent.aspx?eventId={eventID}&orgID={orgID}";
                         break;
                     case "Pending":
-                        eventurl = $"EventReview.aspx?eventId={eventID}";
+                        eventurl = $"EventReview.aspx?eventId={eventID}&orgID={orgID}";
                         break;
                 }
 

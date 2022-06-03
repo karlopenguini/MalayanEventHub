@@ -63,5 +63,15 @@
             <div class="organization-header-border"></div>
         </div>
     </section>
+    <section style="display: flex; color:black; gap:2em; font-size:1.2em; text-decoration:underline;">
+        <asp:Repeater ID="linksrepeater" runat="server">
+            <ItemTemplate>
+                <asp:HyperLink ID="hl_1" runat="server" Target="_self" NavigateUrl='<%# Eval("url") %>'>
+                    <p><%# Eval("lbl") %></p>
+                    <object data="../../../Images/SVG/arrow.svg"></object>
+                </asp:HyperLink>
+            </ItemTemplate>
+        </asp:Repeater>
+    </section>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>

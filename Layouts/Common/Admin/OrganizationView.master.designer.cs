@@ -78,6 +78,15 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected global::System.Web.UI.WebControls.Button btn_inactive;
 
         /// <summary>
+        /// linksrepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater linksrepeater;
+
+        /// <summary>
         /// ContentPlaceHolder2 control.
         /// </summary>
         /// <remarks>

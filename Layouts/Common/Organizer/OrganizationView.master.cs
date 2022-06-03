@@ -24,6 +24,32 @@ namespace MalayanEventHub.Layouts.Common.Organizer
                 orgID2 = Session["organizationID"].ToString();
             }
 
+
+            string query = $"SELECT MemberTBL.memberRole FROM MemberTBL INNER JOIN UserTBL ON UserTBL.userID = MemberTBL.userID WHERE MemberTBL.organizationID = {orgID2} AND MemberTBL.userID = {Session["userID"]}";
+            string role = dbHandler2.RetrieveData(query)[0]["memberRole"];
+
+            List<NavItems> items = new List<NavItems>();
+            items.Add(new NavItems()
+            {
+                url = $"~/Pages/Organizer/OrgDetailsOrganizer.aspx?orgID={orgID2}&role='{role}'",
+                lbl = "Org Details",
+            });
+            if(!role.Contains("Member")) 
+            {
+                items.Add(new NavItems()
+                {
+                    url = $"~/Pages/Organizer/OrgCreateEvent.aspx?orgID={orgID2}&role='{role}'",
+                    lbl = "Create an Event",
+                });
+                items.Add(new NavItems()
+                {
+                    url = $"~/Pages/Organizer/OrgEvents.aspx?orgID={orgID2}&role='{role}'",
+                    lbl = "See Events",
+                });
+            }
+            linksrepeater.DataSource = items;
+            linksrepeater.DataBind();
+
             if (!Page.IsPostBack)
             {
                 //orgID = SessionThing? 
@@ -41,6 +67,11 @@ namespace MalayanEventHub.Layouts.Common.Organizer
             lbl_org_type.Text = data["organizationType"];
             lbl_org_college.Text = data["college"];
             lbl_org_status.Text = data["organizationStatus"];
+        }
+        protected class NavItems
+        {
+            public string url { get; set; }
+            public string lbl { get; set; }
         }
     }
 }

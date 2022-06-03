@@ -23,6 +23,25 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 orgID = Session["organizationID"].ToString();
             }
 
+            List<NavItems> items = new List<NavItems>();
+            items.Add(new NavItems()
+            {
+                url= $"~/Pages/Admin/OrgDetails.aspx?orgID={orgID}",
+                lbl="Org Details",
+            });
+            items.Add(new NavItems()
+            {
+                url = $"~/Pages/Admin/EventRequests.aspx?orgID={orgID}",
+                lbl = "Event Requests",
+            });
+            items.Add(new NavItems()
+            {
+                url = $"~/Pages/Admin/OrganizationViolation.aspx?orgID={orgID}",
+                lbl = "Org Violations",
+            });
+            linksrepeater.DataSource = items;
+            linksrepeater.DataBind();
+
             if (!Page.IsPostBack)
             {
                 GETOrg();
@@ -49,6 +68,12 @@ namespace MalayanEventHub.Layouts.Common.Admin
         {
             string query = $"UPDATE OrganizationTBL SET organizationStatus = 'Inactive'  WHERE organizationID = {orgID}";
             dbHandler.ExecuteUpdateQuery(query);
+        }
+
+        protected class NavItems
+        {
+            public string url { get; set; }
+            public string lbl { get; set; }
         }
     }
 }
