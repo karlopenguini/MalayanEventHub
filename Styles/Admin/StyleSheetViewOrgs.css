@@ -53,18 +53,17 @@
     .organization-card .img {
         /*240x240*/
         width: 100%;
-        height: 307px;
+        min-height: 200px;
         object-fit: contain;
-        position: absolute;
         /*top: 10px;
     left: 35px;*/
         top: 0;
         left: 0;
-        margin: 2em;
-        
+        padding: 1em;
     }
 
     .organization-card .info {
+        position: absolute;
         z-index: 3;
         color: #fff;
         opacity: 0;
@@ -73,11 +72,10 @@
         width: 100%;
         justify-content: center;
         margin-bottom: 50px;
-        margin-top: 10em;
     }
 
 .label-container {
-    margin-left: 2em;
+    padding: 1em 2em;
 }
 
 .organization-card:hover .info {
@@ -120,6 +118,7 @@
     font-weight: bold;
     font-size: 23px;
     font-weight: 400;
+    text-align: left;
 }
 
 .organization-card .sub-name {
