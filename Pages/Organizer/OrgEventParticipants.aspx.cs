@@ -78,7 +78,19 @@ namespace MalayanEventHub.Pages.Organizer
                 "ON part.userId = stud.userID INNER JOIN UserTBL as userT ON stud.userID = userT.userID " +
                 $"WHERE part.eventId = {eventID} AND part.userId = {rb_listParticipants.SelectedValue}";
             DebugWrite($"{eventID} {rb_listParticipants.SelectedValue}");
-            var recordUser = dbHandler.RetrieveData(query1)[0];
+            
+            var records = dbHandler.RetrieveData(query1);
+            if (records.Count <= 0)
+            {
+                //not found
+                ScriptManager.RegisterStartupScript(this, this.GetType(),
+                 "alert",
+                 "alert('User not found!');",
+                 true);
+                return;
+            }
+
+            var recordUser = records[0];
 
             string query2 = "SELECT dataOfParticipant FROM RequiredInformationTBL " +
                     $"WHERE eventID = {eventID}; ";
