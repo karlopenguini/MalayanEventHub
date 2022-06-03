@@ -71,21 +71,5 @@
                     https://www.facebook.com/mcl.arc
                 </p>
             </div>
-            <!--right container-->
-            <div style="width: 50%; font-size: 28px;margin-left: 20px ">
-                Vision
-                <div class="mv-desc">
-                    <asp:Label ID="lbl_Vision" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></asp:Label>
-                </div>
-
-            </div>
-        </div>
-        <!--contact-->
-        <div style="font-size: 28px; margin-top: 70px; margin-bottom: 100px">
-            Contact us:
-            <p style="font-weight: 100">
-                https://www.facebook.com/mcl.arc
-            </p>
-        </div>
     </div>
 </asp:Content>
