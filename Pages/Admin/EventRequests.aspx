@@ -6,7 +6,7 @@
             font-weight:300;
             margin-bottom:1em;
         }
-    </style>s
+    </style>
     <link rel="stylesheet" href="../../Styles/Event_Violation_Card.css" />
 
 </asp:Content>
