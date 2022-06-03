@@ -74,12 +74,10 @@ h1 {
 .fname-label {
     font-size: 20px;
     margin: 0 0 10px 20px;
-    width: 220px;
 }
 
 .fname-tb {
     margin-left: 20px;
-    width: 220px;
 }
 
 .mi-container {
@@ -90,12 +88,10 @@ h1 {
 .mi-label {
     font-size: 20px;
     margin: 0 20px 10px 20px;
-    width: 140px;
 }
 
 .mi-tb {
     margin: 0 20px;
-    width: 140px;
 }
 
 .lname-container {
@@ -106,12 +102,10 @@ h1 {
 .lname-label {
     font-size: 20px;
     margin-bottom: 10px;
-    width: 220px;
 }
 
 .lname-tb {
     margin-right: 20px;
-    width: 220px;
 }
 
 /*STYLES FOR THE EMAIL NUMBER AND PASSWORD */
