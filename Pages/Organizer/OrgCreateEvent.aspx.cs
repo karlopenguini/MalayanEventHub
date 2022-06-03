@@ -485,6 +485,12 @@ namespace MalayanEventHub
 
         protected void cv_pubmatImg_ServerValidate(object source, ServerValidateEventArgs args)
         {
+            if (args.Value == "")
+            {
+                cv_pubmatImg.ErrorMessage = "Must upload a pubmat img";
+                args.IsValid = false;
+                return;
+            }
             int fileSizeInBytes = f_uploadImg.PostedFile.ContentLength;
             int maxFileSizeInBytes = 4194304; 
             if (fileSizeInBytes > maxFileSizeInBytes)
