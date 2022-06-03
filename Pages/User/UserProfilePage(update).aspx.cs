@@ -48,7 +48,7 @@ namespace MalayanEventHub.Layouts.Common.User
 
                 if (userData["role"] != "Admin")
                 {
-                    Dictionary<string, string> studentData = StudentTBL[0];
+                    studentData = StudentTBL[0];
                     ddl_course.SelectedValue = studentData["course"];
                     ddl_college.SelectedValue = studentData["college"];
                     ddl_yearLevel.SelectedValue = studentData["yearLevel"];
