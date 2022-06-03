@@ -93,6 +93,7 @@
                                 <asp:ListItem>ETYCB</asp:ListItem>
                                 <asp:ListItem>MITL</asp:ListItem>
                                 <asp:ListItem>CMET</asp:ListItem>
+                                <asp:ListItem>SHS</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <%--course ddl--%>
@@ -105,13 +106,12 @@
                         </div>
                         <%--year ddl--%>
                         <div class="year-container">
-                            <label class="year-label">year</label>
+                            <asp:Label CssClass="year-label" ID="yearLabel" runat="server" Text="year"></asp:Label>
                             <asp:DropDownList CssClass="year-ddl ddl" ID="ddl_year" runat="server">
                                 <asp:ListItem>1</asp:ListItem>
                                 <asp:ListItem>2</asp:ListItem>
                                 <asp:ListItem>3</asp:ListItem>
                                 <asp:ListItem>4</asp:ListItem>
-                                <asp:ListItem></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>

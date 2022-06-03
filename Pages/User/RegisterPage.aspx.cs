@@ -18,18 +18,20 @@ namespace MalayanEventHub.Pages.User
 
         protected void ddl_college_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] colleges = { "CCIS", "CAS", "ETYCB", "MITL", "CMET" };
+            string[] colleges = { "CCIS", "CAS", "ETYCB", "MITL", "CMET", "SHS"};
             string[][] courses =
             {
                 new string[] {"BSCS", "BSIT" },
                 new string[] {"BACom", "AB MMA", "BSc(Psych)" },
                 new string[] {"BSA", "BSBA", "BSTM" },
                 new string[] {"BArch", "BSChe", "BCE", "BSCE", "BSEE", "BSECE", "BSIE", "BSME"},
-                new string[] {"BSMarE", "BSMT" }
+                new string[] {"BSMarE", "BSMT" },
+                new string[] {"ABM", "HUMSS", "STEM", "Arts and Design", "ICT" }
             };
 
             //Change current items of ddl_course based on the selected value in ddl_college
             ddl_course.Items.Clear();
+            ddl_year.Items.Clear();
             for (var i = 0; i < colleges.Length; i++)
             {
                 if (ddl_college.SelectedValue == colleges[i])
@@ -39,6 +41,23 @@ namespace MalayanEventHub.Pages.User
                         ddl_course.Items.Insert(x, new ListItem(courses[i][x], courses[i][x]));
                     }
                     break;
+                }
+            }
+            //set the correct number of years based on the selected college
+            if (ddl_college.SelectedValue == "SHS")
+            {
+                yearLabel.Text = "grade";
+                for (var i = 0; i < 2; i++)
+                {
+                    ddl_year.Items.Insert(i, (i + 11).ToString());
+                }
+            }
+            else
+            {
+                yearLabel.Text = "year";
+                for (var i = 0; i < 4; i++)
+                {
+                    ddl_year.Items.Insert(i, (i + 1).ToString());
                 }
             }
         }

@@ -64,6 +64,7 @@
                             <asp:ListItem>ETYCB</asp:ListItem>
                             <asp:ListItem>MITL</asp:ListItem>
                             <asp:ListItem>CMET</asp:ListItem>
+                            <asp:ListItem>SHS</asp:ListItem>
                         </asp:DropDownList>
                         </ContentTemplate>
                         </asp:UpdatePanel>
@@ -110,8 +111,10 @@
                         <asp:RegularExpressionValidator CssClass="regex-validator" ID="rev_contact" runat="server" ErrorMessage="invalid" ControlToValidate="tb_contact" ValidationExpression="[0-9]{11}"></asp:RegularExpressionValidator>
                     </td>
                     <td>
+                        <asp:UpdatePanel ID="UpdatePanelYear" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
                         <span class="label-span">
-                            <label class="labels">Year Level:</label>
+                            <asp:Label CssClass="labels" ID="yearLabel" runat="server" Text="Year Level"></asp:Label>
                         </span>
                     </td>
                     <td>
@@ -120,8 +123,9 @@
                             <asp:ListItem>2</asp:ListItem>
                             <asp:ListItem>3</asp:ListItem>
                             <asp:ListItem>4</asp:ListItem>
-                            <asp:ListItem></asp:ListItem>
                         </asp:DropDownList>
+                        </ContentTemplate>
+                        </asp:UpdatePanel>
                     </td>
                 </tr>
                 <tr>

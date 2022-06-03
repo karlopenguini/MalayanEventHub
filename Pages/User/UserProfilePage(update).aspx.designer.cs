@@ -204,6 +204,24 @@ namespace MalayanEventHub.Layouts.Common.User
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_contact;
 
         /// <summary>
+        /// UpdatePanelYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelYear;
+
+        /// <summary>
+        /// yearLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label yearLabel;
+
+        /// <summary>
         /// ddl_yearLevel control.
         /// </summary>
         /// <remarks>
