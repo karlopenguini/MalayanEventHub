@@ -82,7 +82,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
         {
             string query =
                 "select CONCAT(a.firstName,' ',a.lastName) as full_name from UserTBL a inner join MemberTBL b on a.userID" +
-                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Vice-President'";
+                $"= b.userID where b.organizationID = {organizationID} and b.memberRole = 'Vice President'";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
 
             vice = data["full_name"];

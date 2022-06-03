@@ -27,7 +27,8 @@ namespace MalayanEventHub.Layouts
         DatabaseHandler dbHandler = new DatabaseHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            organizationID = Session["organizationID"].ToString();
+            organizationID = Request.QueryString["orgID"].ToString();
+            requestID = GetRequestID();
             if (!Page.IsPostBack)
             {
                 LoadOrgData();
@@ -37,7 +38,7 @@ namespace MalayanEventHub.Layouts
                 LoadImage();
                 LoadMembers();
             }
-            requestID = GetRequestID();
+            
         }
 
         protected void LoadOrgData()
@@ -69,7 +70,7 @@ namespace MalayanEventHub.Layouts
         protected void LoadVice()
         {
             string query = "select a.userId from MemberTBL as a inner join OrganizationRequestTBL as b on a.organizationId = b.organizationId " +
-                $"where a.memberRole = 'Vice-President' and b.requestId = {requestID}";
+                $"where a.memberRole = 'Vice President' and b.requestId = {requestID}";
             Dictionary<string, string> data = dbHandler.RetrieveData(query)[0];
             vice = data["userId"];
             tb_vice.Text = vice;
