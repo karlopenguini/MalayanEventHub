@@ -136,7 +136,7 @@ namespace MalayanEventHub.Pages.Organizer
                 }
                 else
                 {
-                    image = "";
+                    image = "~/Images/mcl_logo.png";
                 }
 
                 Events.Add(

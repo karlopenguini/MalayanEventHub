@@ -126,9 +126,9 @@ namespace MalayanEventHub.Layouts
                     string base64 = data2["imgBase64Str"];
                     image = "data:image/png;base64, " + base64;
                 }
-                else 
+                else
                 {
-                    image = "";
+                    image = "~/Images/mcl_logo.png";
                 }
 
                 Events.Add(
