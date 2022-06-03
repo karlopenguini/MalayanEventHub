@@ -69,6 +69,10 @@ namespace MalayanEventHub.Layouts
                 string base64 = data["imgBase64Str"];
                 img_event.ImageUrl = "data:image/png;base64, " + base64;
             }
+            else
+            {
+                img_event.ImageUrl = "~/Images/mcl_logo.png";
+            }
         }
 
         protected void btn_register_Click(object sender, EventArgs e)

@@ -12,9 +12,9 @@
                 <div class="filter">
                     <p class="filter-var">Type:</p>
                     <asp:DropDownList ID="ddl_type" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_type_SelectedIndexChanged" ViewStateMode="Enabled">
-                        <asp:ListItem Selected="True">Academic</asp:ListItem>
+                        <asp:ListItem>Academic</asp:ListItem>
                         <asp:ListItem>Non-Academic</asp:ListItem>
-                        <asp:ListItem>All</asp:ListItem>
+                        <asp:ListItem Selected="True">All</asp:ListItem>
                     </asp:DropDownList>
                     
                 </div>
@@ -36,11 +36,11 @@
                     <p class="filter-var">Date:</p>
 
                     <asp:DropDownList ID="ddl_date" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_date_SelectedIndexChanged" ViewStateMode="Enabled">
-                        <asp:ListItem Selected="True">All</asp:ListItem>
+                        <asp:ListItem>All</asp:ListItem>
                         <asp:ListItem >Today</asp:ListItem>
                         <asp:ListItem >This Week</asp:ListItem>
                         <asp:ListItem>This Month</asp:ListItem>
-                        <asp:ListItem>Upcoming</asp:ListItem>
+                        <asp:ListItem Selected="True">Upcoming</asp:ListItem>
                         <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
 
