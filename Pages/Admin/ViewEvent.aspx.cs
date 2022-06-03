@@ -107,10 +107,6 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 string base64 = data2["imgBase64Str"];
                 pubmatImg.ImageUrl = "data:image/png;base64, " + base64;
             }
-            else
-            {
-                pubmatImg.ImageUrl = "~/Images/mcl_logo.png";
-            }
         }
     
         private void LoadCheckBoxData()
