@@ -3,11 +3,11 @@
         <link rel="stylesheet" href="../../Styles/MasterStyleSheet.css" />
     <style>
         .dynamic-image{
-            width: 100%;
-            min-height: 250px;
-            max-height: 500px;
-            height: auto;
+            width: 90%;
+            height: 400px;
+            object-fit:contain;
             border-radius: 10px;
+            margin: 0 auto;
         }
     </style>
 </asp:Content>

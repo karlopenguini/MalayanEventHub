@@ -74,6 +74,16 @@ namespace MalayanEventHub.Pages.Organizer
                     endD = DateTime.Now.AddDays(30).ToString("yyyy-MM-dd"); ;
                     dateQuery += $"AND CONVERT(char(10), e.startDateTime,126) BETWEEN '{startD}' AND '{endD}'";
                     break;
+                case "Upcoming":
+                    startD = now;
+                    dateQuery += $"AND e.endDateTime > '{startD}'";
+                    break;
+                case "Past":
+                     startD = now;
+                     dateQuery += $"AND e.endDateTime < '{startD}'";
+                     break;
+                
+
             }
 
 
@@ -88,7 +98,8 @@ namespace MalayanEventHub.Pages.Organizer
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE OrganizationTBL.organizationID ={organizationID}  AND {typeCollegeQuery} RequestTBL.requestStatus = '{status}' {dateQuery};";
+                        $" WHERE OrganizationTBL.organizationID ={organizationID}  AND {typeCollegeQuery} RequestTBL.requestStatus = '{status}' {dateQuery} " +
+                        $" ORDER BY e.startDateTime ASC";
 
 
 
