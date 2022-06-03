@@ -87,8 +87,8 @@
             <div class="organization-header-border"></div>
         </div>
         <div class="dropdown-container">
-            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClass="button Delete" UseSubmitBehavior="False" OnClick="btn_delete_Click" />
-            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClass="button Inactive" UseSubmitBehavior="False" OnClick="btn_inactive_Click" />
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_delete" runat="server" Text="Delete Organization" CssClass="button Delete" UseSubmitBehavior="False" CausesValidation="False" OnClick="btn_delete_Click" />
+            <asp:Button OnClientClick="return confirm('Are you sure?')" ID="btn_inactive" runat="server" Text="Set Organization Inactive" CssClass="button Inactive" UseSubmitBehavior="False" CausesValidation="False" OnClick="btn_inactive_Click" />
         </div>
     </section>
     <section style="display: flex; color:black; gap:2em; font-size:1.2em; text-decoration:underline;">
