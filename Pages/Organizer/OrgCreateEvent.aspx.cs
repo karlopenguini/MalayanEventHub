@@ -487,8 +487,8 @@ namespace MalayanEventHub
         {
             if (args.Value == "")
             {
-                cv_pubmatImg.ErrorMessage = "Must upload a pubmat img";
-                args.IsValid = false;
+               // cv_pubmatImg.ErrorMessage = "Must upload a pubmat img";
+                args.IsValid = true;
                 return;
             }
             int fileSizeInBytes = f_uploadImg.PostedFile.ContentLength;
