@@ -4,7 +4,7 @@
     <style>
         .dynamic-image{
             width: 90%;
-            height: 400px;
+            height: 450px;
             object-fit:contain;
             border-radius: 10px;
             margin: 0 auto;
