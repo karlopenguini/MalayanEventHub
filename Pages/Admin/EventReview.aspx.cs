@@ -110,11 +110,11 @@ namespace MalayanEventHub.Layouts.Common.Admin
             dbHandler.ExecuteUpdateQuery(query);
 
 
-            string query2 =
-                "UPDATE OrganizationTBL" +
-                $" SET organizationStatus = 'Active'" +
-                $" WHERE {OrgID.Split('-')[0]} = organizationID";
-            dbHandler.ExecuteUpdateQuery(query2);
+            //string query2 =
+            //    "UPDATE OrganizationTBL" +
+            //    $" SET organizationStatus = 'Active'" +
+            //    $" WHERE {OrgID.Split('-')[0]} = organizationID";
+            //dbHandler.ExecuteUpdateQuery(query2);
 
             Response.Redirect($"ViewEvent.aspx?eventId={eventID}");
             
