@@ -83,7 +83,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
             if(Page.IsValid)
             {
                 UploadtoDB();
-                Response.Write("alert<script>Form submitted.</script>");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Form submitted')", true);
                 tb_violation.Text = "";
                 tb_dateTime.Text = "";
                 tb_verdict.Text = "";
