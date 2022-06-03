@@ -48,6 +48,11 @@ namespace MalayanEventHub.Pages.User
                     Session["userID"] = eventDataList["userID"];
                     Session["fullName"] = eventDataList["firstName"]+" "+eventDataList["lastName"];
                     Session["role"] = eventDataList["role"];
+                    string query2 = $"SELECT yearLevel FROM StudentTBL WHERE userID = {eventDataList["userID"]}";
+                    var yearLevel = dbHandler.RetrieveData(query2)[0]["yearLevel"];
+                    Session["yearLevel"] = yearLevel;
+                    
+
                     if (eventDataList["role"] == "Student")
                     {
                         Response.Redirect("UserViewCurrentEvents.aspx");                        

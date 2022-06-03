@@ -82,13 +82,19 @@ namespace MalayanEventHub
             {
                 collegeQuery = "";
             }
+           
+
+
             string query =
                         "SELECT e.eventID, e.pubmat, e.activityTitle, e.startDateTime, e.proposedVenue, OrganizationTBL.organizationAcronym, RequestTBL.requestStatus" +
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
                         " INNER JOIN OrganizationTBL ON CAST(SUBSTRING(e.organizerID,0,CHARINDEX('-',e.organizerID,0)) as INT) = OrganizationTBL.organizationID" +
-                        $" WHERE {typeQuery} {collegeQuery} RequestTBL.requestStatus = 'Active' {dateQuery};";
+                        $" WHERE {typeQuery} {collegeQuery} RequestTBL.requestStatus = 'Active' {dateQuery} " +
+                        $" AND IIF(e.audienceGradeYearStart>=11,e.audienceGradeYearStart-12, e.audienceGradeYearStart ) <= {Session["yearLevel"]}" +
+                        $" AND {Session["yearLevel"]} <= " +
+                        $" IIF(e.audienceGradeYearEnd>=11,e.audienceGradeYearEnd-12, e.audienceGradeYearEnd ) ;";
 
 
 
