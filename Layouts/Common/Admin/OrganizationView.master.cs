@@ -39,6 +39,15 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 url = $"~/Pages/Admin/OrganizationViolation.aspx?orgID={orgID}",
                 lbl = "Org Violations",
             });
+
+            string query = $"SELECT organizationStatus FROM OrganizationTBL WHERE organizationID = {orgID}";
+            string status = dbHandler.RetrieveData(query)[0]["organizationStatus"];
+           
+            if(status == "Inactive")
+            {
+                btn_inactive.Visible = false;
+            }
+
             linksrepeater.DataSource = items;
             linksrepeater.DataBind();
 
