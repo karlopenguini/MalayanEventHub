@@ -70,13 +70,19 @@ namespace MalayanEventHub.Layouts.Common.Admin
         protected void btn_delete_Click(object sender, EventArgs e)
         {
             string query = $"UPDATE OrganizationTBL SET organizationStatus = 'Deleted'  WHERE organizationID = {orgID}";
+            
             dbHandler.ExecuteUpdateQuery(query);
+
+            Response.Redirect("~/Pages/Admin/ViewOrganizations.aspx");
         }
 
         protected void btn_inactive_Click(object sender, EventArgs e)
         {
+
             string query = $"UPDATE OrganizationTBL SET organizationStatus = 'Inactive'  WHERE organizationID = {orgID}";
+            
             dbHandler.ExecuteUpdateQuery(query);
+            Response.Redirect("~/Pages/Admin/ViewOrganizations.aspx");
         }
 
         protected class NavItems
