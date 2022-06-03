@@ -38,7 +38,6 @@ namespace MalayanEventHub.Layouts.Common.User
             else
             {
                 Dictionary<string, string> userData = UserTBL[0];
-                Dictionary<string, string> studentData = StudentTBL[0];
                 //set the values retrieved from the database to the controls
                 tb_fname.Text = userData["firstName"];
                 tb_mname.Text = userData["middleName"];
