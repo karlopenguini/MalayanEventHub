@@ -78,6 +78,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
 
         protected void btn_inactive_Click(object sender, EventArgs e)
         {
+
             string query = $"UPDATE OrganizationTBL SET organizationStatus = 'Inactive'  WHERE organizationID = {orgID}";
             
             dbHandler.ExecuteUpdateQuery(query);

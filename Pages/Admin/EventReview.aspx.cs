@@ -106,9 +106,18 @@ namespace MalayanEventHub.Layouts.Common.Admin
             string query =
                 "UPDATE RequestTBL" +
                 $" SET requestStatus = 'Active', modified='{now}', feedback='{tb_comment.Text}'" +
-                $" WHERE '{requestID}' = RequestTBL.requestID";
+                $" WHERE {requestID} = RequestTBL.requestID";
             dbHandler.ExecuteUpdateQuery(query);
+
+            
+            //string query2 =
+            //    "UPDATE OrganizationTBL" +
+            //    $" SET organizationStatus = 'Active'" +
+            //    $" WHERE {OrgID.Split('-')[0]} = organizationID";
+            //dbHandler.ExecuteUpdateQuery(query2);
+
             Response.Redirect($"ViewEvent.aspx?eventId={eventID}");
+            
         }
 
         protected void ButtonCancel_Click(object sender, EventArgs e)

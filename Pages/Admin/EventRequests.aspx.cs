@@ -47,7 +47,8 @@ namespace MalayanEventHub.Layouts.Common.Admin
                         " FROM EventTBL as e" +
                         " INNER JOIN EventRequestTBL ON e.eventID = EventRequestTBL.eventID" +
                         " INNER JOIN RequestTBL ON EventRequestTBL.requestID = RequestTBL.requestID" +
-                        $" INNER JOIN OrganizationTBL ON {organizerID} = OrganizationTBL.organizationID";
+                        $" INNER JOIN OrganizationTBL ON {organizerID} = OrganizationTBL.organizationID" +
+                        $" WHERE RequestTBL.requestStatus = 'Pending'";
             foreach (Dictionary<string, string> row in dbHandler.RetrieveData(query))
             {
                 string eventID = row["eventID"];
@@ -69,7 +70,7 @@ namespace MalayanEventHub.Layouts.Common.Admin
                 {
                     image = "";
                 }
-
+                
                 Events.Add(
                     new EventData()
                     {
