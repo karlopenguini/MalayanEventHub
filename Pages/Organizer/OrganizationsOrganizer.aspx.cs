@@ -126,8 +126,6 @@ namespace MalayanEventHub.Layouts
 
                     btn_ViewEvent.Enabled = false;
                     btn_ViewEvent.Text = status.Text;
-
-
                 }
                 else if (role.Text == "Member") {
 

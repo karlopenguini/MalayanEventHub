@@ -66,6 +66,7 @@
                             <asp:DropDownList ID="ddl_Status" runat="server" CssClass="filter-ddl" AutoPostBack="True" OnSelectedIndexChanged="ddl_Status_SelectedIndexChanged">
                                 <asp:ListItem>Choose</asp:ListItem>
                                 <asp:ListItem Selected="True">Active</asp:ListItem>
+                                <asp:ListItem>Inactive</asp:ListItem>
                                 <asp:ListItem>Pending</asp:ListItem>
                                 <asp:ListItem>Rejected</asp:ListItem>
                             </asp:DropDownList>
