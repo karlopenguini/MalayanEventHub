@@ -205,7 +205,9 @@
             <section>
                 <div class="footer-about-us">
                     <p class="footer-about-us-header">About us</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p style="margin-bottom: 20px;">Malayan Colleges Laguna is a academic instution that offers both Senior High School and college education. Its mission is to tranforms its student to become globally competitive professionals and vission to be global steeple of excellence.
+                    MCL Event HUB provides students of Malayan Colleges Laguna a medium for them to easily register for events hosted by MCL (e.g student organizations, student council, school events, competitions, etc.). It also offers a solution for Malayan Colleges of Laguna to organize events efficiently.</p>
+                    <p>(This is a Course Project. For educational purposes.)</p>
                 </div>
                 <p>All Rights Reserved (2022).</p>
             </section>
