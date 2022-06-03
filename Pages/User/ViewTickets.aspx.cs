@@ -54,7 +54,7 @@ namespace MalayanEventHub
                 }
                 else
                 {
-                    image = "";
+                    image = "~/Images/mcl_logo.png";
                 }
                 if (String.IsNullOrEmpty(row["invitationLink"]))
                 {
