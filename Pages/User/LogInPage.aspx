@@ -34,7 +34,7 @@
                     <div class="register-div">
                         <p class="main-label" style="font-weight:300;">REGISTER</p>
                         <label class="as-label">as</label>
-                        <asp:Button class="reg-button" ID="BtnReg" runat="server" Text="student" CausesValidation="False" OnClick="BtnReg_Click" OnClientClick="return confirm('Member/s Added')"/>
+                        <asp:Button class="reg-button" ID="BtnReg" runat="server" Text="student" CausesValidation="False" OnClick="BtnReg_Click"/>
                     </div>
                 </section>
             </main>
