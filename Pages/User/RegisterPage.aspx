@@ -15,7 +15,7 @@
             <section class="container">
                 <div class="main-div">
                     <h1>Create your account</h1>
-                    <p class="par">Lorem ipsum dolor sit amet, consectetur officia? Doloribus molestias </p>
+                    <p class="par">Register your MCL credentials here</p>
                     <%--name section--%>
                     <div class="main-name-container">
                         <%--first name--%>

@@ -22,10 +22,10 @@
                     <%--div containing the log in part--%>
                     <div class="login-div">
                         <p class="main-label">LOGIN</p>
-                        <label class="userAndPass-label">username</label>
+                        <label class="userAndPass-label">User ID</label>
                         <asp:TextBox CssClass="textbox" ID="TB_UserName" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter username" ControlToValidate="TB_UserName" CssClass="req-field" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <label class="userAndPass-label">password</label>
+                        <label class="userAndPass-label">Password</label>
                         <asp:TextBox CssClass="textbox" ID="TB_Password" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter password" ControlToValidate="TB_Password" CssClass="req-field" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:Button CssClass="signIn-button" ID="Btn_Signin" runat="server" Text="sign in" OnClick="Btn_Signin_Click" />
