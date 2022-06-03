@@ -105,13 +105,13 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.WebControls.Repeater repeater_Members;
 
         /// <summary>
-        /// up_Members control.
+        /// contact_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_Members;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contact_details;
 
         /// <summary>
         /// member_list control.
@@ -168,6 +168,15 @@ namespace MalayanEventHub.Pages.Organizer
         protected global::System.Web.UI.WebControls.Button btn_AddMembers;
 
         /// <summary>
+        /// btn_DeleteMembers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_DeleteMembers;
+
+        /// <summary>
         /// rev_Member control.
         /// </summary>
         /// <remarks>
@@ -175,15 +184,6 @@ namespace MalayanEventHub.Pages.Organizer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rev_Member;
-
-        /// <summary>
-        /// up_MemberList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up_MemberList;
 
         /// <summary>
         /// tb_MemberList control.
@@ -202,14 +202,5 @@ namespace MalayanEventHub.Pages.Organizer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cv_MemberList;
-
-        /// <summary>
-        /// contact_details control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contact_details;
     }
 }

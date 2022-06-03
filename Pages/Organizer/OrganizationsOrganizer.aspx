@@ -83,7 +83,7 @@
                                 <div class="info">
                                     <asp:LinkButton ID="btn_Details" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrgDetailsOrganizer.aspx{Eval("OrganizationUrl")}" %>'>DETAILS</asp:LinkButton>
                                     <asp:LinkButton ID="btn_CreateEvent" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrgCreateEvent.aspx{Eval("OrganizationUrl")}"  %>'>CREATE EVENT</asp:LinkButton>
-                                    <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrgEvents.aspx{Eval("OrganizationUrl")}" %>'>VIEW EVENT</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_ViewEvent" runat="server" CssClass="btn" PostBackUrl='<%# $"~/Pages/Organizer/OrgEvents.aspx{Eval("OrganizationUrl")}" %>'>VIEW EVENTS</asp:LinkButton>
                                 </div>
                                 <div class="label-container">
                                     <div class="name">

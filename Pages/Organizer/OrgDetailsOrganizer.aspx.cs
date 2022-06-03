@@ -37,24 +37,23 @@ namespace MalayanEventHub.Pages.Organizer
             role = Request.QueryString["role"];
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-            if (!Page.IsPostBack)
-            {
-                LoadDataDetails();
-                LoadPresident();
-                LoadVice();
-                LoadTreasurer();
-                LoadSecretary();
-                LoadAdviser();
-                LoadImage();
-                LoadMembers();
 
-            }
+            LoadDataDetails();
+            LoadPresident();
+            LoadVice();
+            LoadTreasurer();
+            LoadSecretary();
+            LoadAdviser();
+            LoadImage();
+            LoadMembers();
+          
 
             if (role == "Member")
             {
                 btn_Add.Visible = false;
                 btn_Delete.Visible = false;
                 btn_AddMembers.Visible = false;
+                btn_DeleteMembers.Visible = false;
                 tb_Member.Visible = false;
                 tb_MemberList.Visible = false;
                 member_list.InnerText = "";
@@ -259,6 +258,18 @@ namespace MalayanEventHub.Pages.Organizer
                 UploadDataToServer();
                 tb_Member.Text = "";
                 tb_MemberList.Text = "";
+                LoadMembers();
+            }
+        }
+
+        protected void btn_DeleteMembers_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                RemoveDataFromServer();
+                tb_Member.Text = "";
+                tb_MemberList.Text = "";
+                LoadMembers();
             }
         }
 
@@ -280,9 +291,26 @@ namespace MalayanEventHub.Pages.Organizer
                 dbHandler.ExecuteInsertQuery(members_query);
             }
             #endregion
+        }
 
-            // Redirect to Organization page
-            //Response.Redirect("OrganizationsOrganizer.aspx");
+        private void RemoveDataFromServer()
+        {
+            #region OrganizationTBL Insert Data
+            // Collect Members
+            string[] members = tb_MemberList.Text.Trim().Split(
+                    new string[] { "\n" },
+                    StringSplitOptions.None);
+
+            // Members
+            string members_query;
+
+            // Iterate over each member and add to query
+            foreach (string member in members)
+            {
+                members_query = $"DELETE FROM MemberTBL WHERE organizationId = {organizationID} AND userId = {member};";
+                dbHandler.ExecuteUpdateQuery(members_query);
+            }
+            #endregion
         }
     }
 }
