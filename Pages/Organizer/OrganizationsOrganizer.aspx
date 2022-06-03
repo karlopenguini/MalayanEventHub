@@ -77,8 +77,8 @@
 
             </div>
         </section>
-        <section class="general-container">
-            <asp:UpdatePanel ID="up_OrganizerRepeater" runat="server">
+        <section>
+            <asp:UpdatePanel ID="up_OrganizerRepeater" runat="server" class="general-container">
                 <ContentTemplate>
                     <asp:Repeater ID="OrganizationsRepeater" runat="server" OnItemDataBound="Organizations_ItemDataBound">
                         <ItemTemplate>
